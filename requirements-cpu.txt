@@ -1,0 +1,2 @@
+# Tested CPU demonstration version. Install with the official PyTorch CPU index.
+torch==2.9.0

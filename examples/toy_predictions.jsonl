@@ -1,0 +1,4 @@
+{"prediction": "The answer is: 1,234", "reference": "1234"}
+{"prediction": "The answer is: 1/2", "reference": "0.5"}
+{"prediction": "The answer is: 3.4", "reference": "3"}
+{"prediction": "I cannot solve this.", "reference": "2"}

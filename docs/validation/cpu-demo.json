@@ -1,0 +1,66 @@
+{
+  "seed": 42,
+  "device": "cpu",
+  "torch_version": "2.9.0+cpu",
+  "transformer_shape": [
+    2,
+    5,
+    16
+  ],
+  "transformer_loss": 2.9369890689849854,
+  "lora_synthetic_loss_before": 0.04594896361231804,
+  "lora_synthetic_loss_after": 6.364347882481525e-06,
+  "lora_merge_max_error": 1.7881393432617188e-07,
+  "lora_parameter_counts": [
+    14,
+    29,
+    0.4827586206896552
+  ],
+  "sampling_distributions": {
+    "greedy": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "topk": [
+      0.6666666865348816,
+      0.3333333134651184,
+      0.0
+    ],
+    "topp": [
+      0.6666666865348816,
+      0.3333333134651184,
+      0.0
+    ],
+    "minp": [
+      1.0,
+      0.0,
+      0.0
+    ]
+  },
+  "toy_evaluation": {
+    "mode": "gsm8k",
+    "total": 2,
+    "correct": 1,
+    "invalid_outputs": 1,
+    "accuracy": 0.5,
+    "records": [
+      {
+        "index": 0,
+        "prediction": "The answer is: 1/2",
+        "reference": "0.5",
+        "extracted_answer": "1/2",
+        "correct": true,
+        "status": "correct"
+      },
+      {
+        "index": 1,
+        "prediction": "no answer",
+        "reference": "2",
+        "extracted_answer": null,
+        "correct": false,
+        "status": "invalid_output"
+      }
+    ]
+  }
+}

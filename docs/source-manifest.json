@@ -1,0 +1,32 @@
+[
+  {
+    "source": "NLP/作业/Assignment1/Q2_transformer_model.py",
+    "destination": "coursework/transformer/model.py",
+    "sha256": "afb3fff6c3c7cc7c9dc2e903bbbfbb892742100705040558b55eaa2e34a3e6c1",
+    "status": "unchanged course source; owner confirmed completing this implementation on 2026-11-11"
+  },
+  {
+    "source": "NLP/作业/Assignment2/Q1_lora_training.py",
+    "destination": "coursework/lora/lora.py",
+    "sha256": "f00bbdb00d8c298a7f2dd60593bf4f95e5756884684f1bef9fc91c7301542042",
+    "status": "unchanged course source; owner confirmed completing this implementation on 2026-11-11"
+  },
+  {
+    "source": "NLP/作业/Assignment2/Q2_decoding.py",
+    "destination": "coursework/decoding/sampling.py",
+    "sha256": "437221d486d2d9c37993c45bdd5c403c0380783a58b9d78cffc489f86b7d307f",
+    "status": "unchanged course source; owner confirmed completing this implementation on 2026-11-11"
+  },
+  {
+    "source": "NLP/作业/Assignment3/eval_gsm8k.py",
+    "destination": "coursework/evaluation/eval_gsm8k.py",
+    "sha256": "1cb16b5dd28c6a67d4e31e3cd9df0742939de81bc8780a09eb8717c4869d6fef",
+    "status": "unchanged course source; owner confirmed completing this implementation on 2026-11-11"
+  },
+  {
+    "source": "NLP/作业/Assignment3/eval_math.py",
+    "destination": "coursework/evaluation/eval_math.py",
+    "sha256": "1c52c89929cef36a7b199d73371a60258705ba041d6e43555017e913d0461036",
+    "status": "unchanged course source; owner confirmed completing this implementation on 2026-11-11"
+  }
+]

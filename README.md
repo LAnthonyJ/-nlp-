@@ -17,7 +17,7 @@ A collection of NLP coursework implementations with corrected reusable component
 
 ## Quick start
 
-Python 3.10+ is declared supported; local execution was verified on Windows, Python 3.13.7 and PyTorch 2.9.0+cpu. A Linux/Python 3.11 GitHub Actions workflow is configured but has not run remotely.
+Python 3.10+ is declared supported; local execution was verified on Windows, Python 3.13.7 and PyTorch 2.9.0+cpu. The Linux/Python 3.11 GitHub Actions workflow [passed on the initial published commit](https://github.com/LAnthonyJ/-nlp-/actions/runs/43263272641) on 2026-11-13.
 
 ```powershell
 python -m venv .venv

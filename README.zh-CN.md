@@ -39,4 +39,8 @@ CPU 示例中，Transformer 输出形状为 `[2,5,16]`；LoRA 在合成数据上
 
 ## 贡献说明
 
-五份原始课程实现由你完成。本次仓库整理、修复、测试与文档由 AI 辅助完成，详情见 [贡献说明](docs/provenance.md)。GitHub 仓库：https://github.com/LAnthonyJ/-nlp- 。提交使用 GitHub 隐私邮箱。
+五份原始课程实现由你完成。本次仓库整理、修复、测试与文档由 AI 辅助完成，详情见 [贡献说明](docs/provenance.md)。GitHub 仓库：[LAnthonyJ/-nlp-](https://github.com/LAnthonyJ/-nlp-)。提交使用 GitHub 隐私邮箱。
+
+## 发布验证
+
+2026-11-13 已完成首次提交和公开发布。[GitHub Actions 首次运行](https://github.com/LAnthonyJ/-nlp-/actions/runs/43263272641)通过，验证了 Linux / Python 3.11 上的测试、CPU 示例和离线评测命令。

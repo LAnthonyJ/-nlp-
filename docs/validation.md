@@ -43,5 +43,8 @@ Raw records: [CPU example](validation/cpu-demo.json), [toy JSONL scoring](valida
 
 - GPU execution, model downloads, real pretrained-model generation and full fine-tuning.
 - General symbolic equivalence for MATH; only documented strict scoring is implemented.
-- Remote GitHub Actions, which is configured but has not run.
 - A clean dependency installation on a new machine or all declared Python versions.
+
+## Publication validation — 2026-11-13
+
+The initial commit `c19b40650c874ec02965123c4b33472a00d68475` was pushed to [LAnthonyJ/-nlp-](https://github.com/LAnthonyJ/-nlp-). [GitHub Actions CPU tests](https://github.com/LAnthonyJ/-nlp-/actions/runs/43263272641) completed successfully on Ubuntu / Python 3.11, including dependency installation, unittest, the CPU demonstration and JSONL scoring. The Git index was also checked against all five original coursework SHA-256 hashes.

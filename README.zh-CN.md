@@ -1,46 +1,130 @@
 # NLP 课程代码实现
 
-本仓库展示 Transformer、LoRA、解码策略和数学答案评测的实现、修复与测试。
+**通过可阅读、可测试的 PyTorch 实现，理解 Transformer、LoRA、解码策略和答案评测。**
 
-[English README](README.md) · [接口说明](docs/api.md) · [验证记录](docs/validation.md)
+[![CPU tests](https://github.com/LAnthonyJ/-nlp-/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/LAnthonyJ/-nlp-/actions/workflows/tests.yml)
 
-## 当前成果
+[English](README.md) · [快速开始](#快速开始) · [运行示例](#运行示例) · [验证结果](#验证结果) · [接口说明](docs/api.md)
 
-- **29 项测试全部通过**，覆盖掩码信息泄漏、梯度、LoRA 合并、采样边界、评测批次和错误处理。
-- Transformer 修复层参数共享、掩码维度、归一化和残差连接，并支持奇数维位置编码。
-- LoRA 补上直接构造时的初始化、参数冻结、设备与精度匹配，以及合并状态保存。
-- 解码支持 Greedy、Top-K、Top-P、相对最大概率定义的 Min-P 和重复惩罚。
-- 评测支持离线 JSONL 输入、精确数值比较、无效答案统计及逐条结果输出。
-- 提供无需模型下载的 CPU 示例，包含真实执行的微型 LoRA 优化。
+本项目适合希望理解 NLP 实现细节、通过小例子检查算法行为的学习者。安装 PyTorch 后，内置示例可以在 CPU 上运行，无需下载模型或数据集。
 
-原始代码位于 `coursework/`，保持不变。请使用 `src/nlp_course/` 中的修复版本。
+## 可以探索什么
 
-## 在当前电脑运行
+| 模块 | 代码入口 | 可以验证的行为 |
+| --- | --- | --- |
+| Transformer | [嵌入、注意力、编码器与解码器](src/nlp_course/transformer.py) | 层参数独立、因果与填充掩码、归一化、前向和反向传播 |
+| LoRA | [低秩适配与模块注入](src/nlp_course/lora.py) | 初始增量为零、基础参数冻结、适配器梯度、合并前后输出一致 |
+| 解码 | [Greedy、Top-K、Top-P、相对 Min-P](src/nlp_course/decoding.py) | 候选词概率、温度、重复惩罚、EOS 停止 |
+| 评测 | [离线 JSONL 评分与批量生成接口](src/nlp_course/evaluation.py) | 精确数值比较、无效答案统计、批次完整性 |
 
-在本仓库目录打开 PowerShell，已有 `.venv` 可直接使用：
+建议从 [`examples/cpu_demo.py`](examples/cpu_demo.py) 开始，再结合 [29 项回归测试](tests/test_components.py) 理解各组件的正确性条件。
 
-```powershell
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v
-.\.venv\Scripts\python.exe examples/cpu_demo.py
-.\.venv\Scripts\python.exe -m nlp_course.evaluation examples/toy_predictions.jsonl --output outputs/toy-report.json
+## 快速开始
+
+需要 Git 和 Python。项目声明 Python 3.10+；已验证 **Linux / Python 3.11** 和 **Windows / Python 3.13.7**，使用 PyTorch 2.9.0+cpu。
+
+```sh
+git clone https://github.com/LAnthonyJ/-nlp-.git nlp-course-implementations
+cd nlp-course-implementations
+python -m venv .venv
 ```
 
-新电脑的安装步骤见英文 README。当前电脑的虚拟环境复用了已有 CPU PyTorch，并已验证本项目的 editable 安装；未声称在全新环境重新下载验证所有依赖。
+根据系统激活虚拟环境：
 
-## 实际运行结果
+| 系统 | 命令 |
+| --- | --- |
+| Windows PowerShell | `.\.venv\Scripts\Activate.ps1` |
+| Linux | `source .venv/bin/activate` |
 
-测试环境：Windows / Python 3.13.7 / PyTorch 2.9.0+cpu。
+安装 CPU 依赖和本地包，然后运行：
 
-CPU 示例中，Transformer 输出形状为 `[2,5,16]`；LoRA 在合成数据上优化 80 步，MSE 从约 `0.045949` 降至 `0.000006364`，合并前后最大输出差约 `1.79e-7`。这些数字只验证小型示例，不代表大模型性能提升。
+```sh
+python -m pip install -r requirements-cpu.txt --index-url https://download.pytorch.org/whl/cpu
+python -m pip install --no-deps -e .
+python examples/cpu_demo.py
+```
 
-## 评测边界
+如果已经有本地仓库，直接在现有目录配置环境即可。PowerShell 无法激活时，可以用 `.\.venv\Scripts\python.exe` 替代命令中的 `python`。macOS 或其他 PyTorch 构建需先安装适配平台的版本；这些环境尚未在本项目验证。
 
-`math-strict` 只进行受支持的数值等价或去除首尾格式后的文本比较，不是通用符号数学判等器，也不是官方 MATH 评测。原始脚本缺失的 `util` 没有被冒充恢复。尚未运行真实大模型训练和完整基准评测。
+## 运行示例
 
-## 贡献说明
+### 微型 Transformer 与 LoRA 优化
 
-五份原始课程实现由你完成。本次仓库整理、修复、测试与文档由 AI 辅助完成，详情见 [贡献说明](docs/provenance.md)。GitHub 仓库：[LAnthonyJ/-nlp-](https://github.com/LAnthonyJ/-nlp-)。提交使用 GitHub 隐私邮箱。
+```sh
+python examples/cpu_demo.py
+```
 
-## 发布验证
+示例会执行 Transformer 前向与反向传播，在合成回归数据上优化 LoRA 适配器 80 步，检查合并一致性，并输出解码分布和玩具评测记录。[已记录输出](docs/validation/cpu-demo.json)中的部分字段：
 
-2026-11-13 已完成首次提交和公开发布。[GitHub Actions 首次运行](https://github.com/LAnthonyJ/-nlp-/actions/runs/43263272641)通过，验证了 Linux / Python 3.11 上的测试、CPU 示例和离线评测命令。
+```json
+{
+  "seed": 42,
+  "device": "cpu",
+  "transformer_shape": [2, 5, 16],
+  "lora_synthetic_loss_before": 0.04594896361231804,
+  "lora_synthetic_loss_after": 0.000006364347882481525,
+  "lora_merge_max_error": 0.00000017881393432617188
+}
+```
+
+### 查看解码候选概率
+
+安装完成后，在 Python 中运行以下代码，观察相对 Min-P 如何筛选三个候选 token 并重新归一化：
+
+```python
+import torch
+from nlp_course.decoding import DecodingSampler
+
+logits = torch.tensor([0.6, 0.3, 0.1]).log()
+probs = DecodingSampler().distribution(logits, strategy="minp", min_p=0.4)
+print([round(p, 3) for p in probs.tolist()])
+# [0.667, 0.333, 0.0]
+```
+
+相对 Min-P 保留满足 `概率 >= min_p × 最大概率` 的候选。还可以切换为 `greedy`、`topk`、`topp`，具体参数见[解码接口](docs/api.md#decoding)。
+
+### 评测已保存的答案
+
+```sh
+python -m nlp_course.evaluation examples/toy_predictions.jsonl --output outputs/toy-report.json
+```
+
+每行输入包含字符串字段 `prediction` 和 `reference`。[示例数据](examples/toy_predictions.jsonl)共有四条，刻意包含错误答案与无效输出；[评分报告](docs/validation/toy-evaluation.json)统计为：总数 4、正确 2、无效输出 1，并保留逐条记录。
+
+> [!NOTE]
+> 上述结果来自合成示例，不代表预训练模型基准成绩。`gsm8k` 模式对受支持的数值进行精确比较，不取整；`math-strict` 只比较受支持的数值或去除首尾格式后的文本，不提供通用符号判等，也不是官方 MATH 评分。详见[答案格式与评分范围](docs/api.md#evaluation)。
+
+## 验证结果
+
+使用 Python 标准库运行回归测试：
+
+```sh
+python -m unittest discover -s tests -v
+```
+
+[自动测试流程](.github/workflows/tests.yml)在 Linux / Python 3.11 上安装依赖、运行测试，并执行上述两条离线示例命令。
+
+| 检查项 | 已记录结果 |
+| --- | --- |
+| 回归测试 | 29 项通过 |
+| Transformer 输出 | `[2, 5, 16]`，梯度有限 |
+| 合成数据上的 LoRA 优化 | 80 步后 MSE 从 `0.045949` 降至 `0.000006364`，种子 42 |
+| LoRA 合并一致性 | 最大绝对输出差约 `1.79e-7` |
+| 首次公开版本 | [GitHub Actions 通过](https://github.com/LAnthonyJ/-nlp-/actions/runs/43263272641) |
+
+以上为已记录的 CPU 运行结果，不同环境可能产生小幅数值差异。环境和执行证据见[验证记录](docs/validation.md)与[原始结果](docs/validation/)。
+
+## 仓库导航
+
+```text
+src/nlp_course/       示例和测试使用的可复用实现
+coursework/          五份原始课程代码，逐字节保留
+examples/            CPU 示例与玩具评测数据
+tests/               正确性与边界情况回归测试
+docs/                接口、审查、来源和验证记录
+.github/workflows/   自动化 CPU 检查
+```
+
+请使用 `src/nlp_course/` 中的实现。`coursework/` 是保留已知问题的历史版本，详见[源码审查](docs/code-review.md)。[接口说明](docs/api.md)进一步介绍掩码约定、LoRA 推理合并及版本差异。
+
+五份原始课程实现由仓库作者完成；仓库整理、修复、测试与文档由 AI 辅助完成，详见[来源与贡献说明](docs/provenance.md)。

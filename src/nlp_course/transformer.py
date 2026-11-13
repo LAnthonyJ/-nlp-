@@ -85,6 +85,14 @@ class MultiHeadAttention(nn.Module):
         self.drop = nn.Dropout(dropout)
 
     def forward(self, q, k, v, mask=None):
+        if any(x.ndim != 3 for x in (q, k, v)):
+            raise ValueError("q, k and v must have shape [batch, sequence, features]")
+        if not q.size(0) == k.size(0) == v.size(0):
+            raise ValueError("q, k and v must have the same batch size")
+        if k.size(1) != v.size(1):
+            raise ValueError("k and v must have the same sequence length")
+        if any(x.size(2) != self.q_linear.in_features for x in (q, k, v)):
+            raise ValueError("q, k and v feature dimensions must match embed_dim")
         B = q.size(0)
 
         Q = self.q_linear(q).view(B, -1, self.num_heads, self.d_k).transpose(1, 2)

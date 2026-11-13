@@ -21,19 +21,26 @@ def extract_final_answer(text):
     """Read the last recognized answer marker, balancing nested boxed braces."""
     if not isinstance(text, str):
         return None
-    markers = list(re.finditer(r"The answer is:\s*|####\s*|\\boxed\{", text))
-    if not markers:
-        return None
-    marker = markers[-1]
-    rest = text[marker.end():]
-    if marker.group().startswith("\\boxed"):
-        depth = 1
-        for i, char in enumerate(rest):
-            depth += (char == "{") - (char == "}")
-            if depth == 0:
-                return rest[:i].strip() or None
-        return None
-    return rest.splitlines()[0].strip() if rest.strip() else None
+    pattern = re.compile(r"The answer is:\s*|####\s*|\\boxed\{")
+    position, answer = 0, None
+    while (marker := pattern.search(text, position)) is not None:
+        start = marker.end()
+        if marker.group().startswith("\\boxed"):
+            depth = 1
+            for end in range(start, len(text)):
+                depth += (text[end] == "{") - (text[end] == "}")
+                if depth == 0:
+                    answer = text[start:end].strip() or None
+                    # Nested boxes and markers belong to this outer answer.
+                    position = end + 1
+                    break
+            else:
+                return None
+        else:
+            rest = text[start:]
+            answer = rest.splitlines()[0].strip() if rest.strip() else None
+            position = start
+    return answer
 
 
 def normalize_answer(text):

@@ -48,3 +48,13 @@ Raw records: [CPU example](validation/cpu-demo.json), [toy JSONL scoring](valida
 ## Publication validation — 2026-11-13
 
 The initial commit `c19b40650c874ec02965123c4b33472a00d68475` was pushed to [LAnthonyJ/-nlp-](https://github.com/LAnthonyJ/-nlp-). [GitHub Actions CPU tests](https://github.com/LAnthonyJ/-nlp-/actions/runs/43263272641) completed successfully on Ubuntu / Python 3.11, including dependency installation, unittest, the CPU demonstration and JSONL scoring. The Git index was also checked against all five original coursework SHA-256 hashes.
+
+## P2 review regressions — 2026-11-13
+
+Reviewed baseline: `1c513ae`. Added nine regression tests in `tests/test_review_regressions.py` before changing the implementation. The baseline reproduced nested-box extraction errors, NaN sampling distributions at small temperatures, and silent attention input reshaping. New assertions failed on the baseline; the complete repaired suite passes **38 tests** on Windows / Python 3.13.7 / PyTorch 2.9.0+cpu.
+
+- Final-answer extraction scans complete outer boxed spans and skips markers within those spans. Unclosed outer boxes return no answer; later independent final-answer markers still take precedence. Nested expressions are retained, not reduced to an inner numeric answer.
+- Sampling probabilities use widened arithmetic and a shift-invariant temperature calculation. Small temperatures center logits before division; large temperatures divide before centering to avoid subtraction overflow. Result probabilities retain the input dtype. Tests include float16/float32 overflow, a tiny positive temperature and opposite float64 extremes, across all four strategies.
+- Attention validates rank, batch, feature width and key/value sequence lengths before projection or reshaping. Different query/key sequence lengths remain valid for cross-attention.
+
+Commands: `python -m unittest discover -s tests -v` and `python examples/cpu_demo.py`. The prior 29 tests, including source hashes, causal isolation and LoRA merge checks, remain part of the suite. No GPU validation was performed for these numerical edge cases.

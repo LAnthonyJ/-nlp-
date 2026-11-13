@@ -19,7 +19,17 @@ class DecodingSampler:
             raise ValueError("logits must be a nonempty floating point vector")
         if torch.isnan(logits).any() or torch.isposinf(logits).any() or not torch.isfinite(logits).any():
             raise ValueError("logits must contain finite candidates and no NaN/+inf")
-        probs = torch.softmax(self.apply_temperature(logits, temperature), dim=-1)
+        # Softmax is shift-invariant. Center before a small-temperature division
+        # so positive logits cannot overflow to +inf (and tied maxima stay zero).
+        # Widen arithmetic so half precision and tiny Python floats remain usable.
+        working = logits.to(torch.float64)
+        if temperature >= 1:
+            # Divide first here: subtracting opposite float64 extremes can overflow.
+            scaled = self.apply_temperature(working, temperature)
+            scaled = scaled - scaled.max()
+        else:
+            scaled = self.apply_temperature(working - working.max(), temperature)
+        probs = torch.softmax(scaled, dim=-1).to(logits.dtype)
         keep = torch.ones_like(probs, dtype=torch.bool)
         if strategy == "greedy":
             keep.zero_()

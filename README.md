@@ -17,7 +17,7 @@ Built for students and developers who want to read the implementation, run it on
 | Decoding | [Greedy, Top-K, Top-P and relative Min-P](src/nlp_course/decoding.py) | Candidate probabilities, temperature, repetition penalty, EOS stopping |
 | Evaluation | [Offline JSONL scoring and batched backend interface](src/nlp_course/evaluation.py) | Exact numeric comparisons, invalid-answer records, complete batch coverage |
 
-Start with [`examples/cpu_demo.py`](examples/cpu_demo.py) for an end-to-end demonstration, then explore the [29 regression tests](tests/test_components.py) for the invariants behind each component.
+Start with [`examples/cpu_demo.py`](examples/cpu_demo.py) for an end-to-end demonstration, then explore the [38 regression tests](tests/) for the invariants behind each component.
 
 ## Quick start
 
@@ -106,7 +106,7 @@ The [CI workflow](.github/workflows/tests.yml) builds and installs the package, 
 
 | Check | Recorded result |
 | --- | --- |
-| Regression suite | 29 tests passed |
+| Regression suite | 38 tests passed locally; see validation record |
 | Transformer output | `[2, 5, 16]`, with finite gradients |
 | Synthetic LoRA optimization | MSE `0.045949` → `0.000006364` after 80 steps, seed 42 |
 | LoRA merge consistency | Maximum absolute output difference ≈ `1.79e-7` |

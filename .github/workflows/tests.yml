@@ -1,21 +1,123 @@
 name: CPU tests
-on: [push, pull_request]
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
 permissions:
   contents: read
+
+concurrency:
+  group: cpu-tests-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHONUTF8: '1'
+  PIP_DISABLE_PIP_VERSION_CHECK: '1'
+
 jobs:
   cpu:
-    runs-on: ubuntu-latest
+    name: CPU / ${{ matrix.os }} / Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            python: '3.10'
+          - os: ubuntu-latest
+            python: '3.11'
+          - os: ubuntu-latest
+            python: '3.12'
+          - os: ubuntu-latest
+            python: '3.13'
+          - os: windows-latest
+            python: '3.13'
+    defaults:
+      run:
+        shell: bash
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - name: Check out source
+        uses: actions/checkout@v7
         with:
-          python-version: '3.11'
-      - name: Install CPU dependencies and project
+          persist-credentials: false
+
+      - name: Set up Python and pip cache
+        uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: |
+            requirements-cpu.txt
+            pyproject.toml
+
+      - name: Install CPU dependency and build/install project
         run: |
           python -m pip install -r requirements-cpu.txt --index-url https://download.pytorch.org/whl/cpu
-          python -m pip install --no-deps -e .
-      - name: Test and run offline examples
+          python -m pip install --no-deps .
+          python -m pip check
+
+      - name: Verify installed package and record environment
         run: |
-          python -m unittest discover -s tests -v
-          python examples/cpu_demo.py
-          python -m nlp_course.evaluation examples/toy_predictions.jsonl --output outputs/toy-report.json
+          mkdir -p outputs
+          python - <<'PY' | tee outputs/environment.json
+          import json, pathlib, platform, subprocess, sys, tempfile
+          import torch
+          # Import outside the checkout: verify the built package, not a src-path shortcut.
+          with tempfile.TemporaryDirectory() as directory:
+              subprocess.run([sys.executable, '-c',
+                  'from nlp_course import transformer, lora, decoding, evaluation'],
+                  cwd=directory, check=True)
+          print(json.dumps({
+              'python': platform.python_version(), 'platform': platform.platform(),
+              'torch': torch.__version__, 'device': 'cpu',
+              'cuda_build': torch.version.cuda,
+          }, indent=2))
+          assert torch.version.cuda is None, 'Expected the CPU-only PyTorch build'
+          PY
+          python -m pip freeze > outputs/dependencies.txt
+
+      - name: Run regression tests
+        run: python -m unittest discover -s tests -v 2>&1 | tee outputs/tests.log
+
+      - name: Run offline examples
+        run: |
+          python examples/cpu_demo.py | tee outputs/cpu-demo.json
+          python -m nlp_course.evaluation examples/toy_predictions.jsonl --output outputs/toy-report.json | tee outputs/evaluation.log
+
+      - name: Validate example outputs and write job summary
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          demo = json.loads(Path('outputs/cpu-demo.json').read_text(encoding='utf-8'))
+          report = json.loads(Path('outputs/toy-report.json').read_text(encoding='utf-8'))
+          assert demo['transformer_shape'] == [2, 5, 16]
+          assert demo['lora_synthetic_loss_after'] < demo['lora_synthetic_loss_before']
+          assert demo['lora_merge_max_error'] < 1e-5
+          assert (report['total'], report['correct'], report['invalid_outputs']) == (4, 2, 1)
+          environment = json.loads(Path('outputs/environment.json').read_text(encoding='utf-8'))
+          summary = (
+              f"### CPU validation: Python {environment['python']}\n\n"
+              f"- Platform: {environment['platform']}\n"
+              f"- PyTorch: {environment['torch']}\n"
+              '- Installed-package imports and regression suite passed.\n'
+              '- Transformer backward, synthetic LoRA optimization and merge check passed.\n'
+              '- Toy evaluation: 4 samples, 2 correct, 1 invalid output (expected).\n'
+              '- Logs and JSON reports are available in the job artifact.\n'
+          )
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as stream:
+              stream.write(summary)
+          PY
+
+      - name: Upload validation logs and reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: cpu-${{ matrix.os }}-py${{ matrix.python }}
+          path: outputs/
+          if-no-files-found: warn
+          retention-days: 14

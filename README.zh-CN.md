@@ -102,7 +102,7 @@ python -m nlp_course.evaluation examples/toy_predictions.jsonl --output outputs/
 python -m unittest discover -s tests -v
 ```
 
-[自动测试流程](.github/workflows/tests.yml)在 Linux / Python 3.11 上安装依赖、运行测试，并执行上述两条离线示例命令。
+[自动测试流程](.github/workflows/tests.yml)覆盖 **Linux / Python 3.10–3.13** 和 **Windows / Python 3.13**，构建并安装包、运行测试与两条离线示例命令。每组环境都会保存环境信息、测试日志与 JSON 结果，可在 Actions 页面下载。详见 [CI 验证范围与报告](docs/ci.md)。
 
 | 检查项 | 已记录结果 |
 | --- | --- |

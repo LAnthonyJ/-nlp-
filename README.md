@@ -102,7 +102,7 @@ Run the regression suite with the Python standard library:
 python -m unittest discover -s tests -v
 ```
 
-The [CI workflow](.github/workflows/tests.yml) installs dependencies, runs the suite, and executes both offline examples on Linux / Python 3.11.
+The [CI workflow](.github/workflows/tests.yml) builds and installs the package, runs the suite, and executes both offline examples across **Linux / Python 3.10–3.13** and **Windows / Python 3.13**. Each job saves its environment, test log and JSON results as a downloadable artifact. See [CI coverage and reports](docs/ci.md).
 
 | Check | Recorded result |
 | --- | --- |

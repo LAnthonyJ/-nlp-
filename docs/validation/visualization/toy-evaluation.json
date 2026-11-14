@@ -1,0 +1,41 @@
+{
+  "mode": "gsm8k",
+  "total": 4,
+  "correct": 2,
+  "invalid_outputs": 1,
+  "accuracy": 0.5,
+  "records": [
+    {
+      "index": 0,
+      "prediction": "The answer is: 1,234",
+      "reference": "1234",
+      "extracted_answer": "1,234",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "index": 1,
+      "prediction": "The answer is: 1/2",
+      "reference": "0.5",
+      "extracted_answer": "1/2",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "index": 2,
+      "prediction": "The answer is: 3.4",
+      "reference": "3",
+      "extracted_answer": "3.4",
+      "correct": false,
+      "status": "incorrect"
+    },
+    {
+      "index": 3,
+      "prediction": "I cannot solve this.",
+      "reference": "2",
+      "extracted_answer": null,
+      "correct": false,
+      "status": "invalid_output"
+    }
+  ]
+}

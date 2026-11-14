@@ -8,6 +8,10 @@
 
 Built for students and developers who want to read the implementation, run it on a CPU, and check why it works. The included examples use tiny tensors and synthetic data; once PyTorch is installed, they run without downloading models or datasets.
 
+![CPU validation overview: synthetic training and toy evaluation](docs/figures/overview.png)
+
+Measured single-seed CPU demonstrations: learning, merge consistency, candidate distributions and four toy examples. These show implementation behavior. See [source reports](docs/validation/visualization/) and [reproduction steps](docs/visualization.md).
+
 ## What you can explore
 
 | Component | Implementation | What you can verify |
@@ -67,6 +71,14 @@ The demo runs a Transformer forward/backward pass, optimizes a LoRA adapter for 
 }
 ```
 
+![LoRA synthetic regression learning curve](docs/figures/lora-learning.png)
+
+All 81 measured points, steps 0–80, on a log MSE axis without smoothing. Oscillations are part of the actual run.
+
+![LoRA merge consistency](docs/figures/lora-merge.png)
+
+Compare the same 192 output elements before/after merging and their absolute differences. [Measured traces](docs/validation/visualization/cpu-demo.json).
+
 ### Inspect a decoding distribution
 
 After installation, run this in Python to see how relative Min-P filters and renormalizes three candidate tokens:
@@ -83,6 +95,10 @@ print([round(p, 3) for p in probs.tolist()])
 
 Relative Min-P retains tokens with probability at least `min_p * max_probability`. Switch `strategy` to `greedy`, `topk`, or `topp` to explore other filters; see the [parameter and generation guide](docs/api.md#decoding).
 
+![Decoding probability comparison](docs/figures/decoding.png)
+
+Three fixed candidate tokens, original probabilities and four strategies; settings are shown in the title. Min-P boundary inclusion follows the actual floating-point probabilities.
+
 ### Score saved answers
 
 ```sh
@@ -93,6 +109,10 @@ Each input line contains `prediction` and `reference` strings. The [four-example
 
 > [!NOTE]
 > These are synthetic demonstrations, not pretrained-model benchmark results. `gsm8k` mode compares supported numeric answers exactly, without rounding. `math-strict` performs supported numeric or stripped-text matching; it does not implement general symbolic equivalence or official MATH scoring. See [answer formats and scoring limits](docs/api.md#evaluation).
+
+![Outcomes of four toy examples](docs/figures/toy-evaluation.png)
+
+Counts only the four-example fixture: 2 correct, 1 incorrect, 1 invalid. The CPU demo's separate two examples are excluded. [Per-example records](docs/validation/visualization/toy-evaluation.json).
 
 ## Verified results
 

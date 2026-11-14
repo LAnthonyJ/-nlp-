@@ -29,3 +29,7 @@ The original snapshots still match their recorded hashes. The corrected package 
 ## Repair pass — 2026-11-11
 
 At the owner's request, AI-assisted development introduced corrected modules under `src/nlp_course/`, 29 regression tests, a synthetic CPU training demonstration, offline evaluation, packaging and CI configuration. `transformer.py`, `lora.py` and `decoding.py` revise the concepts and interfaces in the original implementations. `evaluation.py` provides an explicitly limited, dependency-free scoring path rather than recreating the missing MATH helper. These revisions are not attributed as unaided original coursework. The original five files remain unchanged.
+
+## Static visualizations — 2026-11-14
+
+At the owner's request, AI-assisted development extracted the existing CPU demonstration into a reusable runner, instrumented actual measurements, added static plotting and regression tests, and updated bilingual documentation and CI. The learning curve is a single fixed-seed synthetic training run. All figures are generated from recorded data, not illustrative model-performance estimates. Original coursework and historical validation JSON files are preserved.

@@ -66,3 +66,9 @@ Reviewed baseline: `20bfd8b`. Six new tests in `tests/test_precision_and_aliases
 Ranking tests exercise float16, bfloat16, float32 and float64, with close logits and temperatures up to `1e300`. They verify token support against raw-logit order, probability values against a widened reference, and preservation of output dtype. Shared-module tests cover two target aliases, a non-target alias registered first or last, shared parents, zero-update equivalence, adapter gradients, unique parameter counts, one-time merging and repeated injection.
 
 The checks ran on Windows / Python 3.13.7 / PyTorch 2.9.0+cpu with `python -m unittest discover -s tests -q`. GPU execution was not tested in this pass.
+
+## Static visualization validation — 2026-11-14
+
+Added a shared CPU demo runner and separate collect/render commands. Local Windows / Python 3.13.7 / PyTorch 2.9.0+cpu / Matplotlib 3.10.7 execution passed **52 tests** with the plotting dependency installed. The default example remains JSON-only with its original fields. The renderer produced five SVG and five PNG files; all five PNGs were visually inspected for clipping, label overlap and legibility.
+
+Recorded data contains 81 actual loss measurements (steps 0–80), 64×3 paired merge outputs and explicit decoding settings. The four-example evaluation report remains distinct from the demonstration's two-example report. Source snapshots still pass SHA-256 checks. See [visualization reproduction and data links](visualization.md).

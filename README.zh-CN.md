@@ -8,6 +8,10 @@
 
 本项目适合希望理解 NLP 实现细节、通过小例子检查算法行为的学习者。安装 PyTorch 后，内置示例可以在 CPU 上运行，无需下载模型或数据集。
 
+![CPU 实现验证总览：合成训练与玩具评测](docs/figures/overview.png)
+
+单次固定种子的 CPU 示例：学习曲线、合并一致性、候选概率和四条玩具评测。此图展示实现验证；[原始数据](docs/validation/visualization/)与[重新生成步骤](docs/visualization.md)可供检查。
+
 ## 可以探索什么
 
 | 模块 | 代码入口 | 可以验证的行为 |
@@ -67,6 +71,14 @@ python examples/cpu_demo.py
 }
 ```
 
+![LoRA 合成回归学习曲线](docs/figures/lora-learning.png)
+
+第 0–80 步的实测 MSE，共 81 点；对数纵轴，未平滑。图中起伏反映实际训练过程。
+
+![LoRA 合并一致性](docs/figures/lora-merge.png)
+
+同一输入的 192 个输出元素，比较合并前后数值和逐元素绝对误差。[补录报告](docs/validation/visualization/cpu-demo.json)。
+
 ### 查看解码候选概率
 
 安装完成后，在 Python 中运行以下代码，观察相对 Min-P 如何筛选三个候选 token 并重新归一化：
@@ -83,6 +95,10 @@ print([round(p, 3) for p in probs.tolist()])
 
 相对 Min-P 保留满足 `概率 >= min_p × 最大概率` 的候选。还可以切换为 `greedy`、`topk`、`topp`，具体参数见[解码接口](docs/api.md#decoding)。
 
+![解码概率分布](docs/figures/decoding.png)
+
+固定三个候选 token，对比原始分布和四种策略，具体参数见图标题。Min-P 阈值附近的候选是否被保留取决于实际浮点概率。
+
 ### 评测已保存的答案
 
 ```sh
@@ -93,6 +109,10 @@ python -m nlp_course.evaluation examples/toy_predictions.jsonl --output outputs/
 
 > [!NOTE]
 > 上述结果来自合成示例，不代表预训练模型基准成绩。`gsm8k` 模式对受支持的数值进行精确比较，不取整；`math-strict` 只比较受支持的数值或去除首尾格式后的文本，不提供通用符号判等，也不是官方 MATH 评分。详见[答案格式与评分范围](docs/api.md#evaluation)。
+
+![四条玩具评测的结果分类](docs/figures/toy-evaluation.png)
+
+此图仅统计四条独立示例：正确 2、错误 1、无法提取 1；未混入 CPU 示例内嵌的两条记录。[逐条案例](docs/validation/visualization/toy-evaluation.json)。
 
 ## 验证结果
 

@@ -9,5 +9,8 @@ description = "NLP coursework components with CPU regression tests and examples"
 requires-python = ">=3.10"
 dependencies = ["torch>=2.2,<3"]
 
+[project.optional-dependencies]
+viz = ["matplotlib>=3.8,<4"]
+
 [tool.setuptools.packages.find]
 where = ["src"]

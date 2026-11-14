@@ -47,3 +47,7 @@ Artifact upload is attempted even after a prior step fails; only files produced 
 - Use read-only repository permissions and avoid persisting checkout credentials.
 
 Action configuration follows the official [setup-python](https://github.com/actions/setup-python), [upload-artifact](https://github.com/actions/upload-artifact) and [checkout](https://github.com/actions/checkout) documentation. This workflow uses their v7 major references on GitHub-hosted runners.
+
+## Optional static visualization job
+
+An additional Ubuntu / Python 3.11 job installs the `viz` extra, runs the suite including export tests, collects measured traces and renders figures. The five existing CPU matrix environments keep their core dependency setup. The new `static-visualization-py311` artifact contains the JSON reports and all SVG/PNG exports under `outputs/visualization/`; see [reproduction instructions](visualization.md).

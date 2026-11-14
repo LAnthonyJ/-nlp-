@@ -14,6 +14,7 @@ import random
 import re
 import subprocess
 import time
+import uuid
 
 from .capability_data import prepare, digest
 from .evaluation import extract_answer_number
@@ -137,7 +138,8 @@ def docker_score(task, response, image='python:3.11-slim'):
         parsed=ast.parse(original)
         imports='\n'.join(ast.get_source_segment(original,node) for node in parsed.body if isinstance(node,(ast.Import,ast.ImportFrom)))
     except SyntaxError:imports=''
-    script=imports+'\n'+code+'\n'+task['tests']+'\ncheck('+task['entry_point']+')\n'
+    marker='TESTS_COMPLETED_'+uuid.uuid4().hex
+    script=imports+'\n'+code+'\n'+task['tests']+'\ncheck('+task['entry_point']+')\nprint('+repr(marker)+')\n'
     name='nlp-eval-'+hashlib.sha256((task['id']+response).encode()).hexdigest()[:16]
     args=['docker','run','--name',name,'--rm','--network','none','--read-only','--memory','256m','--cpus','1',
           '--pids-limit','32','--cap-drop','ALL','--security-opt','no-new-privileges','--user','65534:65534',
@@ -148,7 +150,8 @@ def docker_score(task, response, image='python:3.11-slim'):
         subprocess.run(['docker','rm','-f',name],capture_output=True,timeout=10)
         return dict(status='timeout',correct=False)
     if run.returncode in (125,126,127):return dict(status='unavailable',correct=None)
-    return dict(status='correct' if run.returncode==0 else 'test_failure',correct=run.returncode==0)
+    passed=run.returncode==0 and marker in run.stdout.splitlines()
+    return dict(status='correct' if passed else 'test_failure',correct=passed)
 
 
 def score_task(task, row, execute_code=False):
@@ -288,13 +291,26 @@ def analyze(suite_dir,run_dir):
     lines.extend(['','## Failure evidence / 失败证据','', 'Only observable errors and controlled interventions are evidence. Capacity and training-data explanations remain hypotheses.'])
     selected=[]
     for stage in STAGES:
-        candidates=sorted([r for r in scored if r['stage']==stage and r['split']=='main' and r['correct'] is False],key=lambda r:r['task_id'])[:3]
+        candidates=[]
+        for category in ['math','logic','code']:
+            failures=sorted([r for r in scored if r['stage']==stage and r['category']==category and r['split']=='main' and r['correct'] is False],key=lambda r:r['task_id'])
+            candidates.extend(failures[:1])
         originals={r['task_id']:r for r in records(Path(run_dir)/'formal'/f'{stage}.jsonl')}
         for r in candidates:
             task=next(t for t in suite['tasks'] if t['id']==r['task_id'])
             selected.append(dict(task=task,response=originals[r['task_id']],score=r))
             lines.extend(['',f'### {stage}: {r["task_id"]}',task['prompt'],'',originals[r['task_id']]['response'],'',f'Observed status: {r["status"]}.'])
     save(Path(run_dir)/'cases.json',selected)
+    transitions=[]
+    for first,last in [('base','sft'),('sft','dpo')]:
+        for direction in ['improved','regressed']:
+            candidates=[]
+            for task in sorted(suite['tasks'],key=lambda t:t['id']):
+                a,b=lookup.get((first,task['id'])),lookup.get((last,task['id']))
+                if task['split']!='main' or not a or not b or a['correct'] is None or b['correct'] is None:continue
+                if (direction=='improved' and not a['correct'] and b['correct']) or (direction=='regressed' and a['correct'] and not b['correct']):candidates.append(task['id'])
+            transitions.append(dict(first=first,last=last,direction=direction,task_ids=candidates[:3]))
+    save(Path(run_dir)/'transition-cases.json',transitions)
     (Path(run_dir)/'report.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     zh=['# 真实模型能力快速诊断','',f'开放题人工评分状态：{"已导入" if human else "待你填写匿名评分表"}。',
         '', '| 模型阶段 | 任务 | 已收到/应收到 | 已评分 | 正确 | 通过率 |','|---|---|---:|---:|---:|---:|']

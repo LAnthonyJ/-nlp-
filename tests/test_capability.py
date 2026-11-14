@@ -5,13 +5,22 @@ from pathlib import Path
 import tempfile
 import unittest
 from unittest.mock import patch
+from types import SimpleNamespace
 
 from nlp_course.capability_data import prepare
 from nlp_course.capability import (score_task, wilson, blind_review, import_review,
-                                  analyze, save, read, score)
+                                  analyze, save, read, score, docker_score)
 
 
 class CapabilityTests(unittest.TestCase):
+    def test_code_exit_success_without_completed_tests_is_not_a_pass(self):
+        task=dict(id='x',entry_point='f',tests='def check(f): assert f()==1')
+        with patch('nlp_course.capability.uuid.uuid4',return_value=SimpleNamespace(hex='nonce')):
+            with patch('nlp_course.capability.subprocess.run',return_value=SimpleNamespace(returncode=0,stdout='')):
+                self.assertFalse(docker_score(task,'def f(): return 1')['correct'])
+            with patch('nlp_course.capability.subprocess.run',return_value=SimpleNamespace(returncode=0,stdout='TESTS_COMPLETED_nonce\n')):
+                self.assertTrue(docker_score(task,'def f(): return 1')['correct'])
+
     def test_numeric_and_format_failures_are_separate(self):
         task=dict(category='math',reference='2',id='a',split='main')
         row=dict(response='The answer is: 3',stage='base',finish_reason='eos')

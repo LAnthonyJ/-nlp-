@@ -29,16 +29,20 @@ class DecodingSampler:
             scaled = scaled - scaled.max()
         else:
             scaled = self.apply_temperature(working - working.max(), temperature)
-        probs = torch.softmax(scaled, dim=-1).to(logits.dtype)
+        # Filter and normalize in widened precision. Casting before selection can
+        # turn distinct probabilities into ties, particularly for half precision.
+        probs = torch.softmax(scaled, dim=-1)
         keep = torch.ones_like(probs, dtype=torch.bool)
         if strategy == "greedy":
             keep.zero_()
-            keep[probs.argmax()] = True
+            # Positive temperature preserves logit order, even when softmax
+            # probabilities become numerically indistinguishable.
+            keep[working.argmax()] = True
         elif strategy == "topk":
             if isinstance(top_k, bool) or not isinstance(top_k, int) or top_k < 1:
                 raise ValueError("top_k must be a positive integer")
             keep.zero_()
-            keep[probs.topk(min(top_k, probs.numel())).indices] = True
+            keep[working.topk(min(top_k, probs.numel())).indices] = True
         elif strategy == "topp":
             if not 0 < top_p <= 1:
                 raise ValueError("top_p must be in (0, 1]")
@@ -54,7 +58,7 @@ class DecodingSampler:
         else:
             raise ValueError(f"Unknown strategy: {strategy}")
         probs = probs.masked_fill(~keep, 0)
-        return probs / probs.sum()
+        return (probs / probs.sum()).to(logits.dtype)
 
     def sample(self, logits, generator=None, **kwargs):
         return torch.multinomial(self.distribution(logits, **kwargs), 1, generator=generator).item()

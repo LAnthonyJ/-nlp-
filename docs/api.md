@@ -33,3 +33,9 @@ Predictions require `The answer is:`, `####`, or a balanced `\boxed{...}` final-
 `math-strict` compares supported numbers exactly or otherwise compares stripped answer text. It **does not test general symbolic equivalence**, and its scores must not be labeled official MATH benchmark accuracy. For instance `x+x` and `2*x` do not match in this mode. This replaces the missing `util` dependency with an explicitly limited scorer, rather than claiming to recreate that helper.
 
 Invalid numeric predictions count as incorrect and are also reported separately. Malformed references, mismatched counts and malformed JSONL cause explicit errors. Empty evaluations return `accuracy: null`. Per-example records are included. `evaluate_generated` accepts a batch prediction callback and verifies output counts before scoring; no vLLM dependency is required for offline scoring.
+
+## Precision and shared-module repairs — 2026-11-14
+
+Greedy and Top-K choose candidates using original logits, whose ordering is preserved by positive temperature scaling. Filtering and normalization remain in float64 until returning probabilities in the input dtype. Near-equal probabilities can therefore no longer create false ranking ties before selection. Ties already present in the input logits retain the existing tie-ordering policy; rounding of the final returned probabilities is still expected.
+
+LoRA injection enumerates every registered module path. When any alias of a Linear object matches a target name, all its aliases receive the same adapter, including non-target aliases and paths through shared parent modules. The return value counts unique wrapped Linear objects, not alias paths. Repeated injection is a no-op; shared adapter gradients and inference merging apply once per unique module. Aliases must share the same module object: distinct Linear objects merely sharing a weight Parameter are not coalesced.

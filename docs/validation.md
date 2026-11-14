@@ -58,3 +58,11 @@ Reviewed baseline: `1c513ae`. Added nine regression tests in `tests/test_review_
 - Attention validates rank, batch, feature width and key/value sequence lengths before projection or reshaping. Different query/key sequence lengths remain valid for cross-attention.
 
 Commands: `python -m unittest discover -s tests -v` and `python examples/cpu_demo.py`. The prior 29 tests, including source hashes, causal isolation and LoRA merge checks, remain part of the suite. No GPU validation was performed for these numerical edge cases.
+
+## Precision and alias review regressions — 2026-11-14
+
+Reviewed baseline: `20bfd8b`. Six new tests in `tests/test_precision_and_aliases.py` reproduced false Greedy/Top-K ranking ties and broken shared-module aliases before implementation changes. The repaired complete suite passes **44 tests locally**, including all previous overflow, boxed-answer, attention-shape and LoRA merge regressions.
+
+Ranking tests exercise float16, bfloat16, float32 and float64, with close logits and temperatures up to `1e300`. They verify token support against raw-logit order, probability values against a widened reference, and preservation of output dtype. Shared-module tests cover two target aliases, a non-target alias registered first or last, shared parents, zero-update equivalence, adapter gradients, unique parameter counts, one-time merging and repeated injection.
+
+The checks ran on Windows / Python 3.13.7 / PyTorch 2.9.0+cpu with `python -m unittest discover -s tests -q`. GPU execution was not tested in this pass.

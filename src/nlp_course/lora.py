@@ -73,15 +73,27 @@ TARGET_LINEAR_KEYWORDS = {
 
 
 def inject_lora_modules(model, r=8, alpha=16, dropout=0.0):
-    targets = [(name, module) for name, module in model.named_modules()
-               if isinstance(module, nn.Linear) and name.rsplit(".", 1)[-1] in TARGET_LINEAR_KEYWORDS]
-    for name, module in targets:
+    """Replace targeted Linear objects at every alias; count unique adapters.
+
+    If any alias matches a target name, all references to that object share the
+    same wrapper, including aliases whose names are not targets.
+    """
+    linears = [(name, module) for name, module in model.named_modules(remove_duplicate=False)
+               if isinstance(module, nn.Linear)]
+    targets = {id(module) for name, module in linears
+               if name.rsplit(".", 1)[-1] in TARGET_LINEAR_KEYWORDS}
+    adapters = {}
+    for name, module in linears:
+        if id(module) not in targets:
+            continue
         parent_name, _, child = name.rpartition(".")
         parent = model.get_submodule(parent_name) if parent_name else model
-        adapter = LoRALinear(module, r, alpha, dropout)
-        adapter.train(module.training)
-        setattr(parent, child, adapter)
-    return len(targets)
+        if id(module) not in adapters:
+            adapter = LoRALinear(module, r, alpha, dropout)
+            adapter.train(module.training)
+            adapters[id(module)] = adapter
+        setattr(parent, child, adapters[id(module)])
+    return len(adapters)
 
 
 def mark_only_lora_as_trainable(model):

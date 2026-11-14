@@ -21,7 +21,7 @@
 | 解码 | [Greedy、Top-K、Top-P、相对 Min-P](src/nlp_course/decoding.py) | 候选词概率、温度、重复惩罚、EOS 停止 |
 | 评测 | [离线 JSONL 评分与批量生成接口](src/nlp_course/evaluation.py) | 精确数值比较、无效答案统计、批次完整性 |
 
-建议从 [`examples/cpu_demo.py`](examples/cpu_demo.py) 开始，再结合 [44 项回归测试](tests/) 理解各组件的正确性条件。
+建议从 [`examples/cpu_demo.py`](examples/cpu_demo.py) 开始，再结合 [52 项回归测试](tests/) 理解各组件的正确性条件。
 
 ## 快速开始
 
@@ -126,7 +126,7 @@ python -m unittest discover -s tests -v
 
 | 检查项 | 已记录结果 |
 | --- | --- |
-| 回归测试 | 本地 44 项通过，详见验证记录 |
+| 回归测试 | 安装可视化依赖后，本地 52 项通过，详见验证记录 |
 | Transformer 输出 | `[2, 5, 16]`，梯度有限 |
 | 合成数据上的 LoRA 优化 | 80 步后 MSE 从 `0.045949` 降至 `0.000006364`，种子 42 |
 | LoRA 合并一致性 | 最大绝对输出差约 `1.79e-7` |

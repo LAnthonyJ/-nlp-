@@ -11,6 +11,7 @@ dependencies = ["torch>=2.2,<3"]
 
 [project.optional-dependencies]
 viz = ["matplotlib>=3.8,<4"]
+eval = ["transformers>=4.45,<6", "peft>=0.14,<1", "accelerate>=1,<2", "safetensors>=0.4,<1"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

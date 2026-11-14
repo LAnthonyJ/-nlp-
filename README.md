@@ -21,7 +21,7 @@ Measured single-seed CPU demonstrations: learning, merge consistency, candidate 
 | Decoding | [Greedy, Top-K, Top-P and relative Min-P](src/nlp_course/decoding.py) | Candidate probabilities, temperature, repetition penalty, EOS stopping |
 | Evaluation | [Offline JSONL scoring and batched backend interface](src/nlp_course/evaluation.py) | Exact numeric comparisons, invalid-answer records, complete batch coverage |
 
-Start with [`examples/cpu_demo.py`](examples/cpu_demo.py) for an end-to-end demonstration, then explore the [52 regression tests](tests/) for the invariants behind each component.
+Start with [`examples/cpu_demo.py`](examples/cpu_demo.py) for an end-to-end demonstration, then explore the [59 regression tests](tests/) for the invariants behind each component.
 
 ## Quick start
 
@@ -114,6 +114,10 @@ Each input line contains `prediction` and `reference` strings. The [four-example
 
 Counts only the four-example fixture: 2 correct, 1 incorrect, 1 invalid. The CPU demo's separate two examples are excluded. [Per-example records](docs/validation/visualization/toy-evaluation.json).
 
+## Real-checkpoint capability diagnosis
+
+The [evaluation and blind-review workflow](docs/capability-evaluation.md) compares Base, SFT and DPO across math, logic, code, concepts and writing, plus 20 controlled probe pairs. Raw results live in a separate run directory. Open-task quality scores require blind human ratings; missing evidence is not filled with estimated scores.
+
 ## Verified results
 
 Run the regression suite with the Python standard library:
@@ -126,7 +130,7 @@ The [CI workflow](.github/workflows/tests.yml) builds and installs the package, 
 
 | Check | Recorded result |
 | --- | --- |
-| Regression suite | 52 tests passed locally with visualization dependencies installed; see validation record |
+| Regression suite | 59 tests passed locally with visualization dependencies installed; see validation record |
 | Transformer output | `[2, 5, 16]`, with finite gradients |
 | Synthetic LoRA optimization | MSE `0.045949` → `0.000006364` after 80 steps, seed 42 |
 | LoRA merge consistency | Maximum absolute output difference ≈ `1.79e-7` |

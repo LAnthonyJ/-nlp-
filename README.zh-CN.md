@@ -21,7 +21,7 @@
 | 解码 | [Greedy、Top-K、Top-P、相对 Min-P](src/nlp_course/decoding.py) | 候选词概率、温度、重复惩罚、EOS 停止 |
 | 评测 | [离线 JSONL 评分与批量生成接口](src/nlp_course/evaluation.py) | 精确数值比较、无效答案统计、批次完整性 |
 
-建议从 [`examples/cpu_demo.py`](examples/cpu_demo.py) 开始，再结合 [52 项回归测试](tests/) 理解各组件的正确性条件。
+建议从 [`examples/cpu_demo.py`](examples/cpu_demo.py) 开始，再结合 [59 项回归测试](tests/) 理解各组件的正确性条件。
 
 ## 快速开始
 
@@ -114,6 +114,10 @@ python -m nlp_course.evaluation examples/toy_predictions.jsonl --output outputs/
 
 此图仅统计四条独立示例：正确 2、错误 1、无法提取 1；未混入 CPU 示例内嵌的两条记录。[逐条案例](docs/validation/visualization/toy-evaluation.json)。
 
+## 真实模型能力诊断
+
+[评测流程与匿名评分说明](docs/capability-evaluation.md)提供 Base、SFT、DPO 三阶段对照，覆盖数学、逻辑、代码、概念和写作，以及 20 组受控题对。模型输出保存在独立评测目录，开放题分数须经匿名人工评分后导入。缺失评分不填充为模型成绩。
+
 ## 验证结果
 
 使用 Python 标准库运行回归测试：
@@ -126,7 +130,7 @@ python -m unittest discover -s tests -v
 
 | 检查项 | 已记录结果 |
 | --- | --- |
-| 回归测试 | 安装可视化依赖后，本地 52 项通过，详见验证记录 |
+| 回归测试 | 安装可视化依赖后，本地 59 项通过，详见验证记录 |
 | Transformer 输出 | `[2, 5, 16]`，梯度有限 |
 | 合成数据上的 LoRA 优化 | 80 步后 MSE 从 `0.045949` 降至 `0.000006364`，种子 42 |
 | LoRA 合并一致性 | 最大绝对输出差约 `1.79e-7` |

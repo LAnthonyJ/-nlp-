@@ -6,7 +6,7 @@ This workflow compares Qwen2.5-0.5B Base, the existing SFT adapter, and the fina
 
 Keep the existing CPU environment. Use a separate `.venv-eval` with CUDA PyTorch appropriate for the local GPU and install `.[eval,viz]`. The local machine has an RTX 3060 Laptop / 6GB. A smoke run must verify actual CUDA availability, loading, EOS, user/assistant prompt format and custom/reference greedy decoding before formal generation. FP16, one model at a time and batch size one limit memory demand. Weights are loaded from the existing Hugging Face cache and local `q2_sft_output` / `q2_dpo_output`, without modifying the original files.
 
-Default relative paths assume commands are run from the repository root. Override `--train-dir` and `--gsm-data` on another machine. Checkpoints, source data, raw outputs, private review keys and the GPU environment are not committed to Git. Reports and plots intended for publication must be exported explicitly after inspection.
+Run commands from the repository root. Supply `--train-dir` and `--gsm-data` on another machine, or put those paths in the ignored local file `outputs/capability/local-inputs.json`. Machine-specific paths are not part of the published source. Checkpoints, source data, raw outputs, private review keys and the GPU environment are not committed to Git. Reports and plots intended for publication must be exported explicitly after inspection.
 
 ## Commands
 
@@ -79,3 +79,20 @@ The independent GPU environment uses PyTorch 2.9.0+cu128, Transformers 5.9.0 and
 The current run directory is `outputs/capability/final-run` (pass `--run-dir` for score/review/analyze/render/import-review commands). Formal generation may first use `--open-only` to prepare blind review; rerun without that flag to resume the remaining questions under the same configuration.
 
 A structural audit found 193/1000 DPO prompts matching a pattern for data-construction instructions, and one duplicate SFT prompt. These are audit candidates, not automatically invalid examples or proof of the cause of any model failure. The fixed audit samples and complete structural counts are retained locally. Main conceptual questions test familiar training themes; lexical overlap checks do not establish that their semantics are wholly unseen.
+
+### Secondary format-sensitivity analysis
+
+During the first SFT objective run, many final-answer phrases omitted the requested colon. Strict numeric scores remain unchanged. A separately labeled post-hoc diagnostic accepts an explicit final-answer phrase with an optional colon/currency symbol; it never takes an arbitrary last number. It is applied consistently to all stages, is not a replacement benchmark score, and does not demonstrate correct reasoning merely by matching a number. Raw strict and relaxed outcomes are both retained for audit.
+
+### Recreate the GPU environment on this Windows machine
+
+```powershell
+python -m venv .venv-eval
+.\.venv-eval\Scripts\python.exe -m pip install 'torch==2.9.0+cu128' --index-url https://download.pytorch.org/whl/cu128
+.\.venv-eval\Scripts\python.exe -m pip install -e '.[eval,viz]'
+.\.venv-eval\Scripts\python.exe -c "import torch; assert torch.cuda.is_available()"
+```
+
+The executed environment reused existing system packages while overriding Torch inside `.venv-eval`; the commands above create a clean environment instead. Actual executed versions are recorded in `outputs/capability/evaluation-environment.json`. The original CPU environment remains separate. Standard GSM8K `question`/`answer` fields and the course's `query`/`response` conversion are both accepted. Keep the original test split and source attribution when obtaining the dataset.
+
+The review exporter refuses to overwrite an existing CSV, to protect ratings already being edited. Use the existing file for import, or deliberately use a new run directory for a separate assessment.

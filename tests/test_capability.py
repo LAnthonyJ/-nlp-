@@ -1,6 +1,7 @@
 import copy
 import csv
 import json
+import importlib.util
 from pathlib import Path
 import tempfile
 import unittest
@@ -9,7 +10,7 @@ from types import SimpleNamespace
 
 from nlp_course.capability_data import prepare
 from nlp_course.capability import (score_task, wilson, blind_review, import_review,
-                                  analyze, save, read, score, docker_score)
+                                  analyze, save, read, score, docker_score, render_report)
 
 
 class CapabilityTests(unittest.TestCase):
@@ -35,6 +36,15 @@ class CapabilityTests(unittest.TestCase):
         task=dict(category='code',id='a',split='main')
         row=dict(response='def f(): pass',stage='dpo',finish_reason='eos')
         self.assertIsNone(score_task(task,row)['correct'])
+
+    def test_relaxed_math_is_secondary_and_requires_final_answer_phrase(self):
+        task=dict(category='math',reference='1880',id='a',split='main')
+        row=dict(response='The answer is $1,880.',stage='sft',finish_reason='eos')
+        result=score_task(task,row)
+        self.assertFalse(result['correct'])
+        self.assertTrue(result['format_relaxed_correct'])
+        row['response']='I saw 1880 things.'
+        self.assertFalse(score_task(task,row)['format_relaxed_correct'])
 
     def test_probability_intervals_at_boundaries(self):
         self.assertIsNone(wilson(0,0))
@@ -74,6 +84,10 @@ class CapabilityTests(unittest.TestCase):
             for stage in ['base','sft','dpo']:
                 (run/'formal'/f'{stage}.jsonl').write_text('\n'.join(json.dumps(dict(task_id=t['id'],stage=stage,response='answer')) for t in tasks))
             blind_review(suite,run)
+            original=(run/'blind-review.csv').read_bytes()
+            with self.assertRaisesRegex(ValueError,'overwrite'):
+                blind_review(suite,run)
+            self.assertEqual((run/'blind-review.csv').read_bytes(),original)
             key=read(run/'private-review-key.json')
             self.assertEqual(len(key),66)
             self.assertEqual(sum(r['is_repeat'] for r in key.values()),6)
@@ -98,6 +112,24 @@ class CapabilityTests(unittest.TestCase):
             report=analyze(root/'suite',root/'run')
             self.assertIsNone(report['summary'][0]['accuracy'])
             self.assertEqual(report['human_status'],'pending')
+
+    def test_stage_regressions_and_report_export(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);suite=root/'suite';run=root/'run';(run/'formal').mkdir(parents=True)
+            tasks=[dict(id=f'math-{i}',category='math',split='main',prompt=f'Compute {i}',reference=str(i)) for i in [1,2]]
+            save(suite/'suite.json',dict(tasks=tasks))
+            for stage,answers in [('base',[1,9]),('sft',[9,2]),('dpo',[1,2])]:
+                rows=[dict(task_id=t['id'],stage=stage,response=f'The answer is: {a}',finish_reason='eos') for t,a in zip(tasks,answers)]
+                (run/'formal'/f'{stage}.jsonl').write_text('\n'.join(json.dumps(r) for r in rows),encoding='utf-8')
+            score(suite,run);report=analyze(suite,run)
+            change=next(r for r in report['stage_changes'] if r['first']=='base' and r['category']=='math')
+            self.assertEqual(change['counts'],dict(regressed=1,improved=1))
+            self.assertTrue((run/'report.zh-CN.md').is_file())
+            self.assertEqual(len(read(run/'transition-cases.json')),4)
+            if importlib.util.find_spec('matplotlib'):
+                render_report(run)
+                self.assertTrue((run/'capabilities.png').is_file())
+                self.assertTrue((run/'boundaries.svg').is_file())
 
 
 if __name__=='__main__':unittest.main()

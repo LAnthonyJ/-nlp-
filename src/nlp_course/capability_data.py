@@ -53,7 +53,11 @@ def prepare(gsm_path, train_dir, destination, humaneval_path=None):
     tasks = []
     for index in rng.sample(range(len(gsm)), 30):
         row = gsm[index]
-        tasks.append(dict(id=f'gsm-{index}', category='math', prompt=row['query'], reference=row['response'].split('####')[-1].strip(), source='GSM8K test subset', split='main'))
+        question=row.get('query',row.get('question'))
+        answer=row.get('response',row.get('answer'))
+        if not isinstance(question,str) or not isinstance(answer,str) or '####' not in answer:
+            raise ValueError('Expected GSM8K question/answer or query/response fields with a #### answer')
+        tasks.append(dict(id=f'gsm-{index}', category='math', prompt=question, reference=answer.split('####')[-1].strip(), source='GSM8K test subset', split='main'))
     for row in rng.sample(code, 25):
         tasks.append(dict(id=row['task_id'].replace('/', '-'), category='code', prompt='Complete this Python function. Return the complete function in one Python code block.\n'+row['prompt'], reference=row['canonical_solution'], tests=row['test'], entry_point=row['entry_point'], source='HumanEval subset', split='main'))
     for i in range(25):
@@ -95,6 +99,7 @@ def prepare(gsm_path, train_dir, destination, humaneval_path=None):
         original=[t for t in tasks if t['category']=='code' and t['split']=='main'][i]
         for level,budget in [('short',256),('long',512)]:
             tasks.append(dict(original,id=f'dcode-{i}-{level}',pair=f'dcode-{i}',condition=level,split='diagnostic',max_new_tokens=budget))
+    if len({t['id'] for t in tasks})!=len(tasks):raise ValueError('Task source contains duplicate IDs')
     # Conservative prompt leakage screening; flag near overlaps for review.
     norm=lambda s: re.sub(r'\s+',' ',s.casefold()).strip()
     train=[]

@@ -161,6 +161,12 @@ def score_task(task, row, execute_code=False):
         from .evaluation import parse_number
         correct=predicted is not None and predicted==parse_number(task['reference'])
         score=dict(correct=correct,status='invalid_answer' if predicted is None else 'correct' if correct else 'incorrect')
+        # Secondary format-sensitivity diagnostic: never replace the strict score.
+        # Requires an explicit final-answer phrase, not an arbitrary last number.
+        matches=list(re.finditer(r'(?:the (?:final )?answer is|####)\s*:?\s*\$?([+-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?:[eE][+-]?\d+)?(?:/\d+)?)(?![\w,/]|\.\d)',response,re.I))
+        relaxed=parse_number(matches[-1][1]) if matches else None
+        score['format_relaxed_correct']=relaxed is not None and relaxed==parse_number(task['reference'])
+        score['format_relaxed_extracted']=str(relaxed) if relaxed is not None else None
     elif category=='logic':
         candidate=response.strip().rstrip('.')
         candidate=re.sub(r'\s+','',candidate)
@@ -180,7 +186,7 @@ def score_task(task, row, execute_code=False):
     return dict(task_id=task['id'],stage=row['stage'],category=category,split=task['split'],**score)
 
 
-def score(suite_dir,run_dir,execute_code=False):
+def score(suite_dir,run_dir,execute_code=False,progress=False):
     tasks=read(Path(suite_dir)/'suite.json')['tasks']; by_id={t['id']:t for t in tasks}
     results=[]
     if execute_code:
@@ -192,7 +198,9 @@ def score(suite_dir,run_dir,execute_code=False):
         rows=records(Path(run_dir)/'formal'/f'{stage}.jsonl')
         ids=[r['task_id'] for r in rows]
         if len(ids)!=len(set(ids)) or any(i not in by_id for i in ids):raise ValueError('Unknown/duplicate output task')
-        results.extend(score_task(by_id[r['task_id']],r,execute_code) for r in rows)
+        for r in rows:
+            results.append(score_task(by_id[r['task_id']],r,execute_code))
+            if progress and len(results)%10==0:print(f'Scored {len(results)} responses',flush=True)
     save(Path(run_dir)/'scores.json',dict(expected_per_stage=len(tasks),records=results,
          code_execution='isolated Docker python:3.11-slim' if execute_code else 'not executed'))
     return results
@@ -208,6 +216,7 @@ def blind_review(suite_dir,run_dir):
     rng=random.Random(42);rng.shuffle(rows)
     rows.extend(rng.sample(rows,6));rng.shuffle(rows)
     mapping={}; seen=set();path=Path(run_dir)/'blind-review.csv'
+    if path.exists():raise ValueError('Blind review sheet already exists; refusing to overwrite human ratings')
     with path.open('w',newline='',encoding='utf-8-sig') as stream:
         writer=csv.DictWriter(stream,fieldnames=['review_id','category','prompt','reference_rubric','response','accuracy_or_completion','completeness_or_coherence','clarity_or_expression','notes'])
         writer.writeheader()
@@ -250,6 +259,10 @@ def analyze(suite_dir,run_dir):
             measured=[r for r in rows if r['correct'] is not None]
             correct=sum(r['correct'] for r in measured)
             results.append(dict(stage=stage,category=category,expected=sum(t['category']==category and t['split']=='main' for t in suite['tasks']),received=len(rows),scored=len(measured),correct=correct,accuracy=correct/len(measured) if measured else None,interval=wilson(correct,len(measured)),statuses=dict(Counter(r['status'] for r in rows))))
+            if category=='math':
+                results[-1]['format_relaxed_correct']=sum(r.get('format_relaxed_correct',False) for r in rows)
+                results[-1]['format_relaxed_accuracy']=results[-1]['format_relaxed_correct']/len(rows) if rows else None
+                results[-1]['format_relaxed_interval']=wilson(results[-1]['format_relaxed_correct'],len(rows))
     human=read(Path(run_dir)/'human-scores.json') if (Path(run_dir)/'human-scores.json').exists() else None
     pairs=[]
     for stage in STAGES:
@@ -288,6 +301,10 @@ def analyze(suite_dir,run_dir):
         value=f'{r["accuracy"]:.1%}' if r['accuracy'] is not None else 'Pending/unavailable'
         lines.append(f'| {r["stage"]} | {r["category"]} | {r["received"]}/{r["expected"]} | {r["scored"]} | {r["correct"]} | {value} |')
     lines.extend(['','## Limits',*['- '+s for s in report['limitations']]])
+    lines.extend(['','## Math format sensitivity (secondary, post-hoc)','',
+                  'Strict scores include the requested answer protocol. The following relaxation diagnoses format sensitivity; it does not replace the strict result.'])
+    for r in results:
+        if r['category']=='math':lines.append(f'- {r["stage"]}: strict {r["correct"]}/{r["scored"]}; relaxed final-answer format {r["format_relaxed_correct"]}/{r["received"]}.')
     lines.extend(['','## Failure evidence / 失败证据','', 'Only observable errors and controlled interventions are evidence. Capacity and training-data explanations remain hypotheses.'])
     selected=[]
     for stage in STAGES:
@@ -344,7 +361,9 @@ def render_report(run_dir):
                 low,high=row['interval'];p=row['accuracy']
                 ax.bar(index,p,color=['#64748b','#0891b2','#2563eb'][index])
                 ax.errorbar(index,p,yerr=[[p-low],[high-p]],fmt='none',color='black',capsize=4)
-        ax.set(xticks=range(3),xticklabels=STAGES,ylim=(0,1.1),title=category,ylabel='Pass rate (95% Wilson interval)')
+                if category=='math':ax.scatter(index,row['format_relaxed_accuracy'],marker='D',facecolors='none',edgecolors='black',label='Relaxed format (secondary)' if index==0 else None)
+        ax.set(xticks=range(3),xticklabels=STAGES,ylim=(0,1.1),title=category,ylabel='Protocol pass rate (95% Wilson interval)')
+        if category=='math':ax.legend(fontsize=7)
     fig.suptitle('English quick diagnostic | Real checkpoint outputs | Open-task ratings pending' if report['human_status']=='pending' else 'English quick diagnostic | Real checkpoint outputs')
     fig.savefig(Path(run_dir)/'capabilities.png',dpi=180);fig.savefig(Path(run_dir)/'capabilities.svg');plt.close(fig)
     fig,axes=plt.subplots(2,3,figsize=(12,7),layout='constrained')
@@ -354,9 +373,9 @@ def render_report(run_dir):
             for ci,condition in enumerate(conditions):
                 rows=[c for p in report['boundaries'] if p['category']==category and p['stage']==stage for c in p['conditions'] if c['condition']==condition]
                 values=[r['keyword_coverage'] for r in rows if 'keyword_coverage' in r] if category=='concept' else [float(r['correct']) for r in rows if r['correct'] is not None]
-                if values:ax.bar(si+(ci-.5)*.3,sum(values)/len(values),width=.3,label=condition if si==0 else None)
+                if values:ax.bar(si+(ci-.5)*.3,sum(values)/len(values),width=.3,color=['#2563eb','#0891b2'][ci],label=condition if si==0 else None)
         ax.set(xticks=range(3),xticklabels=STAGES,ylim=(0,1.1),title=category+(' | lexical coverage' if category=='concept' else ' | paired probes'))
-        if conditions:ax.legend(fontsize=8)
+        if ax.get_legend_handles_labels()[0]:ax.legend(fontsize=8)
     axes.flat[-1].axis('off');axes.flat[-1].text(0,.8,'4 pairs per category\nControlled probes, not benchmark scores\nMissing code runs remain unscored',va='top')
     fig.savefig(Path(run_dir)/'boundaries.png',dpi=180);fig.savefig(Path(run_dir)/'boundaries.svg');plt.close(fig)
     if report['human_status']=='scored':
@@ -374,17 +393,25 @@ def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['prepare','generate','score','review','import-review','analyze','render'])
     parser.add_argument('--suite-dir',type=Path,default=Path('outputs/capability/suite'))
     parser.add_argument('--run-dir',type=Path,default=Path('outputs/capability/run'))
-    parser.add_argument('--train-dir',type=Path,default=Path('../../NLP/project/12311701 张航源'))
-    parser.add_argument('--gsm-data',type=Path,default=Path('../../NLP/作业/Assignment3/GSM8K_test.jsonl'))
+    parser.add_argument('--train-dir',type=Path)
+    parser.add_argument('--gsm-data',type=Path)
     parser.add_argument('--humaneval-data',type=Path)
     parser.add_argument('--stage',choices=STAGES,default='base');parser.add_argument('--phase',choices=['smoke','formal'],default='formal')
     parser.add_argument('--open-only',action='store_true',help='Generate only main open tasks; later resume without this flag')
     parser.add_argument('--execute-code',action='store_true');parser.add_argument('--ratings',type=Path)
     args=parser.parse_args(argv)
     try:
+        if args.command in ('prepare','generate'):
+            local=read('outputs/capability/local-inputs.json') if Path('outputs/capability/local-inputs.json').exists() else {}
+            if args.train_dir is None:
+                if not local.get('train_dir'):raise ValueError('Provide --train-dir or configure outputs/capability/local-inputs.json')
+                args.train_dir=Path(local['train_dir'])
+            if args.command=='prepare' and args.gsm_data is None:
+                if not local.get('gsm_data'):raise ValueError('Provide --gsm-data or configure outputs/capability/local-inputs.json')
+                args.gsm_data=Path(local['gsm_data'])
         if args.command=='prepare':prepare(args.gsm_data,args.train_dir,args.suite_dir,args.humaneval_data)
         elif args.command=='generate':generate(args.suite_dir,args.run_dir,args.stage,args.train_dir,args.phase,args.open_only)
-        elif args.command=='score':score(args.suite_dir,args.run_dir,args.execute_code)
+        elif args.command=='score':score(args.suite_dir,args.run_dir,args.execute_code,progress=True)
         elif args.command=='review':blind_review(args.suite_dir,args.run_dir)
         elif args.command=='import-review':import_review(args.run_dir,args.ratings)
         elif args.command=='analyze':analyze(args.suite_dir,args.run_dir)

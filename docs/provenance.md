@@ -33,3 +33,7 @@ At the owner's request, AI-assisted development introduced corrected modules und
 ## Static visualizations — 2026-11-14
 
 At the owner's request, AI-assisted development extracted the existing CPU demonstration into a reusable runner, instrumented actual measurements, added static plotting and regression tests, and updated bilingual documentation and CI. The learning curve is a single fixed-seed synthetic training run. All figures are generated from recorded data, not illustrative model-performance estimates. Original coursework and historical validation JSON files are preserved.
+
+## Real-checkpoint capability workflow — 2026-11-15
+
+At the owner's request, AI-assisted development added independent GPU checkpoint evaluation, fixed main/paired task preparation, isolated code execution, anonymous human-review export/import, statistics and bilingual reports. Existing Qwen-based SFT/DPO adapters are original course training artifacts; no new model training was performed in this evaluation. Their task results are separate evidence from the custom LoRALinear component tests. Human open-task scores remain pending until the owner supplies the completed blind-review sheet. Machine-specific input paths are configured locally under ignored outputs/.

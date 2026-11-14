@@ -1,0 +1,1228 @@
+{
+  "seed": 42,
+  "sources": {
+    "gsm8k_sha256": "2b79e4e6730d6fc7d0763bfe55803ddd2d3b6d1aa07d4b4f6ee1c2dc4753ab26",
+    "humaneval_sha256": "1d49078ba3e2b196b9344535bef34a43021f038fad9561d6ee7c53450609a6a2"
+  },
+  "tasks": [
+    {
+      "id": "gsm-1309",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "5dc76d774bd01a74954bc2acab35f65f9f600d1b6f58bff0a7ba4af83adec48c"
+    },
+    {
+      "id": "gsm-228",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "b26cfbf53406dd4d3c827c592bd0925a246f647a04245d6dbe5fa7e9271777e4"
+    },
+    {
+      "id": "gsm-51",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "971dabc5c71b6706fbcb9e063b691f12effce5e1ff53254b4123d7904ab52420"
+    },
+    {
+      "id": "gsm-563",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "0dd0b319394d04552520865cfe1e3b296a3764828873df6f98d810841ff3e038"
+    },
+    {
+      "id": "gsm-501",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "73dc5c4f78d5497304638113242612d9e7beef23ab500086a3bd47a2746fed5a"
+    },
+    {
+      "id": "gsm-457",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "7a9da644d3e1e8b3680a5c6cd25acb11cb2573f5cd755841272f8113dde35453"
+    },
+    {
+      "id": "gsm-285",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "46ce7073561764ace4b5738771fa594bc93ee562c5ac3f922ce4538d4715ca8f"
+    },
+    {
+      "id": "gsm-209",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "5d6ed708fe4546615db9a393deb23d4c485926e7eff5d7bdc4e4ccdd0c03f25d"
+    },
+    {
+      "id": "gsm-1116",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "bca059699200fc8148bca3b76881f8e2e97ca421e2d061ece31fca839423ba6e"
+    },
+    {
+      "id": "gsm-178",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "e2c3edfe6881860228f62cbb2dba4a9e84a6beebb1159c7206bb132725343a28"
+    },
+    {
+      "id": "gsm-1209",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "a7f615dad911a47af2d48a0c225f9e437f79d3043ad2969e3d981c31fcda8886"
+    },
+    {
+      "id": "gsm-864",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "80c6c993731f0b11c9cbb188419d0fec8de3c77caaad1e15da7cea4851f3c727"
+    },
+    {
+      "id": "gsm-65",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "78eb7e05b9b667acd8b52f673e2506b36ef073f7b26e85eb1a9ad2dae04df331"
+    },
+    {
+      "id": "gsm-61",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "53d5c3c6c081dc8b1074463a29c313de0684581c634cd19bdfa17474f0899a62"
+    },
+    {
+      "id": "gsm-191",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "dfe05fecd5842c0cae1ac39e179b099919e6c99c5a51e812657b8b308c37773e"
+    },
+    {
+      "id": "gsm-447",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "edb62873d5a6b883d4d0393935af98e1e9e331b38af4090812341ea509b651c2"
+    },
+    {
+      "id": "gsm-476",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "3f3a4cd95f6a07da40b187b96049023038728da003d199eeda741a22dff552ad"
+    },
+    {
+      "id": "gsm-1034",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "53509ad959de2fa673d51b9e3978c95375b058e9ab2bb4694eaca530c6b73286"
+    },
+    {
+      "id": "gsm-1232",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "471ad40860e85b178e52d4f920bb855a862fe11864eceb266e43e41e674d8667"
+    },
+    {
+      "id": "gsm-54",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "13e140ab86daaa95907a1336e9956e8b9ba84bb7d22a4e830e4b5b91c577b6c1"
+    },
+    {
+      "id": "gsm-1149",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "a841a33b8d90bdb0e0eea86e5ffe41ae9cc4bba08c80992b6a60564631506d84"
+    },
+    {
+      "id": "gsm-407",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "1cb038acd83346246745c392806c3659928178a8ef3f6a41c00d4d148332645c"
+    },
+    {
+      "id": "gsm-859",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "76aaa5245fe3ea8624bb11a5bb0cc5693a39a3962d2a9a2b4c1364de5b599202"
+    },
+    {
+      "id": "gsm-451",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "4e6419841f3b7e3a383e144f2499800717bf7566dfbf154b1400269664711edf"
+    },
+    {
+      "id": "gsm-919",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "7538398121de0c8b64583a6662ba1682fe0e5d84d067a3691588a3eec3f426fa"
+    },
+    {
+      "id": "gsm-1206",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "ad6628c18313d944a7fa7626937245bf4d6a515f1c7c070f973a7d4a6c5d6bcd"
+    },
+    {
+      "id": "gsm-569",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "c131504c06e44841b423734dce28ce1d10230ce3744d7f93d62678607f45ea05"
+    },
+    {
+      "id": "gsm-13",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "0f494281748adc026d7361db6898808fd97dfe58ffa65f7b91193bfa437474e9"
+    },
+    {
+      "id": "gsm-326",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "2c58e20bbc6ee0ee810b5c9cf53ec5a7b2cb6792781602a578d84864bf0b5c76"
+    },
+    {
+      "id": "gsm-865",
+      "category": "math",
+      "source": "GSM8K test subset",
+      "split": "main",
+      "prompt_sha256": "9fa70f2dd7a054f455917badddd9f69389ec5d530e05f6df3fd45626018d5bd5"
+    },
+    {
+      "id": "HumanEval-87",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "e45e8738e73cc0e19c626181d4bcd5dc680c5fff0fa22547f9f667d99081ac61"
+    },
+    {
+      "id": "HumanEval-71",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "3fbdec167ffca3622c37a32cd25c9eec14b2be9e36ea8101bc0933a31d67d81c"
+    },
+    {
+      "id": "HumanEval-39",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "80114e66c66c9c8b33965c6eaca94017d9b233118d02706aa12f4f30bcfccd79"
+    },
+    {
+      "id": "HumanEval-55",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "a3dd010ded5232553c46bb585d163fae67ff0ab052ecc5f88bcdaeec6c7e599f"
+    },
+    {
+      "id": "HumanEval-86",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "9bc8ce39ad6813b9a57ee043be76ace02f03e322629861baa3f2fe955ea2adda"
+    },
+    {
+      "id": "HumanEval-26",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "ab67c7905357c846c7e2da45bbd2ea2aa99bb3a5058fca0396e8e50527ee7105"
+    },
+    {
+      "id": "HumanEval-23",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "7b0390578134bf063ab007921c670c0295c20097af07a522242cb19d9cef9eb2"
+    },
+    {
+      "id": "HumanEval-97",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "ec707ba4cd548985e04387dab0e2741132603e859de7dc38edd0137048584f59"
+    },
+    {
+      "id": "HumanEval-24",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "2238fd2a6db2f35738c4258e7e57f578b84f8160fa4565434fe0ed35b425c24e"
+    },
+    {
+      "id": "HumanEval-91",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "b5f2332c88c9c76ca92cb9ca750ef5ae1f8dc49df109aeee8b001962509fd4d5"
+    },
+    {
+      "id": "HumanEval-88",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "a970d5fb3f703b93a2d82fa1bd2cc1ad249e0abfeaaf789e9172770b7ba52d3c"
+    },
+    {
+      "id": "HumanEval-67",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "c9589732ab6436c73f302111d016497f43c4a0fe75c1ee81f851bec2f62dd8ee"
+    },
+    {
+      "id": "HumanEval-11",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "3722aa4b5e8ae05a58418a38adc71b30e6f6e974c17ab7f8861052acef43e025"
+    },
+    {
+      "id": "HumanEval-117",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "473e1c6a80bb30704cc68734c264ff4cb2b5db51e438f2cc6c7148fc2740b0da"
+    },
+    {
+      "id": "HumanEval-137",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "9bd74c16e73c217420eaf2f6a276988e5b7b7af33566148f0757408aeadf8627"
+    },
+    {
+      "id": "HumanEval-31",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "fa08a7ff3e6bd88b1c7c52c791f0c45fa6c2a062188991c8775f616340c66fe1"
+    },
+    {
+      "id": "HumanEval-96",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "da4e9d7085b2a060943efc49c76c7eeb601b8231ab08d1dd14380cb1f3eeb98b"
+    },
+    {
+      "id": "HumanEval-20",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "327e323d9ca4142b291a5a3315f07aa7e79c102ec0589f7ec065889bdea4d94b"
+    },
+    {
+      "id": "HumanEval-141",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "f5021170d4ec6e4fc8323f82c499027a658d647ab85ce884ceaa6b26732864c3"
+    },
+    {
+      "id": "HumanEval-75",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "caebf46c8e768a8473df5a4c71b38b7efa627bb86ed3bc1b9426bb10d7a280f1"
+    },
+    {
+      "id": "HumanEval-92",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "dc89e05b4516fb6bd19746dc39243b68b2ff5a4e2e43e130f4ee399b8eddc627"
+    },
+    {
+      "id": "HumanEval-49",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "3aa8ee77c59ab50530c5b48d37dfff4d588550364500b460fafcb1eb9a0da310"
+    },
+    {
+      "id": "HumanEval-17",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "56fb79ccdcc1ef7289195daa377cffda31f56e031039fcce2985f70aa3acd689"
+    },
+    {
+      "id": "HumanEval-151",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "5043ec4cf61bbc7597b62188b24a71300d7846c5d37733bee07d787fe52d9f8f"
+    },
+    {
+      "id": "HumanEval-58",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "main",
+      "prompt_sha256": "8289afd3842e7bb7d049314920c34a90ffdd97ef55383b1595b5f9ef42de48ce"
+    },
+    {
+      "id": "logic-0",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "a0dd2e854e7efb33913539c28d3f7b95bbe9ec79b55ad80c6ec1183598ab7f6a",
+      "prompt": "C comes before A. A comes before B. Return the complete order using comma-separated letters only.",
+      "reference": "C,A,B"
+    },
+    {
+      "id": "logic-1",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "e927ef66fb833ad3f035606fff8b6fe829ccacbe74e3cf3a9699571459f1d05d",
+      "prompt": "All amber objects are blue. All blue objects are cold. Object 1 is amber. Must it be cold? Answer yes or no only.",
+      "reference": "yes"
+    },
+    {
+      "id": "logic-2",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "5193f8aa69b13dcc1c7afce2d75cdaa53caa93d8a840110757615e85d9c90497",
+      "prompt": "Set A is {2, 3, 4}. Set B is {3, 4, 5}. How many elements are in their intersection? Return only an integer.",
+      "reference": "2"
+    },
+    {
+      "id": "logic-3",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "08347ace51e98478cf1bf81858a83e4209dcf085e1249b117e8ab08621891b3b",
+      "prompt": "There are 5 red balls and 6 blue balls. Two red balls are removed. How many balls remain? Return only an integer.",
+      "reference": "9"
+    },
+    {
+      "id": "logic-4",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "c3a1ebd6f04b9172f1295c2678254a7708b314ba49de42d80a683aa9761a9318",
+      "prompt": "If the lamp is on, the switch is closed. The lamp is on. Is it logically necessary that the switch is closed? Answer yes or no only.",
+      "reference": "yes"
+    },
+    {
+      "id": "logic-5",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "b8cf44047a0085224a875d0580545e8730dc78f42c6697fa3d899556ef2dcee3",
+      "prompt": "D comes before E. E comes before C. C comes before B. B comes before A. Return the complete order using comma-separated letters only.",
+      "reference": "D,E,C,B,A"
+    },
+    {
+      "id": "logic-6",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "52eb9ff2e94503525b414223434a6d1c19de8d4b46f01ca27781373a3dba3f26",
+      "prompt": "All amber objects are blue. All blue objects are cold. Object 6 is amber. Must it be cold? Answer yes or no only.",
+      "reference": "yes"
+    },
+    {
+      "id": "logic-7",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "cb95ea220adc9545f8f5271b5ac6b216ccb344e9037e45a7c9370dbc79e406ef",
+      "prompt": "Set A is {7, 8, 9}. Set B is {8, 9, 10}. How many elements are in their intersection? Return only an integer.",
+      "reference": "2"
+    },
+    {
+      "id": "logic-8",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "2ee150c2cf5e1b75453ed0098831b2bb4308117bdd226e17c94685a7816fbf93",
+      "prompt": "There are 10 red balls and 11 blue balls. Two red balls are removed. How many balls remain? Return only an integer.",
+      "reference": "19"
+    },
+    {
+      "id": "logic-9",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "c3a1ebd6f04b9172f1295c2678254a7708b314ba49de42d80a683aa9761a9318",
+      "prompt": "If the lamp is on, the switch is closed. The lamp is on. Is it logically necessary that the switch is closed? Answer yes or no only.",
+      "reference": "yes"
+    },
+    {
+      "id": "logic-10",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "59dee5b1699779434eb839382c734d7dec1a46707e2b06a093e6ac268b83765f",
+      "prompt": "B comes before D. D comes before A. A comes before C. Return the complete order using comma-separated letters only.",
+      "reference": "B,D,A,C"
+    },
+    {
+      "id": "logic-11",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "4bd7ed42616feeba0c3509d5815ef326c0744417225f0bc6b7454b45b9dde461",
+      "prompt": "All amber objects are blue. All blue objects are cold. Object 11 is amber. Must it be cold? Answer yes or no only.",
+      "reference": "yes"
+    },
+    {
+      "id": "logic-12",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "82372ab5a9e8ae3bfe536053fbaa66b7d6f4589fe731216e3cbe57985e8af765",
+      "prompt": "Set A is {12, 13, 14}. Set B is {13, 14, 15}. How many elements are in their intersection? Return only an integer.",
+      "reference": "2"
+    },
+    {
+      "id": "logic-13",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "0d022732256f72fdeca738bae668b21e1ed97696450e2d11c0b21fd8e0267852",
+      "prompt": "There are 15 red balls and 16 blue balls. Two red balls are removed. How many balls remain? Return only an integer.",
+      "reference": "29"
+    },
+    {
+      "id": "logic-14",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "c3a1ebd6f04b9172f1295c2678254a7708b314ba49de42d80a683aa9761a9318",
+      "prompt": "If the lamp is on, the switch is closed. The lamp is on. Is it logically necessary that the switch is closed? Answer yes or no only.",
+      "reference": "yes"
+    },
+    {
+      "id": "logic-15",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "b2dfdf7abd13b1a14569eda196871aaaffac39dbe6bac2ba194362f08f6057f2",
+      "prompt": "A comes before B. B comes before C. Return the complete order using comma-separated letters only.",
+      "reference": "A,B,C"
+    },
+    {
+      "id": "logic-16",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "66400f894e70f9c6d3fbca007f28d05d36b7fc2e411d7179c2d16315f4e9e013",
+      "prompt": "All amber objects are blue. All blue objects are cold. Object 16 is amber. Must it be cold? Answer yes or no only.",
+      "reference": "yes"
+    },
+    {
+      "id": "logic-17",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "b76b384c252fe37bf5917963b7adbf69bde3a715bc5e758cc4e2307d88a28a9b",
+      "prompt": "Set A is {17, 18, 19}. Set B is {18, 19, 20}. How many elements are in their intersection? Return only an integer.",
+      "reference": "2"
+    },
+    {
+      "id": "logic-18",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "af7a1432b72b0f6271c60cc602145a1646d88d0ec55c0aa583311d6074fdcec5",
+      "prompt": "There are 20 red balls and 21 blue balls. Two red balls are removed. How many balls remain? Return only an integer.",
+      "reference": "39"
+    },
+    {
+      "id": "logic-19",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "c3a1ebd6f04b9172f1295c2678254a7708b314ba49de42d80a683aa9761a9318",
+      "prompt": "If the lamp is on, the switch is closed. The lamp is on. Is it logically necessary that the switch is closed? Answer yes or no only.",
+      "reference": "yes"
+    },
+    {
+      "id": "logic-20",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "32c7116fa3642d72216fe6c9e82d3588e0b5aed70c66cbb10684453e08b4f895",
+      "prompt": "D comes before C. C comes before B. B comes before A. A comes before E. Return the complete order using comma-separated letters only.",
+      "reference": "D,C,B,A,E"
+    },
+    {
+      "id": "logic-21",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "86ac64dc2e23dab7e36f255fe90e596baad8ee5e92fe39fdabb9d4a51e3c62c4",
+      "prompt": "All amber objects are blue. All blue objects are cold. Object 21 is amber. Must it be cold? Answer yes or no only.",
+      "reference": "yes"
+    },
+    {
+      "id": "logic-22",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "bf7a5fe02919033eb5bdecd4273c3c4f7695fdb8aee12970067f8af9ee9c8753",
+      "prompt": "Set A is {22, 23, 24}. Set B is {23, 24, 25}. How many elements are in their intersection? Return only an integer.",
+      "reference": "2"
+    },
+    {
+      "id": "logic-23",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "345530e825ec86b49a7ea8b8dc4ac5dcb80297cb5f1f6faeee85a6002e834a01",
+      "prompt": "There are 25 red balls and 26 blue balls. Two red balls are removed. How many balls remain? Return only an integer.",
+      "reference": "49"
+    },
+    {
+      "id": "logic-24",
+      "category": "logic",
+      "source": "Generated logical oracle",
+      "split": "main",
+      "prompt_sha256": "c3a1ebd6f04b9172f1295c2678254a7708b314ba49de42d80a683aa9761a9318",
+      "prompt": "If the lamp is on, the switch is closed. The lamp is on. Is it logically necessary that the switch is closed? Answer yes or no only.",
+      "reference": "yes"
+    },
+    {
+      "id": "concept-0",
+      "category": "concept",
+      "source": "Project-authored concept rubric",
+      "split": "main",
+      "prompt_sha256": "83feeb88bfbe3655f0831b1a01489008f6b79eb9a8fbee740b8c70af7bbb9901"
+    },
+    {
+      "id": "concept-1",
+      "category": "concept",
+      "source": "Project-authored concept rubric",
+      "split": "main",
+      "prompt_sha256": "ac21289d7e22b62715e2107b15bc38328320f3cf12b9a7a8785a3ecd1a9940ad"
+    },
+    {
+      "id": "concept-2",
+      "category": "concept",
+      "source": "Project-authored concept rubric",
+      "split": "main",
+      "prompt_sha256": "aa97ae7a9cf716aa829a76d546bf288c6484007e4b59db77093e16fb01231f43"
+    },
+    {
+      "id": "concept-3",
+      "category": "concept",
+      "source": "Project-authored concept rubric",
+      "split": "main",
+      "prompt_sha256": "0dd419dfc3e09616b5f9a04ae041043138fd498725bbd080177f91e76338f30a"
+    },
+    {
+      "id": "concept-4",
+      "category": "concept",
+      "source": "Project-authored concept rubric",
+      "split": "main",
+      "prompt_sha256": "7791eea41c5c545a801e34857ef598efb7cda380d2be60d1b1b5874cf1fba309"
+    },
+    {
+      "id": "concept-5",
+      "category": "concept",
+      "source": "Project-authored concept rubric",
+      "split": "main",
+      "prompt_sha256": "d151ae0bfbfff200d87a368ec453aa0c0c5ea62fb656dbf2e209ca9880e44e99"
+    },
+    {
+      "id": "concept-6",
+      "category": "concept",
+      "source": "Project-authored concept rubric",
+      "split": "main",
+      "prompt_sha256": "9f8df0e6c551b68c30656c7bce4e4a6579290421fead7ea3a02f996068015c52"
+    },
+    {
+      "id": "concept-7",
+      "category": "concept",
+      "source": "Project-authored concept rubric",
+      "split": "main",
+      "prompt_sha256": "19894c86a51b6b09142a168e71b69a03f1ec4d5175a58af36a68f942792c2154"
+    },
+    {
+      "id": "concept-8",
+      "category": "concept",
+      "source": "Project-authored concept rubric",
+      "split": "main",
+      "prompt_sha256": "fd4d91bc79c1794affe688ba4488653d4eb590e940d174e4c2e680dfa9a4478b"
+    },
+    {
+      "id": "concept-9",
+      "category": "concept",
+      "source": "Project-authored concept rubric",
+      "split": "main",
+      "prompt_sha256": "2cd5ac6007e4f53d69aad98dde5fceb81ffab2d560aa5ceb54062b112e32f862"
+    },
+    {
+      "id": "writing-0",
+      "category": "writing",
+      "source": "Project-authored writing rubric",
+      "split": "main",
+      "prompt_sha256": "2aca490680b404dd37fbb1055764f1e5ab214ae798af4dd90bd0a60ed8953429"
+    },
+    {
+      "id": "writing-1",
+      "category": "writing",
+      "source": "Project-authored writing rubric",
+      "split": "main",
+      "prompt_sha256": "f6f1dc883cad1bccc69c32e24e0aa05e3c6a26d2afea93b6b2204f284cb50591"
+    },
+    {
+      "id": "writing-2",
+      "category": "writing",
+      "source": "Project-authored writing rubric",
+      "split": "main",
+      "prompt_sha256": "78085006cb710de26b0615e34beae86695eb78ac996172d4ca5329957cea9f98"
+    },
+    {
+      "id": "writing-3",
+      "category": "writing",
+      "source": "Project-authored writing rubric",
+      "split": "main",
+      "prompt_sha256": "ee390eeececc1bba3eceacb823bc409e655bc3447cd3c8813be7241771c7aa1e"
+    },
+    {
+      "id": "writing-4",
+      "category": "writing",
+      "source": "Project-authored writing rubric",
+      "split": "main",
+      "prompt_sha256": "a84d0d7489c3ea62823017ad8a137dde8d439fb135f28db8339f9e80fe5cef7e"
+    },
+    {
+      "id": "writing-5",
+      "category": "writing",
+      "source": "Project-authored writing rubric",
+      "split": "main",
+      "prompt_sha256": "e40495303889fe9f38a197798a8626d8254b3343d7b88a2dc430438cdea85db9"
+    },
+    {
+      "id": "writing-6",
+      "category": "writing",
+      "source": "Project-authored writing rubric",
+      "split": "main",
+      "prompt_sha256": "45d989797123c9636061b686b23586343e9734ad277f1fa7ac65ea07bd3a33f4"
+    },
+    {
+      "id": "writing-7",
+      "category": "writing",
+      "source": "Project-authored writing rubric",
+      "split": "main",
+      "prompt_sha256": "b494329f0133ed98907614407f3fd8dce1f0a156342985ea5b6b311c8490b4f2"
+    },
+    {
+      "id": "writing-8",
+      "category": "writing",
+      "source": "Project-authored writing rubric",
+      "split": "main",
+      "prompt_sha256": "251fe6fa92aa34d1519b8ffaf83885218f3f5d1df9b2b50ebf5b414f398c89e8"
+    },
+    {
+      "id": "writing-9",
+      "category": "writing",
+      "source": "Project-authored writing rubric",
+      "split": "main",
+      "prompt_sha256": "7c3c4a83ac42d0452b16a4a6a619aaa42192ecd2d45b660b8df0baf8cedfc3fa"
+    },
+    {
+      "id": "dmath-0-small",
+      "category": "math",
+      "source": "Programmatic multiplication oracle",
+      "split": "diagnostic",
+      "pair": "dmath-0",
+      "condition": "small",
+      "prompt_sha256": "8940795f19f74afe24540bf7c1443c14d85ed578f13eaf257700c8fa0c2d9bfe",
+      "prompt": "Compute 7 * 3. End with The answer is: NUMBER.",
+      "reference": "21"
+    },
+    {
+      "id": "dmath-0-large",
+      "category": "math",
+      "source": "Programmatic multiplication oracle",
+      "split": "diagnostic",
+      "pair": "dmath-0",
+      "condition": "large",
+      "prompt_sha256": "6378d0d99854c4575e0871c97d317c8be1442f71f179bba8e5725457f752263d",
+      "prompt": "Compute 7000 * 3. End with The answer is: NUMBER.",
+      "reference": "21000"
+    },
+    {
+      "id": "dlogic-0-short",
+      "category": "logic",
+      "source": "Programmatic ordering oracle",
+      "split": "diagnostic",
+      "pair": "dlogic-0",
+      "condition": "short",
+      "prompt_sha256": "a0dd2e854e7efb33913539c28d3f7b95bbe9ec79b55ad80c6ec1183598ab7f6a",
+      "prompt": "C comes before A. A comes before B. Return the complete order using comma-separated letters only.",
+      "reference": "C,A,B"
+    },
+    {
+      "id": "dlogic-0-long",
+      "category": "logic",
+      "source": "Programmatic ordering oracle",
+      "split": "diagnostic",
+      "pair": "dlogic-0",
+      "condition": "long",
+      "prompt_sha256": "fc6af821d571b346149851e6ebc34274c6f19e71817c07c37fc3d6f298cc9134",
+      "prompt": "G comes before F. F comes before E. E comes before B. B comes before C. C comes before A. A comes before D. Return the complete order using comma-separated letters only.",
+      "reference": "G,F,E,B,C,A,D"
+    },
+    {
+      "id": "dconcept-0-closed",
+      "category": "concept",
+      "source": "Reference-context intervention",
+      "split": "diagnostic",
+      "pair": "dconcept-0",
+      "condition": "closed",
+      "prompt_sha256": "83feeb88bfbe3655f0831b1a01489008f6b79eb9a8fbee740b8c70af7bbb9901",
+      "prompt": "What is monetary policy?",
+      "reference": "Monetary policy is conducted by a central bank; interest rates affect borrowing and demand; price stability is a common goal.",
+      "keywords": [
+        "central bank",
+        "interest",
+        "inflation"
+      ]
+    },
+    {
+      "id": "dconcept-0-context",
+      "category": "concept",
+      "source": "Reference-context intervention",
+      "split": "diagnostic",
+      "pair": "dconcept-0",
+      "condition": "context",
+      "prompt_sha256": "f026dd62d4cbc01ebdb4e2394c0b8459726039c301e0f865849017b2173f6280",
+      "prompt": "Reference facts: Monetary policy is conducted by a central bank; interest rates affect borrowing and demand; price stability is a common goal.\nWhat is monetary policy?",
+      "reference": "Monetary policy is conducted by a central bank; interest rates affect borrowing and demand; price stability is a common goal.",
+      "keywords": [
+        "central bank",
+        "interest",
+        "inflation"
+      ]
+    },
+    {
+      "id": "dwriting-0-one",
+      "category": "writing",
+      "source": "Verifiable format constraints",
+      "split": "diagnostic",
+      "pair": "dwriting-0",
+      "condition": "one",
+      "prompt_sha256": "975ddbca1c5b02c6c3938c1a0398247c9d925afd26fda2eaa8b9302f7f0c3d4d",
+      "prompt": "Explain recycling in exactly three nonempty lines. Address a household with 1 residents.",
+      "reference": "one"
+    },
+    {
+      "id": "dwriting-0-three",
+      "category": "writing",
+      "source": "Verifiable format constraints",
+      "split": "diagnostic",
+      "pair": "dwriting-0",
+      "condition": "three",
+      "prompt_sha256": "059b34c973b0a81abc8d873bad7525d4bb063f6589bb1b3b8e3c8a9a65b4526b",
+      "prompt": "Explain recycling in exactly three nonempty lines. Start each line with \"- \", and end the last line with \"Reuse matters.\" Address a household with 1 residents.",
+      "reference": "three"
+    },
+    {
+      "id": "dcode-0-short",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "diagnostic",
+      "pair": "dcode-0",
+      "condition": "short",
+      "max_new_tokens": 256,
+      "prompt_sha256": "e45e8738e73cc0e19c626181d4bcd5dc680c5fff0fa22547f9f667d99081ac61"
+    },
+    {
+      "id": "dcode-0-long",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "diagnostic",
+      "pair": "dcode-0",
+      "condition": "long",
+      "max_new_tokens": 512,
+      "prompt_sha256": "e45e8738e73cc0e19c626181d4bcd5dc680c5fff0fa22547f9f667d99081ac61"
+    },
+    {
+      "id": "dmath-1-small",
+      "category": "math",
+      "source": "Programmatic multiplication oracle",
+      "split": "diagnostic",
+      "pair": "dmath-1",
+      "condition": "small",
+      "prompt_sha256": "2c7fdd4f03bed6de754eacf74b4e76a9cf98cc2ed2c6a75678840c1fe81818b7",
+      "prompt": "Compute 8 * 4. End with The answer is: NUMBER.",
+      "reference": "32"
+    },
+    {
+      "id": "dmath-1-large",
+      "category": "math",
+      "source": "Programmatic multiplication oracle",
+      "split": "diagnostic",
+      "pair": "dmath-1",
+      "condition": "large",
+      "prompt_sha256": "7180e7337ff5e3b1c5f7b795db0e0a15629a2f1a1e222fe8726602ba33e3f051",
+      "prompt": "Compute 8000 * 4. End with The answer is: NUMBER.",
+      "reference": "32000"
+    },
+    {
+      "id": "dlogic-1-short",
+      "category": "logic",
+      "source": "Programmatic ordering oracle",
+      "split": "diagnostic",
+      "pair": "dlogic-1",
+      "condition": "short",
+      "prompt_sha256": "b2dfdf7abd13b1a14569eda196871aaaffac39dbe6bac2ba194362f08f6057f2",
+      "prompt": "A comes before B. B comes before C. Return the complete order using comma-separated letters only.",
+      "reference": "A,B,C"
+    },
+    {
+      "id": "dlogic-1-long",
+      "category": "logic",
+      "source": "Programmatic ordering oracle",
+      "split": "diagnostic",
+      "pair": "dlogic-1",
+      "condition": "long",
+      "prompt_sha256": "441824d2a3bf5dede2ea29fc7f3c03203ad9f0e4867ae13d84aa09de4cd83b81",
+      "prompt": "C comes before D. D comes before A. A comes before B. B comes before E. E comes before F. F comes before G. Return the complete order using comma-separated letters only.",
+      "reference": "C,D,A,B,E,F,G"
+    },
+    {
+      "id": "dconcept-1-closed",
+      "category": "concept",
+      "source": "Reference-context intervention",
+      "split": "diagnostic",
+      "pair": "dconcept-1",
+      "condition": "closed",
+      "prompt_sha256": "ac21289d7e22b62715e2107b15bc38328320f3cf12b9a7a8785a3ecd1a9940ad",
+      "prompt": "Explain the difference between inflation and a high price level.",
+      "reference": "Inflation is the rate of increase in the price level over time; a high price level alone does not imply ongoing inflation.",
+      "keywords": [
+        "increase",
+        "price",
+        "time"
+      ]
+    },
+    {
+      "id": "dconcept-1-context",
+      "category": "concept",
+      "source": "Reference-context intervention",
+      "split": "diagnostic",
+      "pair": "dconcept-1",
+      "condition": "context",
+      "prompt_sha256": "f35ef6f56ccd94ec05929ad1544311162af940ce5b3e6038f7134f04c5cef7bc",
+      "prompt": "Reference facts: Inflation is the rate of increase in the price level over time; a high price level alone does not imply ongoing inflation.\nExplain the difference between inflation and a high price level.",
+      "reference": "Inflation is the rate of increase in the price level over time; a high price level alone does not imply ongoing inflation.",
+      "keywords": [
+        "increase",
+        "price",
+        "time"
+      ]
+    },
+    {
+      "id": "dwriting-1-one",
+      "category": "writing",
+      "source": "Verifiable format constraints",
+      "split": "diagnostic",
+      "pair": "dwriting-1",
+      "condition": "one",
+      "prompt_sha256": "b123d678c29b8a62d2c1ddd6427aeef734f6c1e257ce9956f8e811ece29d13d2",
+      "prompt": "Explain recycling in exactly three nonempty lines. Address a household with 2 residents.",
+      "reference": "one"
+    },
+    {
+      "id": "dwriting-1-three",
+      "category": "writing",
+      "source": "Verifiable format constraints",
+      "split": "diagnostic",
+      "pair": "dwriting-1",
+      "condition": "three",
+      "prompt_sha256": "9cf84cd5ff76aa90fd5dd6ded7d43ae4491e80fb0ddfabbf9396e0a84f700902",
+      "prompt": "Explain recycling in exactly three nonempty lines. Start each line with \"- \", and end the last line with \"Reuse matters.\" Address a household with 2 residents.",
+      "reference": "three"
+    },
+    {
+      "id": "dcode-1-short",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "diagnostic",
+      "pair": "dcode-1",
+      "condition": "short",
+      "max_new_tokens": 256,
+      "prompt_sha256": "3fbdec167ffca3622c37a32cd25c9eec14b2be9e36ea8101bc0933a31d67d81c"
+    },
+    {
+      "id": "dcode-1-long",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "diagnostic",
+      "pair": "dcode-1",
+      "condition": "long",
+      "max_new_tokens": 512,
+      "prompt_sha256": "3fbdec167ffca3622c37a32cd25c9eec14b2be9e36ea8101bc0933a31d67d81c"
+    },
+    {
+      "id": "dmath-2-small",
+      "category": "math",
+      "source": "Programmatic multiplication oracle",
+      "split": "diagnostic",
+      "pair": "dmath-2",
+      "condition": "small",
+      "prompt_sha256": "34e8ab4d31b120370465d482d3632f72d574cc880dd1372e7d8838747c5d8860",
+      "prompt": "Compute 9 * 5. End with The answer is: NUMBER.",
+      "reference": "45"
+    },
+    {
+      "id": "dmath-2-large",
+      "category": "math",
+      "source": "Programmatic multiplication oracle",
+      "split": "diagnostic",
+      "pair": "dmath-2",
+      "condition": "large",
+      "prompt_sha256": "25b31dd1e56e22b975890064dbfdc0c580e6f2122aa31b1287eb826be890728f",
+      "prompt": "Compute 9000 * 5. End with The answer is: NUMBER.",
+      "reference": "45000"
+    },
+    {
+      "id": "dlogic-2-short",
+      "category": "logic",
+      "source": "Programmatic ordering oracle",
+      "split": "diagnostic",
+      "pair": "dlogic-2",
+      "condition": "short",
+      "prompt_sha256": "03552a1f9eae61f9e57112ad62a20d11fd0bae8dc44dc4f6c77dcdaded695e3f",
+      "prompt": "B comes before C. C comes before A. Return the complete order using comma-separated letters only.",
+      "reference": "B,C,A"
+    },
+    {
+      "id": "dlogic-2-long",
+      "category": "logic",
+      "source": "Programmatic ordering oracle",
+      "split": "diagnostic",
+      "pair": "dlogic-2",
+      "condition": "long",
+      "prompt_sha256": "022fb11ef0a5406ee21e588478eff2b63bc290d7cc1ec66149d21350b60b4b0b",
+      "prompt": "F comes before B. B comes before G. G comes before A. A comes before D. D comes before C. C comes before E. Return the complete order using comma-separated letters only.",
+      "reference": "F,B,G,A,D,C,E"
+    },
+    {
+      "id": "dconcept-2-closed",
+      "category": "concept",
+      "source": "Reference-context intervention",
+      "split": "diagnostic",
+      "pair": "dconcept-2",
+      "condition": "closed",
+      "prompt_sha256": "aa97ae7a9cf716aa829a76d546bf288c6484007e4b59db77093e16fb01231f43",
+      "prompt": "Explain opportunity cost using a simple example.",
+      "reference": "Opportunity cost is the value of the best alternative forgone when a choice is made.",
+      "keywords": [
+        "alternative",
+        "choice"
+      ]
+    },
+    {
+      "id": "dconcept-2-context",
+      "category": "concept",
+      "source": "Reference-context intervention",
+      "split": "diagnostic",
+      "pair": "dconcept-2",
+      "condition": "context",
+      "prompt_sha256": "70a1d3fc451ec877f06f9670090cff73bee31727d16ffe0b53f80df19d9e1351",
+      "prompt": "Reference facts: Opportunity cost is the value of the best alternative forgone when a choice is made.\nExplain opportunity cost using a simple example.",
+      "reference": "Opportunity cost is the value of the best alternative forgone when a choice is made.",
+      "keywords": [
+        "alternative",
+        "choice"
+      ]
+    },
+    {
+      "id": "dwriting-2-one",
+      "category": "writing",
+      "source": "Verifiable format constraints",
+      "split": "diagnostic",
+      "pair": "dwriting-2",
+      "condition": "one",
+      "prompt_sha256": "d3459ef759cf5b748324deaa12530d3f8bf884ee654c3d113c04f4ea2a11802d",
+      "prompt": "Explain recycling in exactly three nonempty lines. Address a household with 3 residents.",
+      "reference": "one"
+    },
+    {
+      "id": "dwriting-2-three",
+      "category": "writing",
+      "source": "Verifiable format constraints",
+      "split": "diagnostic",
+      "pair": "dwriting-2",
+      "condition": "three",
+      "prompt_sha256": "65a423ebc618f3f4cf8c822388d21fbb77913b1df4610682c13ef2660e984450",
+      "prompt": "Explain recycling in exactly three nonempty lines. Start each line with \"- \", and end the last line with \"Reuse matters.\" Address a household with 3 residents.",
+      "reference": "three"
+    },
+    {
+      "id": "dcode-2-short",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "diagnostic",
+      "pair": "dcode-2",
+      "condition": "short",
+      "max_new_tokens": 256,
+      "prompt_sha256": "80114e66c66c9c8b33965c6eaca94017d9b233118d02706aa12f4f30bcfccd79"
+    },
+    {
+      "id": "dcode-2-long",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "diagnostic",
+      "pair": "dcode-2",
+      "condition": "long",
+      "max_new_tokens": 512,
+      "prompt_sha256": "80114e66c66c9c8b33965c6eaca94017d9b233118d02706aa12f4f30bcfccd79"
+    },
+    {
+      "id": "dmath-3-small",
+      "category": "math",
+      "source": "Programmatic multiplication oracle",
+      "split": "diagnostic",
+      "pair": "dmath-3",
+      "condition": "small",
+      "prompt_sha256": "3aea6f08c765c4d6f41bcc1926abed6e4819f91527b90cf470b30d2b06158ecc",
+      "prompt": "Compute 10 * 6. End with The answer is: NUMBER.",
+      "reference": "60"
+    },
+    {
+      "id": "dmath-3-large",
+      "category": "math",
+      "source": "Programmatic multiplication oracle",
+      "split": "diagnostic",
+      "pair": "dmath-3",
+      "condition": "large",
+      "prompt_sha256": "c618414bad3045f2374caca2c91168368489a422a19dec3cfd41cb0bf22e2564",
+      "prompt": "Compute 10000 * 6. End with The answer is: NUMBER.",
+      "reference": "60000"
+    },
+    {
+      "id": "dlogic-3-short",
+      "category": "logic",
+      "source": "Programmatic ordering oracle",
+      "split": "diagnostic",
+      "pair": "dlogic-3",
+      "condition": "short",
+      "prompt_sha256": "a0dd2e854e7efb33913539c28d3f7b95bbe9ec79b55ad80c6ec1183598ab7f6a",
+      "prompt": "C comes before A. A comes before B. Return the complete order using comma-separated letters only.",
+      "reference": "C,A,B"
+    },
+    {
+      "id": "dlogic-3-long",
+      "category": "logic",
+      "source": "Programmatic ordering oracle",
+      "split": "diagnostic",
+      "pair": "dlogic-3",
+      "condition": "long",
+      "prompt_sha256": "d3e351662382ee292806a9e4f0917bc79377185d2a9f11601950a0e78122f30c",
+      "prompt": "C comes before F. F comes before D. D comes before G. G comes before E. E comes before B. B comes before A. Return the complete order using comma-separated letters only.",
+      "reference": "C,F,D,G,E,B,A"
+    },
+    {
+      "id": "dconcept-3-closed",
+      "category": "concept",
+      "source": "Reference-context intervention",
+      "split": "diagnostic",
+      "pair": "dconcept-3",
+      "condition": "closed",
+      "prompt_sha256": "0dd419dfc3e09616b5f9a04ae041043138fd498725bbd080177f91e76338f30a",
+      "prompt": "Explain what diversification can and cannot do to investment risk.",
+      "reference": "Diversification can reduce asset-specific risk; common market risk remains.",
+      "keywords": [
+        "risk",
+        "market"
+      ]
+    },
+    {
+      "id": "dconcept-3-context",
+      "category": "concept",
+      "source": "Reference-context intervention",
+      "split": "diagnostic",
+      "pair": "dconcept-3",
+      "condition": "context",
+      "prompt_sha256": "d847a45b58afa2b622cb81c309ea2765115121a6094332ecd71389aab138858f",
+      "prompt": "Reference facts: Diversification can reduce asset-specific risk; common market risk remains.\nExplain what diversification can and cannot do to investment risk.",
+      "reference": "Diversification can reduce asset-specific risk; common market risk remains.",
+      "keywords": [
+        "risk",
+        "market"
+      ]
+    },
+    {
+      "id": "dwriting-3-one",
+      "category": "writing",
+      "source": "Verifiable format constraints",
+      "split": "diagnostic",
+      "pair": "dwriting-3",
+      "condition": "one",
+      "prompt_sha256": "09c6a509490c173fc2894cfdf3dfe300d303d0349f5ca44a24c0d6913603077c",
+      "prompt": "Explain recycling in exactly three nonempty lines. Address a household with 4 residents.",
+      "reference": "one"
+    },
+    {
+      "id": "dwriting-3-three",
+      "category": "writing",
+      "source": "Verifiable format constraints",
+      "split": "diagnostic",
+      "pair": "dwriting-3",
+      "condition": "three",
+      "prompt_sha256": "62e5f311f2a6ad5a299ba1f9dcaf20ec4dd869a29467a7bd0ebb89f0ad4085e1",
+      "prompt": "Explain recycling in exactly three nonempty lines. Start each line with \"- \", and end the last line with \"Reuse matters.\" Address a household with 4 residents.",
+      "reference": "three"
+    },
+    {
+      "id": "dcode-3-short",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "diagnostic",
+      "pair": "dcode-3",
+      "condition": "short",
+      "max_new_tokens": 256,
+      "prompt_sha256": "a3dd010ded5232553c46bb585d163fae67ff0ab052ecc5f88bcdaeec6c7e599f"
+    },
+    {
+      "id": "dcode-3-long",
+      "category": "code",
+      "source": "HumanEval subset",
+      "split": "diagnostic",
+      "pair": "dcode-3",
+      "condition": "long",
+      "max_new_tokens": 512,
+      "prompt_sha256": "a3dd010ded5232553c46bb585d163fae67ff0ab052ecc5f88bcdaeec6c7e599f"
+    }
+  ],
+  "note": "Original third-party prompts, test code, training samples and model-labeled open answers are omitted. GSM IDs use zero-based official test line indices. HumanEval hyphens map to official slash IDs."
+}

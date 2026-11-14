@@ -1,0 +1,2015 @@
+{
+  "summary": [
+    {
+      "stage": "base",
+      "category": "math",
+      "expected": 30,
+      "received": 30,
+      "scored": 30,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.11351339317396876
+      ],
+      "statuses": {
+        "incorrect": 5,
+        "invalid_answer": 25
+      },
+      "format_relaxed_correct": 0,
+      "format_relaxed_accuracy": 0.0,
+      "format_relaxed_interval": [
+        0.0,
+        0.11351339317396876
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "logic",
+      "expected": 25,
+      "received": 25,
+      "scored": 25,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.13319225093904846
+      ],
+      "statuses": {
+        "incorrect_or_format": 25
+      }
+    },
+    {
+      "stage": "base",
+      "category": "code",
+      "expected": 25,
+      "received": 25,
+      "scored": 25,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.13319225093904846
+      ],
+      "statuses": {
+        "test_failure": 8,
+        "syntax_error": 17
+      }
+    },
+    {
+      "stage": "base",
+      "category": "concept",
+      "expected": 10,
+      "received": 10,
+      "scored": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "statuses": {
+        "pending_human": 10
+      }
+    },
+    {
+      "stage": "base",
+      "category": "writing",
+      "expected": 10,
+      "received": 10,
+      "scored": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "statuses": {
+        "pending_human": 10
+      }
+    },
+    {
+      "stage": "sft",
+      "category": "math",
+      "expected": 30,
+      "received": 30,
+      "scored": 30,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.11351339317396876
+      ],
+      "statuses": {
+        "invalid_answer": 27,
+        "incorrect": 3
+      },
+      "format_relaxed_correct": 5,
+      "format_relaxed_accuracy": 0.16666666666666666,
+      "format_relaxed_interval": [
+        0.0733654237184855,
+        0.3356435050641603
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "logic",
+      "expected": 25,
+      "received": 25,
+      "scored": 25,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.13319225093904846
+      ],
+      "statuses": {
+        "incorrect_or_format": 25
+      }
+    },
+    {
+      "stage": "sft",
+      "category": "code",
+      "expected": 25,
+      "received": 25,
+      "scored": 25,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.13319225093904846
+      ],
+      "statuses": {
+        "test_failure": 13,
+        "syntax_error": 12
+      }
+    },
+    {
+      "stage": "sft",
+      "category": "concept",
+      "expected": 10,
+      "received": 10,
+      "scored": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "statuses": {
+        "pending_human": 10
+      }
+    },
+    {
+      "stage": "sft",
+      "category": "writing",
+      "expected": 10,
+      "received": 10,
+      "scored": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "statuses": {
+        "pending_human": 10
+      }
+    },
+    {
+      "stage": "dpo",
+      "category": "math",
+      "expected": 30,
+      "received": 30,
+      "scored": 30,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.11351339317396876
+      ],
+      "statuses": {
+        "invalid_answer": 29,
+        "incorrect": 1
+      },
+      "format_relaxed_correct": 6,
+      "format_relaxed_accuracy": 0.2,
+      "format_relaxed_interval": [
+        0.0950510717728987,
+        0.3730569641314825
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "logic",
+      "expected": 25,
+      "received": 25,
+      "scored": 25,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.13319225093904846
+      ],
+      "statuses": {
+        "incorrect_or_format": 25
+      }
+    },
+    {
+      "stage": "dpo",
+      "category": "code",
+      "expected": 25,
+      "received": 25,
+      "scored": 25,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.13319225093904846
+      ],
+      "statuses": {
+        "syntax_error": 23,
+        "test_failure": 2
+      }
+    },
+    {
+      "stage": "dpo",
+      "category": "concept",
+      "expected": 10,
+      "received": 10,
+      "scored": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "statuses": {
+        "pending_human": 10
+      }
+    },
+    {
+      "stage": "dpo",
+      "category": "writing",
+      "expected": 10,
+      "received": 10,
+      "scored": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "statuses": {
+        "pending_human": 10
+      }
+    }
+  ],
+  "boundaries": [
+    {
+      "stage": "base",
+      "category": "math",
+      "pair": "dmath-0",
+      "conditions": [
+        {
+          "condition": "small",
+          "task_id": "dmath-0-small",
+          "stage": "base",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": false,
+          "format_relaxed_extracted": null,
+          "truncated": true
+        },
+        {
+          "condition": "large",
+          "task_id": "dmath-0-large",
+          "stage": "base",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": false,
+          "format_relaxed_extracted": null,
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "math",
+      "pair": "dmath-1",
+      "conditions": [
+        {
+          "condition": "small",
+          "task_id": "dmath-1-small",
+          "stage": "base",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": false,
+          "format_relaxed_extracted": null,
+          "truncated": true
+        },
+        {
+          "condition": "large",
+          "task_id": "dmath-1-large",
+          "stage": "base",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": false,
+          "format_relaxed_extracted": null,
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "math",
+      "pair": "dmath-2",
+      "conditions": [
+        {
+          "condition": "small",
+          "task_id": "dmath-2-small",
+          "stage": "base",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": false,
+          "format_relaxed_extracted": null,
+          "truncated": true
+        },
+        {
+          "condition": "large",
+          "task_id": "dmath-2-large",
+          "stage": "base",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": false,
+          "format_relaxed_extracted": null,
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "math",
+      "pair": "dmath-3",
+      "conditions": [
+        {
+          "condition": "small",
+          "task_id": "dmath-3-small",
+          "stage": "base",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": false,
+          "format_relaxed_extracted": null,
+          "truncated": true
+        },
+        {
+          "condition": "large",
+          "task_id": "dmath-3-large",
+          "stage": "base",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": false,
+          "format_relaxed_extracted": null,
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "logic",
+      "pair": "dlogic-0",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dlogic-0-short",
+          "stage": "base",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format",
+          "truncated": true
+        },
+        {
+          "condition": "long",
+          "task_id": "dlogic-0-long",
+          "stage": "base",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "logic",
+      "pair": "dlogic-1",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dlogic-1-short",
+          "stage": "base",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format",
+          "truncated": true
+        },
+        {
+          "condition": "long",
+          "task_id": "dlogic-1-long",
+          "stage": "base",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "logic",
+      "pair": "dlogic-2",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dlogic-2-short",
+          "stage": "base",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format",
+          "truncated": true
+        },
+        {
+          "condition": "long",
+          "task_id": "dlogic-2-long",
+          "stage": "base",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "logic",
+      "pair": "dlogic-3",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dlogic-3-short",
+          "stage": "base",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format",
+          "truncated": true
+        },
+        {
+          "condition": "long",
+          "task_id": "dlogic-3-long",
+          "stage": "base",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "code",
+      "pair": "dcode-0",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dcode-0-short",
+          "stage": "base",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "test_failure",
+          "correct": false,
+          "returncode": 1,
+          "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 22, in <module>\nNameError: name 'aits' is not defined. Did you mean: 'aiter'?\n",
+          "truncated": true
+        },
+        {
+          "condition": "long",
+          "task_id": "dcode-0-long",
+          "stage": "base",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "test_failure",
+          "correct": false,
+          "returncode": 1,
+          "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 22, in <module>\nNameError: name 'aits' is not defined. Did you mean: 'aiter'?\n",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "code",
+      "pair": "dcode-1",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dcode-1-short",
+          "stage": "base",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "unmatched '}' (<unknown>, line 14)",
+          "truncated": true
+        },
+        {
+          "condition": "long",
+          "task_id": "dcode-1-long",
+          "stage": "base",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "unmatched '}' (<unknown>, line 14)",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "code",
+      "pair": "dcode-2",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dcode-2-short",
+          "stage": "base",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "unmatched '}' (<unknown>, line 18)",
+          "truncated": true
+        },
+        {
+          "condition": "long",
+          "task_id": "dcode-2-long",
+          "stage": "base",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "unmatched '}' (<unknown>, line 18)",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "code",
+      "pair": "dcode-3",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dcode-3-short",
+          "stage": "base",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "invalid syntax (<unknown>, line 1)",
+          "truncated": true
+        },
+        {
+          "condition": "long",
+          "task_id": "dcode-3-long",
+          "stage": "base",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "invalid syntax (<unknown>, line 1)",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "concept",
+      "pair": "dconcept-0",
+      "conditions": [
+        {
+          "condition": "closed",
+          "task_id": "dconcept-0-closed",
+          "stage": "base",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 0.3333333333333333,
+          "truncated": true
+        },
+        {
+          "condition": "context",
+          "task_id": "dconcept-0-context",
+          "stage": "base",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 0.6666666666666666,
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "concept",
+      "pair": "dconcept-1",
+      "conditions": [
+        {
+          "condition": "closed",
+          "task_id": "dconcept-1-closed",
+          "stage": "base",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 0.3333333333333333,
+          "truncated": true
+        },
+        {
+          "condition": "context",
+          "task_id": "dconcept-1-context",
+          "stage": "base",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0,
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "concept",
+      "pair": "dconcept-2",
+      "conditions": [
+        {
+          "condition": "closed",
+          "task_id": "dconcept-2-closed",
+          "stage": "base",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0
+        },
+        {
+          "condition": "context",
+          "task_id": "dconcept-2-context",
+          "stage": "base",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0,
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "concept",
+      "pair": "dconcept-3",
+      "conditions": [
+        {
+          "condition": "closed",
+          "task_id": "dconcept-3-closed",
+          "stage": "base",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0,
+          "truncated": true
+        },
+        {
+          "condition": "context",
+          "task_id": "dconcept-3-context",
+          "stage": "base",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0,
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "writing",
+      "pair": "dwriting-0",
+      "conditions": [
+        {
+          "condition": "one",
+          "task_id": "dwriting-0-one",
+          "stage": "base",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure",
+          "truncated": true
+        },
+        {
+          "condition": "three",
+          "task_id": "dwriting-0-three",
+          "stage": "base",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "writing",
+      "pair": "dwriting-1",
+      "conditions": [
+        {
+          "condition": "one",
+          "task_id": "dwriting-1-one",
+          "stage": "base",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure",
+          "truncated": true
+        },
+        {
+          "condition": "three",
+          "task_id": "dwriting-1-three",
+          "stage": "base",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "writing",
+      "pair": "dwriting-2",
+      "conditions": [
+        {
+          "condition": "one",
+          "task_id": "dwriting-2-one",
+          "stage": "base",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure",
+          "truncated": true
+        },
+        {
+          "condition": "three",
+          "task_id": "dwriting-2-three",
+          "stage": "base",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "base",
+      "category": "writing",
+      "pair": "dwriting-3",
+      "conditions": [
+        {
+          "condition": "one",
+          "task_id": "dwriting-3-one",
+          "stage": "base",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure",
+          "truncated": true
+        },
+        {
+          "condition": "three",
+          "task_id": "dwriting-3-three",
+          "stage": "base",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "math",
+      "pair": "dmath-0",
+      "conditions": [
+        {
+          "condition": "small",
+          "task_id": "dmath-0-small",
+          "stage": "sft",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "21"
+        },
+        {
+          "condition": "large",
+          "task_id": "dmath-0-large",
+          "stage": "sft",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "21000"
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "math",
+      "pair": "dmath-1",
+      "conditions": [
+        {
+          "condition": "small",
+          "task_id": "dmath-1-small",
+          "stage": "sft",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "32"
+        },
+        {
+          "condition": "large",
+          "task_id": "dmath-1-large",
+          "stage": "sft",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "32000"
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "math",
+      "pair": "dmath-2",
+      "conditions": [
+        {
+          "condition": "small",
+          "task_id": "dmath-2-small",
+          "stage": "sft",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": true,
+          "status": "correct",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "45"
+        },
+        {
+          "condition": "large",
+          "task_id": "dmath-2-large",
+          "stage": "sft",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "45000"
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "math",
+      "pair": "dmath-3",
+      "conditions": [
+        {
+          "condition": "small",
+          "task_id": "dmath-3-small",
+          "stage": "sft",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "60"
+        },
+        {
+          "condition": "large",
+          "task_id": "dmath-3-large",
+          "stage": "sft",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "60000"
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "logic",
+      "pair": "dlogic-0",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dlogic-0-short",
+          "stage": "sft",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format",
+          "truncated": true
+        },
+        {
+          "condition": "long",
+          "task_id": "dlogic-0-long",
+          "stage": "sft",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format"
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "logic",
+      "pair": "dlogic-1",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dlogic-1-short",
+          "stage": "sft",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format"
+        },
+        {
+          "condition": "long",
+          "task_id": "dlogic-1-long",
+          "stage": "sft",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format"
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "logic",
+      "pair": "dlogic-2",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dlogic-2-short",
+          "stage": "sft",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format"
+        },
+        {
+          "condition": "long",
+          "task_id": "dlogic-2-long",
+          "stage": "sft",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format"
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "logic",
+      "pair": "dlogic-3",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dlogic-3-short",
+          "stage": "sft",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format",
+          "truncated": true
+        },
+        {
+          "condition": "long",
+          "task_id": "dlogic-3-long",
+          "stage": "sft",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format"
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "code",
+      "pair": "dcode-0",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dcode-0-short",
+          "stage": "sft",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "test_failure",
+          "correct": false,
+          "returncode": 1,
+          "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 17, in <module>\nNameError: name 'PostalCodes' is not defined\n"
+        },
+        {
+          "condition": "long",
+          "task_id": "dcode-0-long",
+          "stage": "sft",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "test_failure",
+          "correct": false,
+          "returncode": 1,
+          "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 17, in <module>\nNameError: name 'PostalCodes' is not defined\n"
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "code",
+      "pair": "dcode-1",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dcode-1-short",
+          "stage": "sft",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "unmatched '}' (<unknown>, line 10)"
+        },
+        {
+          "condition": "long",
+          "task_id": "dcode-1-long",
+          "stage": "sft",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "unmatched '}' (<unknown>, line 10)"
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "code",
+      "pair": "dcode-2",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dcode-2-short",
+          "stage": "sft",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "test_failure",
+          "correct": false,
+          "returncode": 1,
+          "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 34, in <module>\n  File \"<stdin>\", line 22, in check\nAssertionError\n"
+        },
+        {
+          "condition": "long",
+          "task_id": "dcode-2-long",
+          "stage": "sft",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "test_failure",
+          "correct": false,
+          "returncode": 1,
+          "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 34, in <module>\n  File \"<stdin>\", line 22, in check\nAssertionError\n"
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "code",
+      "pair": "dcode-3",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dcode-3-short",
+          "stage": "sft",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "test_failure",
+          "correct": false,
+          "returncode": 1,
+          "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 24, in <module>\n  File \"<stdin>\", line 17, in check\nAssertionError\n"
+        },
+        {
+          "condition": "long",
+          "task_id": "dcode-3-long",
+          "stage": "sft",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "test_failure",
+          "correct": false,
+          "returncode": 1,
+          "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 24, in <module>\n  File \"<stdin>\", line 17, in check\nAssertionError\n"
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "concept",
+      "pair": "dconcept-0",
+      "conditions": [
+        {
+          "condition": "closed",
+          "task_id": "dconcept-0-closed",
+          "stage": "sft",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 0.6666666666666666
+        },
+        {
+          "condition": "context",
+          "task_id": "dconcept-0-context",
+          "stage": "sft",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "concept",
+      "pair": "dconcept-1",
+      "conditions": [
+        {
+          "condition": "closed",
+          "task_id": "dconcept-1-closed",
+          "stage": "sft",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0,
+          "truncated": true
+        },
+        {
+          "condition": "context",
+          "task_id": "dconcept-1-context",
+          "stage": "sft",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "concept",
+      "pair": "dconcept-2",
+      "conditions": [
+        {
+          "condition": "closed",
+          "task_id": "dconcept-2-closed",
+          "stage": "sft",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 0.5
+        },
+        {
+          "condition": "context",
+          "task_id": "dconcept-2-context",
+          "stage": "sft",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "concept",
+      "pair": "dconcept-3",
+      "conditions": [
+        {
+          "condition": "closed",
+          "task_id": "dconcept-3-closed",
+          "stage": "sft",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 0.5
+        },
+        {
+          "condition": "context",
+          "task_id": "dconcept-3-context",
+          "stage": "sft",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "writing",
+      "pair": "dwriting-0",
+      "conditions": [
+        {
+          "condition": "one",
+          "task_id": "dwriting-0-one",
+          "stage": "sft",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure",
+          "truncated": true
+        },
+        {
+          "condition": "three",
+          "task_id": "dwriting-0-three",
+          "stage": "sft",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure"
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "writing",
+      "pair": "dwriting-1",
+      "conditions": [
+        {
+          "condition": "one",
+          "task_id": "dwriting-1-one",
+          "stage": "sft",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure"
+        },
+        {
+          "condition": "three",
+          "task_id": "dwriting-1-three",
+          "stage": "sft",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure"
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "writing",
+      "pair": "dwriting-2",
+      "conditions": [
+        {
+          "condition": "one",
+          "task_id": "dwriting-2-one",
+          "stage": "sft",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": true,
+          "status": "correct",
+          "truncated": true
+        },
+        {
+          "condition": "three",
+          "task_id": "dwriting-2-three",
+          "stage": "sft",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "sft",
+      "category": "writing",
+      "pair": "dwriting-3",
+      "conditions": [
+        {
+          "condition": "one",
+          "task_id": "dwriting-3-one",
+          "stage": "sft",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure",
+          "truncated": true
+        },
+        {
+          "condition": "three",
+          "task_id": "dwriting-3-three",
+          "stage": "sft",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure"
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "math",
+      "pair": "dmath-0",
+      "conditions": [
+        {
+          "condition": "small",
+          "task_id": "dmath-0-small",
+          "stage": "dpo",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "21"
+        },
+        {
+          "condition": "large",
+          "task_id": "dmath-0-large",
+          "stage": "dpo",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "21000"
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "math",
+      "pair": "dmath-1",
+      "conditions": [
+        {
+          "condition": "small",
+          "task_id": "dmath-1-small",
+          "stage": "dpo",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "32"
+        },
+        {
+          "condition": "large",
+          "task_id": "dmath-1-large",
+          "stage": "dpo",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": false,
+          "format_relaxed_extracted": null,
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "math",
+      "pair": "dmath-2",
+      "conditions": [
+        {
+          "condition": "small",
+          "task_id": "dmath-2-small",
+          "stage": "dpo",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "45"
+        },
+        {
+          "condition": "large",
+          "task_id": "dmath-2-large",
+          "stage": "dpo",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "45000"
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "math",
+      "pair": "dmath-3",
+      "conditions": [
+        {
+          "condition": "small",
+          "task_id": "dmath-3-small",
+          "stage": "dpo",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "60"
+        },
+        {
+          "condition": "large",
+          "task_id": "dmath-3-large",
+          "stage": "dpo",
+          "category": "math",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "invalid_answer",
+          "format_relaxed_correct": true,
+          "format_relaxed_extracted": "60000",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "logic",
+      "pair": "dlogic-0",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dlogic-0-short",
+          "stage": "dpo",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format"
+        },
+        {
+          "condition": "long",
+          "task_id": "dlogic-0-long",
+          "stage": "dpo",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format"
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "logic",
+      "pair": "dlogic-1",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dlogic-1-short",
+          "stage": "dpo",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format"
+        },
+        {
+          "condition": "long",
+          "task_id": "dlogic-1-long",
+          "stage": "dpo",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format"
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "logic",
+      "pair": "dlogic-2",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dlogic-2-short",
+          "stage": "dpo",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format",
+          "truncated": true
+        },
+        {
+          "condition": "long",
+          "task_id": "dlogic-2-long",
+          "stage": "dpo",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format"
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "logic",
+      "pair": "dlogic-3",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dlogic-3-short",
+          "stage": "dpo",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format"
+        },
+        {
+          "condition": "long",
+          "task_id": "dlogic-3-long",
+          "stage": "dpo",
+          "category": "logic",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "incorrect_or_format",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "code",
+      "pair": "dcode-0",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dcode-0-short",
+          "stage": "dpo",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "unterminated triple-quoted string literal (detected at line 20) (<unknown>, line 18)",
+          "truncated": true
+        },
+        {
+          "condition": "long",
+          "task_id": "dcode-0-long",
+          "stage": "dpo",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "unmatched '}' (<unknown>, line 33)"
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "code",
+      "pair": "dcode-1",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dcode-1-short",
+          "stage": "dpo",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "unindent does not match any outer indentation level (<unknown>, line 10)"
+        },
+        {
+          "condition": "long",
+          "task_id": "dcode-1-long",
+          "stage": "dpo",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "unindent does not match any outer indentation level (<unknown>, line 10)"
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "code",
+      "pair": "dcode-2",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dcode-2-short",
+          "stage": "dpo",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "unmatched '}' (<unknown>, line 16)",
+          "truncated": true
+        },
+        {
+          "condition": "long",
+          "task_id": "dcode-2-long",
+          "stage": "dpo",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "unmatched '}' (<unknown>, line 16)",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "code",
+      "pair": "dcode-3",
+      "conditions": [
+        {
+          "condition": "short",
+          "task_id": "dcode-3-short",
+          "stage": "dpo",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "unterminated triple-quoted string literal (detected at line 12) (<unknown>, line 2)"
+        },
+        {
+          "condition": "long",
+          "task_id": "dcode-3-long",
+          "stage": "dpo",
+          "category": "code",
+          "split": "diagnostic",
+          "status": "syntax_error",
+          "correct": false,
+          "detail": "unterminated triple-quoted string literal (detected at line 12) (<unknown>, line 2)"
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "concept",
+      "pair": "dconcept-0",
+      "conditions": [
+        {
+          "condition": "closed",
+          "task_id": "dconcept-0-closed",
+          "stage": "dpo",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0
+        },
+        {
+          "condition": "context",
+          "task_id": "dconcept-0-context",
+          "stage": "dpo",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "concept",
+      "pair": "dconcept-1",
+      "conditions": [
+        {
+          "condition": "closed",
+          "task_id": "dconcept-1-closed",
+          "stage": "dpo",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0
+        },
+        {
+          "condition": "context",
+          "task_id": "dconcept-1-context",
+          "stage": "dpo",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "concept",
+      "pair": "dconcept-2",
+      "conditions": [
+        {
+          "condition": "closed",
+          "task_id": "dconcept-2-closed",
+          "stage": "dpo",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0
+        },
+        {
+          "condition": "context",
+          "task_id": "dconcept-2-context",
+          "stage": "dpo",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "concept",
+      "pair": "dconcept-3",
+      "conditions": [
+        {
+          "condition": "closed",
+          "task_id": "dconcept-3-closed",
+          "stage": "dpo",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 0.5
+        },
+        {
+          "condition": "context",
+          "task_id": "dconcept-3-context",
+          "stage": "dpo",
+          "category": "concept",
+          "split": "diagnostic",
+          "correct": null,
+          "status": "lexical_probe",
+          "keyword_coverage": 1.0
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "writing",
+      "pair": "dwriting-0",
+      "conditions": [
+        {
+          "condition": "one",
+          "task_id": "dwriting-0-one",
+          "stage": "dpo",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure"
+        },
+        {
+          "condition": "three",
+          "task_id": "dwriting-0-three",
+          "stage": "dpo",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "writing",
+      "pair": "dwriting-1",
+      "conditions": [
+        {
+          "condition": "one",
+          "task_id": "dwriting-1-one",
+          "stage": "dpo",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure"
+        },
+        {
+          "condition": "three",
+          "task_id": "dwriting-1-three",
+          "stage": "dpo",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure",
+          "truncated": true
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "writing",
+      "pair": "dwriting-2",
+      "conditions": [
+        {
+          "condition": "one",
+          "task_id": "dwriting-2-one",
+          "stage": "dpo",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure"
+        },
+        {
+          "condition": "three",
+          "task_id": "dwriting-2-three",
+          "stage": "dpo",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure"
+        }
+      ]
+    },
+    {
+      "stage": "dpo",
+      "category": "writing",
+      "pair": "dwriting-3",
+      "conditions": [
+        {
+          "condition": "one",
+          "task_id": "dwriting-3-one",
+          "stage": "dpo",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure"
+        },
+        {
+          "condition": "three",
+          "task_id": "dwriting-3-three",
+          "stage": "dpo",
+          "category": "writing",
+          "split": "diagnostic",
+          "correct": false,
+          "status": "constraint_failure"
+        }
+      ]
+    }
+  ],
+  "stage_changes": [
+    {
+      "first": "base",
+      "last": "sft",
+      "category": "math",
+      "counts": {
+        "unchanged": 30
+      }
+    },
+    {
+      "first": "base",
+      "last": "sft",
+      "category": "logic",
+      "counts": {
+        "unchanged": 25
+      }
+    },
+    {
+      "first": "base",
+      "last": "sft",
+      "category": "code",
+      "counts": {
+        "unchanged": 25
+      }
+    },
+    {
+      "first": "sft",
+      "last": "dpo",
+      "category": "math",
+      "counts": {
+        "unchanged": 30
+      }
+    },
+    {
+      "first": "sft",
+      "last": "dpo",
+      "category": "logic",
+      "counts": {
+        "unchanged": 25
+      }
+    },
+    {
+      "first": "sft",
+      "last": "dpo",
+      "category": "code",
+      "counts": {
+        "unchanged": 25
+      }
+    }
+  ],
+  "human_summary": [
+    {
+      "stage": "base",
+      "category": "concept",
+      "n": 0,
+      "means": null
+    },
+    {
+      "stage": "base",
+      "category": "writing",
+      "n": 0,
+      "means": null
+    },
+    {
+      "stage": "sft",
+      "category": "concept",
+      "n": 0,
+      "means": null
+    },
+    {
+      "stage": "sft",
+      "category": "writing",
+      "n": 0,
+      "means": null
+    },
+    {
+      "stage": "dpo",
+      "category": "concept",
+      "n": 0,
+      "means": null
+    },
+    {
+      "stage": "dpo",
+      "category": "writing",
+      "n": 0,
+      "means": null
+    }
+  ],
+  "logic_constant_answer_baseline": {
+    "answer": "yes",
+    "accuracy": 0.4
+  },
+  "human_repeat_mean_difference": null,
+  "human_status": "pending",
+  "human_records": null,
+  "limitations": [
+    "English quick diagnostic, not a comprehensive benchmark",
+    "Generated logic templates are simple and their answer distribution is imbalanced; inspect the constant-answer baseline",
+    "Single training run; stage differences do not establish general causality",
+    "Base uses the same instruction protocol as SFT/DPO; a gap may reflect instruction alignment as well as task skill",
+    "Lexical overlap screening does not establish semantic independence or absence of pretraining contamination",
+    "Keyword coverage is a lexical probe, not factual accuracy",
+    "Missing/unsafe code execution is not counted as model failure"
+  ]
+}

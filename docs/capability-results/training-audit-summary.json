@@ -1,0 +1,16 @@
+{
+  "train_sft.json": {
+    "n": 1000,
+    "duplicate_prompts": 1,
+    "meta_instruction_candidates": 0,
+    "replacement_character_rows": 0,
+    "identical_preference_pairs": null
+  },
+  "train_dpo.json": {
+    "n": 1000,
+    "duplicate_prompts": 0,
+    "meta_instruction_candidates": 193,
+    "replacement_character_rows": 0,
+    "identical_preference_pairs": 0
+  }
+}

@@ -4,23 +4,40 @@ import json
 import importlib.util
 from pathlib import Path
 import tempfile
+import sys
 import unittest
 from unittest.mock import patch
 from types import SimpleNamespace
 
 from nlp_course.capability_data import prepare
 from nlp_course.capability import (score_task, wilson, blind_review, import_review,
-                                  analyze, save, read, score, docker_score, render_report)
+                                  analyze, save, read, score, docker_score, render_report, _bounded_number, _run_limited)
 
 
 class CapabilityTests(unittest.TestCase):
+    def test_logic_answer_case_is_not_a_reasoning_failure(self):
+        row=dict(response='Yes.',stage='sft',finish_reason='eos')
+        task=dict(category='logic',reference='yes',id='a',split='main')
+        self.assertTrue(score_task(task,row)['correct'])
+        row['response']='Yes, because the premise implies it.'
+        self.assertFalse(score_task(task,row)['correct'])
+
     def test_code_exit_success_without_completed_tests_is_not_a_pass(self):
         task=dict(id='x',entry_point='f',tests='def check(f): assert f()==1')
         with patch('nlp_course.capability.uuid.uuid4',return_value=SimpleNamespace(hex='nonce')):
-            with patch('nlp_course.capability.subprocess.run',return_value=SimpleNamespace(returncode=0,stdout='')):
+            with patch('nlp_course.capability._run_limited',return_value=SimpleNamespace(returncode=0,stdout='',stderr='',timed_out=False,output_limit=False)):
                 self.assertFalse(docker_score(task,'def f(): return 1')['correct'])
-            with patch('nlp_course.capability.subprocess.run',return_value=SimpleNamespace(returncode=0,stdout='TESTS_COMPLETED_nonce\n')):
+            with patch('nlp_course.capability._run_limited',return_value=SimpleNamespace(returncode=0,stdout='TESTS_COMPLETED_nonce\n',stderr='',timed_out=False,output_limit=False)):
                 self.assertTrue(docker_score(task,'def f(): return 1')['correct'])
+
+    def test_subprocess_output_deadline_and_unicode_bounds(self):
+        result=_run_limited([sys.executable,'-c','import sys; sys.stdout.buffer.write("✓".encode())'],'')
+        self.assertEqual(result.stdout,'✓')
+        result=_run_limited([sys.executable,'-c','import sys; sys.stdout.buffer.write(b"x"*200000)'],'',max_output=10000)
+        self.assertTrue(result.output_limit)
+        self.assertLessEqual(len(result.stdout),65536)
+        result=_run_limited([sys.executable,'-c','import time; time.sleep(3)'],'x'*100000,timeout=.1)
+        self.assertTrue(result.timed_out)
 
     def test_numeric_and_format_failures_are_separate(self):
         task=dict(category='math',reference='2',id='a',split='main')
@@ -45,6 +62,12 @@ class CapabilityTests(unittest.TestCase):
         self.assertTrue(result['format_relaxed_correct'])
         row['response']='I saw 1880 things.'
         self.assertFalse(score_task(task,row)['format_relaxed_correct'])
+        task['reference']='2'
+        for response,expected in [(r'\boxed{2}',True),(r'The answer is 2. Then \boxed{3}',False),(r'\boxed{2 + \boxed{3}}',False),('The answer is 2e3.',False)]:
+            row['response']=response
+            self.assertEqual(score_task(task,row)['format_relaxed_correct'],expected)
+        with patch('nlp_course.evaluation.parse_number',side_effect=AssertionError('Must reject before numeric allocation')):
+            self.assertIsNone(_bounded_number('1e999999999'))
 
     def test_probability_intervals_at_boundaries(self):
         self.assertIsNone(wilson(0,0))
@@ -103,6 +126,9 @@ class CapabilityTests(unittest.TestCase):
             self.assertEqual(report['human_status'],'scored')
             self.assertEqual(report['human_repeat_mean_difference'],0)
             self.assertTrue(all(r['n']==10 for r in report['human_summary']))
+            if importlib.util.find_spec('matplotlib'):
+                render_report(run)
+                self.assertTrue((run/'human-ratings.svg').is_file())
 
     def test_missing_predictions_remain_missing(self):
         with tempfile.TemporaryDirectory() as directory:

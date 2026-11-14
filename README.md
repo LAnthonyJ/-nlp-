@@ -21,7 +21,7 @@ Measured single-seed CPU demonstrations: learning, merge consistency, candidate 
 | Decoding | [Greedy, Top-K, Top-P and relative Min-P](src/nlp_course/decoding.py) | Candidate probabilities, temperature, repetition penalty, EOS stopping |
 | Evaluation | [Offline JSONL scoring and batched backend interface](src/nlp_course/evaluation.py) | Exact numeric comparisons, invalid-answer records, complete batch coverage |
 
-Start with [`examples/cpu_demo.py`](examples/cpu_demo.py) for an end-to-end demonstration, then explore the [62 regression tests](tests/) for the invariants behind each component.
+Start with [`examples/cpu_demo.py`](examples/cpu_demo.py) for an end-to-end demonstration, then explore the [64 regression tests](tests/) for the invariants behind each component.
 
 ## Quick start
 
@@ -116,7 +116,11 @@ Counts only the four-example fixture: 2 correct, 1 incorrect, 1 invalid. The CPU
 
 ## Real-checkpoint capability diagnosis
 
-The [evaluation and blind-review workflow](docs/capability-evaluation.md) compares Base, SFT and DPO across math, logic, code, concepts and writing, plus 20 controlled probe pairs. Raw results live in a separate run directory. Open-task quality scores require blind human ratings; missing evidence is not filled with estimated scores.
+Completed **420 real-checkpoint responses** across Base, SFT and DPO: 100 main tasks plus 20 controlled probe pairs per stage. Read the [measured results and capability boundaries](docs/capability-results/README.md), [auditable statistics](docs/capability-results/analysis.json) and [evaluation workflow](docs/capability-evaluation.md).
+
+![Real-checkpoint task diagnostic with explicit sample sizes](docs/capability-results/capabilities.png)
+
+Strict protocol success was zero on the selected math/logic/code tasks. Secondary, post-hoc math matching found 5/30 SFT and 6/30 DPO answers numerically correct. This one-item difference does not establish an overall DPO advantage. Concept/writing quality remains pending anonymous human ratings. See the report for format failures, code failures, the imbalanced logic baseline and controlled-probe limitations. These checkpoint results are separate from the synthetic CPU demonstrations above.
 
 ## Verified results
 
@@ -130,7 +134,7 @@ The [CI workflow](.github/workflows/tests.yml) builds and installs the package, 
 
 | Check | Recorded result |
 | --- | --- |
-| Regression suite | 62 tests passed locally with visualization dependencies installed; see validation record |
+| Regression suite | 64 tests passed locally with visualization dependencies installed; see validation record |
 | Transformer output | `[2, 5, 16]`, with finite gradients |
 | Synthetic LoRA optimization | MSE `0.045949` → `0.000006364` after 80 steps, seed 42 |
 | LoRA merge consistency | Maximum absolute output difference ≈ `1.79e-7` |

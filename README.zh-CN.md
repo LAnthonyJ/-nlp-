@@ -21,7 +21,7 @@
 | 解码 | [Greedy、Top-K、Top-P、相对 Min-P](src/nlp_course/decoding.py) | 候选词概率、温度、重复惩罚、EOS 停止 |
 | 评测 | [离线 JSONL 评分与批量生成接口](src/nlp_course/evaluation.py) | 精确数值比较、无效答案统计、批次完整性 |
 
-建议从 [`examples/cpu_demo.py`](examples/cpu_demo.py) 开始，再结合 [62 项回归测试](tests/) 理解各组件的正确性条件。
+建议从 [`examples/cpu_demo.py`](examples/cpu_demo.py) 开始，再结合 [64 项回归测试](tests/) 理解各组件的正确性条件。
 
 ## 快速开始
 
@@ -116,7 +116,11 @@ python -m nlp_course.evaluation examples/toy_predictions.jsonl --output outputs/
 
 ## 真实模型能力诊断
 
-[评测流程与匿名评分说明](docs/capability-evaluation.md)提供 Base、SFT、DPO 三阶段对照，覆盖数学、逻辑、代码、概念和写作，以及 20 组受控题对。模型输出保存在独立评测目录，开放题分数须经匿名人工评分后导入。缺失评分不填充为模型成绩。
+已完成 Base、SFT、DPO 共 **420 条真实权重回答**：每阶段 100 道主题题目，加 20 组受控题对。查看[实测结果与能力边界](docs/capability-results/README.zh-CN.md)、[可核查统计](docs/capability-results/analysis.json)与[评测流程](docs/capability-evaluation.md)。
+
+![真实模型主题评测：标明样本量与评分口径](docs/capability-results/capabilities.png)
+
+本轮数学、逻辑、代码的严格协议成功率均为零；事后补充的数学数值匹配为 SFT 5/30、DPO 6/30，一题差异不能证明 DPO 整体更好。概念与写作质量仍待匿名人工评分。报告区分格式失败、代码失败、逻辑集答案偏置及受控探针限制；这些真实权重结果与上方合成 CPU 实现验证分开统计。
 
 ## 验证结果
 
@@ -130,7 +134,7 @@ python -m unittest discover -s tests -v
 
 | 检查项 | 已记录结果 |
 | --- | --- |
-| 回归测试 | 安装可视化依赖后，本地 62 项通过，详见验证记录 |
+| 回归测试 | 安装可视化依赖后，本地 64 项通过，详见验证记录 |
 | Transformer 输出 | `[2, 5, 16]`，梯度有限 |
 | 合成数据上的 LoRA 优化 | 80 步后 MSE 从 `0.045949` 降至 `0.000006364`，种子 42 |
 | LoRA 合并一致性 | 最大绝对输出差约 `1.79e-7` |

@@ -22,9 +22,9 @@ The original files remain untouched. Repository organization, source inventory, 
 
 The vendored subword-nmt project, model checkpoints and datasets were not copied into this repository. External libraries, models and datasets retain their respective attribution and license terms. A license for this repository has not yet been selected.
 
-## Validation boundary
+## Initial validation boundary
 
-The original snapshots still match their recorded hashes. The corrected package passed 29 regression tests and offline CPU examples; see validation.md. No full language-model training or benchmark evaluation has been reproduced.
+At the initial repair, the original snapshots matched their recorded hashes and the corrected package passed 29 regression tests and offline CPU examples; see validation.md. Later validation is recorded chronologically below. No full language-model training was reproduced.
 
 ## Repair pass — 2026-11-11
 
@@ -37,3 +37,5 @@ At the owner's request, AI-assisted development extracted the existing CPU demon
 ## Real-checkpoint capability workflow — 2026-11-15
 
 At the owner's request, AI-assisted development added independent GPU checkpoint evaluation, fixed main/paired task preparation, isolated code execution, anonymous human-review export/import, statistics and bilingual reports. Existing Qwen-based SFT/DPO adapters are original course training artifacts; no new model training was performed in this evaluation. Their task results are separate evidence from the custom LoRALinear component tests. Human open-task scores remain pending until the owner supplies the completed blind-review sheet. Machine-specific input paths are configured locally under ignored outputs/.
+
+The first execution completed 420 formal responses, 30 development outputs and isolated objective scoring. Published aggregates, objective excerpts, plots and provenance are in [capability-results](capability-results/README.md). Original weights, training samples, full raw outputs and the private review key remain local. A post-hoc numeric-format analysis is explicitly separated from the unchanged strict scores. The report records failed tasks and limitations; it makes no claim of state-of-the-art performance or a general causal DPO benefit.

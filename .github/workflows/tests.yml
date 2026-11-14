@@ -43,6 +43,9 @@ jobs:
           python -m unittest discover -s tests -v
           python -m nlp_course.visualization collect --data-dir outputs/visualization/data
           python -m nlp_course.visualization render --data-dir outputs/visualization/data --output-dir outputs/visualization/figures
+          mkdir -p outputs/visualization/checkpoints
+          cp docs/capability-results/analysis.json outputs/visualization/checkpoints/analysis.json
+          python -m nlp_course.capability render --run-dir outputs/visualization/checkpoints
       - name: Upload measured traces and rendered figures
         if: ${{ always() }}
         uses: actions/upload-artifact@v7

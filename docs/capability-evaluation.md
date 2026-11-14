@@ -24,7 +24,7 @@ python -m nlp_course.capability analyze
 python -m nlp_course.capability render
 ```
 
-The default artifact root is `outputs/capability/`, with a frozen `suite/suite.json` and `run/`. Each generation result is appended per question so the same command can resume. Model/adapter hashes, suite hash and configuration must match existing output; changed configurations require a new run directory. Missing answers stay missing, rather than becoming wrong answers. Generation uses a single shared user/assistant ChatML format, greedy decoding and 256 output tokens; the code budget intervention additionally uses 512. No test-set tuning is allowed.
+The default artifact root is `outputs/capability/`, with a frozen `suite/suite.json` and `final-run/`. Each generation result is appended per question so the same command can resume. Model/adapter hashes, suite hash and configuration must match existing output; changed configurations require a new run directory. Missing answers stay missing, rather than becoming wrong answers. Generation uses a single shared user/assistant ChatML format, greedy decoding and 256 output tokens; the code budget intervention additionally uses 512. No test-set tuning is allowed.
 
 `prepare --humaneval-data PATH` can use an already downloaded official JSONL or gzipped file. Otherwise it downloads the official HumanEval data. The local GSM8K file is the 1,319-row test split converted to query/response fields. Sources are identified by hashes; exact training-prompt overlaps block preparation, near-overlap candidates block generation pending review. Case/whitespace normalization and word-set similarity are screening tools, not proof of no semantic contamination.
 
@@ -57,7 +57,7 @@ Score each dimension from **1 to 5**:
 For concept questions, use the provided facts to score factual accuracy, completeness and clarity. For writing, evaluate completion, coherence and expression. Record explanations in `notes`, not only numbers. A single reviewer is explicitly identified as a limitation.
 
 ```powershell
-python -m nlp_course.capability import-review --ratings outputs/capability/run/blind-review.csv
+python -m nlp_course.capability import-review --ratings outputs/capability/final-run/blind-review.csv
 python -m nlp_course.capability analyze
 python -m nlp_course.capability render
 ```
@@ -96,3 +96,17 @@ python -m venv .venv-eval
 The executed environment reused existing system packages while overriding Torch inside `.venv-eval`; the commands above create a clean environment instead. Actual executed versions are recorded in `outputs/capability/evaluation-environment.json`. The original CPU environment remains separate. Standard GSM8K `question`/`answer` fields and the course's `query`/`response` conversion are both accepted. Keep the original test split and source attribution when obtaining the dataset.
 
 The review exporter refuses to overwrite an existing CSV, to protect ratings already being edited. Use the existing file for import, or deliberately use a new run directory for a separate assessment.
+
+The boundary figure's arithmetic panel uses the explicitly labeled relaxed numeric match, because exact-output-format failures are not evidence of arithmetic failure. Strict scores remain in the raw records. The logic panel measures exact-format task success, the concept panel measures lexical coverage only, and the writing panel measures verifiable format constraints. These are different measurements and must not be combined into an overall ability score.
+
+The first generated logic suite is deliberately simple and has an imbalanced answer distribution. An always-yes answer reaches 10/25 on this frozen suite, so that baseline is displayed; these tasks do not establish general reasoning ability. A future stronger suite must include balanced negative cases. Answer capitalization, harmless whitespace and a terminal period are normalized, while unsolicited explanatory text still fails the requested exact-answer protocol.
+
+The controlled probes are narrow: multiplication, ordering chains, four economic concepts, recycling line constraints, and four selected functions. Their results identify specific observed behavior, not universal numerical limits. The local GSM8K conversion was independently checked against all 1,319 official question/answer pairs; all 25 canonical HumanEval references passed the same isolated code harness used for model answers.
+
+Code scoring also bounds combined stdout/stderr to 128 KiB, retains bounded failure logs, and treats timeout/output-limit failures separately. A completion marker ensures early successful exit cannot bypass tests. UTF-8 and stdin backpressure/deadlines are tested. Human review figures show per-dimension rating distributions with repeated ratings excluded, rather than treating an average as a universal capability score.
+
+## Published first run
+
+The [English report](capability-results/README.md) and [中文报告](capability-results/README.zh-CN.md) contain all 420 formal responses' scoring aggregates, two inspected PNG/SVG figures, selected objective excerpts and source/weight hashes. No open-task model-labeled answers or private review keys are published. The public `analysis.json` can be rendered without checkpoints with `python -m nlp_course.capability render --run-dir docs/capability-results`; refresh artifact hashes in the manifest after intentionally changing files. Full generation still requires the original local weights and source data.
+
+Strict math/logic scores measure the requested answer protocol. Code failures include syntax-check failures before sandbox execution as well as runtime/test failures; unavailable infrastructure remains unscored. The diagnostic math prompts retained a NUMBER placeholder from preparation, followed by the fixed numeric-answer instruction. Observed copying and unfinished final-answer markers limit interpretation of these probes. A future cleaner protocol must be a separate run, not a modification to this run's frozen inputs.

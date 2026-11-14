@@ -15,9 +15,11 @@ import re
 import subprocess
 import time
 import uuid
+import threading
+from types import SimpleNamespace
 
 from .capability_data import prepare, digest
-from .evaluation import extract_answer_number
+from .evaluation import extract_final_answer
 
 STAGES = ('base','sft','dpo')
 MODEL = 'Qwen/Qwen2.5-0.5B'
@@ -124,13 +126,49 @@ def generate(suite_dir, run_dir, stage, train_dir, phase='formal', open_only=Fal
         print(f'{stage}: {task["id"]} ({len(generated)} tokens)',flush=True)
 
 
+def _run_limited(command, text, timeout=15, max_output=131072, cleanup=None):
+    """Bound child output in memory; production callers must supply a sandbox."""
+    payload=text.encode('utf-8')
+    process=subprocess.Popen(command,stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+    buffers=[bytearray(),bytearray()];counts=[0,0];exceeded=threading.Event()
+    def drain(stream,index):
+        while True:
+            chunk=stream.read(4096)
+            if not chunk:break
+            counts[index]+=len(chunk);buffers[index].extend(chunk)
+            if len(buffers[index])>65536:del buffers[index][:-65536]
+            if sum(counts)>max_output:exceeded.set()
+    threads=[threading.Thread(target=drain,args=(stream,index),daemon=True) for index,stream in enumerate([process.stdout,process.stderr])]
+    for thread in threads:thread.start()
+    def feed():
+        try:process.stdin.write(payload)
+        except OSError:pass
+        finally:
+            try:process.stdin.close()
+            except OSError:pass
+    writer=threading.Thread(target=feed,daemon=True);writer.start()
+    started=time.monotonic();timed_out=False
+    while process.poll() is None:
+        if exceeded.is_set() or time.monotonic()-started>timeout:
+            timed_out=not exceeded.is_set()
+            process.kill()
+            if cleanup is not None:cleanup()
+            break
+        time.sleep(.02)
+    process.wait(timeout=5)
+    writer.join(timeout=2)
+    for thread in threads:thread.join(timeout=2)
+    for stream in [process.stdout,process.stderr]:stream.close()
+    return SimpleNamespace(returncode=process.returncode,stdout=buffers[0].decode('utf-8','replace'),stderr=buffers[1].decode('utf-8','replace'),timed_out=timed_out,output_limit=exceeded.is_set())
+
+
 def docker_score(task, response, image='python:3.11-slim'):
     """Generated code never executes on the host; no mounts or network."""
     blocks=re.findall(r'```(?:python)?\s*\n(.*?)```',response,re.S)
     code=blocks[0] if len(blocks)==1 else response.strip()
-    if 'def '+task['entry_point'] not in code:return dict(status='syntax_error',correct=False)
+    if 'def '+task['entry_point'] not in code:return dict(status='missing_function',correct=False,detail='Missing requested function definition')
     try:ast.parse(code)
-    except SyntaxError:return dict(status='syntax_error',correct=False)
+    except SyntaxError as exc:return dict(status='syntax_error',correct=False,detail=str(exc))
     # Preserve the imports supplied with the original HumanEval task, so e.g.
     # a correct function using List annotations is not failed by a missing harness import.
     original=task.get('prompt','').split('\n',1)[-1]
@@ -139,38 +177,60 @@ def docker_score(task, response, image='python:3.11-slim'):
         imports='\n'.join(ast.get_source_segment(original,node) for node in parsed.body if isinstance(node,(ast.Import,ast.ImportFrom)))
     except SyntaxError:imports=''
     marker='TESTS_COMPLETED_'+uuid.uuid4().hex
-    script=imports+'\n'+code+'\n'+task['tests']+'\ncheck('+task['entry_point']+')\nprint('+repr(marker)+')\n'
-    name='nlp-eval-'+hashlib.sha256((task['id']+response).encode()).hexdigest()[:16]
+    script=imports+'\n'+code+'\n'+task['tests']+'\ncheck('+task['entry_point']+')\nprint('+repr('\n'+marker)+')\n'
+    name='nlp-eval-'+uuid.uuid4().hex[:16]
     args=['docker','run','--name',name,'--rm','--network','none','--read-only','--memory','256m','--cpus','1',
           '--pids-limit','32','--cap-drop','ALL','--security-opt','no-new-privileges','--user','65534:65534',
           '--tmpfs','/tmp:rw,noexec,nosuid,size=16m', '-i',image,'python','-I','-']
-    try:
-        run=subprocess.run(args,input=script,text=True,capture_output=True,timeout=15)
-    except subprocess.TimeoutExpired:
-        subprocess.run(['docker','rm','-f',name],capture_output=True,timeout=10)
+    def cleanup():subprocess.run(['docker','rm','-f',name],capture_output=True,timeout=10)
+    run=_run_limited(args,script,cleanup=cleanup)
+    if run.timed_out:
         return dict(status='timeout',correct=False)
+    if run.output_limit:return dict(status='output_limit',correct=False)
     if run.returncode in (125,126,127):return dict(status='unavailable',correct=None)
     passed=run.returncode==0 and marker in run.stdout.splitlines()
-    return dict(status='correct' if passed else 'test_failure',correct=passed)
+    return dict(status='correct' if passed else 'test_failure',correct=passed,returncode=run.returncode,stderr_tail=run.stderr[-4000:] if not passed else '')
+
+
+def _bounded_number(text):
+    from .evaluation import parse_number
+    if not isinstance(text,str) or len(text)>4096:return None
+    for exponent in re.findall(r'[eE]([+-]?\d+)',text):
+        if len(exponent.lstrip('+-').lstrip('0'))>5 or abs(int(exponent))>10000:return None
+    return parse_number(text)
+
+
+def _relaxed_numeric_answer(response):
+    # Preserve last-answer and nested-box semantics before relaxing numeric syntax.
+    normalized=re.sub(r'the (?:final )?answer is\s*:?', 'The answer is:',response,flags=re.I)
+    answer=extract_final_answer(normalized)
+    exact=_bounded_number(answer)
+    if exact is not None:return exact
+    if answer is None:return None
+    match=re.match(r'^\$?([+-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?:[eE][+-]?\d+)?(?:/\d+)?)(?![\w,/]|\.\d)',answer)
+    if not match:return None
+    tail=answer[match.end():].lstrip()
+    if tail and tail[0] in '+-*/^=<>[{\\':return None
+    return _bounded_number(match[1])
 
 
 def score_task(task, row, execute_code=False):
     response=row['response']; category=task['category']; score=dict(correct=None,status='pending_human')
     if category=='math':
-        predicted=extract_answer_number(response)
-        from .evaluation import parse_number
-        correct=predicted is not None and predicted==parse_number(task['reference'])
+        predicted=_bounded_number(extract_final_answer(response))
+        expected=_bounded_number(task['reference'])
+        if expected is None:raise ValueError('Math reference must be a supported numeric answer')
+        correct=predicted is not None and predicted==expected
         score=dict(correct=correct,status='invalid_answer' if predicted is None else 'correct' if correct else 'incorrect')
         # Secondary format-sensitivity diagnostic: never replace the strict score.
         # Requires an explicit final-answer phrase, not an arbitrary last number.
-        matches=list(re.finditer(r'(?:the (?:final )?answer is|####)\s*:?\s*\$?([+-]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?(?:[eE][+-]?\d+)?(?:/\d+)?)(?![\w,/]|\.\d)',response,re.I))
-        relaxed=parse_number(matches[-1][1]) if matches else None
-        score['format_relaxed_correct']=relaxed is not None and relaxed==parse_number(task['reference'])
+        relaxed=_relaxed_numeric_answer(response)
+        score['format_relaxed_correct']=relaxed is not None and relaxed==expected
         score['format_relaxed_extracted']=str(relaxed) if relaxed is not None else None
     elif category=='logic':
         candidate=response.strip().rstrip('.')
         candidate=re.sub(r'\s+','',candidate)
-        correct=candidate==task['reference']
+        correct=candidate.casefold()==task['reference'].casefold()
         score=dict(correct=correct,status='correct' if correct else 'incorrect_or_format')
     elif category=='code':
         score=docker_score(task,response) if execute_code else dict(correct=None,status='unavailable')
@@ -291,10 +351,12 @@ def analyze(suite_dir,run_dir):
                 if t['split']!='main' or t['category']!=category or not a or not b or a['correct'] is None or b['correct'] is None:continue
                 counts['improved' if b['correct'] and not a['correct'] else 'regressed' if a['correct'] and not b['correct'] else 'unchanged']+=1
             changes.append(dict(first=first,last=last,category=category,counts=dict(counts)))
-    report=dict(summary=results,boundaries=pairs,stage_changes=changes,human_summary=human_summary,
+    logic_refs=Counter(t['reference'] for t in suite['tasks'] if t['category']=='logic' and t['split']=='main')
+    logic_baseline=dict(answer=logic_refs.most_common(1)[0][0],accuracy=logic_refs.most_common(1)[0][1]/sum(logic_refs.values())) if logic_refs else None
+    report=dict(summary=results,boundaries=pairs,stage_changes=changes,human_summary=human_summary,logic_constant_answer_baseline=logic_baseline,
                 human_repeat_mean_difference=sum(repetition)/len(repetition) if repetition else None,
                 human_status='scored' if human else 'pending',human_records=human,
-                limitations=['English quick diagnostic, not a comprehensive benchmark','Single training run; stage differences do not establish general causality','Base uses the same instruction protocol as SFT/DPO; a gap may reflect instruction alignment as well as task skill','Lexical overlap screening does not establish semantic independence or absence of pretraining contamination','Keyword coverage is a lexical probe, not factual accuracy','Missing/unsafe code execution is not counted as model failure'])
+                limitations=['English quick diagnostic, not a comprehensive benchmark','Generated logic templates are simple and their answer distribution is imbalanced; inspect the constant-answer baseline','Single training run; stage differences do not establish general causality','Base uses the same instruction protocol as SFT/DPO; a gap may reflect instruction alignment as well as task skill','Lexical overlap screening does not establish semantic independence or absence of pretraining contamination','Keyword coverage is a lexical probe, not factual accuracy','Missing/unsafe code execution is not counted as model failure'])
     save(Path(run_dir)/'analysis.json',report)
     lines=['# Model capability diagnostic','',f'Human review: {report["human_status"]}','', '| Stage | Task | Received/expected | Scored | Correct | Accuracy |','|---|---|---:|---:|---:|---:|']
     for r in results:
@@ -334,6 +396,10 @@ def analyze(suite_dir,run_dir):
     for r in results:
         value=f'{r["accuracy"]:.1%}' if r['accuracy'] is not None else '待评分或环境不可用'
         zh.append(f'| {r["stage"]} | {r["category"]} | {r["received"]}/{r["expected"]} | {r["scored"]} | {r["correct"]} | {value} |')
+    zh.extend(['','## 数学答案格式敏感性（事后补充分析）','',
+        '严格分数包含答案输出协议。以下放宽提取仅诊断格式敏感性，不替代严格分数，也不证明推理过程正确。'])
+    for r in results:
+        if r['category']=='math':zh.append(f'- {r["stage"]}：严格 {r["correct"]}/{r["scored"]}；放宽最终答案格式 {r["format_relaxed_correct"]}/{r["received"]}。')
     zh.extend(['','## 能力边界与解释','',
         '- 数字题的答案错误与答案提取失败分别统计；格式失败不能直接解释为不会计算。',
         '- 代码分数只统计已完成隔离执行的回答；缺失环境不计为模型错误。',
@@ -360,39 +426,65 @@ def render_report(run_dir):
             else:
                 low,high=row['interval'];p=row['accuracy']
                 ax.bar(index,p,color=['#64748b','#0891b2','#2563eb'][index])
-                ax.errorbar(index,p,yerr=[[p-low],[high-p]],fmt='none',color='black',capsize=4)
-                if category=='math':ax.scatter(index,row['format_relaxed_accuracy'],marker='D',facecolors='none',edgecolors='black',label='Relaxed format (secondary)' if index==0 else None)
-        ax.set(xticks=range(3),xticklabels=STAGES,ylim=(0,1.1),title=category,ylabel='Protocol pass rate (95% Wilson interval)')
-        if category=='math':ax.legend(fontsize=7)
+                ax.errorbar(index,p,yerr=[[p-low],[high-p]],fmt='o',color='black',capsize=4,markersize=4)
+                ax.annotate(f'{row["correct"]}/{row["scored"]}',(index,p),xytext=(-7,9),textcoords='offset points',ha='right',fontsize=8)
+                if category=='math':
+                    relaxed=row['format_relaxed_accuracy'];lo,hi=row['format_relaxed_interval']
+                    ax.errorbar(index+.12,relaxed,yerr=[[relaxed-lo],[hi-relaxed]],fmt='D',mfc='white',mec='black',ecolor='gray',capsize=3,label='Relaxed numeric match (post-hoc)' if index==0 else None)
+                    if relaxed!=p:ax.annotate(f'{row["format_relaxed_correct"]}/{row["received"]}',(index+.12,relaxed),xytext=(6,0),textcoords='offset points',ha='left',fontsize=8)
+        ax.set(xticks=range(3),xticklabels=STAGES,ylim=(-.025,1.1),yticks=[0,.2,.4,.6,.8,1],title=category.capitalize(),ylabel='Protocol pass rate (95% Wilson interval)')
+        if category=='math':
+            ax.set_title(f'Math: strict / relaxed (expected n={row["expected"]})')
+            if ax.get_legend_handles_labels()[0]:ax.legend(fontsize=7)
+        else:ax.set_title(f'{category.capitalize()} (expected n={row["expected"]})')
+        if category=='logic' and report.get('logic_constant_answer_baseline'):
+            baseline=report['logic_constant_answer_baseline']
+            ax.axhline(baseline['accuracy'],ls='--',color='gray',label=f'Constant "{baseline["answer"]}" baseline')
+            ax.legend(fontsize=7)
     fig.suptitle('English quick diagnostic | Real checkpoint outputs | Open-task ratings pending' if report['human_status']=='pending' else 'English quick diagnostic | Real checkpoint outputs')
     fig.savefig(Path(run_dir)/'capabilities.png',dpi=180);fig.savefig(Path(run_dir)/'capabilities.svg');plt.close(fig)
     fig,axes=plt.subplots(2,3,figsize=(12,7),layout='constrained')
     for ax,category in zip(axes.flat,['math','logic','code','concept','writing']):
-        conditions=sorted({c['condition'] for p in report['boundaries'] if p['category']==category for c in p['conditions']})
+        conditions={'math':['small','large'],'logic':['short','long'],'code':['short','long'],'concept':['closed','context'],'writing':['one','three']}[category]
+        labels={'small':'Small numbers','large':'Large numbers','short':'256 tokens' if category=='code' else 'Short chain','long':'512 tokens' if category=='code' else 'Long chain','closed':'No supplied facts','context':'Supplied facts','one':'1 constraint','three':'3 constraints'}
         for si,stage in enumerate(STAGES):
             for ci,condition in enumerate(conditions):
                 rows=[c for p in report['boundaries'] if p['category']==category and p['stage']==stage for c in p['conditions'] if c['condition']==condition]
-                values=[r['keyword_coverage'] for r in rows if 'keyword_coverage' in r] if category=='concept' else [float(r['correct']) for r in rows if r['correct'] is not None]
-                if values:ax.bar(si+(ci-.5)*.3,sum(values)/len(values),width=.3,color=['#2563eb','#0891b2'][ci],label=condition if si==0 else None)
-        ax.set(xticks=range(3),xticklabels=STAGES,ylim=(0,1.1),title=category+(' | lexical coverage' if category=='concept' else ' | paired probes'))
-        if ax.get_legend_handles_labels()[0]:ax.legend(fontsize=8)
-    axes.flat[-1].axis('off');axes.flat[-1].text(0,.8,'4 pairs per category\nControlled probes, not benchmark scores\nMissing code runs remain unscored',va='top')
+                if category=='concept':values=[r['keyword_coverage'] for r in rows if 'keyword_coverage' in r]
+                elif category=='math':values=[float(r['format_relaxed_correct']) for r in rows if 'format_relaxed_correct' in r]
+                else:values=[float(r['correct']) for r in rows if r['correct'] is not None]
+                if values:
+                    x=si+(ci-.5)*.3;mean=sum(values)/len(values)
+                    ax.bar(x,mean,width=.3,color=['#2563eb','#0891b2'][ci],label=labels[condition] if si==0 else None)
+                    value=f'{mean:.2f}' if category=='concept' else f'{int(sum(values))}/{len(values)}'
+                    ax.text(x,mean+.025,value,ha='center',fontsize=7)
+        titles={'math':'Math | numeric match (relaxed)','logic':'Logic | exact-format pass','code':'Code | unit-test pass','concept':'Concept | keyword coverage','writing':'Writing | format constraints'}
+        ax.set(xticks=range(3),xticklabels=STAGES,ylim=(0,1.1),title=titles[category])
+        if ax.get_legend_handles_labels()[0]:ax.legend(fontsize=8,loc='lower left' if category=='concept' else 'upper left' if category=='math' else 'upper right')
+    axes.flat[-1].axis('off');axes.flat[-1].text(0,.8,'4 pairs per category\nCounts: passes / measured inputs\nConcept: mean lexical coverage only\nControlled probes, not benchmark scores\nMissing code runs remain unscored',va='top',fontsize=10)
     fig.savefig(Path(run_dir)/'boundaries.png',dpi=180);fig.savefig(Path(run_dir)/'boundaries.svg');plt.close(fig)
     if report['human_status']=='scored':
         fig,axes=plt.subplots(1,2,figsize=(10,4),layout='constrained')
         for ax,category in zip(axes,['concept','writing']):
             for si,stage in enumerate(STAGES):
                 row=next(r for r in report['human_summary'] if r['stage']==stage and r['category']==category)
-                if row['means']:ax.plot(range(3),row['means'],marker='o',label=f'{stage} (n={row["n"]})')
-            ax.set(xticks=range(3),xticklabels=['Accuracy/completion','Completeness/coherence','Clarity/expression'],ylim=(1,5),title=category)
-            ax.tick_params(axis='x',labelrotation=20);ax.legend()
-        fig.savefig(Path(run_dir)/'human-ratings.png',dpi=180);plt.close(fig)
+                raw=[r for r in report['human_records'] if not r.get('is_repeat') and r['stage']==stage and r['task_id'].startswith(category+'-')]
+                if raw:
+                    color=['#64748b','#0891b2','#2563eb'][si]
+                    boxes=ax.boxplot([[r['ratings'][i] for r in raw] for i in range(3)],positions=[i+(si-1)*.23 for i in range(3)],widths=.19,manage_ticks=False,patch_artist=True,showmeans=True)
+                    for box in boxes['boxes']:box.set_facecolor(color);box.set_alpha(.5)
+                    ax.plot([],[],color=color,label=f'{stage} (n={row["n"]})')
+            labels=['Accuracy','Completeness','Clarity'] if category=='concept' else ['Completion','Coherence','Expression']
+            ax.set(xticks=range(3),xticklabels=labels,ylim=(.8,5.2),yticks=range(1,6),title=category)
+            ax.legend()
+        fig.suptitle('Single-reviewer rating distributions | 1-5 scale | Repeats excluded')
+        fig.savefig(Path(run_dir)/'human-ratings.png',dpi=180);fig.savefig(Path(run_dir)/'human-ratings.svg');plt.close(fig)
 
 
 def main(argv=None):
     parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['prepare','generate','score','review','import-review','analyze','render'])
     parser.add_argument('--suite-dir',type=Path,default=Path('outputs/capability/suite'))
-    parser.add_argument('--run-dir',type=Path,default=Path('outputs/capability/run'))
+    parser.add_argument('--run-dir',type=Path,default=Path('outputs/capability/final-run'))
     parser.add_argument('--train-dir',type=Path)
     parser.add_argument('--gsm-data',type=Path)
     parser.add_argument('--humaneval-data',type=Path)

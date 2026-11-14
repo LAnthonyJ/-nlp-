@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-15",
+  "model": "Qwen/Qwen2.5-0.5B",
+  "run": "final-run",
+  "generation_provenance": {
+    "python": "3.13.7",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "torch": "2.9.0+cu128",
+      "transformers": "5.9.0",
+      "peft": "0.21.3",
+      "accelerate": "1.11.0",
+      "safetensors": "0.6.2"
+    },
+    "suite_sha256": "3610e911b961f7c031d90b8f1a80ee380dd58e4550a27df72e74ba4b5613cd93",
+    "generation_function_sha256": "21e057dd04e33d55ab98a2d1a016c1c440998599df5d92e817aac700a2317fe7",
+    "training_files": {
+      "train_sft.json": "173d71d35b79f9a91539be0bf8a0576a7037b628821f5436a25108cc0d012c8a",
+      "train_dpo.json": "b4434fe3cf9e9c581b8f22d66459b39f0a52f256c5b9c3f108d1464abcbcfec1"
+    }
+  },
+  "model_configs": {
+    "base": {
+      "stage": "base",
+      "phase": "formal",
+      "model": "Qwen/Qwen2.5-0.5B",
+      "weights": {
+        "base": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9"
+      },
+      "suite_hash": "4181e926dce9024d839979dce8c9921ccc3034092c3b31c516bb91fb97311957",
+      "seed": 42,
+      "dtype": "float16",
+      "max_new_tokens": 256,
+      "decoder": "greedy",
+      "torch": "2.9.0+cu128",
+      "protocol_version": 2,
+      "math_suffix": "At the end, write The answer is: followed by your final numeric answer."
+    },
+    "sft": {
+      "stage": "sft",
+      "phase": "formal",
+      "model": "Qwen/Qwen2.5-0.5B",
+      "weights": {
+        "base": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "adapter": "e05de4884211d56943c17c916944d9eaba4f4df860ee37307ab84ecb1b94bc03",
+        "adapter_config": "794e1d0f1df2f923d245229dc79c3435764dc7eec8a909b24d7ad71511a0a00f"
+      },
+      "suite_hash": "4181e926dce9024d839979dce8c9921ccc3034092c3b31c516bb91fb97311957",
+      "seed": 42,
+      "dtype": "float16",
+      "max_new_tokens": 256,
+      "decoder": "greedy",
+      "torch": "2.9.0+cu128",
+      "protocol_version": 2,
+      "math_suffix": "At the end, write The answer is: followed by your final numeric answer."
+    },
+    "dpo": {
+      "stage": "dpo",
+      "phase": "formal",
+      "model": "Qwen/Qwen2.5-0.5B",
+      "weights": {
+        "base": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "adapter": "1dfe4189403a029ed9a54e9019edee600832c3ed0231569cf103a4eb2a52991b",
+        "adapter_config": "794e1d0f1df2f923d245229dc79c3435764dc7eec8a909b24d7ad71511a0a00f"
+      },
+      "suite_hash": "4181e926dce9024d839979dce8c9921ccc3034092c3b31c516bb91fb97311957",
+      "seed": 42,
+      "dtype": "float16",
+      "max_new_tokens": 256,
+      "decoder": "greedy",
+      "torch": "2.9.0+cu128",
+      "protocol_version": 2,
+      "math_suffix": "At the end, write The answer is: followed by your final numeric answer."
+    }
+  },
+  "statistics": {
+    "base": {
+      "responses": 140,
+      "finish_reasons": {
+        "length": 120,
+        "eos": 20
+      },
+      "formal_jsonl_sha256": "651b13708361529c618d9d864c29a5bfb6d3beb058f769eda259b6e2e0d76e00",
+      "smoke_jsonl_sha256": "d81c56d95aff6b18ace77d6ef160eebb29af65fa5b7cb9157ef580fc2f61efbd"
+    },
+    "sft": {
+      "responses": 140,
+      "finish_reasons": {
+        "eos": 121,
+        "length": 19
+      },
+      "formal_jsonl_sha256": "f32fd5918d61b80bdd9710d7eb97ec44e4fcad0d2ed0e0fafac9490661ccf612",
+      "smoke_jsonl_sha256": "2c6b66c36e1fae2304107f42e4e2f242522e552f69ef72cf22b8449482495fd1"
+    },
+    "dpo": {
+      "responses": 140,
+      "finish_reasons": {
+        "eos": 112,
+        "length": 28
+      },
+      "formal_jsonl_sha256": "da75027b58ee6db43893698151cee2bb05fa1860463eb99bc6ef2980416cd12a",
+      "smoke_jsonl_sha256": "272bd1dfde3b17e9a8846a7e19f10ea75b85552acbf53b9898949f40e72671b8"
+    }
+  },
+  "suite_semantic_digest": "4181e926dce9024d839979dce8c9921ccc3034092c3b31c516bb91fb97311957",
+  "suite_file_sha256": "3610e911b961f7c031d90b8f1a80ee380dd58e4550a27df72e74ba4b5613cd93",
+  "suite_file_note": "Exact private suite includes sampled training-audit records; the public index omits those records. Semantic digest and file-byte SHA are distinct.",
+  "docker_image": "python:3.11-slim@sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535",
+  "sources": {
+    "gsm8k": "https://github.com/openai/grade-school-math",
+    "humaneval": "https://github.com/openai/human-eval",
+    "model": "https://huggingface.co/Qwen/Qwen2.5-0.5B"
+  },
+  "privacy": "Only aggregates, scoring records, hashes, task indices and selected objective excerpts are published. Weights, full raw outputs, training samples, local paths, rating sheet and review key remain local.",
+  "artifacts": {
+    "analysis.json": "f0942a22fb4e0100b8fafb945ca0ec38d9bd6b2476d4c03cb58296ac4df2e058",
+    "boundaries.png": "1f21d98f7eb74b5b084a90773f826c582498dc0f3b874bc92f09845fd94d60b8",
+    "boundaries.svg": "c15e637a2ace0729e4ee3cf815fc6deef28a9140143c1ee0180b6ea0dd3e6c7e",
+    "canonical-code-check.json": "5540f95155352b0bdb29581225afa21a0e2b5e50d86600db1928be6e69851230",
+    "capabilities.png": "99cd4afd6300d45b180efc4890314124bfcbca64703fcba4d20f9b99baee7d80",
+    "capabilities.svg": "15ff7941c5328d4cc43f1798b8eaddd8d040cf613f4927a6f5f33f123e39f1b6",
+    "objective-cases.json": "ee0cc989d86c9c0f6c47c3912e22c7b8c63aef20e2a444bb65e974d5c77ae6a3",
+    "official-data-check.json": "1c2ac105f18eaad3c4213ecff6835bdf6cfd021733f6bc192c6dec480f62c188",
+    "scores.json": "df767ae96f053bf40b35432c2a6fea7776ecca2f8a6b362ca50803829c69ab3d",
+    "suite-index.json": "9ee84c118746bbaec4e8c3e1b459d885f525f051195f03905af213aa9f72061c",
+    "training-audit-summary.json": "13a21e83febf7ddd22115689f72df0db199d20ec499e23d368215aed50d46934"
+  }
+}

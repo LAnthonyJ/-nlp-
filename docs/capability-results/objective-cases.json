@@ -1,0 +1,287 @@
+{
+  "selection": "Three first failure IDs by category, one secondary math improvement, one format-sensitive multiplication probe; no open-task responses.",
+  "cases": [
+    {
+      "stage": "base",
+      "task_id": "gsm-1034",
+      "reference": "66",
+      "response_excerpt": "Ted starts with $200. He buys 3 books for 16 dollars each and 3 pencils for 6 dollars each. How much did he spend in total?\nTed starts with $200. He buys 3 books for 16 dollars each and 3 pencils for 6 dollars each. How much did he spend in total?\nTed starts with $200. He buys 3 books for 16 dollars each and 3 pencils for 6 dollars each. How much did he spend in total?\nTed starts with $200. He buys 3 books for 16 dol",
+      "excerpt_truncated": true,
+      "response_sha256": "e6d289572c4002cd8385630ffb2aa6c47f00e1a569bc8c6d38dad6c4c507caa7",
+      "finish_reason": "length",
+      "score": {
+        "task_id": "gsm-1034",
+        "stage": "base",
+        "category": "math",
+        "split": "main",
+        "correct": false,
+        "status": "invalid_answer",
+        "format_relaxed_correct": false,
+        "format_relaxed_extracted": null,
+        "truncated": true
+      }
+    },
+    {
+      "stage": "base",
+      "task_id": "logic-0",
+      "reference": "C,A,B",
+      "response_excerpt": "LETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\nLETE\n",
+      "excerpt_truncated": true,
+      "response_sha256": "ae6c8a372b185ee12dcce6e5724ed42a1082e4172373131f39361a49a40cb070",
+      "finish_reason": "length",
+      "score": {
+        "task_id": "logic-0",
+        "stage": "base",
+        "category": "logic",
+        "split": "main",
+        "correct": false,
+        "status": "incorrect_or_format",
+        "truncated": true
+      }
+    },
+    {
+      "stage": "base",
+      "task_id": "HumanEval-11",
+      "reference": "See official HumanEval reference and tests",
+      "response_excerpt": "Complete this Python function. Return the complete function in one Python code block.\nfrom typing import List\n\n\ndef string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    \"\"\"\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼\n筼",
+      "excerpt_truncated": true,
+      "response_sha256": "e138ffe10d6d18ef7d9a8560ea7f6073d40470d85545d95a5c996a7e5ecbefe8",
+      "finish_reason": "length",
+      "score": {
+        "task_id": "HumanEval-11",
+        "stage": "base",
+        "category": "code",
+        "split": "main",
+        "status": "syntax_error",
+        "correct": false,
+        "detail": "invalid syntax (<unknown>, line 1)",
+        "truncated": true
+      }
+    },
+    {
+      "stage": "base",
+      "task_id": "gsm-1206",
+      "reference": "40,000",
+      "response_excerpt": "John has a loan of $250,000. He gets a 40% loan, which is $250,000 * 0.4 = $100,000. He uses 60% of that, which is $100,000 * 0.6 = $60,000. So, he has $100,000 - $60,000 = $40,000 left over.",
+      "excerpt_truncated": false,
+      "response_sha256": "e58942b093c042064a5a80710c0d895754da7ad3d5094dfaedfd4abb164b39cd",
+      "finish_reason": "eos",
+      "score": {
+        "task_id": "gsm-1206",
+        "stage": "base",
+        "category": "math",
+        "split": "main",
+        "correct": false,
+        "status": "invalid_answer",
+        "format_relaxed_correct": false,
+        "format_relaxed_extracted": null
+      }
+    },
+    {
+      "stage": "base",
+      "task_id": "dmath-1-large",
+      "reference": "32000",
+      "response_excerpt": "Compute 8000 * 4. End with The answer is: NUMBER.\nAt the end, write The answer is: followed by your final numeric answer.(UIAlertAction message: \"The answer is: \\(number)\", style: .error) {\n}\n(UIAlertAction(message: \"The answer is: \\(number)\", style: .error) {\n}\n(UIAlertAction(message: \"The answer is: \\(number)\", style: .default) {\n}\n(UIAlertAction(message: \"The answer is: \\(number)\", style: .default) {\n}\n(UIAlertAct",
+      "excerpt_truncated": true,
+      "response_sha256": "6d7cb168434f1d1dd0c48de8b6bf09d1fc78e9b6a72e445e761747961ad65f5b",
+      "finish_reason": "length",
+      "score": {
+        "task_id": "dmath-1-large",
+        "stage": "base",
+        "category": "math",
+        "split": "diagnostic",
+        "correct": false,
+        "status": "invalid_answer",
+        "format_relaxed_correct": false,
+        "format_relaxed_extracted": null,
+        "truncated": true
+      }
+    },
+    {
+      "stage": "sft",
+      "task_id": "gsm-1034",
+      "reference": "66",
+      "response_excerpt": "Ted spends a total of $16 + $18 = $34 on books and pencils. Therefore, the total amount he spent is $200 + $34 = $234. The final answer is: 234.",
+      "excerpt_truncated": false,
+      "response_sha256": "896c5f1cc1a2a33100a6c99c6cd88a5bdd367b79ac1494ac73a0c068e81bb9d7",
+      "finish_reason": "eos",
+      "score": {
+        "task_id": "gsm-1034",
+        "stage": "sft",
+        "category": "math",
+        "split": "main",
+        "correct": false,
+        "status": "invalid_answer",
+        "format_relaxed_correct": false,
+        "format_relaxed_extracted": "234"
+      }
+    },
+    {
+      "stage": "sft",
+      "task_id": "logic-0",
+      "reference": "C,A,B",
+      "response_excerpt": "The complete order from A to Z is: A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z. This order is returned as a comma-separated string. For example, 'A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z'. This is the correct order. If you want to return the letters in a different order, you can specify the order as a string. For example, 'A, B, C, D, E, F, G, H, I,",
+      "excerpt_truncated": true,
+      "response_sha256": "9d868807a77253821ee89ee473f22c400f671ab18cb4c974dddb377fb85d7223",
+      "finish_reason": "length",
+      "score": {
+        "task_id": "logic-0",
+        "stage": "sft",
+        "category": "logic",
+        "split": "main",
+        "correct": false,
+        "status": "incorrect_or_format",
+        "truncated": true
+      }
+    },
+    {
+      "stage": "sft",
+      "task_id": "HumanEval-11",
+      "reference": "See official HumanEval reference and tests",
+      "response_excerpt": "def string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    '''\n    # Your code here\n    pass\n",
+      "excerpt_truncated": false,
+      "response_sha256": "029e936f0219fe18e4586de6e284a51c7b09e0f11ce9a581761d38273dbfb3e5",
+      "finish_reason": "eos",
+      "score": {
+        "task_id": "HumanEval-11",
+        "stage": "sft",
+        "category": "code",
+        "split": "main",
+        "status": "syntax_error",
+        "correct": false,
+        "detail": "unterminated triple-quoted string literal (detected at line 8) (<unknown>, line 2)"
+      }
+    },
+    {
+      "stage": "sft",
+      "task_id": "gsm-1206",
+      "reference": "40,000",
+      "response_excerpt": "John starts with a loan of $250,000. He gets a 40% loan, which means he pays 40% of $250,000, which is $100,000. He then uses 60% of the remaining loan to pay off his debts, which is $60,000. Therefore, the amount of money he has leftover after paying off his debts is $250,000 - $100,000 - $60,000 = $15,000. The final answer is: 15000.",
+      "excerpt_truncated": false,
+      "response_sha256": "aa7e13dc2bca22cce9f1a5c64a14e6cd6f7905bfaced243344f0d4e8aa369f74",
+      "finish_reason": "eos",
+      "score": {
+        "task_id": "gsm-1206",
+        "stage": "sft",
+        "category": "math",
+        "split": "main",
+        "correct": false,
+        "status": "invalid_answer",
+        "format_relaxed_correct": false,
+        "format_relaxed_extracted": "15000"
+      }
+    },
+    {
+      "stage": "sft",
+      "task_id": "dmath-1-large",
+      "reference": "32000",
+      "response_excerpt": "The answer is: NUMBER. The final answer is: 32000.",
+      "excerpt_truncated": false,
+      "response_sha256": "4cf54cb30bd3ad2a819641ab4acab982ee478a73eaac085400233436d8fc6710",
+      "finish_reason": "eos",
+      "score": {
+        "task_id": "dmath-1-large",
+        "stage": "sft",
+        "category": "math",
+        "split": "diagnostic",
+        "correct": false,
+        "status": "invalid_answer",
+        "format_relaxed_correct": true,
+        "format_relaxed_extracted": "32000"
+      }
+    },
+    {
+      "stage": "dpo",
+      "task_id": "gsm-1034",
+      "reference": "66",
+      "response_excerpt": "Ted spends a total of $16 + $18 = $34 on books and pencils. So, the total amount he spent is $200 + $34 = $234. The final answer is: 234.該使用者\n",
+      "excerpt_truncated": false,
+      "response_sha256": "7cb0fc5f7c045584f305afa0a6660acaf8de90db3de41d3c179e378e70c242dc",
+      "finish_reason": "eos",
+      "score": {
+        "task_id": "gsm-1034",
+        "stage": "dpo",
+        "category": "math",
+        "split": "main",
+        "correct": false,
+        "status": "invalid_answer",
+        "format_relaxed_correct": false,
+        "format_relaxed_extracted": "234"
+      }
+    },
+    {
+      "stage": "dpo",
+      "task_id": "logic-0",
+      "reference": "C,A,B",
+      "response_excerpt": "The complete order from A to Z is: A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z. This order is returned as a comma-separated string. For example, 'A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z'. This ensures that the letters are returned in the correct order.看查看\n",
+      "excerpt_truncated": false,
+      "response_sha256": "4733d6eb62edd6d7558c4f134984dc4cb4264fa8df695a72b6ce5a41d8b61549",
+      "finish_reason": "eos",
+      "score": {
+        "task_id": "logic-0",
+        "stage": "dpo",
+        "category": "logic",
+        "split": "main",
+        "correct": false,
+        "status": "incorrect_or_format"
+      }
+    },
+    {
+      "stage": "dpo",
+      "task_id": "HumanEval-11",
+      "reference": "See official HumanEval reference and tests",
+      "response_excerpt": "def string_xor(a: str, b: str) -> str:\n    \"\"\" Input are two strings a and b consisting only of 1s and 0s.\n    Perform binary XOR on these inputs and return result also as a string.\n    >>> string_xor('010', '110')\n    '100'\n    '''\n    # Your code here\n    pass\n})();\nutomation\nstring_xor('010', '110')  # Output: '100'\n})();\n",
+      "excerpt_truncated": false,
+      "response_sha256": "96ef4e89646b3b28fbb20c30a156d236d20bb591b905abdb65ad72db4260fc49",
+      "finish_reason": "eos",
+      "score": {
+        "task_id": "HumanEval-11",
+        "stage": "dpo",
+        "category": "code",
+        "split": "main",
+        "status": "syntax_error",
+        "correct": false,
+        "detail": "unterminated triple-quoted string literal (detected at line 12) (<unknown>, line 2)"
+      }
+    },
+    {
+      "stage": "dpo",
+      "task_id": "gsm-1206",
+      "reference": "40,000",
+      "response_excerpt": "After getting a loan worth 40% of the house's value, John gets a loan of $250,000 * 0.40 = $100,000. He uses 60% of this amount to pay off his debts, which is $100,000 * 0.60 = $60,000. Therefore, the leftover amount is $100,000 - $60,000 = $40,000. The final answer is: 40,000.-NLS\n",
+      "excerpt_truncated": false,
+      "response_sha256": "514c76aa03026e57b69d033a7d14eff2204c242fdd5471a6e3e799618f17bbe7",
+      "finish_reason": "eos",
+      "score": {
+        "task_id": "gsm-1206",
+        "stage": "dpo",
+        "category": "math",
+        "split": "main",
+        "correct": false,
+        "status": "invalid_answer",
+        "format_relaxed_correct": true,
+        "format_relaxed_extracted": "40000"
+      }
+    },
+    {
+      "stage": "dpo",
+      "task_id": "dmath-1-large",
+      "reference": "32000",
+      "response_excerpt": "The answer is: 32000. The final answer is: 32000. This is the result of multiplying 8000 by 4, which equals 32000. The answer is: 32000. The final answer is: 32000. The final answer is: 32000. The final answer is: 32000. The final answer is: 32000. The final answer is: 32000. The final answer is: 32000. The final answer is: 32000. The final answer is: 32000. The final answer is: 32000. The final answer is: 32000. The",
+      "excerpt_truncated": true,
+      "response_sha256": "9fc78cb208bdd1532cd62ddd341dc4715751d094ed1f7e0e4deb9d3c38d4d5da",
+      "finish_reason": "length",
+      "score": {
+        "task_id": "dmath-1-large",
+        "stage": "dpo",
+        "category": "math",
+        "split": "diagnostic",
+        "correct": false,
+        "status": "invalid_answer",
+        "format_relaxed_correct": false,
+        "format_relaxed_extracted": null,
+        "truncated": true
+      }
+    }
+  ]
+}

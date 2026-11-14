@@ -4,3 +4,4 @@ coursework/** -text
 
 # Matplotlib emits insignificant whitespace inside generated SVG paths.
 docs/figures/*.svg -whitespace
+docs/capability-results/*.svg -whitespace

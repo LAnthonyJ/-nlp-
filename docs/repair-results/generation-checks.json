@@ -1,0 +1,27 @@
+{
+  "base": {
+    "expected": "2+3=5\nassistant",
+    "actual": "2+3=5\nassistant",
+    "passed": true
+  },
+  "old_sft": {
+    "expected": "2+3 equals 5. This",
+    "actual": "2+3 equals 5. This",
+    "passed": true
+  },
+  "old_dpo": {
+    "expected": "The sum of 2 and 3",
+    "actual": "The sum of 2 and 3",
+    "passed": true
+  },
+  "instruct": {
+    "expected": "2 + 3 equals 5.",
+    "actual": "2 + 3 equals 5.",
+    "passed": true
+  },
+  "new_sft": {
+    "expected": "The answer is: 5",
+    "actual": "The answer is: 5",
+    "passed": true
+  }
+}

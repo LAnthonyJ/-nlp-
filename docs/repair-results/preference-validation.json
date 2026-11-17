@@ -1,0 +1,7 @@
+{
+  "n": 104,
+  "reward_accuracy": 0.9807692307692307,
+  "mean_reward_margin": 0.15668478530200308,
+  "posthoc": true,
+  "note": "Frozen SFT and saved DPO evaluated on held-out oracle pairs after development selection"
+}

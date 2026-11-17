@@ -1,0 +1,44 @@
+{
+  "suite_dir": "docs/repair-results/suite",
+  "dev_suite_dir": "outputs/repair-v1/dev-suite",
+  "run_dir": "docs/repair-results",
+  "sources": {
+    "gsm8k": "https://github.com/openai/grade-school-math",
+    "humaneval": "https://github.com/openai/human-eval"
+  },
+  "models": {
+    "base": {
+      "model": "Qwen/Qwen2.5-0.5B",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+    },
+    "old_sft": {
+      "model": "Qwen/Qwen2.5-0.5B",
+      "adapter": "local-only/old_sft",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+    },
+    "old_dpo": {
+      "model": "Qwen/Qwen2.5-0.5B",
+      "adapter": "local-only/old_dpo",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+    },
+    "instruct": {
+      "model": "Qwen/Qwen2.5-0.5B-Instruct",
+      "native_template": true,
+      "repetition_penalty": 1.0,
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+    },
+    "new_sft": {
+      "model": "Qwen/Qwen2.5-0.5B",
+      "adapter": "local-only/new_sft",
+      "repetition_penalty": 1.0,
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+    }
+  },
+  "comparisons": [
+    [
+      "old_sft",
+      "new_sft"
+    ]
+  ],
+  "statistics_only": true
+}

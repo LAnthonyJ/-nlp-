@@ -1,0 +1,649 @@
+{
+  "runs": {
+    "sft-a": {
+      "config": {
+        "model": "Qwen/Qwen2.5-0.5B",
+        "data_dir": "outputs/repair-v1/data-a",
+        "output_dir": "outputs/repair-v1/sft-a",
+        "overfit": false,
+        "steps": 50,
+        "accumulation": 8,
+        "max_length": 512,
+        "overfit_report": "outputs/repair-v1/overfit-native-eos/overfit-check.json",
+        "dev_suite_dir": "outputs/repair-v1/dev-suite"
+      },
+      "examples": 823,
+      "excluded_long_or_invalid": 0,
+      "history": [
+        {
+          "step": 1,
+          "loss": 1.271908976137638
+        },
+        {
+          "step": 2,
+          "loss": 1.361324518918991
+        },
+        {
+          "step": 3,
+          "loss": 1.4364861100912094
+        },
+        {
+          "step": 4,
+          "loss": 1.2709137126803398
+        },
+        {
+          "step": 5,
+          "loss": 1.216939240694046
+        },
+        {
+          "step": 6,
+          "loss": 1.4063287451863289
+        },
+        {
+          "step": 7,
+          "loss": 1.1149392426013947
+        },
+        {
+          "step": 8,
+          "loss": 1.3015733137726784
+        },
+        {
+          "step": 9,
+          "loss": 1.3275500237941742
+        },
+        {
+          "step": 10,
+          "loss": 1.1648231968283653
+        },
+        {
+          "step": 11,
+          "loss": 1.174650400876999
+        },
+        {
+          "step": 12,
+          "loss": 1.0688684806227684
+        },
+        {
+          "step": 13,
+          "loss": 1.3839592933654785
+        },
+        {
+          "step": 14,
+          "loss": 1.348673827946186
+        },
+        {
+          "step": 15,
+          "loss": 1.2568141892552376
+        },
+        {
+          "step": 16,
+          "loss": 1.2500137686729431
+        },
+        {
+          "step": 17,
+          "loss": 1.1981121599674225
+        },
+        {
+          "step": 18,
+          "loss": 1.2732359915971756
+        },
+        {
+          "step": 19,
+          "loss": 1.0718583837151527
+        },
+        {
+          "step": 20,
+          "loss": 1.432510294020176
+        },
+        {
+          "step": 21,
+          "loss": 1.3842841684818268
+        },
+        {
+          "step": 22,
+          "loss": 1.4512892961502075
+        },
+        {
+          "step": 23,
+          "loss": 1.2789383828639984
+        },
+        {
+          "step": 24,
+          "loss": 1.1590254753828049
+        },
+        {
+          "step": 25,
+          "loss": 1.0593839287757874
+        },
+        {
+          "step": 26,
+          "loss": 1.1264352053403854
+        },
+        {
+          "step": 27,
+          "loss": 1.2099197581410408
+        },
+        {
+          "step": 28,
+          "loss": 1.1293365806341171
+        },
+        {
+          "step": 29,
+          "loss": 1.1199023947119713
+        },
+        {
+          "step": 30,
+          "loss": 1.1328948587179184
+        },
+        {
+          "step": 31,
+          "loss": 1.12647145986557
+        },
+        {
+          "step": 32,
+          "loss": 1.2540598586201668
+        },
+        {
+          "step": 33,
+          "loss": 1.1302574500441551
+        },
+        {
+          "step": 34,
+          "loss": 1.2053477317094803
+        },
+        {
+          "step": 35,
+          "loss": 1.3159393817186356
+        },
+        {
+          "step": 36,
+          "loss": 1.4091567620635033
+        },
+        {
+          "step": 37,
+          "loss": 1.0722446478903294
+        },
+        {
+          "step": 38,
+          "loss": 1.114681951701641
+        },
+        {
+          "step": 39,
+          "loss": 1.3323681578040123
+        },
+        {
+          "step": 40,
+          "loss": 1.368400439620018
+        },
+        {
+          "step": 41,
+          "loss": 1.0743670389056206
+        },
+        {
+          "step": 42,
+          "loss": 1.2009383514523506
+        },
+        {
+          "step": 43,
+          "loss": 1.2590389028191566
+        },
+        {
+          "step": 44,
+          "loss": 1.254098430275917
+        },
+        {
+          "step": 45,
+          "loss": 1.1937655061483383
+        },
+        {
+          "step": 46,
+          "loss": 1.11920016258955
+        },
+        {
+          "step": 47,
+          "loss": 1.194442205131054
+        },
+        {
+          "step": 48,
+          "loss": 1.2404701933264732
+        },
+        {
+          "step": 49,
+          "loss": 1.0684462785720825
+        },
+        {
+          "step": 50,
+          "loss": 1.5081174075603485
+        }
+      ],
+      "dtype": "torch.bfloat16",
+      "eos_token_id": 151643,
+      "peak_memory_bytes": 1528811008,
+      "training_data_hash": "b77fe45237ce16431e8bf89eadeba11c19442848f181c3b7fbd7dcfcf3455cc1",
+      "development_selection": {
+        "step": 50,
+        "objective_mean": 0.3333333333333333
+      }
+    },
+    "sft-b": {
+      "config": {
+        "model": "Qwen/Qwen2.5-0.5B",
+        "data_dir": "outputs/repair-v1/data-b",
+        "output_dir": "outputs/repair-v1/sft-b",
+        "overfit": false,
+        "steps": 50,
+        "accumulation": 8,
+        "max_length": 512,
+        "overfit_report": "outputs/repair-v1/overfit-native-eos/overfit-check.json",
+        "dev_suite_dir": "outputs/repair-v1/dev-suite"
+      },
+      "examples": 6189,
+      "excluded_long_or_invalid": 2,
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.7221535891294479
+        },
+        {
+          "step": 2,
+          "loss": 0.6421902030706406
+        },
+        {
+          "step": 3,
+          "loss": 1.0622700974345207
+        },
+        {
+          "step": 4,
+          "loss": 0.980893824249506
+        },
+        {
+          "step": 5,
+          "loss": 0.824751328676939
+        },
+        {
+          "step": 6,
+          "loss": 0.6053925715386868
+        },
+        {
+          "step": 7,
+          "loss": 0.5775386579334736
+        },
+        {
+          "step": 8,
+          "loss": 0.6632208488881588
+        },
+        {
+          "step": 9,
+          "loss": 0.4240891635417938
+        },
+        {
+          "step": 10,
+          "loss": 0.473736222833395
+        },
+        {
+          "step": 11,
+          "loss": 0.6108727045357227
+        },
+        {
+          "step": 12,
+          "loss": 0.5983331948518753
+        },
+        {
+          "step": 13,
+          "loss": 0.524063766002655
+        },
+        {
+          "step": 14,
+          "loss": 0.5052426345646381
+        },
+        {
+          "step": 15,
+          "loss": 0.4224787801504135
+        },
+        {
+          "step": 16,
+          "loss": 0.4752523936331272
+        },
+        {
+          "step": 17,
+          "loss": 0.3583717346191406
+        },
+        {
+          "step": 18,
+          "loss": 0.38177670165896416
+        },
+        {
+          "step": 19,
+          "loss": 0.329031839966774
+        },
+        {
+          "step": 20,
+          "loss": 0.3986990191042423
+        },
+        {
+          "step": 21,
+          "loss": 0.46130284294486046
+        },
+        {
+          "step": 22,
+          "loss": 0.39074722211807966
+        },
+        {
+          "step": 23,
+          "loss": 0.5639382880181074
+        },
+        {
+          "step": 24,
+          "loss": 0.4151111477985978
+        },
+        {
+          "step": 25,
+          "loss": 0.36651115491986275
+        },
+        {
+          "step": 26,
+          "loss": 0.47744304686784744
+        },
+        {
+          "step": 27,
+          "loss": 0.5950265601277351
+        },
+        {
+          "step": 28,
+          "loss": 0.557800923474133
+        },
+        {
+          "step": 29,
+          "loss": 0.31999807246029377
+        },
+        {
+          "step": 30,
+          "loss": 0.3823150135576725
+        },
+        {
+          "step": 31,
+          "loss": 0.5554797742515802
+        },
+        {
+          "step": 32,
+          "loss": 0.3385170567780733
+        },
+        {
+          "step": 33,
+          "loss": 0.33328573778271675
+        },
+        {
+          "step": 34,
+          "loss": 0.43222299590706825
+        },
+        {
+          "step": 35,
+          "loss": 0.36015245877206326
+        },
+        {
+          "step": 36,
+          "loss": 0.5249057970941067
+        },
+        {
+          "step": 37,
+          "loss": 0.4565301612019539
+        },
+        {
+          "step": 38,
+          "loss": 0.3490494601428509
+        },
+        {
+          "step": 39,
+          "loss": 0.552663104608655
+        },
+        {
+          "step": 40,
+          "loss": 0.38970235735177994
+        },
+        {
+          "step": 41,
+          "loss": 0.3885931000113487
+        },
+        {
+          "step": 42,
+          "loss": 0.461872860789299
+        },
+        {
+          "step": 43,
+          "loss": 0.3930097338743508
+        },
+        {
+          "step": 44,
+          "loss": 0.2344809933565557
+        },
+        {
+          "step": 45,
+          "loss": 0.4687928780913353
+        },
+        {
+          "step": 46,
+          "loss": 0.5407531093806028
+        },
+        {
+          "step": 47,
+          "loss": 0.39988153614103794
+        },
+        {
+          "step": 48,
+          "loss": 0.5127697084099054
+        },
+        {
+          "step": 49,
+          "loss": 0.3926273910328746
+        },
+        {
+          "step": 50,
+          "loss": 0.4895976036787033
+        }
+      ],
+      "dtype": "torch.bfloat16",
+      "eos_token_id": 151643,
+      "peak_memory_bytes": 1902212608,
+      "training_data_hash": "fd0b0a021907e652d6d6b0abfa187628c33cf072aafaeaef3c8595f610853841",
+      "development_selection": {
+        "step": 50,
+        "objective_mean": 0.6333333333333333
+      }
+    },
+    "dpo": {
+      "config": {
+        "model": "Qwen/Qwen2.5-0.5B",
+        "data_dir": "outputs/repair-v1/data-b",
+        "output_dir": "outputs\\repair-v1\\dpo",
+        "overfit": false,
+        "steps": 50,
+        "accumulation": 8,
+        "max_length": 512,
+        "overfit_report": "outputs/repair-v1/overfit-native-eos/overfit-check.json",
+        "dev_suite_dir": "outputs/repair-v1/dev-suite",
+        "sft_adapter": "outputs\\repair-v1\\sft-b\\best",
+        "sft_improved_on_dev": true,
+        "learning_rate": 5e-06,
+        "beta": 0.1
+      },
+      "examples": 224,
+      "excluded_long_or_invalid": 0,
+      "history": [
+        {
+          "step": 1,
+          "loss": 0.6931471824645996
+        },
+        {
+          "step": 2,
+          "loss": 0.6860158294439316
+        },
+        {
+          "step": 3,
+          "loss": 0.6793959215283394
+        },
+        {
+          "step": 4,
+          "loss": 0.6715710610151291
+        },
+        {
+          "step": 5,
+          "loss": 0.65777987241745
+        },
+        {
+          "step": 6,
+          "loss": 0.6627619564533234
+        },
+        {
+          "step": 7,
+          "loss": 0.6900399699807167
+        },
+        {
+          "step": 8,
+          "loss": 0.6915959343314171
+        },
+        {
+          "step": 9,
+          "loss": 0.6892775297164917
+        },
+        {
+          "step": 10,
+          "loss": 0.6885206252336502
+        },
+        {
+          "step": 11,
+          "loss": 0.6861907690763474
+        },
+        {
+          "step": 12,
+          "loss": 0.6831594482064247
+        },
+        {
+          "step": 13,
+          "loss": 0.6793713569641113
+        },
+        {
+          "step": 14,
+          "loss": 0.6788075864315033
+        },
+        {
+          "step": 15,
+          "loss": 0.6734642758965492
+        },
+        {
+          "step": 16,
+          "loss": 0.6698395386338234
+        },
+        {
+          "step": 17,
+          "loss": 0.6653833538293839
+        },
+        {
+          "step": 18,
+          "loss": 0.658921629190445
+        },
+        {
+          "step": 19,
+          "loss": 0.677816741168499
+        },
+        {
+          "step": 20,
+          "loss": 0.6683908998966217
+        },
+        {
+          "step": 21,
+          "loss": 0.6699116751551628
+        },
+        {
+          "step": 22,
+          "loss": 0.6664650142192841
+        },
+        {
+          "step": 23,
+          "loss": 0.6625925078988075
+        },
+        {
+          "step": 24,
+          "loss": 0.6512594521045685
+        },
+        {
+          "step": 25,
+          "loss": 0.6589850410819054
+        },
+        {
+          "step": 26,
+          "loss": 0.6546183675527573
+        },
+        {
+          "step": 27,
+          "loss": 0.6434622630476952
+        },
+        {
+          "step": 28,
+          "loss": 0.6284733191132545
+        }
+      ],
+      "dtype": "torch.bfloat16",
+      "eos_token_id": 151643,
+      "peak_memory_bytes": 1902212608,
+      "training_data_hash": "655b7869f256594f5bc490440446f7634339485e5391fe491b41c1d9d3c7625f",
+      "development_selection": {
+        "step": 28,
+        "objective_mean": 0.6333333333333333
+      }
+    }
+  },
+  "selection": {
+    "sft": "b",
+    "old_dev": 0.0,
+    "new_dev": 0.6333333333333333,
+    "dpo_admitted": false
+  },
+  "overfit_initial": {
+    "passed": false,
+    "correct": 0,
+    "total": 16
+  },
+  "overfit_fixed": {
+    "passed": true,
+    "correct": 16,
+    "total": 16
+  },
+  "data_a": {
+    "counts": {
+      "sft_train": 823,
+      "sft_validation": 177,
+      "dpo_train": 0,
+      "dpo_validation": 0
+    },
+    "quarantined": 1000,
+    "hashes": {
+      "sft_train": "b77fe45237ce16431e8bf89eadeba11c19442848f181c3b7fbd7dcfcf3455cc1",
+      "sft_validation": "28f60b4b77a582c382b241b141fa334e4bd1679ac61fd50d094c22b9fa5cbb84",
+      "dpo_train": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "dpo_validation": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f"
+    },
+    "sources": {
+      "train_sft.json": "173d71d35b79f9a91539be0bf8a0576a7037b628821f5436a25108cc0d012c8a",
+      "train_dpo.json": "b4434fe3cf9e9c581b8f22d66459b39f0a52f256c5b9c3f108d1464abcbcfec1"
+    }
+  },
+  "data_b": {
+    "counts": {
+      "sft_train": 6191,
+      "sft_validation": 1600,
+      "dpo_train": 224,
+      "dpo_validation": 104
+    },
+    "quarantined": 2000,
+    "hashes": {
+      "sft_train": "fd0b0a021907e652d6d6b0abfa187628c33cf072aafaeaef3c8595f610853841",
+      "sft_validation": "fdc745e20eb2235239e6a1f4c5efa1b752916e24b4e9feaabd91d13086415a43",
+      "dpo_train": "655b7869f256594f5bc490440446f7634339485e5391fe491b41c1d9d3c7625f",
+      "dpo_validation": "9ced3b45c7036b4fd36ec6d32b3a47d63a0b9d2899fe18b90fba582d19c4b63b"
+    },
+    "sources": {
+      "train_sft.json": "173d71d35b79f9a91539be0bf8a0576a7037b628821f5436a25108cc0d012c8a",
+      "train_dpo.json": "b4434fe3cf9e9c581b8f22d66459b39f0a52f256c5b9c3f108d1464abcbcfec1"
+    }
+  }
+}

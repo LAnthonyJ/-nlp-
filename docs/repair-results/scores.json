@@ -1,0 +1,4839 @@
+{
+  "records": [
+    {
+      "task_id": "gsm-237",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "30"
+    },
+    {
+      "task_id": "gsm-53",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-582",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-518",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "120",
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-472",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-295",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-217",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-1141",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-184",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-1238",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-886",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-70",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-66",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-198",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-462",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-492",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-1058",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-1261",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-57",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-1175",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-419",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "4000"
+    },
+    {
+      "task_id": "gsm-881",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-466",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "10"
+    },
+    {
+      "task_id": "gsm-942",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-1235",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-588",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-14",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-337",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-887",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-715",
+      "stage": "base",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-85",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 10)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-47",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-66",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 16)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-107",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 24)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-33",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 1)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-29",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 1)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-119",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 1)"
+    },
+    {
+      "task_id": "HumanEval-30",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 1)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-112",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 13, in <module>\nNameError: name 'onica' is not defined\n",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-109",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 23) (<unknown>, line 2)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-81",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 24) (<unknown>, line 2)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-12",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 1)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-114",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 9)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-70",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 1)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-82",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 12)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-16",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 11)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-142",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 78, in <module>\n  File \"<stdin>\", line 63, in check\nAssertionError\n",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-59",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 11)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-10",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 21)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-84",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 16, in <module>\nNameError: name 'ypad' is not defined\n",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-45",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 1)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-128",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 15)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-101",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 1)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-100",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unexpected indent (<unknown>, line 16)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-135",
+      "stage": "base",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 12, in <module>\nNameError: name 'ypad' is not defined\n",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-judgment-0",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-order-0",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-count-0",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-judgment-1",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-order-1",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-count-1",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-judgment-2",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-order-2",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-count-2",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-judgment-3",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-order-3",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-count-3",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-judgment-4",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-order-4",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-count-4",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-judgment-5",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-order-5",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-count-5",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-judgment-6",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-order-6",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-count-6",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-judgment-7",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-order-7",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-count-7",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-judgment-8",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-order-8",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-count-8",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-judgment-9",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-order-9",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-count-9",
+      "stage": "base",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "concept-new-0",
+      "stage": "base",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "concept-new-1",
+      "stage": "base",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "concept-new-2",
+      "stage": "base",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "concept-new-3",
+      "stage": "base",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "concept-new-4",
+      "stage": "base",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "concept-new-5",
+      "stage": "base",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "concept-new-6",
+      "stage": "base",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "concept-new-7",
+      "stage": "base",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "concept-new-8",
+      "stage": "base",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "concept-new-9",
+      "stage": "base",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "writing-new-0",
+      "stage": "base",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "writing-new-1",
+      "stage": "base",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "writing-new-2",
+      "stage": "base",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "writing-new-3",
+      "stage": "base",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "writing-new-4",
+      "stage": "base",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "writing-new-5",
+      "stage": "base",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "writing-new-6",
+      "stage": "base",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "writing-new-7",
+      "stage": "base",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "writing-new-8",
+      "stage": "base",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "writing-new-9",
+      "stage": "base",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-237",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "90"
+    },
+    {
+      "task_id": "gsm-53",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "40"
+    },
+    {
+      "task_id": "gsm-582",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "22800"
+    },
+    {
+      "task_id": "gsm-518",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "12"
+    },
+    {
+      "task_id": "gsm-472",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-295",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-217",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-1141",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "20"
+    },
+    {
+      "task_id": "gsm-184",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "-1111111/1000000"
+    },
+    {
+      "task_id": "gsm-1238",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-886",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "40"
+    },
+    {
+      "task_id": "gsm-70",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "6750"
+    },
+    {
+      "task_id": "gsm-66",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "30"
+    },
+    {
+      "task_id": "gsm-198",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "320"
+    },
+    {
+      "task_id": "gsm-462",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "71"
+    },
+    {
+      "task_id": "gsm-492",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "32"
+    },
+    {
+      "task_id": "gsm-1058",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "250"
+    },
+    {
+      "task_id": "gsm-1261",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "45"
+    },
+    {
+      "task_id": "gsm-57",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "333"
+    },
+    {
+      "task_id": "gsm-1175",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "29/2"
+    },
+    {
+      "task_id": "gsm-419",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "7000"
+    },
+    {
+      "task_id": "gsm-881",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "18"
+    },
+    {
+      "task_id": "gsm-466",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "-35"
+    },
+    {
+      "task_id": "gsm-942",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "365/2"
+    },
+    {
+      "task_id": "gsm-1235",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "100"
+    },
+    {
+      "task_id": "gsm-588",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-14",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "20"
+    },
+    {
+      "task_id": "gsm-337",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "1"
+    },
+    {
+      "task_id": "gsm-887",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "34"
+    },
+    {
+      "task_id": "gsm-715",
+      "stage": "old_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "HumanEval-85",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 7, in <module>\nNameError: name '該使用者' is not defined\n"
+    },
+    {
+      "task_id": "HumanEval-47",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unindent does not match any outer indentation level (<unknown>, line 8)"
+    },
+    {
+      "task_id": "HumanEval-66",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 15, in <module>\nNameError: name 'iOS' is not defined\n"
+    },
+    {
+      "task_id": "HumanEval-107",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 25)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-33",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 26, in <module>\n  File \"<stdin>\", line 17, in check\nTypeError: 'NoneType' object is not iterable\n"
+    },
+    {
+      "task_id": "HumanEval-29",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 9) (<unknown>, line 2)"
+    },
+    {
+      "task_id": "HumanEval-119",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 12, in <module>\nNameError: name '該使用者' is not defined\n"
+    },
+    {
+      "task_id": "HumanEval-30",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 8)"
+    },
+    {
+      "task_id": "HumanEval-112",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 15, in <module>\nNameError: name 'CLUDED' is not defined\n"
+    },
+    {
+      "task_id": "HumanEval-109",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 23) (<unknown>, line 2)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-81",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 24)"
+    },
+    {
+      "task_id": "HumanEval-12",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 13) (<unknown>, line 2)"
+    },
+    {
+      "task_id": "HumanEval-114",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 9)"
+    },
+    {
+      "task_id": "HumanEval-70",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 5, in <module>\nNameError: name 'CLUDED' is not defined\n"
+    },
+    {
+      "task_id": "HumanEval-82",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 11, in <module>\nNameError: name 'iOS' is not defined\n"
+    },
+    {
+      "task_id": "HumanEval-16",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 8) (<unknown>, line 2)"
+    },
+    {
+      "task_id": "HumanEval-142",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 31, in <module>\n  File \"<stdin>\", line 16, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-59",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 22, in <module>\n  File \"<stdin>\", line 15, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-10",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 33, in <module>\n  File \"<stdin>\", line 27, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-84",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 16, in <module>\nNameError: name 'iOS' is not defined\n"
+    },
+    {
+      "task_id": "HumanEval-45",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 20, in <module>\n  File \"<stdin>\", line 15, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-128",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 13)"
+    },
+    {
+      "task_id": "HumanEval-101",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 11, in <module>\nNameError: name 'PostalCodes' is not defined\n"
+    },
+    {
+      "task_id": "HumanEval-100",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 11)"
+    },
+    {
+      "task_id": "HumanEval-135",
+      "stage": "old_sft",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 12)"
+    },
+    {
+      "task_id": "logic-judgment-0",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-0",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-count-0",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-1",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-1",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-count-1",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-2",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-2",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-2",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-3",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-3",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-count-3",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-4",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-4",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-4",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-5",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-5",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-5",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-6",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-6",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-6",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-7",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-7",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-7",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-8",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-8",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-8",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-9",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-9",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-9",
+      "stage": "old_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "concept-new-0",
+      "stage": "old_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-1",
+      "stage": "old_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-2",
+      "stage": "old_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-3",
+      "stage": "old_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-4",
+      "stage": "old_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-5",
+      "stage": "old_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-6",
+      "stage": "old_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-7",
+      "stage": "old_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-8",
+      "stage": "old_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-9",
+      "stage": "old_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-0",
+      "stage": "old_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-1",
+      "stage": "old_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-2",
+      "stage": "old_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-3",
+      "stage": "old_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-4",
+      "stage": "old_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-5",
+      "stage": "old_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-6",
+      "stage": "old_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-7",
+      "stage": "old_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-8",
+      "stage": "old_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-9",
+      "stage": "old_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "gsm-237",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "90"
+    },
+    {
+      "task_id": "gsm-53",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "40"
+    },
+    {
+      "task_id": "gsm-582",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "22800",
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-518",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "12"
+    },
+    {
+      "task_id": "gsm-472",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "2"
+    },
+    {
+      "task_id": "gsm-295",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "350"
+    },
+    {
+      "task_id": "gsm-217",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-1141",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "20"
+    },
+    {
+      "task_id": "gsm-184",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "1111/50"
+    },
+    {
+      "task_id": "gsm-1238",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-886",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "40"
+    },
+    {
+      "task_id": "gsm-70",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "5625"
+    },
+    {
+      "task_id": "gsm-66",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "15"
+    },
+    {
+      "task_id": "gsm-198",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-462",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "71"
+    },
+    {
+      "task_id": "gsm-492",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "32"
+    },
+    {
+      "task_id": "gsm-1058",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "250"
+    },
+    {
+      "task_id": "gsm-1261",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "47"
+    },
+    {
+      "task_id": "gsm-57",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "333"
+    },
+    {
+      "task_id": "gsm-1175",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-419",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "7000"
+    },
+    {
+      "task_id": "gsm-881",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "20"
+    },
+    {
+      "task_id": "gsm-466",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "-35"
+    },
+    {
+      "task_id": "gsm-942",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "715/4"
+    },
+    {
+      "task_id": "gsm-1235",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "100"
+    },
+    {
+      "task_id": "gsm-588",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "5677/100",
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-14",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "20"
+    },
+    {
+      "task_id": "gsm-337",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "6"
+    },
+    {
+      "task_id": "gsm-887",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "34"
+    },
+    {
+      "task_id": "gsm-715",
+      "stage": "old_dpo",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "385000"
+    },
+    {
+      "task_id": "HumanEval-85",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 7)"
+    },
+    {
+      "task_id": "HumanEval-47",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unindent does not match any outer indentation level (<unknown>, line 8)"
+    },
+    {
+      "task_id": "HumanEval-66",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 17)"
+    },
+    {
+      "task_id": "HumanEval-107",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 25)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-33",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 13)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-29",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 11) (<unknown>, line 2)"
+    },
+    {
+      "task_id": "HumanEval-119",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 12)"
+    },
+    {
+      "task_id": "HumanEval-30",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 17)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-112",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 9, in <module>\nNameError: name 'CLUDED' is not defined\n"
+    },
+    {
+      "task_id": "HumanEval-109",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 23) (<unknown>, line 2)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-81",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 26) (<unknown>, line 25)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-12",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unindent does not match any outer indentation level (<unknown>, line 7)"
+    },
+    {
+      "task_id": "HumanEval-114",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 9)"
+    },
+    {
+      "task_id": "HumanEval-70",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 5, in <module>\nNameError: name 'CLUDED' is not defined\n"
+    },
+    {
+      "task_id": "HumanEval-82",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 13)"
+    },
+    {
+      "task_id": "HumanEval-16",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 74) (<unknown>, line 2)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-142",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 12) (<unknown>, line 2)"
+    },
+    {
+      "task_id": "HumanEval-59",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid decimal literal (<unknown>, line 9)"
+    },
+    {
+      "task_id": "HumanEval-10",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 17)"
+    },
+    {
+      "task_id": "HumanEval-84",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated string literal (detected at line 27) (<unknown>, line 27)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-45",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 147) (<unknown>, line 2)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-128",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unindent does not match any outer indentation level (<unknown>, line 5)"
+    },
+    {
+      "task_id": "HumanEval-101",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 9)"
+    },
+    {
+      "task_id": "HumanEval-100",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unmatched '}' (<unknown>, line 12)"
+    },
+    {
+      "task_id": "HumanEval-135",
+      "stage": "old_dpo",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 26) (<unknown>, line 24)",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-judgment-0",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-0",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format",
+      "truncated": true
+    },
+    {
+      "task_id": "logic-count-0",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-1",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-1",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-1",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-2",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-2",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-2",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-3",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-3",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-3",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-4",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-4",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-4",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-5",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-5",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-5",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-6",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-6",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-6",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-7",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-7",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-7",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-8",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-8",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-8",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-9",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-9",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-9",
+      "stage": "old_dpo",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "concept-new-0",
+      "stage": "old_dpo",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "concept-new-1",
+      "stage": "old_dpo",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-2",
+      "stage": "old_dpo",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-3",
+      "stage": "old_dpo",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "concept-new-4",
+      "stage": "old_dpo",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-5",
+      "stage": "old_dpo",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-6",
+      "stage": "old_dpo",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-7",
+      "stage": "old_dpo",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-8",
+      "stage": "old_dpo",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-9",
+      "stage": "old_dpo",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-0",
+      "stage": "old_dpo",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-1",
+      "stage": "old_dpo",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-2",
+      "stage": "old_dpo",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-3",
+      "stage": "old_dpo",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-4",
+      "stage": "old_dpo",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-5",
+      "stage": "old_dpo",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-6",
+      "stage": "old_dpo",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-7",
+      "stage": "old_dpo",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human",
+      "truncated": true
+    },
+    {
+      "task_id": "writing-new-8",
+      "stage": "old_dpo",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-9",
+      "stage": "old_dpo",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "gsm-237",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-53",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-582",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-518",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-472",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "5",
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-295",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-217",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "15"
+    },
+    {
+      "task_id": "gsm-1141",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-184",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-1238",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-886",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-70",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-66",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "30"
+    },
+    {
+      "task_id": "gsm-198",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-462",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "21/2"
+    },
+    {
+      "task_id": "gsm-492",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "32"
+    },
+    {
+      "task_id": "gsm-1058",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-1261",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-57",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-1175",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-419",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "1000"
+    },
+    {
+      "task_id": "gsm-881",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-466",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-942",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-1235",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-588",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-14",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-337",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "1"
+    },
+    {
+      "task_id": "gsm-887",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "34"
+    },
+    {
+      "task_id": "gsm-715",
+      "stage": "instruct",
+      "category": "math",
+      "split": "main",
+      "correct": true,
+      "status": "correct",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "385000"
+    },
+    {
+      "task_id": "HumanEval-85",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 32, in <module>\n  File \"<stdin>\", line 24, in check\nAssertionError\n",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-47",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated string literal (detected at line 3) (<unknown>, line 3)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-66",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "task_id": "HumanEval-107",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "invalid syntax (<unknown>, line 1)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-33",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 32, in <module>\n  File \"<stdin>\", line 26, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-29",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "task_id": "HumanEval-119",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 41, in <module>\n  File \"<stdin>\", line 24, in check\nAssertionError\n",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-30",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "task_id": "HumanEval-112",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 24, in <module>\n  File \"<stdin>\", line 14, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-109",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 40, in <module>\n  File \"<stdin>\", line 33, in check\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-81",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 24) (<unknown>, line 3)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-12",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": "",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-114",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 40, in <module>\n  File \"<stdin>\", line 25, in check\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-70",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 29, in <module>\n  File \"<stdin>\", line 15, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-82",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 44, in <module>\n  File \"<stdin>\", line 24, in check\nAssertionError\n",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-16",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "task_id": "HumanEval-142",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "task_id": "HumanEval-59",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated string literal (detected at line 1) (<unknown>, line 1)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-10",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 42, in <module>\n  File \"<stdin>\", line 39, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-84",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 34, in <module>\n  File \"<stdin>\", line 25, in check\nAssertionError: Error\n",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-45",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "task_id": "HumanEval-128",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 45, in <module>\n  File \"<stdin>\", line 32, in check\nAssertionError\n",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-101",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 32, in <module>\n  File \"<stdin>\", line 21, in check\n  File \"<stdin>\", line 14, in words_string\nAttributeError: 'list' object has no attribute 'split'\n"
+    },
+    {
+      "task_id": "HumanEval-100",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 37, in <module>\n  File \"<stdin>\", line 27, in check\nAssertionError: Test 3\n"
+    },
+    {
+      "task_id": "HumanEval-135",
+      "stage": "instruct",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 36, in <module>\n  File \"<stdin>\", line 27, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "logic-judgment-0",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-0",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-0",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-1",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-1",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-1",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-2",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-2",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-2",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-3",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-3",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-3",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-4",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-4",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-4",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-5",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-5",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-5",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-6",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-6",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-6",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-7",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-7",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-7",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-8",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-8",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-8",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-9",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-9",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-9",
+      "stage": "instruct",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "concept-new-0",
+      "stage": "instruct",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-1",
+      "stage": "instruct",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-2",
+      "stage": "instruct",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-3",
+      "stage": "instruct",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-4",
+      "stage": "instruct",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-5",
+      "stage": "instruct",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-6",
+      "stage": "instruct",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-7",
+      "stage": "instruct",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-8",
+      "stage": "instruct",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-9",
+      "stage": "instruct",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-0",
+      "stage": "instruct",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-1",
+      "stage": "instruct",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-2",
+      "stage": "instruct",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-3",
+      "stage": "instruct",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-4",
+      "stage": "instruct",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-5",
+      "stage": "instruct",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-6",
+      "stage": "instruct",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-7",
+      "stage": "instruct",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-8",
+      "stage": "instruct",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-9",
+      "stage": "instruct",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "gsm-237",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": true,
+      "status": "correct",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "90"
+    },
+    {
+      "task_id": "gsm-53",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "120"
+    },
+    {
+      "task_id": "gsm-582",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "98800"
+    },
+    {
+      "task_id": "gsm-518",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": true,
+      "status": "correct",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "32"
+    },
+    {
+      "task_id": "gsm-472",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-295",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "410"
+    },
+    {
+      "task_id": "gsm-217",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": true,
+      "status": "correct",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "15"
+    },
+    {
+      "task_id": "gsm-1141",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": true,
+      "status": "correct",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "20"
+    },
+    {
+      "task_id": "gsm-184",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null,
+      "truncated": true
+    },
+    {
+      "task_id": "gsm-1238",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "17"
+    },
+    {
+      "task_id": "gsm-886",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "40"
+    },
+    {
+      "task_id": "gsm-70",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": true,
+      "status": "correct",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "7425"
+    },
+    {
+      "task_id": "gsm-66",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "24"
+    },
+    {
+      "task_id": "gsm-198",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "120"
+    },
+    {
+      "task_id": "gsm-462",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": true,
+      "status": "correct",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "71"
+    },
+    {
+      "task_id": "gsm-492",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-1058",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": true,
+      "status": "correct",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "250"
+    },
+    {
+      "task_id": "gsm-1261",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "245"
+    },
+    {
+      "task_id": "gsm-57",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-1175",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "7"
+    },
+    {
+      "task_id": "gsm-419",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-881",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "56"
+    },
+    {
+      "task_id": "gsm-466",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": true,
+      "status": "correct",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "1"
+    },
+    {
+      "task_id": "gsm-942",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-1235",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "100"
+    },
+    {
+      "task_id": "gsm-588",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "gsm-14",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": "40"
+    },
+    {
+      "task_id": "gsm-337",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": true,
+      "status": "correct",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "1"
+    },
+    {
+      "task_id": "gsm-887",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": true,
+      "status": "correct",
+      "format_relaxed_correct": true,
+      "format_relaxed_extracted": "34"
+    },
+    {
+      "task_id": "gsm-715",
+      "stage": "new_sft",
+      "category": "math",
+      "split": "main",
+      "correct": false,
+      "status": "invalid_answer",
+      "format_relaxed_correct": false,
+      "format_relaxed_extracted": null
+    },
+    {
+      "task_id": "HumanEval-85",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "task_id": "HumanEval-47",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "task_id": "HumanEval-66",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 21, in <module>\n  File \"<stdin>\", line 9, in check\nAssertionError: Error\n"
+    },
+    {
+      "task_id": "HumanEval-107",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 27, in <module>\n  File \"<stdin>\", line 15, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-33",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 31, in <module>\n  File \"<stdin>\", line 25, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-29",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "task_id": "HumanEval-119",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 36, in <module>\n  File \"<stdin>\", line 19, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-30",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unexpected indent (<unknown>, line 9)"
+    },
+    {
+      "task_id": "HumanEval-112",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 17, in <module>\n  File \"<stdin>\", line 7, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-109",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 17, in <module>\n  File \"<stdin>\", line 10, in check\nAssertionError: This prints if this assert fails 1 (good for debugging!)\n"
+    },
+    {
+      "task_id": "HumanEval-81",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "syntax_error",
+      "correct": false,
+      "detail": "unterminated triple-quoted string literal (detected at line 24) (<unknown>, line 2)",
+      "truncated": true
+    },
+    {
+      "task_id": "HumanEval-12",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "task_id": "HumanEval-114",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "task_id": "HumanEval-70",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 21, in <module>\n  File \"<stdin>\", line 7, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-82",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 43, in <module>\n  File \"<stdin>\", line 23, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-16",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "task_id": "HumanEval-142",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 29, in <module>\n  File \"<stdin>\", line 14, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-59",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 9, in <module>\nNameError: name 'ypad' is not defined\n"
+    },
+    {
+      "task_id": "HumanEval-10",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 40, in <module>\n  File \"<stdin>\", line 36, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-84",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 32, in <module>\n  File \"<stdin>\", line 22, in check\nAssertionError: Error\n"
+    },
+    {
+      "task_id": "HumanEval-45",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "correct",
+      "correct": true,
+      "returncode": 0,
+      "stderr_tail": ""
+    },
+    {
+      "task_id": "HumanEval-128",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 23, in <module>\n  File \"<stdin>\", line 10, in check\n  File \"<stdin>\", line 5, in prod_signs\n  File \"<stdin>\", line 5, in <listcomp>\nNameError: name 'sign' is not defined\n"
+    },
+    {
+      "task_id": "HumanEval-101",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 27, in <module>\n  File \"<stdin>\", line 16, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "HumanEval-100",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 30, in <module>\n  File \"<stdin>\", line 20, in check\nAssertionError: Test 3\n"
+    },
+    {
+      "task_id": "HumanEval-135",
+      "stage": "new_sft",
+      "category": "code",
+      "split": "main",
+      "status": "test_failure",
+      "correct": false,
+      "returncode": 1,
+      "stderr_tail": "Traceback (most recent call last):\n  File \"<stdin>\", line 32, in <module>\n  File \"<stdin>\", line 24, in check\nAssertionError\n"
+    },
+    {
+      "task_id": "logic-judgment-0",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-0",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-0",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-1",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-1",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-1",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-2",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-2",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-2",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-3",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-3",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-3",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-4",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-4",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-4",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-5",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-5",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-5",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-6",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-6",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-6",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-7",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-7",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-7",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-8",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": true,
+      "status": "correct"
+    },
+    {
+      "task_id": "logic-order-8",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-8",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-judgment-9",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-order-9",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "logic-count-9",
+      "stage": "new_sft",
+      "category": "logic",
+      "split": "main",
+      "correct": false,
+      "status": "incorrect_or_format"
+    },
+    {
+      "task_id": "concept-new-0",
+      "stage": "new_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-1",
+      "stage": "new_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-2",
+      "stage": "new_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-3",
+      "stage": "new_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-4",
+      "stage": "new_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-5",
+      "stage": "new_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-6",
+      "stage": "new_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-7",
+      "stage": "new_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-8",
+      "stage": "new_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "concept-new-9",
+      "stage": "new_sft",
+      "category": "concept",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-0",
+      "stage": "new_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-1",
+      "stage": "new_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-2",
+      "stage": "new_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-3",
+      "stage": "new_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-4",
+      "stage": "new_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-5",
+      "stage": "new_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-6",
+      "stage": "new_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-7",
+      "stage": "new_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-8",
+      "stage": "new_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    },
+    {
+      "task_id": "writing-new-9",
+      "stage": "new_sft",
+      "category": "writing",
+      "split": "main",
+      "correct": null,
+      "status": "pending_human"
+    }
+  ],
+  "experiment_hash": "d5b84aeeb44c52389824a3b2497712c65db8226b3c1ae512b654462f6f060ed7",
+  "source_experiment_hash": "f19882f0b61dfce4c2280c3e9174daa2e5baf8c3385ec6c1a442417f414ebc2c"
+}

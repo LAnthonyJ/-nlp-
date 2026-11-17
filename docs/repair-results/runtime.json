@@ -1,0 +1,17 @@
+{
+  "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26300-SP0",
+  "versions": {
+    "torch": "2.9.0+cu128",
+    "transformers": "5.9.0",
+    "peft": "0.21.3",
+    "accelerate": "1.11.0",
+    "safetensors": "0.6.2",
+    "tokenizers": "0.22.1",
+    "huggingface-hub": "1.16.1"
+  },
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 3060 Laptop GPU",
+  "gpu_memory_bytes": 6441926656,
+  "scoring_image_id": "sha256:07d4824036af339fa1b6ef769cc99d9c10a141769538b52b3b597c84f7a7b535"
+}

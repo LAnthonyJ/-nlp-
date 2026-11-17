@@ -1,0 +1,1254 @@
+{
+  "summary": [
+    {
+      "model": "base",
+      "category": "math",
+      "n": 30,
+      "measured": 30,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.11351339317396876
+      ],
+      "relaxed_correct": 0,
+      "truncated": 21,
+      "statuses": {
+        "incorrect": 2,
+        "invalid_answer": 28
+      }
+    },
+    {
+      "model": "base",
+      "category": "logic",
+      "n": 30,
+      "measured": 30,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.11351339317396876
+      ],
+      "relaxed_correct": 0,
+      "truncated": 30,
+      "statuses": {
+        "incorrect_or_format": 30
+      }
+    },
+    {
+      "model": "base",
+      "category": "code",
+      "n": 25,
+      "measured": 25,
+      "correct": 1,
+      "accuracy": 0.04,
+      "interval": [
+        0.007096233501987265,
+        0.19544063736193734
+      ],
+      "relaxed_correct": 0,
+      "truncated": 24,
+      "statuses": {
+        "syntax_error": 20,
+        "correct": 1,
+        "test_failure": 4
+      }
+    },
+    {
+      "model": "base",
+      "category": "concept",
+      "n": 10,
+      "measured": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "relaxed_correct": 0,
+      "truncated": 10,
+      "statuses": {
+        "pending_human": 10
+      }
+    },
+    {
+      "model": "base",
+      "category": "writing",
+      "n": 10,
+      "measured": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "relaxed_correct": 0,
+      "truncated": 10,
+      "statuses": {
+        "pending_human": 10
+      }
+    },
+    {
+      "model": "old_sft",
+      "category": "math",
+      "n": 30,
+      "measured": 30,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.11351339317396876
+      ],
+      "relaxed_correct": 9,
+      "truncated": 1,
+      "statuses": {
+        "invalid_answer": 29,
+        "incorrect": 1
+      }
+    },
+    {
+      "model": "old_sft",
+      "category": "logic",
+      "n": 30,
+      "measured": 30,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.11351339317396876
+      ],
+      "relaxed_correct": 0,
+      "truncated": 3,
+      "statuses": {
+        "incorrect_or_format": 30
+      }
+    },
+    {
+      "model": "old_sft",
+      "category": "code",
+      "n": 25,
+      "measured": 25,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.13319225093904846
+      ],
+      "relaxed_correct": 0,
+      "truncated": 2,
+      "statuses": {
+        "test_failure": 13,
+        "syntax_error": 12
+      }
+    },
+    {
+      "model": "old_sft",
+      "category": "concept",
+      "n": 10,
+      "measured": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "relaxed_correct": 0,
+      "truncated": 0,
+      "statuses": {
+        "pending_human": 10
+      }
+    },
+    {
+      "model": "old_sft",
+      "category": "writing",
+      "n": 10,
+      "measured": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "relaxed_correct": 0,
+      "truncated": 0,
+      "statuses": {
+        "pending_human": 10
+      }
+    },
+    {
+      "model": "old_dpo",
+      "category": "math",
+      "n": 30,
+      "measured": 30,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.11351339317396876
+      ],
+      "relaxed_correct": 8,
+      "truncated": 3,
+      "statuses": {
+        "invalid_answer": 29,
+        "incorrect": 1
+      }
+    },
+    {
+      "model": "old_dpo",
+      "category": "logic",
+      "n": 30,
+      "measured": 30,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.11351339317396876
+      ],
+      "relaxed_correct": 0,
+      "truncated": 1,
+      "statuses": {
+        "incorrect_or_format": 30
+      }
+    },
+    {
+      "model": "old_dpo",
+      "category": "code",
+      "n": 25,
+      "measured": 25,
+      "correct": 0,
+      "accuracy": 0.0,
+      "interval": [
+        0.0,
+        0.13319225093904846
+      ],
+      "relaxed_correct": 0,
+      "truncated": 9,
+      "statuses": {
+        "syntax_error": 23,
+        "test_failure": 2
+      }
+    },
+    {
+      "model": "old_dpo",
+      "category": "concept",
+      "n": 10,
+      "measured": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "relaxed_correct": 0,
+      "truncated": 2,
+      "statuses": {
+        "pending_human": 10
+      }
+    },
+    {
+      "model": "old_dpo",
+      "category": "writing",
+      "n": 10,
+      "measured": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "relaxed_correct": 0,
+      "truncated": 1,
+      "statuses": {
+        "pending_human": 10
+      }
+    },
+    {
+      "model": "instruct",
+      "category": "math",
+      "n": 30,
+      "measured": 30,
+      "correct": 1,
+      "accuracy": 0.03333333333333333,
+      "interval": [
+        0.005908590381612455,
+        0.16670390991409173
+      ],
+      "relaxed_correct": 5,
+      "truncated": 13,
+      "statuses": {
+        "invalid_answer": 28,
+        "incorrect": 1,
+        "correct": 1
+      }
+    },
+    {
+      "model": "instruct",
+      "category": "logic",
+      "n": 30,
+      "measured": 30,
+      "correct": 10,
+      "accuracy": 0.3333333333333333,
+      "interval": [
+        0.19230498083676134,
+        0.5121994835545616
+      ],
+      "relaxed_correct": 0,
+      "truncated": 0,
+      "statuses": {
+        "correct": 10,
+        "incorrect_or_format": 20
+      }
+    },
+    {
+      "model": "instruct",
+      "category": "code",
+      "n": 25,
+      "measured": 25,
+      "correct": 7,
+      "accuracy": 0.28,
+      "interval": [
+        0.14283853850956563,
+        0.47576605190361576
+      ],
+      "relaxed_correct": 0,
+      "truncated": 12,
+      "statuses": {
+        "test_failure": 14,
+        "syntax_error": 4,
+        "correct": 7
+      }
+    },
+    {
+      "model": "instruct",
+      "category": "concept",
+      "n": 10,
+      "measured": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "relaxed_correct": 0,
+      "truncated": 0,
+      "statuses": {
+        "pending_human": 10
+      }
+    },
+    {
+      "model": "instruct",
+      "category": "writing",
+      "n": 10,
+      "measured": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "relaxed_correct": 0,
+      "truncated": 0,
+      "statuses": {
+        "pending_human": 10
+      }
+    },
+    {
+      "model": "new_sft",
+      "category": "math",
+      "n": 30,
+      "measured": 30,
+      "correct": 10,
+      "accuracy": 0.3333333333333333,
+      "interval": [
+        0.19230498083676134,
+        0.5121994835545616
+      ],
+      "relaxed_correct": 10,
+      "truncated": 1,
+      "statuses": {
+        "correct": 10,
+        "incorrect": 12,
+        "invalid_answer": 8
+      }
+    },
+    {
+      "model": "new_sft",
+      "category": "logic",
+      "n": 30,
+      "measured": 30,
+      "correct": 5,
+      "accuracy": 0.16666666666666666,
+      "interval": [
+        0.0733654237184855,
+        0.3356435050641603
+      ],
+      "relaxed_correct": 0,
+      "truncated": 0,
+      "statuses": {
+        "correct": 5,
+        "incorrect_or_format": 25
+      }
+    },
+    {
+      "model": "new_sft",
+      "category": "code",
+      "n": 25,
+      "measured": 25,
+      "correct": 7,
+      "accuracy": 0.28,
+      "interval": [
+        0.14283853850956563,
+        0.47576605190361576
+      ],
+      "relaxed_correct": 0,
+      "truncated": 1,
+      "statuses": {
+        "correct": 7,
+        "test_failure": 16,
+        "syntax_error": 2
+      }
+    },
+    {
+      "model": "new_sft",
+      "category": "concept",
+      "n": 10,
+      "measured": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "relaxed_correct": 0,
+      "truncated": 0,
+      "statuses": {
+        "pending_human": 10
+      }
+    },
+    {
+      "model": "new_sft",
+      "category": "writing",
+      "n": 10,
+      "measured": 0,
+      "correct": 0,
+      "accuracy": null,
+      "interval": null,
+      "relaxed_correct": 0,
+      "truncated": 0,
+      "statuses": {
+        "pending_human": 10
+      }
+    }
+  ],
+  "transitions": [
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-237",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-53",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-582",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-518",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-472",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-295",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-217",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-1141",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-184",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-1238",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-886",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-70",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-66",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-198",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-462",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-492",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-1058",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-1261",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-57",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-1175",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-419",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-881",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-466",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-942",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-1235",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-588",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-14",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-337",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-887",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "gsm-715",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-85",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-47",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-66",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-107",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-33",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-29",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-119",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-30",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-112",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-109",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-81",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-12",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-114",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-70",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-82",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-16",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-142",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-59",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-10",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-84",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-45",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-128",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-101",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-100",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "HumanEval-135",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-judgment-0",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-order-0",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-count-0",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-judgment-1",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-order-1",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-count-1",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-judgment-2",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-order-2",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-count-2",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-judgment-3",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-order-3",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-count-3",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-judgment-4",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-order-4",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-count-4",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-judgment-5",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-order-5",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-count-5",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-judgment-6",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-order-6",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-count-6",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-judgment-7",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-order-7",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-count-7",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-judgment-8",
+      "before": false,
+      "after": true
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-order-8",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-count-8",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-judgment-9",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-order-9",
+      "before": false,
+      "after": false
+    },
+    {
+      "first": "old_sft",
+      "last": "new_sft",
+      "task_id": "logic-count-9",
+      "before": false,
+      "after": false
+    }
+  ],
+  "experiment": {
+    "suite_dir": "docs/repair-results/suite",
+    "dev_suite_dir": "outputs/repair-v1/dev-suite",
+    "run_dir": "docs/repair-results",
+    "sources": {
+      "gsm8k": "https://github.com/openai/grade-school-math",
+      "humaneval": "https://github.com/openai/human-eval"
+    },
+    "models": {
+      "base": {
+        "model": "Qwen/Qwen2.5-0.5B",
+        "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+      },
+      "old_sft": {
+        "model": "Qwen/Qwen2.5-0.5B",
+        "adapter": "local-only/old_sft",
+        "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+      },
+      "old_dpo": {
+        "model": "Qwen/Qwen2.5-0.5B",
+        "adapter": "local-only/old_dpo",
+        "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+      },
+      "instruct": {
+        "model": "Qwen/Qwen2.5-0.5B-Instruct",
+        "native_template": true,
+        "repetition_penalty": 1.0,
+        "revision": "7ae557604adf67be50417f59c2c2f167def9a775"
+      },
+      "new_sft": {
+        "model": "Qwen/Qwen2.5-0.5B",
+        "adapter": "local-only/new_sft",
+        "repetition_penalty": 1.0,
+        "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+      }
+    },
+    "comparisons": [
+      [
+        "old_sft",
+        "new_sft"
+      ]
+    ],
+    "statistics_only": true
+  },
+  "human_summary": [
+    {
+      "model": "base",
+      "category": "concept",
+      "n": 0,
+      "means": null
+    },
+    {
+      "model": "base",
+      "category": "writing",
+      "n": 0,
+      "means": null
+    },
+    {
+      "model": "old_sft",
+      "category": "concept",
+      "n": 0,
+      "means": null
+    },
+    {
+      "model": "old_sft",
+      "category": "writing",
+      "n": 0,
+      "means": null
+    },
+    {
+      "model": "old_dpo",
+      "category": "concept",
+      "n": 0,
+      "means": null
+    },
+    {
+      "model": "old_dpo",
+      "category": "writing",
+      "n": 0,
+      "means": null
+    },
+    {
+      "model": "instruct",
+      "category": "concept",
+      "n": 0,
+      "means": null
+    },
+    {
+      "model": "instruct",
+      "category": "writing",
+      "n": 0,
+      "means": null
+    },
+    {
+      "model": "new_sft",
+      "category": "concept",
+      "n": 0,
+      "means": null
+    },
+    {
+      "model": "new_sft",
+      "category": "writing",
+      "n": 0,
+      "means": null
+    }
+  ],
+  "human_status": "pending",
+  "logic_by_kind": [
+    {
+      "model": "base",
+      "kind": "counting",
+      "n": 10,
+      "correct": 0,
+      "constant_answer_accuracy": 0.1
+    },
+    {
+      "model": "base",
+      "kind": "entailment",
+      "n": 10,
+      "correct": 0,
+      "constant_answer_accuracy": 0.5
+    },
+    {
+      "model": "base",
+      "kind": "ordering",
+      "n": 10,
+      "correct": 0,
+      "constant_answer_accuracy": 0.1
+    },
+    {
+      "model": "old_sft",
+      "kind": "counting",
+      "n": 10,
+      "correct": 0,
+      "constant_answer_accuracy": 0.1
+    },
+    {
+      "model": "old_sft",
+      "kind": "entailment",
+      "n": 10,
+      "correct": 0,
+      "constant_answer_accuracy": 0.5
+    },
+    {
+      "model": "old_sft",
+      "kind": "ordering",
+      "n": 10,
+      "correct": 0,
+      "constant_answer_accuracy": 0.1
+    },
+    {
+      "model": "old_dpo",
+      "kind": "counting",
+      "n": 10,
+      "correct": 0,
+      "constant_answer_accuracy": 0.1
+    },
+    {
+      "model": "old_dpo",
+      "kind": "entailment",
+      "n": 10,
+      "correct": 0,
+      "constant_answer_accuracy": 0.5
+    },
+    {
+      "model": "old_dpo",
+      "kind": "ordering",
+      "n": 10,
+      "correct": 0,
+      "constant_answer_accuracy": 0.1
+    },
+    {
+      "model": "instruct",
+      "kind": "counting",
+      "n": 10,
+      "correct": 0,
+      "constant_answer_accuracy": 0.1
+    },
+    {
+      "model": "instruct",
+      "kind": "entailment",
+      "n": 10,
+      "correct": 10,
+      "constant_answer_accuracy": 0.5
+    },
+    {
+      "model": "instruct",
+      "kind": "ordering",
+      "n": 10,
+      "correct": 0,
+      "constant_answer_accuracy": 0.1
+    },
+    {
+      "model": "new_sft",
+      "kind": "counting",
+      "n": 10,
+      "correct": 0,
+      "constant_answer_accuracy": 0.1
+    },
+    {
+      "model": "new_sft",
+      "kind": "entailment",
+      "n": 10,
+      "correct": 5,
+      "constant_answer_accuracy": 0.5
+    },
+    {
+      "model": "new_sft",
+      "kind": "ordering",
+      "n": 10,
+      "correct": 0,
+      "constant_answer_accuracy": 0.1
+    }
+  ],
+  "logic_constant_baseline": {
+    "counts": {
+      "yes": 5,
+      "N1,N0,N3,N2": 1,
+      "24": 1,
+      "no": 5,
+      "N6,N8,N7,N5": 1,
+      "25": 1,
+      "N12,N13,N10,N11": 1,
+      "26": 1,
+      "N18,N16,N15,N17": 1,
+      "27": 1,
+      "N21,N20,N23,N22": 1,
+      "28": 1,
+      "N27,N28,N25,N26": 1,
+      "29": 1,
+      "N30,N33,N32,N31": 1,
+      "30": 1,
+      "N38,N37,N36,N35": 1,
+      "31": 1,
+      "N40,N43,N42,N41": 1,
+      "32": 1,
+      "N45,N46,N47,N48": 1,
+      "33": 1
+    },
+    "accuracy": 0.16666666666666666
+  }
+}

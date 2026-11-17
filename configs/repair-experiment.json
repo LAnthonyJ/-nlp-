@@ -1,0 +1,17 @@
+{
+  "suite_dir": "outputs/repair/suite",
+  "dev_suite_dir": "outputs/repair/dev-suite",
+  "run_dir": "outputs/repair/results",
+  "sources": {
+    "old_suite": "docs/capability-results/suite-index.json",
+    "gsm_test": "data/raw/gsm-test.jsonl",
+    "gsm_train": "data/raw/gsm-train.jsonl",
+    "humaneval": "data/raw/HumanEval.jsonl.gz"
+  },
+  "models": {
+    "base": {"model": "Qwen/Qwen2.5-0.5B"},
+    "new_sft": {"model": "Qwen/Qwen2.5-0.5B", "adapter": "outputs/repair/sft/best"},
+    "instruct": {"model": "Qwen/Qwen2.5-0.5B-Instruct", "native_template": true}
+  },
+  "comparisons": [["base", "new_sft"]]
+}

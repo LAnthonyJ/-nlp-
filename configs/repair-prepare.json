@@ -1,0 +1,7 @@
+{
+  "train_dir": "data/raw/coursework",
+  "data_dir": "outputs/repair/data",
+  "gsm_train": "data/raw/gsm-train.jsonl",
+  "exclude_suites": ["outputs/repair/suite/suite.json", "outputs/repair/dev-suite/suite.json"],
+  "synthetic": true
+}

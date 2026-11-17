@@ -1,0 +1,11 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B",
+  "data_dir": "outputs/repair/data",
+  "output_dir": "outputs/repair/overfit",
+  "overfit": true,
+  "steps": 200,
+  "accumulation": 8,
+  "max_length": 512,
+  "learning_rate": 0.0001,
+  "seed": 42
+}

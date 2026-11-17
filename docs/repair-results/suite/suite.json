@@ -1,0 +1,648 @@
+{
+  "tasks": [
+    {
+      "id": "gsm-237",
+      "category": "math",
+      "reference": "90",
+      "split": "main"
+    },
+    {
+      "id": "gsm-53",
+      "category": "math",
+      "reference": "40",
+      "split": "main"
+    },
+    {
+      "id": "gsm-582",
+      "category": "math",
+      "reference": "129200",
+      "split": "main"
+    },
+    {
+      "id": "gsm-518",
+      "category": "math",
+      "reference": "32",
+      "split": "main"
+    },
+    {
+      "id": "gsm-472",
+      "category": "math",
+      "reference": "6",
+      "split": "main"
+    },
+    {
+      "id": "gsm-295",
+      "category": "math",
+      "reference": "370",
+      "split": "main"
+    },
+    {
+      "id": "gsm-217",
+      "category": "math",
+      "reference": "15",
+      "split": "main"
+    },
+    {
+      "id": "gsm-1141",
+      "category": "math",
+      "reference": "20",
+      "split": "main"
+    },
+    {
+      "id": "gsm-184",
+      "category": "math",
+      "reference": "25",
+      "split": "main"
+    },
+    {
+      "id": "gsm-1238",
+      "category": "math",
+      "reference": "520",
+      "split": "main"
+    },
+    {
+      "id": "gsm-886",
+      "category": "math",
+      "reference": "20",
+      "split": "main"
+    },
+    {
+      "id": "gsm-70",
+      "category": "math",
+      "reference": "7425",
+      "split": "main"
+    },
+    {
+      "id": "gsm-66",
+      "category": "math",
+      "reference": "48",
+      "split": "main"
+    },
+    {
+      "id": "gsm-198",
+      "category": "math",
+      "reference": "320",
+      "split": "main"
+    },
+    {
+      "id": "gsm-462",
+      "category": "math",
+      "reference": "71",
+      "split": "main"
+    },
+    {
+      "id": "gsm-492",
+      "category": "math",
+      "reference": "32",
+      "split": "main"
+    },
+    {
+      "id": "gsm-1058",
+      "category": "math",
+      "reference": "250",
+      "split": "main"
+    },
+    {
+      "id": "gsm-1261",
+      "category": "math",
+      "reference": "235",
+      "split": "main"
+    },
+    {
+      "id": "gsm-57",
+      "category": "math",
+      "reference": "83",
+      "split": "main"
+    },
+    {
+      "id": "gsm-1175",
+      "category": "math",
+      "reference": "16",
+      "split": "main"
+    },
+    {
+      "id": "gsm-419",
+      "category": "math",
+      "reference": "3000",
+      "split": "main"
+    },
+    {
+      "id": "gsm-881",
+      "category": "math",
+      "reference": "16",
+      "split": "main"
+    },
+    {
+      "id": "gsm-466",
+      "category": "math",
+      "reference": "1",
+      "split": "main"
+    },
+    {
+      "id": "gsm-942",
+      "category": "math",
+      "reference": "205",
+      "split": "main"
+    },
+    {
+      "id": "gsm-1235",
+      "category": "math",
+      "reference": "60",
+      "split": "main"
+    },
+    {
+      "id": "gsm-588",
+      "category": "math",
+      "reference": "52",
+      "split": "main"
+    },
+    {
+      "id": "gsm-14",
+      "category": "math",
+      "reference": "60",
+      "split": "main"
+    },
+    {
+      "id": "gsm-337",
+      "category": "math",
+      "reference": "1",
+      "split": "main"
+    },
+    {
+      "id": "gsm-887",
+      "category": "math",
+      "reference": "34",
+      "split": "main"
+    },
+    {
+      "id": "gsm-715",
+      "category": "math",
+      "reference": "385000",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-85",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-47",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-66",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-107",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-33",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-29",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-119",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-30",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-112",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-109",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-81",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-12",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-114",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-70",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-82",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-16",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-142",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-59",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-10",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-84",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-45",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-128",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-101",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-100",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "HumanEval-135",
+      "category": "code",
+      "split": "main"
+    },
+    {
+      "id": "logic-judgment-0",
+      "category": "logic",
+      "kind": "entailment",
+      "reference": "yes",
+      "split": "main"
+    },
+    {
+      "id": "logic-order-0",
+      "category": "logic",
+      "kind": "ordering",
+      "reference": "N1,N0,N3,N2",
+      "split": "main"
+    },
+    {
+      "id": "logic-count-0",
+      "category": "logic",
+      "kind": "counting",
+      "reference": "24",
+      "split": "main"
+    },
+    {
+      "id": "logic-judgment-1",
+      "category": "logic",
+      "kind": "entailment",
+      "reference": "no",
+      "split": "main"
+    },
+    {
+      "id": "logic-order-1",
+      "category": "logic",
+      "kind": "ordering",
+      "reference": "N6,N8,N7,N5",
+      "split": "main"
+    },
+    {
+      "id": "logic-count-1",
+      "category": "logic",
+      "kind": "counting",
+      "reference": "25",
+      "split": "main"
+    },
+    {
+      "id": "logic-judgment-2",
+      "category": "logic",
+      "kind": "entailment",
+      "reference": "yes",
+      "split": "main"
+    },
+    {
+      "id": "logic-order-2",
+      "category": "logic",
+      "kind": "ordering",
+      "reference": "N12,N13,N10,N11",
+      "split": "main"
+    },
+    {
+      "id": "logic-count-2",
+      "category": "logic",
+      "kind": "counting",
+      "reference": "26",
+      "split": "main"
+    },
+    {
+      "id": "logic-judgment-3",
+      "category": "logic",
+      "kind": "entailment",
+      "reference": "no",
+      "split": "main"
+    },
+    {
+      "id": "logic-order-3",
+      "category": "logic",
+      "kind": "ordering",
+      "reference": "N18,N16,N15,N17",
+      "split": "main"
+    },
+    {
+      "id": "logic-count-3",
+      "category": "logic",
+      "kind": "counting",
+      "reference": "27",
+      "split": "main"
+    },
+    {
+      "id": "logic-judgment-4",
+      "category": "logic",
+      "kind": "entailment",
+      "reference": "yes",
+      "split": "main"
+    },
+    {
+      "id": "logic-order-4",
+      "category": "logic",
+      "kind": "ordering",
+      "reference": "N21,N20,N23,N22",
+      "split": "main"
+    },
+    {
+      "id": "logic-count-4",
+      "category": "logic",
+      "kind": "counting",
+      "reference": "28",
+      "split": "main"
+    },
+    {
+      "id": "logic-judgment-5",
+      "category": "logic",
+      "kind": "entailment",
+      "reference": "no",
+      "split": "main"
+    },
+    {
+      "id": "logic-order-5",
+      "category": "logic",
+      "kind": "ordering",
+      "reference": "N27,N28,N25,N26",
+      "split": "main"
+    },
+    {
+      "id": "logic-count-5",
+      "category": "logic",
+      "kind": "counting",
+      "reference": "29",
+      "split": "main"
+    },
+    {
+      "id": "logic-judgment-6",
+      "category": "logic",
+      "kind": "entailment",
+      "reference": "yes",
+      "split": "main"
+    },
+    {
+      "id": "logic-order-6",
+      "category": "logic",
+      "kind": "ordering",
+      "reference": "N30,N33,N32,N31",
+      "split": "main"
+    },
+    {
+      "id": "logic-count-6",
+      "category": "logic",
+      "kind": "counting",
+      "reference": "30",
+      "split": "main"
+    },
+    {
+      "id": "logic-judgment-7",
+      "category": "logic",
+      "kind": "entailment",
+      "reference": "no",
+      "split": "main"
+    },
+    {
+      "id": "logic-order-7",
+      "category": "logic",
+      "kind": "ordering",
+      "reference": "N38,N37,N36,N35",
+      "split": "main"
+    },
+    {
+      "id": "logic-count-7",
+      "category": "logic",
+      "kind": "counting",
+      "reference": "31",
+      "split": "main"
+    },
+    {
+      "id": "logic-judgment-8",
+      "category": "logic",
+      "kind": "entailment",
+      "reference": "yes",
+      "split": "main"
+    },
+    {
+      "id": "logic-order-8",
+      "category": "logic",
+      "kind": "ordering",
+      "reference": "N40,N43,N42,N41",
+      "split": "main"
+    },
+    {
+      "id": "logic-count-8",
+      "category": "logic",
+      "kind": "counting",
+      "reference": "32",
+      "split": "main"
+    },
+    {
+      "id": "logic-judgment-9",
+      "category": "logic",
+      "kind": "entailment",
+      "reference": "no",
+      "split": "main"
+    },
+    {
+      "id": "logic-order-9",
+      "category": "logic",
+      "kind": "ordering",
+      "reference": "N45,N46,N47,N48",
+      "split": "main"
+    },
+    {
+      "id": "logic-count-9",
+      "category": "logic",
+      "kind": "counting",
+      "reference": "33",
+      "split": "main"
+    },
+    {
+      "id": "concept-new-0",
+      "category": "concept",
+      "reference": "Rate factual accuracy, completeness, and clarity from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "concept-new-1",
+      "category": "concept",
+      "reference": "Rate factual accuracy, completeness, and clarity from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "concept-new-2",
+      "category": "concept",
+      "reference": "Rate factual accuracy, completeness, and clarity from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "concept-new-3",
+      "category": "concept",
+      "reference": "Rate factual accuracy, completeness, and clarity from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "concept-new-4",
+      "category": "concept",
+      "reference": "Rate factual accuracy, completeness, and clarity from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "concept-new-5",
+      "category": "concept",
+      "reference": "Rate factual accuracy, completeness, and clarity from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "concept-new-6",
+      "category": "concept",
+      "reference": "Rate factual accuracy, completeness, and clarity from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "concept-new-7",
+      "category": "concept",
+      "reference": "Rate factual accuracy, completeness, and clarity from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "concept-new-8",
+      "category": "concept",
+      "reference": "Rate factual accuracy, completeness, and clarity from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "concept-new-9",
+      "category": "concept",
+      "reference": "Rate factual accuracy, completeness, and clarity from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "writing-new-0",
+      "category": "writing",
+      "reference": "Rate task completion, coherence, and expression from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "writing-new-1",
+      "category": "writing",
+      "reference": "Rate task completion, coherence, and expression from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "writing-new-2",
+      "category": "writing",
+      "reference": "Rate task completion, coherence, and expression from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "writing-new-3",
+      "category": "writing",
+      "reference": "Rate task completion, coherence, and expression from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "writing-new-4",
+      "category": "writing",
+      "reference": "Rate task completion, coherence, and expression from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "writing-new-5",
+      "category": "writing",
+      "reference": "Rate task completion, coherence, and expression from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "writing-new-6",
+      "category": "writing",
+      "reference": "Rate task completion, coherence, and expression from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "writing-new-7",
+      "category": "writing",
+      "reference": "Rate task completion, coherence, and expression from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "writing-new-8",
+      "category": "writing",
+      "reference": "Rate task completion, coherence, and expression from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    },
+    {
+      "id": "writing-new-9",
+      "category": "writing",
+      "reference": "Rate task completion, coherence, and expression from 1 to 5 using the existing anchored rubric.",
+      "split": "main"
+    }
+  ],
+  "task_hash": "2ecc6bab654022f3f39016caa126c685486527a3a72fe51f4ad800a18e72b927",
+  "source_task_hash": "2499ca033b334d599ef1c7eced21658d7175dcccb376ef08d93537c144e3ccdc",
+  "sources": {
+    "old_suite": "3610e911b961f7c031d90b8f1a80ee380dd58e4550a27df72e74ba4b5613cd93",
+    "gsm_test": "e8b472800f8dee3d0a8f61066b3d786c53fa2775396bedb8e3dfabe7b641661a",
+    "gsm_train": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+    "humaneval": "b796127e635a67f93fb35c04f4cb03cf06f38c8072ee7cee8833d7bee06979ef"
+  },
+  "statistics_only": true
+}

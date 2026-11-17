@@ -21,7 +21,11 @@ Measured single-seed CPU demonstrations: learning, merge consistency, candidate 
 | Decoding | [Greedy, Top-K, Top-P and relative Min-P](src/nlp_course/decoding.py) | Candidate probabilities, temperature, repetition penalty, EOS stopping |
 | Evaluation | [Offline JSONL scoring and batched backend interface](src/nlp_course/evaluation.py) | Exact numeric comparisons, invalid-answer records, complete batch coverage |
 
-Start with [`examples/cpu_demo.py`](examples/cpu_demo.py) for an end-to-end demonstration, then explore the [64 regression tests](tests/) for the invariants behind each component.
+Start with [`examples/cpu_demo.py`](examples/cpu_demo.py) for an end-to-end demonstration, then explore the [70 regression tests](tests/) for the invariants behind each component.
+
+The [local training guide](docs/training.md) documents completion-only SFT, verified preference data, checkpoint selection, and configurable real-model evaluation.
+
+The [repair evaluation](docs/repair-results/README.md) contains 525 fresh responses. On the same held-out subsets, original SFT to repaired SFT code passes increase from 0/25 to 7/25; math final numeric matches increase from 9/30 to 10/30, with strict-format passes increasing from 0/30 to 10/30. Logic remains at an always-yes baseline. DPO did not improve the development objective mean.
 
 ## Quick start
 
@@ -134,7 +138,7 @@ The [CI workflow](.github/workflows/tests.yml) builds and installs the package, 
 
 | Check | Recorded result |
 | --- | --- |
-| Regression suite | 64 tests passed locally with visualization dependencies installed; see validation record |
+| Regression suite | 70 tests passed locally with visualization dependencies installed; see validation record |
 | Transformer output | `[2, 5, 16]`, with finite gradients |
 | Synthetic LoRA optimization | MSE `0.045949` → `0.000006364` after 80 steps, seed 42 |
 | LoRA merge consistency | Maximum absolute output difference ≈ `1.79e-7` |

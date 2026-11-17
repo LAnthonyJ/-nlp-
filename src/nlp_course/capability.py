@@ -27,7 +27,7 @@ MODEL = 'Qwen/Qwen2.5-0.5B'
 
 def save(path, data):
     Path(path).parent.mkdir(parents=True,exist_ok=True)
-    Path(path).write_text(json.dumps(data,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8')
+    Path(path).write_text(json.dumps(data,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8',newline='\n')
 
 
 def read(path):
@@ -46,22 +46,25 @@ def sha(path):
     return h.hexdigest()
 
 
-def generate(suite_dir, run_dir, stage, train_dir, phase='formal', open_only=False):
+def generate(suite_dir, run_dir, stage, train_dir, phase='formal', open_only=False, spec=None):
     import torch
     torch.set_num_threads(1)
     from transformers import AutoModelForCausalLM, AutoTokenizer
     from huggingface_hub import snapshot_download
     if not torch.cuda.is_available():raise ValueError('CUDA evaluation requires the separate GPU environment')
-    model_path=snapshot_download(MODEL,local_files_only=True)
+    spec = spec or {}
+    model_id = spec.get('model', MODEL)
+    model_path = model_id if Path(model_id).is_dir() else snapshot_download(model_id,revision=spec.get('revision'),local_files_only=True)
     tokenizer=AutoTokenizer.from_pretrained(model_path,local_files_only=True)
-    tokenizer.chat_template="{% for m in messages %}<|im_start|>{{m['role']}}\n{{m['content']}}<|im_end|>\n{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}"
+    from .training import TEMPLATE
+    if not spec.get('native_template',False): tokenizer.chat_template = TEMPLATE
     model=AutoModelForCausalLM.from_pretrained(model_path,torch_dtype=torch.float16,local_files_only=True).to('cuda')
     weights={'base':sha(Path(model_path)/'model.safetensors')}
     weights['model_config']=sha(Path(model_path)/'config.json')
     weights['tokenizer_config']=sha(Path(model_path)/'tokenizer_config.json')
-    if stage!='base':
+    if spec.get('adapter') or (not spec and stage!='base'):
         from peft import PeftModel
-        adapter=Path(train_dir)/f'q2_{stage}_output'
+        adapter=Path(spec['adapter']) if spec.get('adapter') else Path(train_dir)/f'q2_{stage}_output'
         weights['adapter']=sha(adapter/'adapter_model.safetensors')
         weights['adapter_config']=sha(adapter/'adapter_config.json')
         model=PeftModel.from_pretrained(model,str(adapter),is_trainable=False)
@@ -76,10 +79,11 @@ def generate(suite_dir, run_dir, stage, train_dir, phase='formal', open_only=Fal
         from .decoding import DecodingSampler
         messages=[dict(role='user',content='What is 2+3?')]
         encoded=tokenizer.apply_chat_template(messages,tokenize=True,add_generation_prompt=True,return_tensors='pt',return_dict=True).to('cuda')
+        probe_eos=tokenizer.eos_token_id if spec else tokenizer.convert_tokens_to_ids('<|im_end|>')
         with torch.inference_mode():
-            probe=model.generate(**encoded,do_sample=False,max_new_tokens=8,pad_token_id=tokenizer.eos_token_id)
+            probe=model.generate(**encoded,do_sample=False,max_new_tokens=8,pad_token_id=tokenizer.eos_token_id,eos_token_id=probe_eos,repetition_penalty=1.0)
         expected=tokenizer.decode(probe[0,encoded.input_ids.shape[1]:],skip_special_tokens=True).strip()
-        actual=DecodingSampler(tokenizer.convert_tokens_to_ids('<|im_end|>')).generate(model,tokenizer,messages,max_new_tokens=8)
+        actual=DecodingSampler(probe_eos).generate(model,tokenizer,messages,max_new_tokens=8)
         if actual!=expected:raise ValueError('Custom and reference greedy decoder disagree on the development probe')
         save(Path(run_dir)/'smoke'/f'{stage}-decoder-check.json',dict(expected=expected,actual=actual,passed=True))
     if phase=='smoke':
@@ -89,9 +93,11 @@ def generate(suite_dir, run_dir, stage, train_dir, phase='formal', open_only=Fal
             'Return a Python function double(x) that returns x*2.', 'Return a Python function empty() that returns an empty list.',
             'Explain what an atom is in one sentence.', 'Explain the difference between weather and climate.',
             'Rewrite politely: Send me the file.', 'Write exactly two sentences about planting a tree.'])]
-    metadata=dict(stage=stage,phase=phase,model=MODEL,weights=weights,suite_hash=digest(suite),
+    metadata=dict(stage=stage,phase=phase,model=model_id,weights=weights,suite_hash=digest(suite),
                   seed=42,dtype='float16',max_new_tokens=256,decoder='greedy',torch=torch.__version__,protocol_version=2,
                   math_suffix='At the end, write The answer is: followed by your final numeric answer.')
+    if spec:
+        metadata.update(spec=spec,template=tokenizer.chat_template,tokenizer_vocab=digest(tokenizer.get_vocab()),eos_ids=[tokenizer.eos_token_id,tokenizer.convert_tokens_to_ids('<|im_end|>')])
     folder=Path(run_dir)/phase; folder.mkdir(parents=True,exist_ok=True)
     config=folder/f'{stage}-config.json'
     if config.exists() and read(config)!=metadata:raise ValueError('Resume configuration changed; use a new run directory')
@@ -107,14 +113,14 @@ def generate(suite_dir, run_dir, stage, train_dir, phase='formal', open_only=Fal
         if task['id'] in done:continue
         prompt=task['prompt']
         if task['category']=='math':prompt+='\n'+metadata['math_suffix']
-        text='<|im_start|>user\n'+prompt+'<|im_end|>\n<|im_start|>assistant\n'
+        text=tokenizer.apply_chat_template([dict(role='user',content=prompt)],tokenize=False,add_generation_prompt=True)
         encoded=tokenizer(text,return_tensors='pt').to('cuda')
-        budget=task.get('max_new_tokens',256)
+        budget=task.get('max_new_tokens',spec.get('max_new_tokens',256))
         if encoded.input_ids.shape[1]+budget>model.config.max_position_embeddings:raise ValueError('Context limit exceeded')
         torch.manual_seed(42); torch.cuda.synchronize(); torch.cuda.reset_peak_memory_stats()
         started=time.perf_counter()
         with torch.inference_mode():
-            out=model.generate(**encoded,do_sample=False,max_new_tokens=budget,eos_token_id=eos_ids,pad_token_id=tokenizer.eos_token_id,use_cache=True)
+            out=model.generate(**encoded,do_sample=False,max_new_tokens=budget,eos_token_id=eos_ids,pad_token_id=tokenizer.eos_token_id,use_cache=True,repetition_penalty=1.0)
         torch.cuda.synchronize(); generated=out[0,encoded.input_ids.shape[1]:]
         response=tokenizer.decode(generated,skip_special_tokens=True)
         row=dict(task_id=task['id'],stage=stage,response=response,input_tokens=encoded.input_ids.shape[1],
@@ -272,9 +278,10 @@ def blind_review(suite_dir,run_dir):
     for stage in STAGES:
         for row in records(Path(run_dir)/'formal'/f'{stage}.jsonl'):
             if row['task_id'] in wanted:rows.append((wanted[row['task_id']],row))
-    if len(rows)!=60:raise ValueError('Need all 60 open-task responses before exporting blind review')
+    expected=len(wanted)*len(STAGES)
+    if len(rows)!=expected or len({(r['task_id'],r['stage']) for _,r in rows})!=expected:raise ValueError(f'Need all {expected} open-task responses before exporting blind review')
     rng=random.Random(42);rng.shuffle(rows)
-    rows.extend(rng.sample(rows,6));rng.shuffle(rows)
+    rows.extend(rng.sample(rows,min(6,len(rows))));rng.shuffle(rows)
     mapping={}; seen=set();path=Path(run_dir)/'blind-review.csv'
     if path.exists():raise ValueError('Blind review sheet already exists; refusing to overwrite human ratings')
     with path.open('w',newline='',encoding='utf-8-sig') as stream:
@@ -482,7 +489,9 @@ def render_report(run_dir):
 
 
 def main(argv=None):
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['prepare','generate','score','review','import-review','analyze','render'])
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('command',choices=['prepare','freeze','generate','score','review','import-review','analyze','render'])
+    parser.add_argument('--experiment-config',type=Path)
+    parser.add_argument('--model-name')
     parser.add_argument('--suite-dir',type=Path,default=Path('outputs/capability/suite'))
     parser.add_argument('--run-dir',type=Path,default=Path('outputs/capability/final-run'))
     parser.add_argument('--train-dir',type=Path)
@@ -492,7 +501,14 @@ def main(argv=None):
     parser.add_argument('--open-only',action='store_true',help='Generate only main open tasks; later resume without this flag')
     parser.add_argument('--execute-code',action='store_true');parser.add_argument('--ratings',type=Path)
     args=parser.parse_args(argv)
+    if (args.command=='freeze' or args.model_name) and not args.experiment_config:
+        parser.error('freeze and --model-name require --experiment-config')
     try:
+        if args.experiment_config:
+            from .experiment import run
+            config=read(args.experiment_config)
+            if args.command=='import-review':return import_review(config['run_dir'],args.ratings)
+            return run(config,args.command,args.model_name,args.execute_code)
         if args.command in ('prepare','generate'):
             local=read('outputs/capability/local-inputs.json') if Path('outputs/capability/local-inputs.json').exists() else {}
             if args.train_dir is None:

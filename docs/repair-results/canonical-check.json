@@ -1,0 +1,177 @@
+[
+  {
+    "task_id": "HumanEval-85",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-47",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-66",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-107",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-33",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-29",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-119",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-30",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-112",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-109",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-81",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-12",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-114",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-70",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-82",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-16",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-142",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-59",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-10",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-84",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-45",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-128",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-101",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-100",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  },
+  {
+    "task_id": "HumanEval-135",
+    "status": "correct",
+    "correct": true,
+    "returncode": 0,
+    "stderr_tail": ""
+  }
+]

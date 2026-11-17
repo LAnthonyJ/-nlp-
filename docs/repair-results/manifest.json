@@ -1,0 +1,29 @@
+{
+  "baseline_commit": "52738f8",
+  "source_run_hashes": {
+    "scores.json": "8cc47f5223bceb1a2a08cd185647bcfcb0d52e48d8a1a013653cea99d402e8a3",
+    "analysis.json": "53f43aae4e54a2ae65a3cb4f9cc0aeb1fe0f1df56fd4d739d4af09e21e37ba9d"
+  },
+  "files": {
+    "analysis.json": "425fca4ca28822f85d68b355ce71d35c52af798e88818d7f2dc9318961005ea3",
+    "canonical-check.json": "0851c7025a486e1f01da6f112baadb9cadf004ca0d5d81bfbad02fd7d0c91102",
+    "capabilities.png": "1e2fefbe152486841ea2712018d86f1e9d86d390c8d8ce10dcbb54a823bc4cf3",
+    "cases.json": "97da5f4bbf1da9cb0485ea28419749ef9998d82d0845633e3b5106c1079945be",
+    "errors.png": "c1694e26073503e776739144ab5da5c92c5a9c92e2ae720653287a428d6dd126",
+    "experiment.json": "aadced218cb38dd2442466152d6fb3934451eec59161cba4371a1d45066fe433",
+    "generation-checks.json": "50f0e0d027c67ebb891d943db4d07fb02b38d878aebf8ff7377633260d6d7270",
+    "preference-validation.json": "425006ee2893c08b115a8f6dd9ea3b97115708fe3577ed21381fd8619328dd50",
+    "protocols.json": "9677280dc7232649373ce11aa3831ad2d7060ce6760a5074dcfcbeefda8ef1a5",
+    "README.md": "fce40bc77f190e4f4b0cc97f51040e13df3a0320c3c7bd51e00c0e8226c045d2",
+    "README.zh-CN.md": "b7f5250234a74f0435a948f49f29efa4b67273f7ce5ff8767638e82a853004c3",
+    "runtime.json": "d30bd3200e80b09a76c6b45c24a2da05260c4e35a8b7275ffa4a47948c97c268",
+    "scores.json": "855287d29af365c588e3d9a3ba46d25196a1f3858f971b6af9ab1a574662f120",
+    "training.json": "be67b6699b802255cb8247c14edeba13311810849ffea6cc121aec72b7c5f6f2",
+    "suite/suite.json": "69bad6c765923187e3cba1e4de40c5547f84b20813189133213825bdcc399fc4"
+  },
+  "source_files": {
+    "src/nlp_course/training.py": "76b58214e461f5fbc6e41ae65dbe51de00d3505fb5ba33b361915e087312279a",
+    "src/nlp_course/experiment.py": "60e0b1a2fb0ef1550b9b4d9a62c7b6ca55e0bc03fcc39512cc6b988b1d4c18fe",
+    "src/nlp_course/capability.py": "a2b8fdc9c1e64fe7252c167c0c5d361fa700d8857395c61f6764c3bbe7ab937e"
+  }
+}

@@ -1,0 +1,17 @@
+# Python 3.11. Install the matching CUDA build of torch 2.4.1 first.
+lighteval @ git+https://github.com/huggingface/lighteval.git@ea46419a93fb390e8f694f7c6c64c1e684487c9d
+torch==2.4.1
+transformers==4.46.3
+peft==0.13.2
+accelerate==1.1.1
+datasets==2.21.0
+huggingface-hub==0.36.2
+tokenizers==0.20.3
+safetensors==0.8.0
+numpy==1.26.4
+pyarrow==20.0.0
+matplotlib==3.11.2
+langdetect==1.0.9
+word2number==1.1
+fsspec==2024.6.1
+setuptools==80.10.2

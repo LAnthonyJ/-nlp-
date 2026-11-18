@@ -29,6 +29,8 @@ The [repair evaluation](docs/repair-results/README.md) contains 525 fresh respon
 
 On 60 paired reasoning tasks, continued SFT solved four pairs and DPO trained on the same prompts and observed errors solved zero. All four models, individual predictions and training curves are in the [paired DPO experiment](docs/paired-dpo-results/README.md).
 
+The [SmolLM2 public evaluation](docs/smollm2-results/README.md) compares six frozen Qwen checkpoints on PIQA and HellaSwag and five instruction-tuned checkpoints on IFEval. It includes public baseline calibration, per-question predictions and paired uncertainty intervals for the effect of DPO.
+
 ## Quick start
 
 Requires Git and Python. The package declares Python 3.10+; verified environments are **Linux / Python 3.11** in CI and **Windows / Python 3.13.7**, with PyTorch 2.9.0+cpu.

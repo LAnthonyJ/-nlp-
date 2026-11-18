@@ -1,0 +1,839 @@
+{
+  "tasks": {
+    "piqa": {
+      "base": {
+        "correct": 1284,
+        "total": 1838,
+        "percent": 69.85854189336236,
+        "seconds": 25.508030199736822,
+        "peak_mib": 1481.09716796875
+      },
+      "instruct": {
+        "correct": 1234,
+        "total": 1838,
+        "percent": 67.13819368879217,
+        "seconds": 26.525121800310444,
+        "peak_mib": 2498.68798828125
+      },
+      "frozen": {
+        "correct": 1272,
+        "total": 1838,
+        "percent": 69.2056583242655,
+        "seconds": 25.517631899681874,
+        "peak_mib": 2473.20947265625
+      },
+      "previous_dpo": {
+        "correct": 1270,
+        "total": 1838,
+        "percent": 69.0968443960827,
+        "seconds": 25.47412820038153,
+        "peak_mib": 2473.20947265625
+      },
+      "sft-42": {
+        "correct": 1272,
+        "total": 1838,
+        "percent": 69.2056583242655,
+        "seconds": 25.678716699883807,
+        "peak_mib": 2473.20947265625
+      },
+      "dpo-42": {
+        "correct": 1274,
+        "total": 1838,
+        "percent": 69.31447225244831,
+        "seconds": 25.629656800068915,
+        "peak_mib": 2473.20947265625
+      }
+    },
+    "hellaswag": {
+      "base": {
+        "correct": 5147,
+        "total": 10042,
+        "percent": 51.25473013343955,
+        "seconds": 283.6984326004167,
+        "peak_mib": 1744.5986328125
+      },
+      "instruct": {
+        "correct": 4811,
+        "total": 10042,
+        "percent": 47.908783110934074,
+        "seconds": 368.5387442994979,
+        "peak_mib": 1768.5810546875
+      },
+      "frozen": {
+        "correct": 5033,
+        "total": 10042,
+        "percent": 50.119498107946626,
+        "seconds": 366.9616922996356,
+        "peak_mib": 1807.55126953125
+      },
+      "previous_dpo": {
+        "correct": 5032,
+        "total": 10042,
+        "percent": 50.109539932284406,
+        "seconds": 367.37375779781723,
+        "peak_mib": 1807.55126953125
+      },
+      "sft-42": {
+        "correct": 5038,
+        "total": 10042,
+        "percent": 50.16928898625772,
+        "seconds": 366.73839649982983,
+        "peak_mib": 1807.55126953125
+      },
+      "dpo-42": {
+        "correct": 5029,
+        "total": 10042,
+        "percent": 50.079665405297746,
+        "seconds": 368.73265380057273,
+        "peak_mib": 1807.55126953125
+      }
+    },
+    "ifeval": {
+      "instruct": {
+        "correct": 148,
+        "total": 541,
+        "percent": 27.35674676524954,
+        "seconds": 1200.9094850001857,
+        "peak_mib": 1153.93359375,
+        "truncated": 21,
+        "prompt_level_strict_acc": {
+          "passed": 148,
+          "total": 541,
+          "percent": 27.35674676524954
+        },
+        "inst_level_strict_acc": {
+          "passed": 307,
+          "total": 834,
+          "percent": 36.810551558753
+        },
+        "prompt_level_loose_acc": {
+          "passed": 164,
+          "total": 541,
+          "percent": 30.31423290203327
+        },
+        "inst_level_loose_acc": {
+          "passed": 334,
+          "total": 834,
+          "percent": 40.04796163069545
+        }
+      },
+      "frozen": {
+        "correct": 95,
+        "total": 541,
+        "percent": 17.56007393715342,
+        "seconds": 3453.9918392997934,
+        "peak_mib": 1176.341796875,
+        "truncated": 155,
+        "prompt_level_strict_acc": {
+          "passed": 95,
+          "total": 541,
+          "percent": 17.56007393715342
+        },
+        "inst_level_strict_acc": {
+          "passed": 251,
+          "total": 834,
+          "percent": 30.095923261390887
+        },
+        "prompt_level_loose_acc": {
+          "passed": 102,
+          "total": 541,
+          "percent": 18.853974121996302
+        },
+        "inst_level_loose_acc": {
+          "passed": 265,
+          "total": 834,
+          "percent": 31.774580335731414
+        }
+      },
+      "previous_dpo": {
+        "correct": 113,
+        "total": 541,
+        "percent": 20.88724584103512,
+        "seconds": 3120.1785398003412,
+        "peak_mib": 1176.341796875,
+        "truncated": 142,
+        "prompt_level_strict_acc": {
+          "passed": 113,
+          "total": 541,
+          "percent": 20.88724584103512
+        },
+        "inst_level_strict_acc": {
+          "passed": 262,
+          "total": 834,
+          "percent": 31.414868105515588
+        },
+        "prompt_level_loose_acc": {
+          "passed": 119,
+          "total": 541,
+          "percent": 21.99630314232902
+        },
+        "inst_level_loose_acc": {
+          "passed": 282,
+          "total": 834,
+          "percent": 33.81294964028777
+        }
+      },
+      "sft-42": {
+        "correct": 104,
+        "total": 541,
+        "percent": 19.22365988909427,
+        "seconds": 2777.6658368001226,
+        "peak_mib": 1176.341796875,
+        "truncated": 150,
+        "prompt_level_strict_acc": {
+          "passed": 104,
+          "total": 541,
+          "percent": 19.22365988909427
+        },
+        "inst_level_strict_acc": {
+          "passed": 263,
+          "total": 834,
+          "percent": 31.534772182254198
+        },
+        "prompt_level_loose_acc": {
+          "passed": 108,
+          "total": 541,
+          "percent": 19.963031423290204
+        },
+        "inst_level_loose_acc": {
+          "passed": 275,
+          "total": 834,
+          "percent": 32.97362110311751
+        }
+      },
+      "dpo-42": {
+        "correct": 97,
+        "total": 541,
+        "percent": 17.929759704251385,
+        "seconds": 5783.532478199835,
+        "peak_mib": 1176.337890625,
+        "truncated": 152,
+        "prompt_level_strict_acc": {
+          "passed": 97,
+          "total": 541,
+          "percent": 17.929759704251385
+        },
+        "inst_level_strict_acc": {
+          "passed": 257,
+          "total": 834,
+          "percent": 30.81534772182254
+        },
+        "prompt_level_loose_acc": {
+          "passed": 101,
+          "total": 541,
+          "percent": 18.66913123844732
+        },
+        "inst_level_loose_acc": {
+          "passed": 268,
+          "total": 834,
+          "percent": 32.13429256594724
+        }
+      }
+    }
+  },
+  "comparisons": {
+    "piqa": {
+      "sft-42": {
+        "primary": {
+          "gained": 15,
+          "lost": 13,
+          "delta_pp": 0.1088139281828074,
+          "ci95": [
+            -0.4352557127312296,
+            0.6528835690968444
+          ]
+        }
+      },
+      "frozen": {
+        "primary": {
+          "gained": 10,
+          "lost": 8,
+          "delta_pp": 0.1088139281828074,
+          "ci95": [
+            -0.3264417845484222,
+            0.544069640914037
+          ]
+        }
+      },
+      "previous_dpo": {
+        "primary": {
+          "gained": 16,
+          "lost": 12,
+          "delta_pp": 0.2176278563656148,
+          "ci95": [
+            -0.3264417845484222,
+            0.7616974972796517
+          ]
+        }
+      }
+    },
+    "hellaswag": {
+      "sft-42": {
+        "primary": {
+          "gained": 51,
+          "lost": 60,
+          "delta_pp": -0.08962358095996813,
+          "ci95": [
+            -0.2887870942043418,
+            0.11949810794662417
+          ]
+        }
+      },
+      "frozen": {
+        "primary": {
+          "gained": 40,
+          "lost": 44,
+          "delta_pp": -0.03983270264887473,
+          "ci95": [
+            -0.21907986456881098,
+            0.13941445927106155
+          ]
+        }
+      },
+      "previous_dpo": {
+        "primary": {
+          "gained": 59,
+          "lost": 62,
+          "delta_pp": -0.029874526986656044,
+          "ci95": [
+            -0.23924517028480358,
+            0.18920533758215494
+          ]
+        }
+      }
+    },
+    "ifeval": {
+      "sft-42": {
+        "primary": {
+          "gained": 8,
+          "lost": 15,
+          "delta_pp": -1.2939001848428835,
+          "ci95": [
+            -3.142329020332717,
+            0.36968576709796674
+          ]
+        },
+        "prompt_level_strict_acc": {
+          "gained": 8,
+          "lost": 15,
+          "delta_pp": -1.2939001848428835,
+          "ci95": [
+            -3.142329020332717,
+            0.36968576709796674
+          ]
+        },
+        "inst_level_strict_acc": {
+          "gained": 20,
+          "lost": 26,
+          "delta_pp": -0.7194244604316546,
+          "ci95": [
+            -2.3585345130669166,
+            0.9334889148191365
+          ]
+        },
+        "prompt_level_loose_acc": {
+          "gained": 9,
+          "lost": 16,
+          "delta_pp": -1.2939001848428835,
+          "ci95": [
+            -3.142329020332717,
+            0.5545286506469501
+          ]
+        },
+        "inst_level_loose_acc": {
+          "gained": 19,
+          "lost": 26,
+          "delta_pp": -0.8393285371702638,
+          "ci95": [
+            -2.445051891873408,
+            0.72555787622293
+          ]
+        }
+      },
+      "frozen": {
+        "primary": {
+          "gained": 11,
+          "lost": 9,
+          "delta_pp": 0.36968576709796674,
+          "ci95": [
+            -1.2939001848428835,
+            2.033271719038817
+          ]
+        },
+        "prompt_level_strict_acc": {
+          "gained": 11,
+          "lost": 9,
+          "delta_pp": 0.36968576709796674,
+          "ci95": [
+            -1.2939001848428835,
+            2.033271719038817
+          ]
+        },
+        "inst_level_strict_acc": {
+          "gained": 24,
+          "lost": 18,
+          "delta_pp": 0.7194244604316546,
+          "ci95": [
+            -0.850546780072904,
+            2.358629956733126
+          ]
+        },
+        "prompt_level_loose_acc": {
+          "gained": 10,
+          "lost": 11,
+          "delta_pp": -0.18484288354898337,
+          "ci95": [
+            -1.8484288354898337,
+            1.478743068391867
+          ]
+        },
+        "inst_level_loose_acc": {
+          "gained": 23,
+          "lost": 20,
+          "delta_pp": 0.3597122302158273,
+          "ci95": [
+            -1.2062726176115801,
+            1.94884287454324
+          ]
+        }
+      },
+      "previous_dpo": {
+        "primary": {
+          "gained": 9,
+          "lost": 25,
+          "delta_pp": -2.957486136783734,
+          "ci95": [
+            -4.990757855822551,
+            -0.9242144177449169
+          ]
+        },
+        "prompt_level_strict_acc": {
+          "gained": 9,
+          "lost": 25,
+          "delta_pp": -2.957486136783734,
+          "ci95": [
+            -4.990757855822551,
+            -0.9242144177449169
+          ]
+        },
+        "inst_level_strict_acc": {
+          "gained": 28,
+          "lost": 33,
+          "delta_pp": -0.5995203836930456,
+          "ci95": [
+            -2.536231884057971,
+            1.3580666575104146
+          ]
+        },
+        "prompt_level_loose_acc": {
+          "gained": 9,
+          "lost": 27,
+          "delta_pp": -3.3271719038817005,
+          "ci95": [
+            -5.545286506469501,
+            -1.1090573012939002
+          ]
+        },
+        "inst_level_loose_acc": {
+          "gained": 25,
+          "lost": 39,
+          "delta_pp": -1.6786570743405276,
+          "ci95": [
+            -3.6384976525821595,
+            0.24848602484471993
+          ]
+        }
+      }
+    }
+  },
+  "cases": {
+    "piqa": {
+      "gain": {
+        "id": "piqa-571",
+        "instructions": null,
+        "continued_sft": {
+          "id": "piqa-571",
+          "gold": 1,
+          "pred": 0,
+          "logprob": [
+            -43.5,
+            -43.75
+          ],
+          "normalized": [
+            -1.2428571428571429,
+            -1.25
+          ],
+          "correct": false
+        },
+        "upgraded_dpo": {
+          "id": "piqa-571",
+          "gold": 1,
+          "pred": 1,
+          "logprob": [
+            -44.0,
+            -43.75
+          ],
+          "normalized": [
+            -1.2571428571428571,
+            -1.25
+          ],
+          "correct": true
+        }
+      },
+      "loss": {
+        "id": "piqa-31",
+        "instructions": null,
+        "continued_sft": {
+          "id": "piqa-31",
+          "gold": 0,
+          "pred": 0,
+          "logprob": [
+            -29.75,
+            -29.625
+          ],
+          "normalized": [
+            -0.6329787234042553,
+            -0.6440217391304348
+          ],
+          "correct": true
+        },
+        "upgraded_dpo": {
+          "id": "piqa-31",
+          "gold": 0,
+          "pred": 1,
+          "logprob": [
+            -30.5,
+            -29.5
+          ],
+          "normalized": [
+            -0.648936170212766,
+            -0.6413043478260869
+          ],
+          "correct": false
+        }
+      }
+    },
+    "hellaswag": {
+      "gain": {
+        "id": "hellaswag-144",
+        "instructions": null,
+        "continued_sft": {
+          "id": "hellaswag-144",
+          "gold": 2,
+          "pred": 0,
+          "logprob": [
+            -36.75,
+            -53.0,
+            -52.5,
+            -67.0
+          ],
+          "normalized": [
+            -0.8546511627906976,
+            -0.9464285714285714,
+            -0.860655737704918,
+            -1.0151515151515151
+          ],
+          "correct": false
+        },
+        "upgraded_dpo": {
+          "id": "hellaswag-144",
+          "gold": 2,
+          "pred": 2,
+          "logprob": [
+            -37.0,
+            -52.5,
+            -52.0,
+            -67.0
+          ],
+          "normalized": [
+            -0.8604651162790697,
+            -0.9375,
+            -0.8524590163934426,
+            -1.0151515151515151
+          ],
+          "correct": true
+        }
+      },
+      "loss": {
+        "id": "hellaswag-284",
+        "instructions": null,
+        "continued_sft": {
+          "id": "hellaswag-284",
+          "gold": 1,
+          "pred": 1,
+          "logprob": [
+            -29.625,
+            -21.125,
+            -44.5,
+            -39.75
+          ],
+          "normalized": [
+            -0.9875,
+            -0.6401515151515151,
+            -0.644927536231884,
+            -0.673728813559322
+          ],
+          "correct": true
+        },
+        "upgraded_dpo": {
+          "id": "hellaswag-284",
+          "gold": 1,
+          "pred": 2,
+          "logprob": [
+            -31.25,
+            -22.875,
+            -45.5,
+            -42.5
+          ],
+          "normalized": [
+            -1.0416666666666667,
+            -0.6931818181818182,
+            -0.6594202898550725,
+            -0.7203389830508474
+          ],
+          "correct": false
+        }
+      }
+    },
+    "ifeval": {
+      "gain": {
+        "id": "ifeval-1893",
+        "instructions": [
+          "startend:end_checker"
+        ],
+        "continued_sft": {
+          "id": "ifeval-1893",
+          "response": "Verse 1:\nAlexander the Great, the king of Macedon,\nHe conquered the world, he ruled the land.\nHe built a great empire, he made it grand,\nHis name is forever etched in history.\n\nChorus:\nPeace! Peace! Peace!\nAlexander the Great, the king of Macedon,\nHe conquered the world, he ruled the land.\nHe built a great empire, he made it grand,\nHis name is forever etched in history.\n\nVerse 2:\nHe led his army to the sea, he conquered the land,\nHe conquered the world, he made it grand,\nHe built a great empire, he made it grand,\nHis name is forever etched in history.\n\nChorus:\nPeace! Peace! Peace!\nAlexander the Great, the king of Macedon,\nHe conquered the world, he ruled the land.\nHe built a great empire, he made it grand,\nHis name is forever etched in history.\n\nBridge:\nHe led his army to the sea, he conquered the land,\nHe conquered the world, he made it grand,\nHe built a great empire, he made it grand,\nHis name is forever etched in history.\n\nChorus:\nPeace! Peace! Peace!\nAlexander the Great, the king of Macedon,\nHe conquered the world, he ruled the land.\nHe built a great empire, he made it grand,\nHis name is forever etched in history.\n\nOutro:\nPeace! Peace! Peace!\nAlexander the Great, the king of Macedon,\nHe conquered the world, he ruled the land.\nHe built a great empire, he made it grand,\nHis name is forever etched in history.",
+          "output_tokens": 333,
+          "truncated": false,
+          "scores": {
+            "prompt_level_strict_acc": 0,
+            "inst_level_strict_acc": [
+              false
+            ],
+            "prompt_level_loose_acc": 0,
+            "inst_level_loose_acc": [
+              false
+            ]
+          },
+          "correct": false
+        },
+        "upgraded_dpo": {
+          "id": "ifeval-1893",
+          "response": "Verse 1:\nAlexander the Great, the king of the Macedonians,\nHe conquered the world, his empire was vast and wide.\nHe ruled over the land, his people were free and free,\nHe made the world a better place, he made it great.\n\nChorus:\nPeace! Peace! Peace!\nAlexander the Great, the king of the Macedonians,\nHe made the world a better place, he made it great.\nPeace! Peace! Peace!\nPeace! Peace! Peace!",
+          "output_tokens": 101,
+          "truncated": false,
+          "scores": {
+            "prompt_level_strict_acc": 1,
+            "inst_level_strict_acc": [
+              true
+            ],
+            "prompt_level_loose_acc": 1,
+            "inst_level_loose_acc": [
+              true
+            ]
+          },
+          "correct": true
+        }
+      },
+      "loss": {
+        "id": "ifeval-1072",
+        "instructions": [
+          "length_constraints:number_words"
+        ],
+        "continued_sft": {
+          "id": "ifeval-1072",
+          "response": "**The Benefits of Sleeping in a Hammock: A Comprehensive Guide**\n\nIn today's fast-paced world, we often find ourselves glued to our devices, neglecting the importance of rest and relaxation. However, a hammock can be a perfect solution to help you unwind and rejuvenate. In this blog post, we'll explore the numerous benefits of sleeping in a hammock, from improved sleep quality to increased energy levels.\n\n**1. Improved Sleep Quality**\n\nOne of the most significant benefits of sleeping in a hammock is the improvement in sleep quality. A hammock provides a comfortable and supportive surface, which helps to reduce the risk of falling asleep during the night. According to a study published in the Journal of Sleep Research, hammock use can lead to a 20% reduction in the risk of sleep apnea, a condition characterized by pauses in breathing during sleep.\n\nAdditionally, a hammock can help to create a more relaxed environment, which can lead to a deeper and more restful sleep. The soft, supportive material of a hammock can help to reduce muscle tension and promote relaxation, making it easier to fall asleep and stay asleep.\n\n**2. Increased Energy Levels**\n\nAnother benefit of sleeping in a hammock is the increased energy levels. A hammock can provide a comfortable and supportive surface, which can help to reduce the risk of injury and promote better sleep. According to a study published in the Journal of Sports Medicine and Physical Fitness, hammock use can lead to a 20% increase in energy levels, which can help to improve overall performance and reduce fatigue.\n\nFurthermore, a hammock can also help to reduce the risk of injury during sleep. The soft, supportive material of a hammock can help to reduce muscle tension and promote relaxation, making it easier to fall asleep and stay asleep.\n\n**3. Reduced Stress and Anxiety**\n\nFinally, sleeping in a hammock can also help to reduce stress and anxiety. A hammock can provide a comfortable and supportive surface, which can help to reduce the risk of injury and promote better sleep. According to a study published in the Journal of Sleep Research, hammock use can lead to a 20% reduction in the risk of sleep apnea, a condition characterized by pauses in breathing during sleep.\n\nAdditionally, a hammock can help to reduce the risk of injury during sleep. The soft, supportive material of a hammock can help to reduce muscle tension and promote relaxation, making it easier to fall asleep and stay asleep.\n\n**4. Improved Mental Health**\n\nFinally, sleeping in a hammock can also help to improve mental health. A hammock can provide a comfortable and supportive surface, which can help to reduce the risk of injury and promote better sleep. According to a study published in the Journal of Sleep Research, hammock use can lead to a 20% reduction in the risk of sleep apnea, a condition characterized by pauses in breathing during sleep.\n\nAdditionally, a hammock can help to reduce the risk of injury during sleep. The soft, supportive material of a hammock can help to reduce muscle tension and promote relaxation, making it easier to fall asleep and stay asleep.\n\n**Conclusion**\n\nIn conclusion, sleeping in a hammock can be a great way to improve sleep quality, increase energy levels, reduce stress and anxiety, and improve mental health. Whether you're a professional or a casual user, a hammock can be a great addition to your daily routine. So why not give it a try? You might just find that it's the perfect solution to help you unwind and recharge.",
+          "output_tokens": 718,
+          "truncated": false,
+          "scores": {
+            "prompt_level_strict_acc": 1,
+            "inst_level_strict_acc": [
+              true
+            ],
+            "prompt_level_loose_acc": 1,
+            "inst_level_loose_acc": [
+              true
+            ]
+          },
+          "correct": true
+        },
+        "upgraded_dpo": {
+          "id": "ifeval-1072",
+          "response": "The benefits of sleeping in a hammock are numerous and well worth the effort. Here are some of the advantages:\n\n1. Relaxation: Sleeping in a hammock is a great way to unwind after a long day. The soft, comfortable material of the hammock provides a soothing and calming environment, allowing you to relax and unwind.\n\n2. Improved sleep quality: Sleeping in a hammock can help improve your sleep quality. The soft material of the hammock can help you drift off to sleep more easily, and the gentle rocking motion can help you fall asleep faster.\n\n3. Increased energy: Sleeping in a hammock can also help increase your energy levels. The soft material of the hammock can help you feel more relaxed and energized, which can help you wake up feeling more refreshed and ready to tackle the day ahead.\n\n4. Better posture: Sleeping in a hammock can also help improve your posture. The soft material of the hammock can help you maintain a good posture, which can help prevent back pain and other health issues.\n\n5. Better sleep hygiene: Sleeping in a hammock can also help improve your sleep hygiene. The soft material of the hammock can help you fall asleep faster and stay asleep longer, which can help you maintain a good sleep hygiene routine.\n\nIn conclusion, sleeping in a hammock is a great way to improve your sleep quality, increase your energy levels, and improve your posture. So why not give it a try? You may be surprised at how much better you feel after sleeping in a hammock.",
+          "output_tokens": 311,
+          "truncated": false,
+          "scores": {
+            "prompt_level_strict_acc": 0,
+            "inst_level_strict_acc": [
+              false
+            ],
+            "prompt_level_loose_acc": 0,
+            "inst_level_loose_acc": [
+              false
+            ]
+          },
+          "correct": false
+        }
+      }
+    }
+  },
+  "checks": {
+    "piqa": {
+      "base": {
+        "n": 8,
+        "seconds": 16.640816999999515,
+        "peak_mib": 1043.91943359375,
+        "prompts_per_second": 0.48074562685234945,
+        "projected_minutes_at_probe_batch": 63.72046176249815,
+        "formal_first8_matches": 8
+      },
+      "instruct": {
+        "n": 8,
+        "seconds": 8.702586000001247,
+        "peak_mib": 1078.64208984375,
+        "prompts_per_second": 0.9192669856981424,
+        "projected_minutes_at_probe_batch": 33.32365222500478,
+        "formal_first8_matches": 8
+      },
+      "frozen": {
+        "n": 8,
+        "seconds": 0.462396300106775,
+        "peak_mib": 2007.27392578125,
+        "prompts_per_second": 17.301176497633453,
+        "projected_minutes_at_probe_batch": 1.7705924991588593,
+        "formal_first8_matches": 8
+      },
+      "previous_dpo": {
+        "n": 8,
+        "seconds": 0.5837181999813765,
+        "peak_mib": 2007.27392578125,
+        "prompts_per_second": 13.705243386715095,
+        "projected_minutes_at_probe_batch": 2.2351542740953545,
+        "formal_first8_matches": 8
+      },
+      "sft-42": {
+        "n": 8,
+        "seconds": 0.4812096999376081,
+        "peak_mib": 2007.27392578125,
+        "prompts_per_second": 16.62476878798838,
+        "projected_minutes_at_probe_batch": 1.8426321426777577,
+        "formal_first8_matches": 8
+      },
+      "dpo-42": {
+        "n": 8,
+        "seconds": 0.4405880001722835,
+        "peak_mib": 2007.27392578125,
+        "prompts_per_second": 18.157553081045677,
+        "projected_minutes_at_probe_batch": 1.6870848839930355,
+        "formal_first8_matches": 8
+      }
+    },
+    "hellaswag": {
+      "base": {
+        "n": 8,
+        "seconds": 5.453257600020152,
+        "peak_mib": 1069.87939453125,
+        "prompts_per_second": 1.4670130382196573,
+        "projected_minutes_at_probe_batch": 114.08669337375493,
+        "formal_first8_matches": 8
+      },
+      "instruct": {
+        "n": 8,
+        "seconds": 0.41043260000878945,
+        "peak_mib": 2053.888671875,
+        "prompts_per_second": 19.491629075830428,
+        "projected_minutes_at_probe_batch": 8.58659201935055,
+        "formal_first8_matches": 8
+      },
+      "frozen": {
+        "n": 8,
+        "seconds": 6.252612299867906,
+        "peak_mib": 1097.80419921875,
+        "prompts_per_second": 1.2794652245060854,
+        "projected_minutes_at_probe_batch": 130.80985982348648,
+        "formal_first8_matches": 8
+      },
+      "previous_dpo": {
+        "n": 8,
+        "seconds": 5.366856599983294,
+        "peak_mib": 1097.80419921875,
+        "prompts_per_second": 1.490630474461513,
+        "projected_minutes_at_probe_batch": 112.27911245215049,
+        "formal_first8_matches": 8
+      },
+      "sft-42": {
+        "n": 8,
+        "seconds": 5.164211600029375,
+        "peak_mib": 1097.80419921875,
+        "prompts_per_second": 1.549123200132716,
+        "projected_minutes_at_probe_batch": 108.03961018228122,
+        "formal_first8_matches": 8
+      },
+      "dpo-42": {
+        "n": 8,
+        "seconds": 4.843214699998498,
+        "peak_mib": 1097.80419921875,
+        "prompts_per_second": 1.6517954490025977,
+        "projected_minutes_at_probe_batch": 101.32408753621857,
+        "formal_first8_matches": 8
+      }
+    },
+    "ifeval": {
+      "instruct": {
+        "n": 8,
+        "seconds": 85.83320809982251,
+        "peak_mib": 979.904296875,
+        "prompts_per_second": 0.09320401948271746,
+        "projected_minutes_at_probe_batch": 96.74117829584162,
+        "formal_first8_matches": 7
+      },
+      "frozen": {
+        "n": 8,
+        "seconds": 148.57970019994536,
+        "peak_mib": 987.830078125,
+        "prompts_per_second": 0.053843156159517826,
+        "projected_minutes_at_probe_batch": 167.46170376702176,
+        "formal_first8_matches": 8
+      },
+      "previous_dpo": {
+        "n": 8,
+        "seconds": 149.5087090000161,
+        "peak_mib": 987.830078125,
+        "prompts_per_second": 0.053508588586629685,
+        "projected_minutes_at_probe_batch": 168.50877410210148,
+        "formal_first8_matches": 8
+      },
+      "sft-42": {
+        "n": 8,
+        "seconds": 113.85377209994476,
+        "peak_mib": 987.37109375,
+        "prompts_per_second": 0.07026556830262351,
+        "projected_minutes_at_probe_batch": 128.3226889709794,
+        "formal_first8_matches": 8
+      },
+      "dpo-42": {
+        "n": 8,
+        "seconds": 112.81362289999379,
+        "peak_mib": 987.37109375,
+        "prompts_per_second": 0.07091342157402199,
+        "projected_minutes_at_probe_batch": 127.15035414353467,
+        "formal_first8_matches": 8
+      }
+    }
+  },
+  "seed": 42,
+  "bootstrap_draws": 10000,
+  "calibration": {
+    "base": {
+      "reference": 69.9,
+      "delta_pp": -0.041458106637648484,
+      "audit_required": false
+    },
+    "instruct": {
+      "reference": 67.2,
+      "delta_pp": -0.061806311207831754,
+      "audit_required": false
+    }
+  }
+}

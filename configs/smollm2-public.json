@@ -1,0 +1,49 @@
+{
+  "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+  "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+  "root": "outputs/smollm2-public",
+  "assets": "outputs/smollm2-upstream",
+  "models": {
+    "base": {
+      "repo": "Qwen/Qwen2.5-0.5B",
+      "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+      "template": "raw"
+    },
+    "instruct": {
+      "repo": "Qwen/Qwen2.5-0.5B-Instruct",
+      "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+      "template": "native"
+    }
+  },
+  "adapters": {
+    "frozen": "outputs/repair-v1/sft-b/best",
+    "previous_dpo": "outputs/repair-v1/dpo",
+    "sft-42": "outputs/paired-dpo-v1/sft-42/best",
+    "dpo-42": "outputs/paired-dpo-v1/dpo-42/best"
+  },
+  "batch": 1,
+  "seed": 42,
+  "calibration": {
+    "base": 69.9,
+    "instruct": 67.2
+  },
+  "tasks": {
+    "piqa": {
+      "n": 1838,
+      "split": "validation",
+      "revision": "2e8ac2dffd59bac8c3c6714948f4c551a0848bb0"
+    },
+    "hellaswag": {
+      "n": 10042,
+      "split": "validation",
+      "revision": "6002345709e0801764318f06bf06ce1e7d1a1fe3",
+      "parquet_revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76"
+    },
+    "ifeval": {
+      "n": 541,
+      "split": "train",
+      "revision": "966cd89545d6b6acfd7638bc708b98261ca58e84",
+      "budget": 1280
+    }
+  }
+}

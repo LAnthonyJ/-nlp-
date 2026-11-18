@@ -1,0 +1,18 @@
+{
+  "files": {
+    "metrics.json": "2d7d8be3d60c4fafa5e2eb311f97ea289fdca3abc6e4fb52fbd35995fc69e271",
+    "protocols.json": "5be02411e7ec1d1ee83a99543a8d8ec976eea338105a0379d652a3be27022e25",
+    "accuracy.png": "c5f1ff9a78d558498ad68b0766347a37eef36e364ec03fc444bb6f009b4355de",
+    "paired-differences.png": "fd6baef03c8a40cbfa35449c0328cd9646304ba45c120ac0e365f72349f3f657",
+    "piqa-predictions.jsonl.gz": "ce56800f1a8d78371e82ea5190f87c539be55fef16dfb2ea005eabcc6335900e",
+    "hellaswag-predictions.jsonl.gz": "c9492fd0cc966b548689f2fed0a4e10668e9e37d4710a85f077531eaae3f4f95",
+    "ifeval-predictions.jsonl.gz": "97e1e060fabcf971c46b1731cec297db344813820224893640f56665d8f97d4e"
+  },
+  "assets": {
+    "tasks.py": "6899e7565b529ef2200e500fd9814c46bbdf42f9576f069d6de8a4dc2b9355b1",
+    "math_utils.py": "a8cea086bab6352284a6b88433549f76b7b10047b080f11e2faa6a4a755f0690",
+    "piqa.zip": "54d32a04f59a7e354396f321723c8d7ec35cc6b08506563d8d1ffcc15ce98ddd",
+    "hellaswag.parquet": "899813071e1e95efafec90f856e1987d2150fa4d020fc005df6962c259f660cd",
+    "ifeval.jsonl": "6a85310ca8ce15eff755aa08a3a4ff931c7e273e7515ebb3c492ea85fd8288f2"
+  }
+}

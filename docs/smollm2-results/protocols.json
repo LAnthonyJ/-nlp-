@@ -1,0 +1,854 @@
+{
+  "piqa": {
+    "base": {
+      "key": "defb119790f9436405b78ce996d2a9d0f1f8e0c19b1261d3ecd213af38086cd4",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+          "template": "raw"
+        },
+        "weights": {
+          "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "generation": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "template": null,
+        "eos": 151643,
+        "pad": 151643
+      },
+      "task": "piqa",
+      "mode": "run",
+      "data": "01da6915b2919fa0ccc0250b11066ea2ffafd9577ebcfa7217516aacb2c0d1ba",
+      "settings": {
+        "n": 1838,
+        "split": "validation",
+        "revision": "2e8ac2dffd59bac8c3c6714948f4c551a0848bb0"
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 1838,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "Question: How do I ready a guinea pig cage for it's new occupants?\nAnswer:"
+    },
+    "instruct": {
+      "key": "85b0d71c245a88fc7b81eebb335175b5f4f6b91f16c474187b79b177cc1964f3",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B-Instruct",
+          "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+          "template": "native"
+        },
+        "weights": {
+          "model.safetensors": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+        "model_config": "18e18afcaccafade98daf13a54092927904649e1dd4eba8299ab717d5d94ff45",
+        "generation": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6",
+        "template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n",
+        "eos": 151645,
+        "pad": 151645
+      },
+      "task": "piqa",
+      "mode": "run",
+      "data": "01da6915b2919fa0ccc0250b11066ea2ffafd9577ebcfa7217516aacb2c0d1ba",
+      "settings": {
+        "n": 1838,
+        "split": "validation",
+        "revision": "2e8ac2dffd59bac8c3c6714948f4c551a0848bb0"
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 1838,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nQuestion: How do I ready a guinea pig cage for it's new occupants?\nAnswer:<|im_end|>\n<|im_start|>assistant\n"
+    },
+    "frozen": {
+      "key": "479c6bf58389dd58eaed8da93192474c49b6104ed247689a30ca4a5c55458ea3",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+          "template": "project",
+          "adapter": "outputs/repair-v1/sft-b/best"
+        },
+        "weights": {
+          "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+          "adapter": "ef85b96e651b9046800e6312f7b9ab283cfce3fa99709174d25bedecdbb1f521",
+          "adapter_config": "dbf67da7d7d33d80ad46d6e439cb37c7baea935d4892708491f85e7d556fd52e"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "generation": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "template": "{% for m in messages %}<|im_start|>{{m['role']}}\n{{m['content']}}<|im_end|>\n{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}",
+        "eos": 151643,
+        "pad": 151643
+      },
+      "task": "piqa",
+      "mode": "run",
+      "data": "01da6915b2919fa0ccc0250b11066ea2ffafd9577ebcfa7217516aacb2c0d1ba",
+      "settings": {
+        "n": 1838,
+        "split": "validation",
+        "revision": "2e8ac2dffd59bac8c3c6714948f4c551a0848bb0"
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 1838,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>user\nQuestion: How do I ready a guinea pig cage for it's new occupants?\nAnswer:<|im_end|>\n<|im_start|>assistant\n"
+    },
+    "previous_dpo": {
+      "key": "22ecb5bf309d546918707bd04382c4bf1da1fbc5aa5d70895d14ee8ec8897df9",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+          "template": "project",
+          "adapter": "outputs/repair-v1/dpo"
+        },
+        "weights": {
+          "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+          "adapter": "8cf4fb959ab7b22dcf537693db5510bf60231ea7d8b1fa21f1136bd1bfbccd1c",
+          "adapter_config": "dbf67da7d7d33d80ad46d6e439cb37c7baea935d4892708491f85e7d556fd52e"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "generation": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "template": "{% for m in messages %}<|im_start|>{{m['role']}}\n{{m['content']}}<|im_end|>\n{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}",
+        "eos": 151643,
+        "pad": 151643
+      },
+      "task": "piqa",
+      "mode": "run",
+      "data": "01da6915b2919fa0ccc0250b11066ea2ffafd9577ebcfa7217516aacb2c0d1ba",
+      "settings": {
+        "n": 1838,
+        "split": "validation",
+        "revision": "2e8ac2dffd59bac8c3c6714948f4c551a0848bb0"
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 1838,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>user\nQuestion: How do I ready a guinea pig cage for it's new occupants?\nAnswer:<|im_end|>\n<|im_start|>assistant\n"
+    },
+    "sft-42": {
+      "key": "c626a04bdd91ad03d04d5e9b657adf8ed6353ac745034b551ed9ffeecd7fb47d",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+          "template": "project",
+          "adapter": "outputs/paired-dpo-v1/sft-42/best"
+        },
+        "weights": {
+          "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+          "adapter": "02d46fcd0c6395fc7129cd830ef27d94f517953851dbfb0e82d9a6fab43682a5",
+          "adapter_config": "d9386b36b7ee7cf4a41f8206583ca7604344d5194ba44b240afd1ce160ec113e"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "generation": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "template": "{% for m in messages %}<|im_start|>{{m['role']}}\n{{m['content']}}<|im_end|>\n{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}",
+        "eos": 151643,
+        "pad": 151643
+      },
+      "task": "piqa",
+      "mode": "run",
+      "data": "01da6915b2919fa0ccc0250b11066ea2ffafd9577ebcfa7217516aacb2c0d1ba",
+      "settings": {
+        "n": 1838,
+        "split": "validation",
+        "revision": "2e8ac2dffd59bac8c3c6714948f4c551a0848bb0"
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 1838,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>user\nQuestion: How do I ready a guinea pig cage for it's new occupants?\nAnswer:<|im_end|>\n<|im_start|>assistant\n"
+    },
+    "dpo-42": {
+      "key": "4d7865d12dac56ff7958feefcb857f0f92bc7af7e02ce08700ca0fc778333c85",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+          "template": "project",
+          "adapter": "outputs/paired-dpo-v1/dpo-42/best"
+        },
+        "weights": {
+          "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+          "adapter": "86d5232069e45b2cf7d5650ec7707ea339409753bf0902accff9a92a56db80f5",
+          "adapter_config": "d9386b36b7ee7cf4a41f8206583ca7604344d5194ba44b240afd1ce160ec113e"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "generation": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "template": "{% for m in messages %}<|im_start|>{{m['role']}}\n{{m['content']}}<|im_end|>\n{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}",
+        "eos": 151643,
+        "pad": 151643
+      },
+      "task": "piqa",
+      "mode": "run",
+      "data": "01da6915b2919fa0ccc0250b11066ea2ffafd9577ebcfa7217516aacb2c0d1ba",
+      "settings": {
+        "n": 1838,
+        "split": "validation",
+        "revision": "2e8ac2dffd59bac8c3c6714948f4c551a0848bb0"
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 1838,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>user\nQuestion: How do I ready a guinea pig cage for it's new occupants?\nAnswer:<|im_end|>\n<|im_start|>assistant\n"
+    }
+  },
+  "hellaswag": {
+    "base": {
+      "key": "a895558b651ce477a06b6455f4f6501a7f3f4f9a74608bedc82cc5c7dc6b5431",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+          "template": "raw"
+        },
+        "weights": {
+          "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "generation": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "template": null,
+        "eos": 151643,
+        "pad": 151643
+      },
+      "task": "hellaswag",
+      "mode": "run",
+      "data": "d10dca672136bf1a6428b836de088b006a006e83f91bc37a9e4d692822f8bf98",
+      "settings": {
+        "n": 10042,
+        "split": "validation",
+        "revision": "6002345709e0801764318f06bf06ce1e7d1a1fe3",
+        "parquet_revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76"
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 10042,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "Roof shingle removal: A man is sitting on a roof. He "
+    },
+    "instruct": {
+      "key": "9b9f275cee34623228271afb3d3653cc8d9c931a4d70ff96ac9c4aad99f8d1b6",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B-Instruct",
+          "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+          "template": "native"
+        },
+        "weights": {
+          "model.safetensors": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+        "model_config": "18e18afcaccafade98daf13a54092927904649e1dd4eba8299ab717d5d94ff45",
+        "generation": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6",
+        "template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n",
+        "eos": 151645,
+        "pad": 151645
+      },
+      "task": "hellaswag",
+      "mode": "run",
+      "data": "d10dca672136bf1a6428b836de088b006a006e83f91bc37a9e4d692822f8bf98",
+      "settings": {
+        "n": 10042,
+        "split": "validation",
+        "revision": "6002345709e0801764318f06bf06ce1e7d1a1fe3",
+        "parquet_revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76"
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 10042,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nRoof shingle removal: A man is sitting on a roof. He <|im_end|>\n<|im_start|>assistant\n"
+    },
+    "frozen": {
+      "key": "a636b70a4271ae39bd0e09ac5c1f498a0fcb960509987501105a43c787a97d8b",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+          "template": "project",
+          "adapter": "outputs/repair-v1/sft-b/best"
+        },
+        "weights": {
+          "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+          "adapter": "ef85b96e651b9046800e6312f7b9ab283cfce3fa99709174d25bedecdbb1f521",
+          "adapter_config": "dbf67da7d7d33d80ad46d6e439cb37c7baea935d4892708491f85e7d556fd52e"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "generation": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "template": "{% for m in messages %}<|im_start|>{{m['role']}}\n{{m['content']}}<|im_end|>\n{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}",
+        "eos": 151643,
+        "pad": 151643
+      },
+      "task": "hellaswag",
+      "mode": "run",
+      "data": "d10dca672136bf1a6428b836de088b006a006e83f91bc37a9e4d692822f8bf98",
+      "settings": {
+        "n": 10042,
+        "split": "validation",
+        "revision": "6002345709e0801764318f06bf06ce1e7d1a1fe3",
+        "parquet_revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76"
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 10042,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>user\nRoof shingle removal: A man is sitting on a roof. He <|im_end|>\n<|im_start|>assistant\n"
+    },
+    "previous_dpo": {
+      "key": "85803760e0d90e86b85e4a77cd49151c910911e3176fd526b99935e8a7f19cc0",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+          "template": "project",
+          "adapter": "outputs/repair-v1/dpo"
+        },
+        "weights": {
+          "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+          "adapter": "8cf4fb959ab7b22dcf537693db5510bf60231ea7d8b1fa21f1136bd1bfbccd1c",
+          "adapter_config": "dbf67da7d7d33d80ad46d6e439cb37c7baea935d4892708491f85e7d556fd52e"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "generation": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "template": "{% for m in messages %}<|im_start|>{{m['role']}}\n{{m['content']}}<|im_end|>\n{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}",
+        "eos": 151643,
+        "pad": 151643
+      },
+      "task": "hellaswag",
+      "mode": "run",
+      "data": "d10dca672136bf1a6428b836de088b006a006e83f91bc37a9e4d692822f8bf98",
+      "settings": {
+        "n": 10042,
+        "split": "validation",
+        "revision": "6002345709e0801764318f06bf06ce1e7d1a1fe3",
+        "parquet_revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76"
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 10042,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>user\nRoof shingle removal: A man is sitting on a roof. He <|im_end|>\n<|im_start|>assistant\n"
+    },
+    "sft-42": {
+      "key": "c74e1096d15e2b472e374f155dffdcc57d9a21accd7c939a9523db46011b258b",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+          "template": "project",
+          "adapter": "outputs/paired-dpo-v1/sft-42/best"
+        },
+        "weights": {
+          "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+          "adapter": "02d46fcd0c6395fc7129cd830ef27d94f517953851dbfb0e82d9a6fab43682a5",
+          "adapter_config": "d9386b36b7ee7cf4a41f8206583ca7604344d5194ba44b240afd1ce160ec113e"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "generation": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "template": "{% for m in messages %}<|im_start|>{{m['role']}}\n{{m['content']}}<|im_end|>\n{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}",
+        "eos": 151643,
+        "pad": 151643
+      },
+      "task": "hellaswag",
+      "mode": "run",
+      "data": "d10dca672136bf1a6428b836de088b006a006e83f91bc37a9e4d692822f8bf98",
+      "settings": {
+        "n": 10042,
+        "split": "validation",
+        "revision": "6002345709e0801764318f06bf06ce1e7d1a1fe3",
+        "parquet_revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76"
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 10042,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>user\nRoof shingle removal: A man is sitting on a roof. He <|im_end|>\n<|im_start|>assistant\n"
+    },
+    "dpo-42": {
+      "key": "8f68d02dd32e4cebaad201f6debd0cc772afdfc11056777e3eb0d7295a95c841",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+          "template": "project",
+          "adapter": "outputs/paired-dpo-v1/dpo-42/best"
+        },
+        "weights": {
+          "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+          "adapter": "86d5232069e45b2cf7d5650ec7707ea339409753bf0902accff9a92a56db80f5",
+          "adapter_config": "d9386b36b7ee7cf4a41f8206583ca7604344d5194ba44b240afd1ce160ec113e"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "generation": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "template": "{% for m in messages %}<|im_start|>{{m['role']}}\n{{m['content']}}<|im_end|>\n{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}",
+        "eos": 151643,
+        "pad": 151643
+      },
+      "task": "hellaswag",
+      "mode": "run",
+      "data": "d10dca672136bf1a6428b836de088b006a006e83f91bc37a9e4d692822f8bf98",
+      "settings": {
+        "n": 10042,
+        "split": "validation",
+        "revision": "6002345709e0801764318f06bf06ce1e7d1a1fe3",
+        "parquet_revision": "218ec52e09a7e7462a5400043bb9a69a41d06b76"
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 10042,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>user\nRoof shingle removal: A man is sitting on a roof. He <|im_end|>\n<|im_start|>assistant\n"
+    }
+  },
+  "ifeval": {
+    "instruct": {
+      "key": "96787c8a85149b778488a63afce6ba4932a724588a1316d3b6e4fd13a43085fe",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B-Instruct",
+          "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+          "template": "native"
+        },
+        "weights": {
+          "model.safetensors": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+        "model_config": "18e18afcaccafade98daf13a54092927904649e1dd4eba8299ab717d5d94ff45",
+        "generation": "e558847a8b4402616f1273797b015104dc266fe4b520056fca88823ba8f8ebe6",
+        "template": "{%- if tools %}\n    {{- '<|im_start|>system\\n' }}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- messages[0]['content'] }}\n    {%- else %}\n        {{- 'You are Qwen, created by Alibaba Cloud. You are a helpful assistant.' }}\n    {%- endif %}\n    {{- \"\\n\\n# Tools\\n\\nYou may call one or more functions to assist with the user query.\\n\\nYou are provided with function signatures within <tools></tools> XML tags:\\n<tools>\" }}\n    {%- for tool in tools %}\n        {{- \"\\n\" }}\n        {{- tool | tojson }}\n    {%- endfor %}\n    {{- \"\\n</tools>\\n\\nFor each function call, return a json object with function name and arguments within <tool_call></tool_call> XML tags:\\n<tool_call>\\n{\\\"name\\\": <function-name>, \\\"arguments\\\": <args-json-object>}\\n</tool_call><|im_end|>\\n\" }}\n{%- else %}\n    {%- if messages[0]['role'] == 'system' %}\n        {{- '<|im_start|>system\\n' + messages[0]['content'] + '<|im_end|>\\n' }}\n    {%- else %}\n        {{- '<|im_start|>system\\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\\n' }}\n    {%- endif %}\n{%- endif %}\n{%- for message in messages %}\n    {%- if (message.role == \"user\") or (message.role == \"system\" and not loop.first) or (message.role == \"assistant\" and not message.tool_calls) %}\n        {{- '<|im_start|>' + message.role + '\\n' + message.content + '<|im_end|>' + '\\n' }}\n    {%- elif message.role == \"assistant\" %}\n        {{- '<|im_start|>' + message.role }}\n        {%- if message.content %}\n            {{- '\\n' + message.content }}\n        {%- endif %}\n        {%- for tool_call in message.tool_calls %}\n            {%- if tool_call.function is defined %}\n                {%- set tool_call = tool_call.function %}\n            {%- endif %}\n            {{- '\\n<tool_call>\\n{\"name\": \"' }}\n            {{- tool_call.name }}\n            {{- '\", \"arguments\": ' }}\n            {{- tool_call.arguments | tojson }}\n            {{- '}\\n</tool_call>' }}\n        {%- endfor %}\n        {{- '<|im_end|>\\n' }}\n    {%- elif message.role == \"tool\" %}\n        {%- if (loop.index0 == 0) or (messages[loop.index0 - 1].role != \"tool\") %}\n            {{- '<|im_start|>user' }}\n        {%- endif %}\n        {{- '\\n<tool_response>\\n' }}\n        {{- message.content }}\n        {{- '\\n</tool_response>' }}\n        {%- if loop.last or (messages[loop.index0 + 1].role != \"tool\") %}\n            {{- '<|im_end|>\\n' }}\n        {%- endif %}\n    {%- endif %}\n{%- endfor %}\n{%- if add_generation_prompt %}\n    {{- '<|im_start|>assistant\\n' }}\n{%- endif %}\n",
+        "eos": 151645,
+        "pad": 151645
+      },
+      "task": "ifeval",
+      "mode": "run",
+      "data": "5d4704eaa7b49ad0d5dcd43794c4a9bdc4761cc38ee02e418b8cd87df0ffa6a4",
+      "settings": {
+        "n": 541,
+        "split": "train",
+        "revision": "966cd89545d6b6acfd7638bc708b98261ca58e84",
+        "budget": 1280
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 541,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>system\nYou are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>\n<|im_start|>user\nWrite a 300+ word summary of the wikipedia page \"https://en.wikipedia.org/wiki/Raymond_III,_Count_of_Tripoli\". Do not use any commas and highlight at least 3 sections that has titles in markdown format, for example *highlighted section part 1*, *highlighted section part 2*, *highlighted section part 3*.<|im_end|>\n<|im_start|>assistant\n"
+    },
+    "frozen": {
+      "key": "7f928c0b67b59cce1815cce097478d0a17538ed68d53b6827f50fb4d38bd9987",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+          "template": "project",
+          "adapter": "outputs/repair-v1/sft-b/best"
+        },
+        "weights": {
+          "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+          "adapter": "ef85b96e651b9046800e6312f7b9ab283cfce3fa99709174d25bedecdbb1f521",
+          "adapter_config": "dbf67da7d7d33d80ad46d6e439cb37c7baea935d4892708491f85e7d556fd52e"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "generation": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "template": "{% for m in messages %}<|im_start|>{{m['role']}}\n{{m['content']}}<|im_end|>\n{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}",
+        "eos": 151643,
+        "pad": 151643
+      },
+      "task": "ifeval",
+      "mode": "run",
+      "data": "5d4704eaa7b49ad0d5dcd43794c4a9bdc4761cc38ee02e418b8cd87df0ffa6a4",
+      "settings": {
+        "n": 541,
+        "split": "train",
+        "revision": "966cd89545d6b6acfd7638bc708b98261ca58e84",
+        "budget": 1280
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 541,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>user\nWrite a 300+ word summary of the wikipedia page \"https://en.wikipedia.org/wiki/Raymond_III,_Count_of_Tripoli\". Do not use any commas and highlight at least 3 sections that has titles in markdown format, for example *highlighted section part 1*, *highlighted section part 2*, *highlighted section part 3*.<|im_end|>\n<|im_start|>assistant\n"
+    },
+    "previous_dpo": {
+      "key": "64240298d4271de83e343063e95905081160413ef5c3a2606bf0c7628b264784",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+          "template": "project",
+          "adapter": "outputs/repair-v1/dpo"
+        },
+        "weights": {
+          "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+          "adapter": "8cf4fb959ab7b22dcf537693db5510bf60231ea7d8b1fa21f1136bd1bfbccd1c",
+          "adapter_config": "dbf67da7d7d33d80ad46d6e439cb37c7baea935d4892708491f85e7d556fd52e"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "generation": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "template": "{% for m in messages %}<|im_start|>{{m['role']}}\n{{m['content']}}<|im_end|>\n{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}",
+        "eos": 151643,
+        "pad": 151643
+      },
+      "task": "ifeval",
+      "mode": "run",
+      "data": "5d4704eaa7b49ad0d5dcd43794c4a9bdc4761cc38ee02e418b8cd87df0ffa6a4",
+      "settings": {
+        "n": 541,
+        "split": "train",
+        "revision": "966cd89545d6b6acfd7638bc708b98261ca58e84",
+        "budget": 1280
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 541,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>user\nWrite a 300+ word summary of the wikipedia page \"https://en.wikipedia.org/wiki/Raymond_III,_Count_of_Tripoli\". Do not use any commas and highlight at least 3 sections that has titles in markdown format, for example *highlighted section part 1*, *highlighted section part 2*, *highlighted section part 3*.<|im_end|>\n<|im_start|>assistant\n"
+    },
+    "sft-42": {
+      "key": "87d5de5b67a3121667ae7b89ca9daaa69b35ca0b05c45aa5539dfc66cca173c6",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+          "template": "project",
+          "adapter": "outputs/paired-dpo-v1/sft-42/best"
+        },
+        "weights": {
+          "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+          "adapter": "02d46fcd0c6395fc7129cd830ef27d94f517953851dbfb0e82d9a6fab43682a5",
+          "adapter_config": "d9386b36b7ee7cf4a41f8206583ca7604344d5194ba44b240afd1ce160ec113e"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "generation": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "template": "{% for m in messages %}<|im_start|>{{m['role']}}\n{{m['content']}}<|im_end|>\n{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}",
+        "eos": 151643,
+        "pad": 151643
+      },
+      "task": "ifeval",
+      "mode": "run",
+      "data": "5d4704eaa7b49ad0d5dcd43794c4a9bdc4761cc38ee02e418b8cd87df0ffa6a4",
+      "settings": {
+        "n": 541,
+        "split": "train",
+        "revision": "966cd89545d6b6acfd7638bc708b98261ca58e84",
+        "budget": 1280
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 541,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>user\nWrite a 300+ word summary of the wikipedia page \"https://en.wikipedia.org/wiki/Raymond_III,_Count_of_Tripoli\". Do not use any commas and highlight at least 3 sections that has titles in markdown format, for example *highlighted section part 1*, *highlighted section part 2*, *highlighted section part 3*.<|im_end|>\n<|im_start|>assistant\n"
+    },
+    "dpo-42": {
+      "key": "c0a73ae91d43d64f3d51fe43e88fb845b4f3d3d0237c2a93f8461412e6cc5c9e",
+      "model": {
+        "spec": {
+          "repo": "Qwen/Qwen2.5-0.5B",
+          "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+          "template": "project",
+          "adapter": "outputs/paired-dpo-v1/dpo-42/best"
+        },
+        "weights": {
+          "model.safetensors": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+          "adapter": "86d5232069e45b2cf7d5650ec7707ea339409753bf0902accff9a92a56db80f5",
+          "adapter_config": "d9386b36b7ee7cf4a41f8206583ca7604344d5194ba44b240afd1ce160ec113e"
+        },
+        "tokenizer": "36cd562eb06d9cff856d898c9700031561bf42c50bf57dc82e4c5d8655e61f8c",
+        "tokenizer_config": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+        "model_config": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+        "generation": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+        "template": "{% for m in messages %}<|im_start|>{{m['role']}}\n{{m['content']}}<|im_end|>\n{% endfor %}{% if add_generation_prompt %}<|im_start|>assistant\n{% endif %}",
+        "eos": 151643,
+        "pad": 151643
+      },
+      "task": "ifeval",
+      "mode": "run",
+      "data": "5d4704eaa7b49ad0d5dcd43794c4a9bdc4761cc38ee02e418b8cd87df0ffa6a4",
+      "settings": {
+        "n": 541,
+        "split": "train",
+        "revision": "966cd89545d6b6acfd7638bc708b98261ca58e84",
+        "budget": 1280
+      },
+      "versions": {
+        "torch": "2.4.1+cu121",
+        "transformers": "4.46.3",
+        "tokenizers": "0.20.3",
+        "peft": "0.13.2",
+        "lighteval": "0.6.0.dev0",
+        "langdetect": "1.0.9",
+        "nltk": "3.9.1"
+      },
+      "upstream": "d3bb683bc123a1954b289b70dd8119b51c358018",
+      "lighteval": "ea46419a93fb390e8f694f7c6c64c1e684487c9d",
+      "dtype": "bfloat16",
+      "backend": "transformers",
+      "batch": 8,
+      "seed": 42,
+      "device": "NVIDIA GeForce RTX 3060 Laptop GPU",
+      "n": 541,
+      "code": "b80ad7dd9b51cb52325015ff4fb847adcdfb33e3f296ac0190e6c900ad38c117",
+      "sample_prompt": "<|im_start|>user\nWrite a 300+ word summary of the wikipedia page \"https://en.wikipedia.org/wiki/Raymond_III,_Count_of_Tripoli\". Do not use any commas and highlight at least 3 sections that has titles in markdown format, for example *highlighted section part 1*, *highlighted section part 2*, *highlighted section part 3*.<|im_end|>\n<|im_start|>assistant\n"
+    }
+  }
+}

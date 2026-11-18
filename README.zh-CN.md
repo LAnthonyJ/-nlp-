@@ -29,6 +29,8 @@
 
 在 60 组成对推理题上，继续 SFT 答对 4 组，使用相同提示和真实错答的 DPO 答对 0 组。四组对照、逐题输出与训练曲线见[成对推理 DPO 实验](docs/paired-dpo-results/README.zh-CN.md)。
 
+[SmolLM2 公开评测](docs/smollm2-results/README.zh-CN.md)比较六组 Qwen 权重的 PIQA、HellaSwag 成绩和五组指令模型的 IFEval 成绩，包含官方基线校准、逐题预测及 DPO 相对继续 SFT 的配对差值区间。
+
 ## 快速开始
 
 需要 Git 和 Python。项目声明 Python 3.10+；已验证 **Linux / Python 3.11** 和 **Windows / Python 3.13.7**，使用 PyTorch 2.9.0+cpu。

@@ -1,0 +1,9 @@
+{
+  "metrics.json": "db32aa4a5e94b73188c6eda868e91d962412cd41e826e8aebe4c45be5a53fe03",
+  "pairs.json": "7138f51c361ee64a1bbc5cdb310fe48754c9585041e4e70f3381e90b3c100954",
+  "generations.json": "234e81ae3165625856624e33ba095a0bad2af51e01b1d85391e6f5ad06eb55d4",
+  "regression.json": "437f25ce72d44bbfc619c708ac4c5ebbb6adf7ae7ce236f83649fcd8b6a2cc4e",
+  "mining.json.gz": "d3ce7f5db964771dcf7ac10d5004b5e51339286064a5d840b13339a8aace612c",
+  "paired-accuracy.png": "44637aa82c184ae7903de58d6de4e6dbcc030dfbfe7d874d39fd6ab75191bce2",
+  "development.png": "13a995103a12dc30dc9b10412458df4c57bbc69154095c10f58fc2b0e735cba9"
+}

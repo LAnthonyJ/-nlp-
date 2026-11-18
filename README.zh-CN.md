@@ -21,11 +21,13 @@
 | 解码 | [Greedy、Top-K、Top-P、相对 Min-P](src/nlp_course/decoding.py) | 候选词概率、温度、重复惩罚、EOS 停止 |
 | 评测 | [离线 JSONL 评分与批量生成接口](src/nlp_course/evaluation.py) | 精确数值比较、无效答案统计、批次完整性 |
 
-建议从 [`examples/cpu_demo.py`](examples/cpu_demo.py) 开始，再结合 [70 项回归测试](tests/) 理解各组件的正确性条件。
+建议从 [`examples/cpu_demo.py`](examples/cpu_demo.py) 开始，再结合[回归测试](tests/)理解各组件的正确性条件。
 
 [本地训练指南](docs/training.md)涵盖仅对回答计算损失的 SFT、可验证偏好数据、开发集选模与可配置的真实模型复评。
 
 [本轮修复复评](docs/repair-results/README.zh-CN.md)包含 525 条新回答。同一保留集上，旧 SFT 到新 SFT 的代码测试通过从 0/25 到 7/25；数学最终数值匹配从 9/30 到 10/30，严格格式得分从 0/30 到 10/30。逻辑仍等于恒答 yes 基线，DPO 未提升开发集客观均分。
+
+在 60 组成对推理题上，继续 SFT 答对 4 组，使用相同提示和真实错答的 DPO 答对 0 组。四组对照、逐题输出与训练曲线见[成对推理 DPO 实验](docs/paired-dpo-results/README.zh-CN.md)。
 
 ## 快速开始
 
@@ -138,7 +140,7 @@ python -m unittest discover -s tests -v
 
 | 检查项 | 已记录结果 |
 | --- | --- |
-| 回归测试 | 安装可视化依赖后，本地 70 项通过，详见验证记录 |
+| 回归测试 | 覆盖题组划分、真实错答来源、参考分数冻结及公开结果与逐题记录的一致性 |
 | Transformer 输出 | `[2, 5, 16]`，梯度有限 |
 | 合成数据上的 LoRA 优化 | 80 步后 MSE 从 `0.045949` 降至 `0.000006364`，种子 42 |
 | LoRA 合并一致性 | 最大绝对输出差约 `1.79e-7` |

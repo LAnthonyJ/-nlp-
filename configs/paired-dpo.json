@@ -1,0 +1,8 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B",
+  "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+  "sft": "outputs/repair-v1/sft-b/best",
+  "old_dpo": "outputs/repair-v1/dpo",
+  "regression_suite": "outputs/repair-v1/suite/suite.json",
+  "output_dir": "outputs/paired-dpo-v1"
+}

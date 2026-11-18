@@ -1,0 +1,1662 @@
+[
+  {
+    "id": "train-judgment-0-0",
+    "group": "train-judgment-0",
+    "kind": "judgment",
+    "prompt": "Specimen 0 is a maple. Every maple is a pine. Does it necessarily follow that specimen 0 is a pine? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-2-1",
+    "group": "train-judgment-2",
+    "kind": "judgment",
+    "prompt": "Specimen 2 is a pine. Every pine is a oak. Does it necessarily follow that specimen 2 is a oak? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-3-0",
+    "group": "train-judgment-3",
+    "kind": "judgment",
+    "prompt": "Specimen 3 is a maple. Every maple is a elm. Does it necessarily follow that specimen 3 is a elm? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-4-0",
+    "group": "train-judgment-4",
+    "kind": "judgment",
+    "prompt": "Specimen 4 is a oak. Every oak is a ash. Does it necessarily follow that specimen 4 is a ash? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-8-0",
+    "group": "train-judgment-8",
+    "kind": "judgment",
+    "prompt": "Specimen 8 is a oak. Every oak is a ash. Does it necessarily follow that specimen 8 is a ash? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-10-1",
+    "group": "train-judgment-10",
+    "kind": "judgment",
+    "prompt": "Specimen 10 is a ash. Every ash is a cedar. Does it necessarily follow that specimen 10 is a cedar? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-11-0",
+    "group": "train-judgment-11",
+    "kind": "judgment",
+    "prompt": "Specimen 11 is a pine. Every pine is a oak. Does it necessarily follow that specimen 11 is a oak? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-12-0",
+    "group": "train-judgment-12",
+    "kind": "judgment",
+    "prompt": "Specimen 12 is a oak. Every oak is a pine. Does it necessarily follow that specimen 12 is a pine? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-16-0",
+    "group": "train-judgment-16",
+    "kind": "judgment",
+    "prompt": "Specimen 16 is a maple. Every maple is a oak. Does it necessarily follow that specimen 16 is a oak? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-18-0",
+    "group": "train-judgment-18",
+    "kind": "judgment",
+    "prompt": "Specimen 18 is a pine. Every pine is a cedar. Does it necessarily follow that specimen 18 is a cedar? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-19-0",
+    "group": "train-judgment-19",
+    "kind": "judgment",
+    "prompt": "Specimen 19 is a cedar. Every cedar is a elm. Does it necessarily follow that specimen 19 is a elm? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-21-0",
+    "group": "train-judgment-21",
+    "kind": "judgment",
+    "prompt": "Specimen 21 is a ash. Every ash is a pine. Does it necessarily follow that specimen 21 is a pine? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-23-1",
+    "group": "train-judgment-23",
+    "kind": "judgment",
+    "prompt": "Specimen 23 is a elm. Every elm is a birch. Does it necessarily follow that specimen 23 is a birch? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-24-0",
+    "group": "train-judgment-24",
+    "kind": "judgment",
+    "prompt": "Specimen 24 is a oak. Every oak is a ash. Does it necessarily follow that specimen 24 is a ash? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-26-1",
+    "group": "train-judgment-26",
+    "kind": "judgment",
+    "prompt": "Specimen 26 is a oak. Every oak is a elm. Does it necessarily follow that specimen 26 is a elm? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-28-0",
+    "group": "train-judgment-28",
+    "kind": "judgment",
+    "prompt": "Specimen 28 is a pine. Every pine is a maple. Does it necessarily follow that specimen 28 is a maple? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-29-0",
+    "group": "train-judgment-29",
+    "kind": "judgment",
+    "prompt": "Specimen 29 is a pine. Every pine is a cedar. Does it necessarily follow that specimen 29 is a cedar? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-31-1",
+    "group": "train-judgment-31",
+    "kind": "judgment",
+    "prompt": "Specimen 31 is a elm. Every elm is a pine. Does it necessarily follow that specimen 31 is a pine? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-33-0",
+    "group": "train-judgment-33",
+    "kind": "judgment",
+    "prompt": "Specimen 33 is a cedar. Every cedar is a maple. Does it necessarily follow that specimen 33 is a maple? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-37-1",
+    "group": "train-judgment-37",
+    "kind": "judgment",
+    "prompt": "Specimen 37 is a maple. Every maple is a oak. Does it necessarily follow that specimen 37 is a oak? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-38-0",
+    "group": "train-judgment-38",
+    "kind": "judgment",
+    "prompt": "Specimen 38 is a birch. Every birch is a cedar. Does it necessarily follow that specimen 38 is a cedar? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-40-0",
+    "group": "train-judgment-40",
+    "kind": "judgment",
+    "prompt": "Specimen 40 is a cedar. Every cedar is a birch. Does it necessarily follow that specimen 40 is a birch? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-41-0",
+    "group": "train-judgment-41",
+    "kind": "judgment",
+    "prompt": "Specimen 41 is a maple. Every maple is a oak. Does it necessarily follow that specimen 41 is a oak? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-42-0",
+    "group": "train-judgment-42",
+    "kind": "judgment",
+    "prompt": "Specimen 42 is a birch. Every birch is a pine. Does it necessarily follow that specimen 42 is a pine? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-44-1",
+    "group": "train-judgment-44",
+    "kind": "judgment",
+    "prompt": "Specimen 44 is a pine. Every pine is a elm. Does it necessarily follow that specimen 44 is a elm? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-45-1",
+    "group": "train-judgment-45",
+    "kind": "judgment",
+    "prompt": "Specimen 45 is a oak. Every oak is a maple. Does it necessarily follow that specimen 45 is a maple? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-48-0",
+    "group": "train-judgment-48",
+    "kind": "judgment",
+    "prompt": "Specimen 48 is a oak. Every oak is a birch. Does it necessarily follow that specimen 48 is a birch? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-49-0",
+    "group": "train-judgment-49",
+    "kind": "judgment",
+    "prompt": "Specimen 49 is a pine. Every pine is a ash. Does it necessarily follow that specimen 49 is a ash? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-53-0",
+    "group": "train-judgment-53",
+    "kind": "judgment",
+    "prompt": "Specimen 53 is a pine. Every pine is a elm. Does it necessarily follow that specimen 53 is a elm? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-55-0",
+    "group": "train-judgment-55",
+    "kind": "judgment",
+    "prompt": "Specimen 55 is a elm. Every elm is a ash. Does it necessarily follow that specimen 55 is a ash? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-56-1",
+    "group": "train-judgment-56",
+    "kind": "judgment",
+    "prompt": "Specimen 56 is a ash. Every ash is a oak. Does it necessarily follow that specimen 56 is a oak? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-59-1",
+    "group": "train-judgment-59",
+    "kind": "judgment",
+    "prompt": "Specimen 59 is a maple. Every maple is a birch. Does it necessarily follow that specimen 59 is a birch? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-61-0",
+    "group": "train-judgment-61",
+    "kind": "judgment",
+    "prompt": "Specimen 61 is a cedar. Every cedar is a maple. Does it necessarily follow that specimen 61 is a maple? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-62-1",
+    "group": "train-judgment-62",
+    "kind": "judgment",
+    "prompt": "Specimen 62 is a maple. Every maple is a cedar. Does it necessarily follow that specimen 62 is a cedar? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-64-1",
+    "group": "train-judgment-64",
+    "kind": "judgment",
+    "prompt": "Specimen 64 is a oak. Every oak is a birch. Does it necessarily follow that specimen 64 is a birch? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-66-1",
+    "group": "train-judgment-66",
+    "kind": "judgment",
+    "prompt": "Specimen 66 is a elm. Every elm is a birch. Does it necessarily follow that specimen 66 is a birch? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-67-0",
+    "group": "train-judgment-67",
+    "kind": "judgment",
+    "prompt": "Specimen 67 is a pine. Every pine is a cedar. Does it necessarily follow that specimen 67 is a cedar? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-70-0",
+    "group": "train-judgment-70",
+    "kind": "judgment",
+    "prompt": "Specimen 70 is a birch. Every birch is a pine. Does it necessarily follow that specimen 70 is a pine? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-71-1",
+    "group": "train-judgment-71",
+    "kind": "judgment",
+    "prompt": "Specimen 71 is a cedar. Every cedar is a ash. Does it necessarily follow that specimen 71 is a ash? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-72-0",
+    "group": "train-judgment-72",
+    "kind": "judgment",
+    "prompt": "Specimen 72 is a pine. Every pine is a ash. Does it necessarily follow that specimen 72 is a ash? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-73-1",
+    "group": "train-judgment-73",
+    "kind": "judgment",
+    "prompt": "Specimen 73 is a ash. Every ash is a cedar. Does it necessarily follow that specimen 73 is a cedar? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-74-0",
+    "group": "train-judgment-74",
+    "kind": "judgment",
+    "prompt": "Specimen 74 is a birch. Every birch is a elm. Does it necessarily follow that specimen 74 is a elm? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-75-1",
+    "group": "train-judgment-75",
+    "kind": "judgment",
+    "prompt": "Specimen 75 is a ash. Every ash is a pine. Does it necessarily follow that specimen 75 is a pine? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-76-0",
+    "group": "train-judgment-76",
+    "kind": "judgment",
+    "prompt": "Specimen 76 is a cedar. Every cedar is a oak. Does it necessarily follow that specimen 76 is a oak? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-77-0",
+    "group": "train-judgment-77",
+    "kind": "judgment",
+    "prompt": "Specimen 77 is a birch. Every birch is a pine. Does it necessarily follow that specimen 77 is a pine? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-78-0",
+    "group": "train-judgment-78",
+    "kind": "judgment",
+    "prompt": "Specimen 78 is a maple. Every maple is a birch. Does it necessarily follow that specimen 78 is a birch? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-79-0",
+    "group": "train-judgment-79",
+    "kind": "judgment",
+    "prompt": "Specimen 79 is a cedar. Every cedar is a birch. Does it necessarily follow that specimen 79 is a birch? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-81-1",
+    "group": "train-judgment-81",
+    "kind": "judgment",
+    "prompt": "Specimen 81 is a ash. Every ash is a elm. Does it necessarily follow that specimen 81 is a elm? Answer yes or no only.",
+    "answer": "yes",
+    "chosen": "yes",
+    "rejected": "no",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-0-1",
+    "group": "train-judgment-0",
+    "kind": "judgment",
+    "prompt": "Specimen 0 is a ash. Every maple is a pine. Does it necessarily follow that specimen 0 is a pine? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-1-0",
+    "group": "train-judgment-1",
+    "kind": "judgment",
+    "prompt": "Specimen 1 is a cedar. Every pine is a ash. Does it necessarily follow that specimen 1 is a ash? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-2-0",
+    "group": "train-judgment-2",
+    "kind": "judgment",
+    "prompt": "Specimen 2 is a birch. Every pine is a oak. Does it necessarily follow that specimen 2 is a oak? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-3-1",
+    "group": "train-judgment-3",
+    "kind": "judgment",
+    "prompt": "Specimen 3 is a oak. Every maple is a elm. Does it necessarily follow that specimen 3 is a elm? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-4-1",
+    "group": "train-judgment-4",
+    "kind": "judgment",
+    "prompt": "Specimen 4 is a cedar. Every oak is a ash. Does it necessarily follow that specimen 4 is a ash? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-5-0",
+    "group": "train-judgment-5",
+    "kind": "judgment",
+    "prompt": "Specimen 5 is a ash. Every elm is a pine. Does it necessarily follow that specimen 5 is a pine? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-6-0",
+    "group": "train-judgment-6",
+    "kind": "judgment",
+    "prompt": "Specimen 6 is a ash. Every elm is a oak. Does it necessarily follow that specimen 6 is a oak? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-7-0",
+    "group": "train-judgment-7",
+    "kind": "judgment",
+    "prompt": "Specimen 7 is a maple. Every cedar is a elm. Does it necessarily follow that specimen 7 is a elm? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-8-1",
+    "group": "train-judgment-8",
+    "kind": "judgment",
+    "prompt": "Specimen 8 is a cedar. Every oak is a ash. Does it necessarily follow that specimen 8 is a ash? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-9-0",
+    "group": "train-judgment-9",
+    "kind": "judgment",
+    "prompt": "Specimen 9 is a oak. Every birch is a pine. Does it necessarily follow that specimen 9 is a pine? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-10-0",
+    "group": "train-judgment-10",
+    "kind": "judgment",
+    "prompt": "Specimen 10 is a pine. Every ash is a cedar. Does it necessarily follow that specimen 10 is a cedar? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-11-1",
+    "group": "train-judgment-11",
+    "kind": "judgment",
+    "prompt": "Specimen 11 is a ash. Every pine is a oak. Does it necessarily follow that specimen 11 is a oak? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-12-1",
+    "group": "train-judgment-12",
+    "kind": "judgment",
+    "prompt": "Specimen 12 is a cedar. Every oak is a pine. Does it necessarily follow that specimen 12 is a pine? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-13-0",
+    "group": "train-judgment-13",
+    "kind": "judgment",
+    "prompt": "Specimen 13 is a maple. Every oak is a birch. Does it necessarily follow that specimen 13 is a birch? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-14-1",
+    "group": "train-judgment-14",
+    "kind": "judgment",
+    "prompt": "Specimen 14 is a cedar. Every ash is a maple. Does it necessarily follow that specimen 14 is a maple? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-15-1",
+    "group": "train-judgment-15",
+    "kind": "judgment",
+    "prompt": "Specimen 15 is a maple. Every pine is a ash. Does it necessarily follow that specimen 15 is a ash? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-16-1",
+    "group": "train-judgment-16",
+    "kind": "judgment",
+    "prompt": "Specimen 16 is a elm. Every maple is a oak. Does it necessarily follow that specimen 16 is a oak? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-17-1",
+    "group": "train-judgment-17",
+    "kind": "judgment",
+    "prompt": "Specimen 17 is a oak. Every birch is a elm. Does it necessarily follow that specimen 17 is a elm? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-18-1",
+    "group": "train-judgment-18",
+    "kind": "judgment",
+    "prompt": "Specimen 18 is a ash. Every pine is a cedar. Does it necessarily follow that specimen 18 is a cedar? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-19-1",
+    "group": "train-judgment-19",
+    "kind": "judgment",
+    "prompt": "Specimen 19 is a maple. Every cedar is a elm. Does it necessarily follow that specimen 19 is a elm? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-20-0",
+    "group": "train-judgment-20",
+    "kind": "judgment",
+    "prompt": "Specimen 20 is a maple. Every birch is a pine. Does it necessarily follow that specimen 20 is a pine? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-21-1",
+    "group": "train-judgment-21",
+    "kind": "judgment",
+    "prompt": "Specimen 21 is a maple. Every ash is a pine. Does it necessarily follow that specimen 21 is a pine? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-22-0",
+    "group": "train-judgment-22",
+    "kind": "judgment",
+    "prompt": "Specimen 22 is a oak. Every pine is a elm. Does it necessarily follow that specimen 22 is a elm? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-23-0",
+    "group": "train-judgment-23",
+    "kind": "judgment",
+    "prompt": "Specimen 23 is a pine. Every elm is a birch. Does it necessarily follow that specimen 23 is a birch? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-24-1",
+    "group": "train-judgment-24",
+    "kind": "judgment",
+    "prompt": "Specimen 24 is a birch. Every oak is a ash. Does it necessarily follow that specimen 24 is a ash? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-25-0",
+    "group": "train-judgment-25",
+    "kind": "judgment",
+    "prompt": "Specimen 25 is a pine. Every oak is a cedar. Does it necessarily follow that specimen 25 is a cedar? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-26-0",
+    "group": "train-judgment-26",
+    "kind": "judgment",
+    "prompt": "Specimen 26 is a ash. Every oak is a elm. Does it necessarily follow that specimen 26 is a elm? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-27-0",
+    "group": "train-judgment-27",
+    "kind": "judgment",
+    "prompt": "Specimen 27 is a ash. Every elm is a maple. Does it necessarily follow that specimen 27 is a maple? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-28-1",
+    "group": "train-judgment-28",
+    "kind": "judgment",
+    "prompt": "Specimen 28 is a birch. Every pine is a maple. Does it necessarily follow that specimen 28 is a maple? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-29-1",
+    "group": "train-judgment-29",
+    "kind": "judgment",
+    "prompt": "Specimen 29 is a maple. Every pine is a cedar. Does it necessarily follow that specimen 29 is a cedar? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-30-1",
+    "group": "train-judgment-30",
+    "kind": "judgment",
+    "prompt": "Specimen 30 is a pine. Every ash is a oak. Does it necessarily follow that specimen 30 is a oak? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-31-0",
+    "group": "train-judgment-31",
+    "kind": "judgment",
+    "prompt": "Specimen 31 is a cedar. Every elm is a pine. Does it necessarily follow that specimen 31 is a pine? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-32-0",
+    "group": "train-judgment-32",
+    "kind": "judgment",
+    "prompt": "Specimen 32 is a elm. Every pine is a maple. Does it necessarily follow that specimen 32 is a maple? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-33-1",
+    "group": "train-judgment-33",
+    "kind": "judgment",
+    "prompt": "Specimen 33 is a birch. Every cedar is a maple. Does it necessarily follow that specimen 33 is a maple? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-34-1",
+    "group": "train-judgment-34",
+    "kind": "judgment",
+    "prompt": "Specimen 34 is a pine. Every elm is a ash. Does it necessarily follow that specimen 34 is a ash? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-35-0",
+    "group": "train-judgment-35",
+    "kind": "judgment",
+    "prompt": "Specimen 35 is a maple. Every elm is a birch. Does it necessarily follow that specimen 35 is a birch? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-36-1",
+    "group": "train-judgment-36",
+    "kind": "judgment",
+    "prompt": "Specimen 36 is a elm. Every oak is a ash. Does it necessarily follow that specimen 36 is a ash? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-37-0",
+    "group": "train-judgment-37",
+    "kind": "judgment",
+    "prompt": "Specimen 37 is a cedar. Every maple is a oak. Does it necessarily follow that specimen 37 is a oak? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-38-1",
+    "group": "train-judgment-38",
+    "kind": "judgment",
+    "prompt": "Specimen 38 is a elm. Every birch is a cedar. Does it necessarily follow that specimen 38 is a cedar? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-39-1",
+    "group": "train-judgment-39",
+    "kind": "judgment",
+    "prompt": "Specimen 39 is a oak. Every pine is a elm. Does it necessarily follow that specimen 39 is a elm? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-40-1",
+    "group": "train-judgment-40",
+    "kind": "judgment",
+    "prompt": "Specimen 40 is a elm. Every cedar is a birch. Does it necessarily follow that specimen 40 is a birch? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-41-1",
+    "group": "train-judgment-41",
+    "kind": "judgment",
+    "prompt": "Specimen 41 is a cedar. Every maple is a oak. Does it necessarily follow that specimen 41 is a oak? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-42-1",
+    "group": "train-judgment-42",
+    "kind": "judgment",
+    "prompt": "Specimen 42 is a oak. Every birch is a pine. Does it necessarily follow that specimen 42 is a pine? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-43-0",
+    "group": "train-judgment-43",
+    "kind": "judgment",
+    "prompt": "Specimen 43 is a pine. Every maple is a ash. Does it necessarily follow that specimen 43 is a ash? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-44-0",
+    "group": "train-judgment-44",
+    "kind": "judgment",
+    "prompt": "Specimen 44 is a birch. Every pine is a elm. Does it necessarily follow that specimen 44 is a elm? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-45-0",
+    "group": "train-judgment-45",
+    "kind": "judgment",
+    "prompt": "Specimen 45 is a pine. Every oak is a maple. Does it necessarily follow that specimen 45 is a maple? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-judgment-46-0",
+    "group": "train-judgment-46",
+    "kind": "judgment",
+    "prompt": "Specimen 46 is a cedar. Every elm is a oak. Does it necessarily follow that specimen 46 is a oak? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-judgment-47-0",
+    "group": "train-judgment-47",
+    "kind": "judgment",
+    "prompt": "Specimen 47 is a maple. Every ash is a pine. Does it necessarily follow that specimen 47 is a pine? Answer yes or no only.",
+    "answer": "no",
+    "chosen": "no",
+    "rejected": "yes",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-ordering-1-1",
+    "group": "train-ordering-1",
+    "kind": "ordering",
+    "prompt": "B precedes P. P precedes E. B precedes E. Give the complete order using comma-separated letters only.",
+    "answer": "B,P,E",
+    "chosen": "B,P,E",
+    "rejected": "B, E, P, E, P, B",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-3-1",
+    "group": "train-ordering-3",
+    "kind": "ordering",
+    "prompt": "F precedes K. K precedes P. F precedes P. Give the complete order using comma-separated letters only.",
+    "answer": "F,K,P",
+    "chosen": "F,K,P",
+    "rejected": "A,B,C",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-4-1",
+    "group": "train-ordering-4",
+    "kind": "ordering",
+    "prompt": "T precedes O. J precedes O. J precedes T. Give the complete order using comma-separated letters only.",
+    "answer": "J,T,O",
+    "chosen": "J,T,O",
+    "rejected": "T, O, O, T",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-5-0",
+    "group": "train-ordering-5",
+    "kind": "ordering",
+    "prompt": "V precedes H. X precedes H. V precedes X. Give the complete order using comma-separated letters only.",
+    "answer": "V,X,H",
+    "chosen": "V,X,H",
+    "rejected": "V, X, H, H, V",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-11-1",
+    "group": "train-ordering-11",
+    "kind": "ordering",
+    "prompt": "J precedes K. K precedes U. J precedes U. Give the complete order using comma-separated letters only.",
+    "answer": "J,K,U",
+    "chosen": "J, K, U",
+    "rejected": "U, J, K, U, J, K",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-ordering-12-1",
+    "group": "train-ordering-12",
+    "kind": "ordering",
+    "prompt": "C precedes O. C precedes X. O precedes X. Give the complete order using comma-separated letters only.",
+    "answer": "C,O,X",
+    "chosen": "C, O, X",
+    "rejected": "X, O, C",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-ordering-13-0",
+    "group": "train-ordering-13",
+    "kind": "ordering",
+    "prompt": "L precedes Z. Q precedes Z. Q precedes L. Give the complete order using comma-separated letters only.",
+    "answer": "Q,L,Z",
+    "chosen": "Q,L,Z",
+    "rejected": "L, Q ,L",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-13-1",
+    "group": "train-ordering-13",
+    "kind": "ordering",
+    "prompt": "L precedes Z. Q precedes Z. L precedes Q. Give the complete order using comma-separated letters only.",
+    "answer": "L,Q,Z",
+    "chosen": "L,Q,Z",
+    "rejected": "Q,L,Q",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-15-0",
+    "group": "train-ordering-15",
+    "kind": "ordering",
+    "prompt": "K precedes M. K precedes O. M precedes O. Give the complete order using comma-separated letters only.",
+    "answer": "K,M,O",
+    "chosen": "K,M,O",
+    "rejected": "K, O, M, K",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-15-1",
+    "group": "train-ordering-15",
+    "kind": "ordering",
+    "prompt": "M precedes K. K precedes O. M precedes O. Give the complete order using comma-separated letters only.",
+    "answer": "M,K,O",
+    "chosen": "M,K,O",
+    "rejected": "K, M, O",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-16-1",
+    "group": "train-ordering-16",
+    "kind": "ordering",
+    "prompt": "M precedes O. N precedes O. M precedes N. Give the complete order using comma-separated letters only.",
+    "answer": "M,N,O",
+    "chosen": "M,N,O",
+    "rejected": "M, O, N, O, N",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-17-1",
+    "group": "train-ordering-17",
+    "kind": "ordering",
+    "prompt": "E precedes X. E precedes B. B precedes X. Give the complete order using comma-separated letters only.",
+    "answer": "E,B,X",
+    "chosen": "E,B,X",
+    "rejected": "E, X, B, B, X, E",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-18-0",
+    "group": "train-ordering-18",
+    "kind": "ordering",
+    "prompt": "U precedes G. U precedes A. G precedes A. Give the complete order using comma-separated letters only.",
+    "answer": "U,G,A",
+    "chosen": "U,G,A",
+    "rejected": "A, G, U, A",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-18-1",
+    "group": "train-ordering-18",
+    "kind": "ordering",
+    "prompt": "G precedes U. U precedes A. G precedes A. Give the complete order using comma-separated letters only.",
+    "answer": "G,U,A",
+    "chosen": "G,U,A",
+    "rejected": "A, G, U, A",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-20-1",
+    "group": "train-ordering-20",
+    "kind": "ordering",
+    "prompt": "T precedes N. T precedes R. N precedes R. Give the complete order using comma-separated letters only.",
+    "answer": "T,N,R",
+    "chosen": "T,N,R",
+    "rejected": "T, R, N",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-27-0",
+    "group": "train-ordering-27",
+    "kind": "ordering",
+    "prompt": "D precedes A. E precedes D. E precedes A. Give the complete order using comma-separated letters only.",
+    "answer": "E,D,A",
+    "chosen": "E,D,A",
+    "rejected": "A,B,C",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-31-0",
+    "group": "train-ordering-31",
+    "kind": "ordering",
+    "prompt": "U precedes W. S precedes W. U precedes S. Give the complete order using comma-separated letters only.",
+    "answer": "U,S,W",
+    "chosen": "U,S,W",
+    "rejected": "A, B, C, W",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-31-1",
+    "group": "train-ordering-31",
+    "kind": "ordering",
+    "prompt": "U precedes W. S precedes W. S precedes U. Give the complete order using comma-separated letters only.",
+    "answer": "S,U,W",
+    "chosen": "S,U,W",
+    "rejected": "U, S, S, U",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-32-0",
+    "group": "train-ordering-32",
+    "kind": "ordering",
+    "prompt": "Z precedes U. O precedes U. O precedes Z. Give the complete order using comma-separated letters only.",
+    "answer": "O,Z,U",
+    "chosen": "O,Z,U",
+    "rejected": "Z, O, U",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-32-1",
+    "group": "train-ordering-32",
+    "kind": "ordering",
+    "prompt": "Z precedes U. O precedes U. Z precedes O. Give the complete order using comma-separated letters only.",
+    "answer": "Z,O,U",
+    "chosen": "Z,O,U",
+    "rejected": "Z, U, O",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-36-1",
+    "group": "train-ordering-36",
+    "kind": "ordering",
+    "prompt": "S precedes P. S precedes H. H precedes P. Give the complete order using comma-separated letters only.",
+    "answer": "S,H,P",
+    "chosen": "S,H,P",
+    "rejected": "P, H, S, H, S",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-37-0",
+    "group": "train-ordering-37",
+    "kind": "ordering",
+    "prompt": "D precedes H. K precedes H. D precedes K. Give the complete order using comma-separated letters only.",
+    "answer": "D,K,H",
+    "chosen": "D,K,H",
+    "rejected": "H, D , K",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-37-1",
+    "group": "train-ordering-37",
+    "kind": "ordering",
+    "prompt": "D precedes H. K precedes H. K precedes D. Give the complete order using comma-separated letters only.",
+    "answer": "K,D,H",
+    "chosen": "K,D,H",
+    "rejected": "H, K",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-38-0",
+    "group": "train-ordering-38",
+    "kind": "ordering",
+    "prompt": "G precedes O. W precedes O. W precedes G. Give the complete order using comma-separated letters only.",
+    "answer": "W,G,O",
+    "chosen": "W,G,O",
+    "rejected": "G, O, O, W, G",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-38-1",
+    "group": "train-ordering-38",
+    "kind": "ordering",
+    "prompt": "G precedes O. W precedes O. G precedes W. Give the complete order using comma-separated letters only.",
+    "answer": "G,W,O",
+    "chosen": "G,W,O",
+    "rejected": "G, O, W, O",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-41-0",
+    "group": "train-ordering-41",
+    "kind": "ordering",
+    "prompt": "T precedes K. C precedes K. C precedes T. Give the complete order using comma-separated letters only.",
+    "answer": "C,T,K",
+    "chosen": "C,T,K",
+    "rejected": "T, C, K",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-44-1",
+    "group": "train-ordering-44",
+    "kind": "ordering",
+    "prompt": "L precedes S. L precedes N. N precedes S. Give the complete order using comma-separated letters only.",
+    "answer": "L,N,S",
+    "chosen": "L,N,S",
+    "rejected": "N, N, S",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-46-1",
+    "group": "train-ordering-46",
+    "kind": "ordering",
+    "prompt": "S precedes K. N precedes K. N precedes S. Give the complete order using comma-separated letters only.",
+    "answer": "N,S,K",
+    "chosen": "N,S,K",
+    "rejected": "S, N, K, N, K",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-49-1",
+    "group": "train-ordering-49",
+    "kind": "ordering",
+    "prompt": "V precedes H. J precedes H. J precedes V. Give the complete order using comma-separated letters only.",
+    "answer": "J,V,H",
+    "chosen": "J,V,H",
+    "rejected": "J,V",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-51-0",
+    "group": "train-ordering-51",
+    "kind": "ordering",
+    "prompt": "C precedes P. C precedes Y. Y precedes P. Give the complete order using comma-separated letters only.",
+    "answer": "C,Y,P",
+    "chosen": "C,Y,P",
+    "rejected": "C, P, Y",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-52-1",
+    "group": "train-ordering-52",
+    "kind": "ordering",
+    "prompt": "S precedes N. S precedes R. N precedes R. Give the complete order using comma-separated letters only.",
+    "answer": "S,N,R",
+    "chosen": "S,N,R",
+    "rejected": "R, N, S",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-53-0",
+    "group": "train-ordering-53",
+    "kind": "ordering",
+    "prompt": "W precedes J. K precedes W. K precedes J. Give the complete order using comma-separated letters only.",
+    "answer": "K,W,J",
+    "chosen": "K,W,J",
+    "rejected": "J, K, W, J",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-54-0",
+    "group": "train-ordering-54",
+    "kind": "ordering",
+    "prompt": "E precedes Y. Y precedes P. E precedes P. Give the complete order using comma-separated letters only.",
+    "answer": "E,Y,P",
+    "chosen": "E,Y,P",
+    "rejected": "E, P, Y, E",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-54-1",
+    "group": "train-ordering-54",
+    "kind": "ordering",
+    "prompt": "Y precedes E. Y precedes P. E precedes P. Give the complete order using comma-separated letters only.",
+    "answer": "Y,E,P",
+    "chosen": "Y,E,P",
+    "rejected": "E, P, Y, E",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-55-0",
+    "group": "train-ordering-55",
+    "kind": "ordering",
+    "prompt": "W precedes O. H precedes O. W precedes H. Give the complete order using comma-separated letters only.",
+    "answer": "W,H,O",
+    "chosen": "W,H,O",
+    "rejected": "W, H, O, O, H, O, W",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-55-1",
+    "group": "train-ordering-55",
+    "kind": "ordering",
+    "prompt": "W precedes O. H precedes O. H precedes W. Give the complete order using comma-separated letters only.",
+    "answer": "H,W,O",
+    "chosen": "H,W,O",
+    "rejected": "W, H, H, O",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-56-0",
+    "group": "train-ordering-56",
+    "kind": "ordering",
+    "prompt": "S precedes Q. S precedes A. A precedes Q. Give the complete order using comma-separated letters only.",
+    "answer": "S,A,Q",
+    "chosen": "S,A,Q",
+    "rejected": "Q, A, S, Q",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-57-1",
+    "group": "train-ordering-57",
+    "kind": "ordering",
+    "prompt": "J precedes D. E precedes J. E precedes D. Give the complete order using comma-separated letters only.",
+    "answer": "E,J,D",
+    "chosen": "E,J,D",
+    "rejected": "E, J , D , E",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-59-1",
+    "group": "train-ordering-59",
+    "kind": "ordering",
+    "prompt": "G precedes V. G precedes T. V precedes T. Give the complete order using comma-separated letters only.",
+    "answer": "G,V,T",
+    "chosen": "G,V,T",
+    "rejected": "T, V, G",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-60-1",
+    "group": "train-ordering-60",
+    "kind": "ordering",
+    "prompt": "C precedes Y. Y precedes R. C precedes R. Give the complete order using comma-separated letters only.",
+    "answer": "C,Y,R",
+    "chosen": "C,Y,R",
+    "rejected": "C, R, Y",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-61-0",
+    "group": "train-ordering-61",
+    "kind": "ordering",
+    "prompt": "C precedes O. K precedes O. C precedes K. Give the complete order using comma-separated letters only.",
+    "answer": "C,K,O",
+    "chosen": "C,K,O",
+    "rejected": "C, O, K",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-61-1",
+    "group": "train-ordering-61",
+    "kind": "ordering",
+    "prompt": "C precedes O. K precedes O. K precedes C. Give the complete order using comma-separated letters only.",
+    "answer": "K,C,O",
+    "chosen": "K,C,O",
+    "rejected": "C, K, O, K, O",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-62-0",
+    "group": "train-ordering-62",
+    "kind": "ordering",
+    "prompt": "G precedes K. G precedes A. A precedes K. Give the complete order using comma-separated letters only.",
+    "answer": "G,A,K",
+    "chosen": "G,A,K",
+    "rejected": "G, K, A",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-62-1",
+    "group": "train-ordering-62",
+    "kind": "ordering",
+    "prompt": "G precedes K. A precedes G. A precedes K. Give the complete order using comma-separated letters only.",
+    "answer": "A,G,K",
+    "chosen": "A,G,K",
+    "rejected": "A, K, G",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-64-0",
+    "group": "train-ordering-64",
+    "kind": "ordering",
+    "prompt": "B precedes H. B precedes S. S precedes H. Give the complete order using comma-separated letters only.",
+    "answer": "B,S,H",
+    "chosen": "B,S,H",
+    "rejected": "S, H, B",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-65-0",
+    "group": "train-ordering-65",
+    "kind": "ordering",
+    "prompt": "S precedes V. V precedes L. S precedes L. Give the complete order using comma-separated letters only.",
+    "answer": "S,V,L",
+    "chosen": "S,V,L",
+    "rejected": "L, V, S",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-67-0",
+    "group": "train-ordering-67",
+    "kind": "ordering",
+    "prompt": "N precedes D. V precedes D. N precedes V. Give the complete order using comma-separated letters only.",
+    "answer": "N,V,D",
+    "chosen": "N,V,D",
+    "rejected": "V, N, D",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-67-1",
+    "group": "train-ordering-67",
+    "kind": "ordering",
+    "prompt": "N precedes D. V precedes D. V precedes N. Give the complete order using comma-separated letters only.",
+    "answer": "V,N,D",
+    "chosen": "V,N,D",
+    "rejected": "V, N, V, N",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-68-0",
+    "group": "train-ordering-68",
+    "kind": "ordering",
+    "prompt": "U precedes Q. U precedes Z. Z precedes Q. Give the complete order using comma-separated letters only.",
+    "answer": "U,Z,Q",
+    "chosen": "U,Z,Q",
+    "rejected": "Q, U, Z, U",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-68-1",
+    "group": "train-ordering-68",
+    "kind": "ordering",
+    "prompt": "U precedes Q. Z precedes U. Z precedes Q. Give the complete order using comma-separated letters only.",
+    "answer": "Z,U,Q",
+    "chosen": "Z,U,Q",
+    "rejected": "U, Z, Q",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-69-1",
+    "group": "train-ordering-69",
+    "kind": "ordering",
+    "prompt": "M precedes K. Y precedes K. M precedes Y. Give the complete order using comma-separated letters only.",
+    "answer": "M,Y,K",
+    "chosen": "M,Y,K",
+    "rejected": "M, K, Y, K, Y",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-70-0",
+    "group": "train-ordering-70",
+    "kind": "ordering",
+    "prompt": "C precedes K. C precedes M. K precedes M. Give the complete order using comma-separated letters only.",
+    "answer": "C,K,M",
+    "chosen": "C, K, M",
+    "rejected": "K , M , C , C , C , M , M , K",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-ordering-71-0",
+    "group": "train-ordering-71",
+    "kind": "ordering",
+    "prompt": "U precedes L. L precedes Z. U precedes Z. Give the complete order using comma-separated letters only.",
+    "answer": "U,L,Z",
+    "chosen": "U,L,Z",
+    "rejected": "L,Z,U,Z,U",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-72-1",
+    "group": "train-ordering-72",
+    "kind": "ordering",
+    "prompt": "Y precedes V. Y precedes R. R precedes V. Give the complete order using comma-separated letters only.",
+    "answer": "Y,R,V",
+    "chosen": "Y,R,V",
+    "rejected": "V, R, Y",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-73-1",
+    "group": "train-ordering-73",
+    "kind": "ordering",
+    "prompt": "G precedes Q. G precedes L. Q precedes L. Give the complete order using comma-separated letters only.",
+    "answer": "G,Q,L",
+    "chosen": "G,Q,L",
+    "rejected": "Q, L, G, L, G",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-76-0",
+    "group": "train-ordering-76",
+    "kind": "ordering",
+    "prompt": "Y precedes O. N precedes O. N precedes Y. Give the complete order using comma-separated letters only.",
+    "answer": "N,Y,O",
+    "chosen": "N,Y,O",
+    "rejected": "Y, O, O, N, O",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-76-1",
+    "group": "train-ordering-76",
+    "kind": "ordering",
+    "prompt": "Y precedes O. N precedes O. Y precedes N. Give the complete order using comma-separated letters only.",
+    "answer": "Y,N,O",
+    "chosen": "Y,N,O",
+    "rejected": "Y, O, N",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-81-0",
+    "group": "train-ordering-81",
+    "kind": "ordering",
+    "prompt": "P precedes T. U precedes T. P precedes U. Give the complete order using comma-separated letters only.",
+    "answer": "P,U,T",
+    "chosen": "P, U, T",
+    "rejected": "A,B,C,D,E",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-ordering-82-0",
+    "group": "train-ordering-82",
+    "kind": "ordering",
+    "prompt": "N precedes X. X precedes D. N precedes D. Give the complete order using comma-separated letters only.",
+    "answer": "N,X,D",
+    "chosen": "N,X,D",
+    "rejected": "N, D, X, D",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-88-0",
+    "group": "train-ordering-88",
+    "kind": "ordering",
+    "prompt": "N precedes V. N precedes K. V precedes K. Give the complete order using comma-separated letters only.",
+    "answer": "N,V,K",
+    "chosen": "N,V,K",
+    "rejected": "K, V, N",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-88-1",
+    "group": "train-ordering-88",
+    "kind": "ordering",
+    "prompt": "V precedes N. N precedes K. V precedes K. Give the complete order using comma-separated letters only.",
+    "answer": "V,N,K",
+    "chosen": "V, N, K",
+    "rejected": "V,K",
+    "chosen_source": "model"
+  },
+  {
+    "id": "train-ordering-92-0",
+    "group": "train-ordering-92",
+    "kind": "ordering",
+    "prompt": "H precedes O. H precedes Q. Q precedes O. Give the complete order using comma-separated letters only.",
+    "answer": "H,Q,O",
+    "chosen": "H,Q,O",
+    "rejected": "Q, O, H, H, O",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-92-1",
+    "group": "train-ordering-92",
+    "kind": "ordering",
+    "prompt": "H precedes O. Q precedes H. Q precedes O. Give the complete order using comma-separated letters only.",
+    "answer": "Q,H,O",
+    "chosen": "Q,H,O",
+    "rejected": "H, Q, O",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-ordering-97-0",
+    "group": "train-ordering-97",
+    "kind": "ordering",
+    "prompt": "N precedes R. N precedes J. J precedes R. Give the complete order using comma-separated letters only.",
+    "answer": "N,J,R",
+    "chosen": "N,J,R",
+    "rejected": "R, L, O",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-counting-9-0",
+    "group": "train-counting-9",
+    "kind": "counting",
+    "prompt": "A bin has 25 red and 18 blue beads. Take away 13 red beads. How many red beads are there now in the original container? Return only an integer.",
+    "answer": "12",
+    "chosen": "12",
+    "rejected": "7",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-counting-47-0",
+    "group": "train-counting-47",
+    "kind": "counting",
+    "prompt": "A bin has 11 red and 10 blue beads. Take away 4 red beads. How many beads of all colors are there now in the original container? Return only an integer.",
+    "answer": "17",
+    "chosen": "17",
+    "rejected": "10",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-counting-50-1",
+    "group": "train-counting-50",
+    "kind": "counting",
+    "prompt": "A bin has 29 red and 5 blue beads. Take away 4 red beads. How many red beads are there now in the original container? Return only an integer.",
+    "answer": "25",
+    "chosen": "25",
+    "rejected": "39",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-counting-52-0",
+    "group": "train-counting-52",
+    "kind": "counting",
+    "prompt": "A bin has 33 red and 19 blue beads. Take away 7 red beads. How many beads of all colors are there now in the original container? Return only an integer.",
+    "answer": "45",
+    "chosen": "45",
+    "rejected": "22",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-counting-84-0",
+    "group": "train-counting-84",
+    "kind": "counting",
+    "prompt": "A bin has 39 red and 24 blue beads. Take away 1 red beads. How many beads of all colors are there now in the original container? Return only an integer.",
+    "answer": "62",
+    "chosen": "62",
+    "rejected": "85",
+    "chosen_source": "solver"
+  },
+  {
+    "id": "train-counting-99-0",
+    "group": "train-counting-99",
+    "kind": "counting",
+    "prompt": "A bin has 12 red and 39 blue beads. Take away 11 red beads. How many beads of all colors are there now in the original container? Return only an integer.",
+    "answer": "40",
+    "chosen": "40",
+    "rejected": "13",
+    "chosen_source": "solver"
+  }
+]

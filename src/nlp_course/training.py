@@ -341,10 +341,14 @@ def evaluate_dev(model, tokenizer, suite_dir, device):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('command',choices=['prepare','sft','dpo','paired-freeze','paired-collect','paired-run'])
+    parser.add_argument('command',choices=['prepare','sft','dpo','paired-freeze','paired-collect','paired-run',
+        'progression-prepare','progression-run','progression-public','progression-report'])
     parser.add_argument('--config',required=True,type=Path)
     args = parser.parse_args()
     config = read(args.config)
+    if args.command.startswith('progression-'):
+        from .progression import dispatch
+        return dispatch(args.command.removeprefix('progression-'),config)
     if args.command.startswith('paired-'):
         from .paired_experiment import collect, freeze
         root=Path(config['output_dir'])

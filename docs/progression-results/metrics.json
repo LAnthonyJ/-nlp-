@@ -1,0 +1,670 @@
+{
+  "public": {
+    "scores": {
+      "base": {
+        "piqa": 69.96735582154515,
+        "hellaswag": 51.25473013343955,
+        "ifeval": 17.005545286506468,
+        "gsm8k": 14.297061159650516,
+        "mean": 38.13117310028542
+      },
+      "sft": {
+        "piqa": 70.34820457018499,
+        "hellaswag": 51.80242979486158,
+        "ifeval": 14.78743068391867,
+        "gsm8k": 30.73868149324861,
+        "mean": 41.919186635553466
+      },
+      "dpo": {
+        "piqa": 70.5658324265506,
+        "hellaswag": 52.02150965943039,
+        "ifeval": 14.232902033271719,
+        "gsm8k": 32.08895949166005,
+        "mean": 42.22730090272819
+      }
+    },
+    "sft": {
+      "pp": 3.7880135352680426,
+      "tasks": {
+        "piqa": {
+          "pp": 0.3808487486398259,
+          "gained": 66,
+          "lost": 59,
+          "n": 1838
+        },
+        "hellaswag": {
+          "pp": 0.5476996614220275,
+          "gained": 267,
+          "lost": 212,
+          "n": 10042
+        },
+        "ifeval": {
+          "pp": -2.2181146025878005,
+          "gained": 34,
+          "lost": 46,
+          "n": 541
+        },
+        "gsm8k": {
+          "pp": 16.441620333598095,
+          "gained": 281,
+          "lost": 74,
+          "n": 1259
+        }
+      },
+      "passed": false,
+      "lower": 2.42125719932341,
+      "ci95": [
+        2.6723130085748084,
+        4.896527020119915
+      ]
+    },
+    "dpo": {
+      "pp": 0.308114267174723,
+      "tasks": {
+        "piqa": {
+          "pp": 0.2176278563656148,
+          "gained": 12,
+          "lost": 8,
+          "n": 1838
+        },
+        "hellaswag": {
+          "pp": 0.21907986456881098,
+          "gained": 45,
+          "lost": 23,
+          "n": 10042
+        },
+        "ifeval": {
+          "pp": -0.5545286506469501,
+          "gained": 3,
+          "lost": 6,
+          "n": 541
+        },
+        "gsm8k": {
+          "pp": 1.3502779984114377,
+          "gained": 78,
+          "lost": 61,
+          "n": 1259
+        }
+      },
+      "passed": false,
+      "lower": -0.3672643138348337,
+      "ci95": [
+        -0.24356183477251309,
+        0.8542781307422258
+      ]
+    },
+    "counts": {
+      "piqa": 1838,
+      "hellaswag": 10042,
+      "ifeval": 541,
+      "gsm8k": 1259
+    }
+  },
+  "history": [
+    {
+      "sft": "outputs/progression-v1/round-1/sft/step-32",
+      "pairs": {
+        "piqa": 256,
+        "hellaswag": 256,
+        "ifeval": 256,
+        "gsm8k": 256
+      },
+      "dev_sft": {
+        "pp": 6.640625,
+        "tasks": {
+          "piqa": {
+            "pp": -1.5625,
+            "gained": 5,
+            "lost": 7,
+            "n": 128
+          },
+          "hellaswag": {
+            "pp": 1.5625,
+            "gained": 5,
+            "lost": 3,
+            "n": 128
+          },
+          "ifeval": {
+            "pp": 14.0625,
+            "gained": 18,
+            "lost": 0,
+            "n": 128
+          },
+          "gsm8k": {
+            "pp": 12.5,
+            "gained": 29,
+            "lost": 13,
+            "n": 128
+          }
+        },
+        "passed": true
+      },
+      "passed": false,
+      "opened": false,
+      "dpo": "outputs/progression-v1/round-1/dpo/step-64",
+      "dev_dpo": {
+        "pp": 1.5625,
+        "tasks": {
+          "piqa": {
+            "pp": 1.5625,
+            "gained": 3,
+            "lost": 1,
+            "n": 128
+          },
+          "hellaswag": {
+            "pp": 0.0,
+            "gained": 0,
+            "lost": 0,
+            "n": 128
+          },
+          "ifeval": {
+            "pp": -2.34375,
+            "gained": 1,
+            "lost": 4,
+            "n": 128
+          },
+          "gsm8k": {
+            "pp": 7.03125,
+            "gained": 12,
+            "lost": 3,
+            "n": 128
+          }
+        },
+        "passed": false
+      },
+      "scores": {
+        "base": {
+          "piqa": 73.4375,
+          "hellaswag": 51.5625,
+          "ifeval": 0.0,
+          "gsm8k": 26.5625,
+          "mean": 37.890625
+        },
+        "sft": {
+          "piqa": 71.875,
+          "hellaswag": 53.125,
+          "ifeval": 14.0625,
+          "gsm8k": 39.0625,
+          "mean": 44.53125
+        },
+        "dpo": {
+          "piqa": 73.4375,
+          "hellaswag": 53.125,
+          "ifeval": 11.71875,
+          "gsm8k": 46.09375,
+          "mean": 46.09375
+        }
+      },
+      "action": "hard_pairs",
+      "elapsed_seconds": 1696.2826003655791
+    },
+    {
+      "sft": "outputs/progression-v1/round-1/sft/step-32",
+      "pairs": {
+        "piqa": 256,
+        "hellaswag": 256,
+        "ifeval": 256,
+        "gsm8k": 256
+      },
+      "dev_sft": {
+        "pp": 6.640625,
+        "tasks": {
+          "piqa": {
+            "pp": -1.5625,
+            "gained": 5,
+            "lost": 7,
+            "n": 128
+          },
+          "hellaswag": {
+            "pp": 1.5625,
+            "gained": 5,
+            "lost": 3,
+            "n": 128
+          },
+          "ifeval": {
+            "pp": 14.0625,
+            "gained": 18,
+            "lost": 0,
+            "n": 128
+          },
+          "gsm8k": {
+            "pp": 12.5,
+            "gained": 29,
+            "lost": 13,
+            "n": 128
+          }
+        },
+        "passed": true
+      },
+      "passed": true,
+      "opened": true,
+      "dpo": "outputs/progression-v1/round-2/dpo/step-64",
+      "dev_dpo": {
+        "pp": 1.171875,
+        "tasks": {
+          "piqa": {
+            "pp": 0.78125,
+            "gained": 3,
+            "lost": 2,
+            "n": 128
+          },
+          "hellaswag": {
+            "pp": -0.78125,
+            "gained": 0,
+            "lost": 1,
+            "n": 128
+          },
+          "ifeval": {
+            "pp": 0.78125,
+            "gained": 3,
+            "lost": 2,
+            "n": 128
+          },
+          "gsm8k": {
+            "pp": 3.90625,
+            "gained": 11,
+            "lost": 6,
+            "n": 128
+          }
+        },
+        "passed": true
+      },
+      "scores": {
+        "base": {
+          "piqa": 73.4375,
+          "hellaswag": 51.5625,
+          "ifeval": 0.0,
+          "gsm8k": 26.5625,
+          "mean": 37.890625
+        },
+        "sft": {
+          "piqa": 71.875,
+          "hellaswag": 53.125,
+          "ifeval": 14.0625,
+          "gsm8k": 39.0625,
+          "mean": 44.53125
+        },
+        "dpo": {
+          "piqa": 72.65625,
+          "hellaswag": 52.34375,
+          "ifeval": 14.84375,
+          "gsm8k": 42.96875,
+          "mean": 45.703125
+        }
+      },
+      "action": "expand_dev",
+      "formal_sft": {
+        "pp": 4.533500385718618,
+        "tasks": {
+          "piqa": {
+            "pp": 0.6525285481239804,
+            "gained": 23,
+            "lost": 19,
+            "n": 613
+          },
+          "hellaswag": {
+            "pp": 0.5675029868578255,
+            "gained": 89,
+            "lost": 70,
+            "n": 3348
+          },
+          "ifeval": {
+            "pp": -1.6574585635359116,
+            "gained": 11,
+            "lost": 14,
+            "n": 181
+          },
+          "gsm8k": {
+            "pp": 18.571428571428573,
+            "gained": 95,
+            "lost": 17,
+            "n": 420
+          }
+        },
+        "passed": true,
+        "lower": 2.2555054212760477,
+        "ci95": [
+          2.68723727591321,
+          6.381218065184637
+        ]
+      },
+      "formal_dpo": {
+        "pp": 1.0822232217705405,
+        "tasks": {
+          "piqa": {
+            "pp": 0.0,
+            "gained": 4,
+            "lost": 4,
+            "n": 613
+          },
+          "hellaswag": {
+            "pp": 0.11947431302270012,
+            "gained": 9,
+            "lost": 5,
+            "n": 3348
+          },
+          "ifeval": {
+            "pp": -0.5524861878453039,
+            "gained": 0,
+            "lost": 1,
+            "n": 181
+          },
+          "gsm8k": {
+            "pp": 4.761904761904762,
+            "gained": 32,
+            "lost": 12,
+            "n": 420
+          }
+        },
+        "passed": true,
+        "lower": 0.054676931842111656,
+        "ci95": [
+          0.23659012718839306,
+          1.9226681706605366
+        ]
+      },
+      "panel": 1,
+      "formal_scores": {
+        "base": {
+          "piqa": 70.96247960848287,
+          "hellaswag": 50.38829151732377,
+          "ifeval": 14.917127071823204,
+          "gsm8k": 11.904761904761905,
+          "mean": 37.043165025597936
+        },
+        "sft": {
+          "piqa": 71.61500815660685,
+          "hellaswag": 50.955794504181604,
+          "ifeval": 13.259668508287293,
+          "gsm8k": 30.476190476190474,
+          "mean": 41.576665411316554
+        },
+        "dpo": {
+          "piqa": 71.61500815660685,
+          "hellaswag": 51.075268817204304,
+          "ifeval": 12.707182320441989,
+          "gsm8k": 35.23809523809524,
+          "mean": 42.658888633087095
+        }
+      },
+      "elapsed_seconds": 1855.068217176944
+    }
+  ],
+  "audit": [
+    {
+      "design": {
+        "sft_lr": 0.0001,
+        "dpo_lr": 5e-06,
+        "extra": null,
+        "hard": false,
+        "dev": 128,
+        "sft_parent": "060db6499f32faf8b98477b0a26969ef7d8b9987"
+      },
+      "wall_seconds": 1696.0,
+      "checkpoints": {
+        "sft": {
+          "step-128": {
+            "piqa": 69.53125,
+            "hellaswag": 55.46875,
+            "ifeval": 5.46875,
+            "gsm8k": 40.625,
+            "mean": 42.7734375
+          },
+          "step-32": {
+            "piqa": 71.875,
+            "hellaswag": 53.125,
+            "ifeval": 14.0625,
+            "gsm8k": 39.0625,
+            "mean": 44.53125
+          },
+          "step-64": {
+            "piqa": 70.3125,
+            "hellaswag": 55.46875,
+            "ifeval": 3.90625,
+            "gsm8k": 44.53125,
+            "mean": 43.5546875
+          },
+          "step-96": {
+            "piqa": 68.75,
+            "hellaswag": 55.46875,
+            "ifeval": 5.46875,
+            "gsm8k": 40.625,
+            "mean": 42.578125
+          }
+        },
+        "dpo": {
+          "step-16": {
+            "piqa": 71.09375,
+            "hellaswag": 53.125,
+            "ifeval": 14.0625,
+            "gsm8k": 39.84375,
+            "mean": 44.53125,
+            "chosen_delta": 0.23004610414500348,
+            "rejected_delta": -0.10108593697077595
+          },
+          "step-32": {
+            "piqa": 72.65625,
+            "hellaswag": 52.34375,
+            "ifeval": 12.5,
+            "gsm8k": 39.84375,
+            "mean": 44.3359375,
+            "chosen_delta": 0.4375622602237854,
+            "rejected_delta": -0.20622023177566007
+          },
+          "step-48": {
+            "piqa": 71.875,
+            "hellaswag": 51.5625,
+            "ifeval": 10.9375,
+            "gsm8k": 43.75,
+            "mean": 44.53125,
+            "chosen_delta": 0.5935319687414449,
+            "rejected_delta": -0.3540841508365702
+          },
+          "step-64": {
+            "piqa": 73.4375,
+            "hellaswag": 53.125,
+            "ifeval": 11.71875,
+            "gsm8k": 46.09375,
+            "mean": 46.09375,
+            "chosen_delta": 0.6914855976647232,
+            "rejected_delta": -0.5542666993278544
+          }
+        }
+      },
+      "mining": {
+        "piqa": {
+          "attempted": 256,
+          "eligible": 256,
+          "retained": 256
+        },
+        "hellaswag": {
+          "attempted": 256,
+          "eligible": 256,
+          "retained": 256
+        },
+        "ifeval": {
+          "attempted": 280,
+          "eligible": 263,
+          "retained": 256
+        },
+        "gsm8k": {
+          "attempted": 320,
+          "eligible": 261,
+          "retained": 256
+        }
+      }
+    },
+    {
+      "design": {
+        "sft_lr": 0.0001,
+        "dpo_lr": 5e-06,
+        "extra": null,
+        "hard": true,
+        "dev": 128,
+        "sft_parent": "outputs/progression-v1/round-1/sft/step-32"
+      },
+      "wall_seconds": 5105.0,
+      "checkpoints": {
+        "sft": {},
+        "dpo": {
+          "step-16": {
+            "piqa": 70.3125,
+            "hellaswag": 53.125,
+            "ifeval": 11.71875,
+            "gsm8k": 42.96875,
+            "mean": 44.53125,
+            "chosen_delta": 0.19141192667302676,
+            "rejected_delta": -0.05485030103591271
+          },
+          "step-32": {
+            "piqa": 71.09375,
+            "hellaswag": 52.34375,
+            "ifeval": 14.0625,
+            "gsm8k": 39.84375,
+            "mean": 44.3359375,
+            "chosen_delta": 0.3279385110945441,
+            "rejected_delta": -0.12306482635904104
+          },
+          "step-48": {
+            "piqa": 71.875,
+            "hellaswag": 52.34375,
+            "ifeval": 12.5,
+            "gsm8k": 41.40625,
+            "mean": 44.53125,
+            "chosen_delta": 0.41392070837900974,
+            "rejected_delta": -0.2483064029365778
+          },
+          "step-64": {
+            "piqa": 72.65625,
+            "hellaswag": 52.34375,
+            "ifeval": 14.84375,
+            "gsm8k": 42.96875,
+            "mean": 45.703125,
+            "chosen_delta": 0.4819349546160083,
+            "rejected_delta": -0.38694942818256095
+          }
+        }
+      },
+      "mining": {
+        "piqa": {
+          "attempted": 912,
+          "eligible": 912,
+          "retained": 256
+        },
+        "hellaswag": {
+          "attempted": 504,
+          "eligible": 504,
+          "retained": 256
+        },
+        "ifeval": {
+          "attempted": 2048,
+          "eligible": 1902,
+          "retained": 256
+        },
+        "gsm8k": {
+          "attempted": 1560,
+          "eligible": 1288,
+          "retained": 256
+        }
+      }
+    }
+  ],
+  "acceptance": {
+    "attempts": 2,
+    "passed": true,
+    "opened": 1
+  },
+  "weights": {
+    "base": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+    "sft": "df91a12d3997db305d9d1fc6c89c36d4c198fc535fed65538a17202901d0dc64",
+    "dpo": "cd12f0e74ccf1663243da8bb9fc9f05f2d997ea4e1b582bbfa3991768571b5c3"
+  },
+  "data": {
+    "config": "e0a506587205fe007360e6e55c34677f8ea58e2f0e7a226700faf15df2cf76bb",
+    "excluded": [
+      "gsm-1034",
+      "gsm-1058",
+      "gsm-1116",
+      "gsm-1141",
+      "gsm-1149",
+      "gsm-1175",
+      "gsm-1206",
+      "gsm-1209",
+      "gsm-1232",
+      "gsm-1235",
+      "gsm-1238",
+      "gsm-1261",
+      "gsm-13",
+      "gsm-1309",
+      "gsm-14",
+      "gsm-178",
+      "gsm-184",
+      "gsm-191",
+      "gsm-198",
+      "gsm-209",
+      "gsm-217",
+      "gsm-228",
+      "gsm-237",
+      "gsm-285",
+      "gsm-295",
+      "gsm-326",
+      "gsm-337",
+      "gsm-407",
+      "gsm-419",
+      "gsm-447",
+      "gsm-451",
+      "gsm-457",
+      "gsm-462",
+      "gsm-466",
+      "gsm-472",
+      "gsm-476",
+      "gsm-492",
+      "gsm-501",
+      "gsm-51",
+      "gsm-518",
+      "gsm-53",
+      "gsm-54",
+      "gsm-563",
+      "gsm-569",
+      "gsm-57",
+      "gsm-582",
+      "gsm-588",
+      "gsm-61",
+      "gsm-65",
+      "gsm-66",
+      "gsm-70",
+      "gsm-715",
+      "gsm-859",
+      "gsm-864",
+      "gsm-865",
+      "gsm-881",
+      "gsm-886",
+      "gsm-887",
+      "gsm-919",
+      "gsm-942"
+    ],
+    "panels": [
+      "933e6a96d5e12c83f5e567b6585482b98222246e9ac8461056a5541438664530",
+      "a27f7f45dfabb2fc5f127ca3953bc3b2abaaafa714b992dd24529cc60cf6c086",
+      "7e96f53ba27c6e711ddf128f7c0dace4c67c6a3c2c5bfc35627f018158321467"
+    ],
+    "banks": {
+      "sft": "52d22d9a99741bbbe492d21ea75a0271b0875ed7fa7121f1700e5f3be3b29c41",
+      "mine": "19809170af5a27153974d0c49bd79fbd1e94011626f73d6f27df04e8be2902f0",
+      "dev": "70ecbaa0866c363b47b5f289be60f8e1730e81f9f91931515618d47579d8ff2a"
+    },
+    "sources": {
+      "gsm_test": "e8b472800f8dee3d0a8f61066b3d786c53fa2775396bedb8e3dfabe7b641661a",
+      "gsm_train": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465",
+      "hellaswag_train": "cacb12587faa63d7f723a72d61d12bfa94b140446f5a6a0a2e1c6906ab88bf02"
+    }
+  },
+  "environment": {
+    "model": "Qwen/Qwen2.5-0.5B",
+    "revision": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+    "gpu": "NVIDIA GeForce RTX 5090",
+    "torch": "2.8.0+cu128",
+    "bf16": true,
+    "seed": 42
+  }
+}

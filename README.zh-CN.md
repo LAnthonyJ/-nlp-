@@ -31,6 +31,8 @@
 
 [SmolLM2 公开评测](docs/smollm2-results/README.zh-CN.md)比较六组 Qwen 权重的 PIQA、HellaSwag 成绩和五组指令模型的 IFEval 成绩，包含官方基线校准、逐题预测及 DPO 相对继续 SFT 的配对差值区间。
 
+在[一次 SFT、一次 DPO 的重训实验](docs/progression-results/README.zh-CN.md)中，Qwen2.5-0.5B 在四任务封存题上的等权综合分依次为 37.04%、41.58%、42.66%。提升主要来自 GSM8K，严格指令遵循得分有所下降。报告同时列出首轮失败原因和锁定权重后的全量公开评测。
+
 ## 快速开始
 
 需要 Git 和 Python。项目声明 Python 3.10+；已验证 **Linux / Python 3.11** 和 **Windows / Python 3.13.7**，使用 PyTorch 2.9.0+cpu。

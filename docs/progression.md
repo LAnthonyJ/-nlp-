@@ -19,6 +19,8 @@ Training and mining have distinct prompts. Normalization groups case, whitespace
 
 The cloud run uses Linux, Python 3.12, CUDA 12.8 PyTorch 2.8.0, Transformers 4.51.3, PEFT 0.15.2, Accelerate 1.6.0, NumPy 2.3.2, langdetect 1.0.9 and NLTK 3.9.1. The RTX 5090 needs a Blackwell-compatible PyTorch build. Install the matching CUDA build before installing the project. The frozen inputs can be copied from the preparation machine. Copy the three upstream IFEval instructions modules from the pinned LightEval checkout to upstream/lighteval/tasks/extended/ifeval and its English punkt_tab files to upstream/nltk_data/tokenizers/punkt_tab/english. The CPU verifier additionally uses the original LightEval metric in the preparation environment.
 
+Also copy the verified English punkt/english.pickle into upstream/nltk_data/tokenizers/punkt/english.pickle. The locked instruction registry checks for this legacy directory during import, even with the newer English tables installed.
+
 ~~~sh
 export PYTHONPATH=src:upstream NLTK_DATA=upstream/nltk_data
 export PROGRESSION_BASE=base TOKENIZERS_PARALLELISM=false

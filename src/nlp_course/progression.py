@@ -82,6 +82,41 @@ def change(first, second, point):
     return "hard_pairs"
 
 
+def reuse_fixed_inputs(previous, current):
+    """A learning-rate-only DPO retry uses exactly the previous frozen inputs."""
+    outcome = read(previous / "outcome.json")
+    old, new = (read(folder / "design.json") for folder in (previous, current))
+    if (
+        outcome["action"] not in ("hard_pairs", "dpo_lr")
+        or old["dpo_lr"] == new["dpo_lr"]
+    ):
+        return
+    if new["sft_parent"] != outcome["sft"] or any(
+        old[k] != new[k] for k in ("hard", "dev", "extra", "sft_lr")
+    ):
+        return
+    weights = Path(outcome["sft"]) / "adapter_model.safetensors"
+    if sha(weights) != read(weights.parent.parent / "selected.json")["weights"]:
+        raise ValueError("Cannot reuse predictions from changed SFT weights")
+    for name in ("base-dev", "selected-sft-dev", "mining"):
+        for source in (previous / name).rglob("*.json"):
+            destination = current / source.relative_to(previous)
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            try:
+                os.link(source, destination)
+            except FileExistsError:
+                if sha(source) != sha(destination):
+                    raise ValueError(f"Conflicting cache at {destination}")
+    freeze(
+        current / "reuse.json",
+        dict(
+            source=previous.name,
+            weights=sha(weights),
+            preferences=sha(previous / "mining/pairs.json"),
+        ),
+    )
+
+
 def run(cfg):
     from langdetect import DetectorFactory
 
@@ -143,6 +178,8 @@ def run(cfg):
             result = read(folder / "outcome.json")
             sft = Path(result["sft"])
         else:
+            if attempt > 1:
+                reuse_fixed_inputs(root / f"round-{attempt - 1}", folder)
             model, tok = load_model(cfg)
             print(
                 f"Round {attempt}: measuring Base on {len(dev)} development prompts",

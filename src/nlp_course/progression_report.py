@@ -34,10 +34,10 @@ def verify_return(root, original):
                 raise ValueError("Duplicate panel ID")
             questions[row["id"]] = row
     full = read(root / "public.json")
-    arms = {}
-    for name in ("base", "sft", "dpo"):
+
+    def checked_rows(folder, name, expected, summary):
         items = []
-        for p in sorted((root / "public" / name).glob("*/*.json")):
+        for p in sorted(folder.glob("*/*.json")):
             for r in read(p):
                 q = questions[r["id"]]
                 if "choices" in q:
@@ -59,11 +59,16 @@ def verify_return(root, original):
                 if correct != r["correct"] or q["task"] != r["task"]:
                     raise ValueError(f"Public score mismatch: {name} {r['id']}")
                 items.append(r)
-        if {r["id"] for r in items} != set(questions) or scores(items) != full[
-            "scores"
-        ][name]:
+        if {r["id"] for r in items} != expected or scores(items) != summary:
             raise ValueError("Incomplete public evaluation")
-        arms[name] = items
+        return items
+
+    arms = {
+        name: checked_rows(
+            root / "public" / name, name, set(questions), full["scores"][name]
+        )
+        for name in ("base", "sft", "dpo")
+    }
     for a, b, target in [("base", "sft", 2), ("sft", "dpo", 1)]:
         if compare(arms[a], arms[b], target, True) != full[b]:
             raise ValueError("Paired comparison mismatch")
@@ -76,6 +81,26 @@ def verify_return(root, original):
         if "dpo" not in run:
             continue
         folder = root / f"round-{i}"
+        if run["opened"]:
+            panel = read(original / f"panels/{run['panel']}.json")
+            expected = {r["id"] for r in panel}
+            stages = {
+                name: checked_rows(
+                    folder / f"formal-{name}",
+                    name,
+                    expected,
+                    run["formal_scores"][name],
+                )
+                for name in ("base", "sft", "dpo")
+            }
+            gates = []
+            for before, after, target in (("base", "sft", 2), ("sft", "dpo", 1)):
+                delta = compare(stages[before], stages[after], target, True)
+                if delta != run[f"formal_{after}"]:
+                    raise ValueError("Sealed-panel inference mismatch")
+                gates.append(delta["passed"])
+            if all(gates) != run["passed"]:
+                raise ValueError("Formal acceptance mismatch")
         pairs = read(folder / "mining/pairs.json")
         random.Random(read(root / "environment.json")["seed"]).shuffle(pairs)
         parent = (
@@ -97,6 +122,29 @@ def verify_return(root, original):
         f"Verified {sum(map(len, arms.values())):,} predictions and both selected adapters",
         flush=True,
     )
+
+
+def reuse_formal_batches(root, rows, size, weights):
+    """Reuse an identical locked model AND an identical ordered inference batch."""
+    for claim in (root / "opened").glob("*.json"):
+        lock = read(claim)
+        folder = root / f"round-{lock['attempt']}"
+        for stage, identity in weights.items():
+            if lock[stage] != identity:
+                continue
+            for task in TASKS:
+                ids = [r["id"] for r in rows if r["task"] == task]
+                offsets = {
+                    tuple(ids[i : i + size]): i for i in range(0, len(ids), size)
+                }
+                for p in (folder / f"formal-{stage}" / task).glob("*.json"):
+                    predictions = read(p)
+                    key = tuple(r["id"] for r in predictions)
+                    if key in offsets:
+                        freeze(
+                            root / "public" / stage / task / f"{offsets[key]}.json",
+                            predictions,
+                        )
 
 
 def public(cfg):
@@ -133,6 +181,7 @@ def public(cfg):
         },
     )
     all_rows = {}
+    reuse_formal_batches(root, rows, cfg["eval_batch"], read(root / "public-lock.json"))
     for name, path in models.items():
         model, tok = load_model(cfg, path)
         print("Locked public evaluation:", name, flush=True)
@@ -187,6 +236,8 @@ def report(root, dest=Path("docs/progression-results")):
         audit.append(
             dict(
                 design=read(folder / "design.json"),
+                wall_seconds=(folder / "outcome.json").stat().st_mtime
+                - (folder / "design.json").stat().st_mtime,
                 checkpoints=stages,
                 mining=collection,
             )
@@ -268,7 +319,7 @@ def report(root, dest=Path("docs/progression-results")):
     lines = [
         "# Qwen2.5-0.5B 单次 SFT 与单次 DPO 的公开评测",
         "",
-        f"共尝试 {final['attempts']} 轮，正式验收{'通过' if final['passed'] else '未通过'}。下表来自锁定最终权重后的全量描述性评测。",
+        f"共尝试 {final['attempts']} 轮，正式验收{'通过' if final['passed'] else '未通过'}。下表来自锁定最终权重后的全量描述性评测。每个阶段测 {sum(full['counts'].values()):,} 道题，四项等权。DPO 从选中的 SFT 出发训练一轮。",
         "",
         "| 阶段 | PIQA | HellaSwag | IFEval 严格提示级 | GSM8K | 等权均分 |",
         "|---|---:|---:|---:|---:|---:|",
@@ -284,6 +335,24 @@ def report(root, dest=Path("docs/progression-results")):
     lines.extend(
         [
             "",
+            "## 封存题正式验收",
+            "",
+            "| 轮次与题集 | Base 综合分 | SFT 综合分 | DPO 综合分 | SFT 增益 / 校正单侧下界 | DPO 增益 / 校正单侧下界 |",
+            "|---|---:|---:|---:|---:|---:|",
+        ]
+    )
+    for i, r in enumerate(history, 1):
+        if r["opened"]:
+            formal = r["formal_scores"]
+            a, b = r["formal_sft"], r["formal_dpo"]
+            lines.append(
+                f"| 第 {i} 轮 / 集合 {r['panel']} | {formal['base']['mean']:.2f}% | {formal['sft']['mean']:.2f}% | {formal['dpo']['mean']:.2f}% | {a['pp']:+.2f} / {a['lower']:+.3f} | {b['pp']:+.2f} / {b['lower']:+.3f} |"
+            )
+    lines.extend(
+        [
+            "",
+            "封存题决定是否验收。全量评测在训练结束后进行，含已开封的题目。两张表分别回答预定门槛是否达成，以及这条训练路径在完整评测范围内表现如何。增益和下界以百分点计。",
+            "",
             "## 两段公开能力变化",
             "",
             "| 阶段 | 综合分差（百分点） | 配对 95% 区间 | 回退最大的任务及变化（百分点） |",
@@ -297,6 +366,19 @@ def report(root, dest=Path("docs/progression-results")):
         lines.append(
             f"| {name.upper()} | {change['pp']:+.2f} | [{lo:+.2f}, {hi:+.2f}] | {worst} {change['tasks'][worst]['pp']:+.2f} |"
         )
+    if full["dpo"]["ci95"][0] <= 0 <= full["dpo"]["ci95"][1]:
+        lines.extend(
+            [
+                "",
+                f"全量评测中，DPO 相对 SFT 的综合增益为 {full['dpo']['pp']:+.2f} 个百分点，配对 95% 区间包含零。封存题上观察到的增益幅度在更大题集上未得到确认。",
+            ]
+        )
+    for stage in ("sft", "dpo"):
+        for task, delta in full[stage]["tasks"].items():
+            if delta["pp"] < -2:
+                lines.append(
+                    f"全量 {task} 上，{stage.upper()} 相对前一阶段下降 {-delta['pp']:.2f} 个百分点，超过预设的 2 点回退线。"
+                )
     lines.extend(
         [
             "",
@@ -309,12 +391,63 @@ def report(root, dest=Path("docs/progression-results")):
     for i, r in enumerate(history, 1):
         d = f"{r['dev_dpo']['pp']:+.2f}" if "dev_dpo" in r else "偏好对不足"
         lines.append(
-            f"| {i} | {r['dev_sft']['pp']:+.2f} | {d} | {r.get('panel', '—')} | {r['elapsed_seconds'] / 60:.1f} |"
+            f"| {i} | {r['dev_sft']['pp']:+.2f} | {d} | {r.get('panel', '—')} | {audit[i - 1]['wall_seconds'] / 60:.1f} |"
         )
+    lines.append("")
+    for i, r in enumerate(history, 1):
+        if r["passed"]:
+            lines.append(f"第 {i} 轮两段提升均通过封存题验收。")
+            continue
+        if "dev_dpo" not in r:
+            lines.append(
+                f"第 {i} 轮有任务的合格偏好对不足 128 对。各类采集量见指标文件。"
+            )
+            continue
+        phase = "正式验收" if r["opened"] else "开发"
+        comparisons = (
+            [r["formal_sft"], r["formal_dpo"]]
+            if r["opened"]
+            else [r["dev_sft"], r["dev_dpo"]]
+        )
+        for stage, delta in zip(("SFT", "DPO"), comparisons, strict=True):
+            if delta["passed"]:
+                continue
+            worst = min(TASKS, key=lambda k: delta["tasks"][k]["pp"])
+            task = delta["tasks"][worst]
+            details = []
+            if delta["pp"] < (2 if stage == "SFT" else 1):
+                details.append("综合增益低于预设门槛")
+            if task["pp"] < -2:
+                details.append(
+                    f"{worst} 从错到对 {task['gained']} 题、从对到错 {task['lost']} 题，下降 {-task['pp']:.2f} 个百分点"
+                )
+            if delta.get("lower", 1) <= 0:
+                details.append(
+                    f"综合差值的校正单侧下界为 {delta['lower']:.2f} 个百分点"
+                )
+            lines.append(
+                f"第 {i} 轮{phase}评估中，{stage} 相对上阶段变化 {delta['pp']:+.2f} 个百分点。"
+                + "，".join(details)
+                + "。"
+            )
+        if i < len(history):
+            design = audit[i]["design"]
+            prior = audit[i - 1]["design"]
+            if design["dev"] > prior["dev"]:
+                lines.append(
+                    f"下一轮将每类开发题扩至 {design['dev']} 道，并从 Base 重新训练。"
+                )
+            elif design["hard"] and not prior["hard"]:
+                lines.append(
+                    "下一轮从同一 SFT 出发，优先采集首次回答错误且候选中有正确回答的训练题。"
+                )
+            elif design["dpo_lr"] < prior["dpo_lr"]:
+                lines.append(f"下一轮将 DPO 学习率降至 {design['dpo_lr']:g}。")
     lines.extend(
         [
             "",
-            "开发增益以百分点计。单卡运行时间含本轮开发评估与偏好采集。各次重训的配置、逐项错转对与对转错题数、正负回答的概率变化见指标文件。",
+            "开发增益以百分点计。指令开发集使用独立编写的练习，公开验收和全量评测使用原版 IFEval。单卡运行时间含本轮开发评估与偏好采集。各次重训的配置、逐项错转对与对转错题数、正负回答的概率变化见指标文件。",
+            f"在 {read(root / 'environment.json')['gpu']} 上，从环境验证至全量评测写入结果历时 {((root / 'public.json').stat().st_mtime - (root / 'environment.json').stat().st_mtime) / 3600:.2f} 小时。该时间包含等待与评分，不等于 GPU 内核执行时间。",
             "",
             "[训练与复现说明](../progression.md)",
         ]
@@ -332,3 +465,16 @@ def report(root, dest=Path("docs/progression-results")):
         ]
     )
     (dest / "README.zh-CN.md").write_text("\n".join(lines) + "\n", encoding="utf8")
+    save(
+        dest / "manifest.json",
+        {
+            name: sha(dest / name)
+            for name in (
+                "metrics.json",
+                "cases.json",
+                "predictions.jsonl.gz",
+                "progression.png",
+                "tasks.png",
+            )
+        },
+    )

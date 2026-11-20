@@ -31,6 +31,8 @@ On 60 paired reasoning tasks, continued SFT solved four pairs and DPO trained on
 
 The [SmolLM2 public evaluation](docs/smollm2-results/README.md) compares six frozen Qwen checkpoints on PIQA and HellaSwag and five instruction-tuned checkpoints on IFEval. It includes public baseline calibration, per-question predictions and paired uncertainty intervals for the effect of DPO.
 
+The [Base → SFT → DPO experiment](docs/progression-results/README.zh-CN.md) retrains Qwen2.5-0.5B with one SFT stage and one DPO stage. On the sealed four-task panel, equal-weight accuracy rose from 37.04% to 41.58% to 42.66%. The largest gain came from GSM8K. Strict instruction following declined on this panel. The report includes the unsuccessful first attempt and the full public evaluation of the locked weights.
+
 ## Quick start
 
 Requires Git and Python. The package declares Python 3.10+; verified environments are **Linux / Python 3.11** in CI and **Windows / Python 3.13.7**, with PyTorch 2.9.0+cpu.

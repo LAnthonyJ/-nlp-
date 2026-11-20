@@ -1,5 +1,6 @@
 """Prospective paired macro-accuracy gate for the three-stage experiment."""
 
+import math
 from .progression_data import TASKS
 
 
@@ -12,7 +13,7 @@ def scores(rows):
         if not values or any(type(v) is not bool for v in values):
             raise ValueError(f"Missing or invalid {task} outcomes")
         result[task] = 100 * sum(values) / len(values)
-    result["mean"] = sum(result.values()) / len(TASKS)
+    result["mean"] = math.fsum(result.values()) / len(TASKS)
     return result
 
 

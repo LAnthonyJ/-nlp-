@@ -1,172 +1,70 @@
-# NLP Course Implementations
-
-**Explore Transformer attention, LoRA adapters, decoding strategies, and answer evaluation through small, testable PyTorch implementations.**
+# NLP in PyTorch: Transformer attention, LoRA, and preference training
 
 [![CPU tests](https://github.com/LAnthonyJ/-nlp-/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/LAnthonyJ/-nlp-/actions/workflows/tests.yml)
 
-[中文](README.zh-CN.md) · [Quick start](#quick-start) · [Examples](#try-the-components) · [Results](#verified-results) · [API guide](docs/api.md)
+This project grew out of five NLP coursework implementations. You can inspect a causal attention mask on a CPU, train and merge a low-rank adapter, or follow a controlled experiment that tests whether direct preference optimization (DPO) improves a supervised Qwen2.5-0.5B checkpoint.
 
-Built for students and developers who want to read the implementation, run it on a CPU, and check why it works. The included examples use tiny tensors and synthetic data; once PyTorch is installed, they run without downloading models or datasets.
+## Can a future token change an earlier output?
 
-![CPU validation overview: synthetic training and toy evaluation](docs/figures/overview.png)
+After [installing the package](#run-locally), run this example in Python. It changes only the last token in a four-token sequence and compares the first three attention outputs.
 
-Measured single-seed CPU demonstrations: learning, merge consistency, candidate distributions and four toy examples. These show implementation behavior. See [source reports](docs/validation/visualization/) and [reproduction steps](docs/visualization.md).
+```python
+import torch
+from nlp_course.transformer import MultiHeadAttention, causal_mask
 
-## What you can explore
+torch.manual_seed(42)
+attention = MultiHeadAttention(embed_dim=8, num_heads=2, dropout=0).eval()
+tokens = torch.randn(1, 4, 8)  # one sequence, four tokens, eight features
+changed = tokens.clone()
+changed[:, -1] += 10
 
-| Component | Implementation | What you can verify |
-| --- | --- | --- |
-| Transformer | [Embeddings, attention, encoder and decoder](src/nlp_course/transformer.py) | Independent layer weights, causal and padding masks, feature-wise normalization, forward/backward passes |
-| LoRA | [Low-rank adapters and projection injection](src/nlp_course/lora.py) | Zero initial update, frozen base weights, adapter gradients, equivalent outputs after merging |
-| Decoding | [Greedy, Top-K, Top-P and relative Min-P](src/nlp_course/decoding.py) | Candidate probabilities, temperature, repetition penalty, EOS stopping |
-| Evaluation | [Offline JSONL scoring and batched backend interface](src/nlp_course/evaluation.py) | Exact numeric comparisons, invalid-answer records, complete batch coverage |
+with torch.no_grad():
+    mask = causal_mask(4)
+    before = attention(tokens, tokens, tokens, mask)
+    after = attention(changed, changed, changed, mask)
 
-Start with [`examples/cpu_demo.py`](examples/cpu_demo.py) for an end-to-end demonstration, then explore the [regression tests](tests/) for the invariants behind each component.
-
-The [local training guide](docs/training.md) documents completion-only SFT, verified preference data, checkpoint selection, and configurable real-model evaluation.
-
-The [repair evaluation](docs/repair-results/README.md) contains 525 fresh responses. On the same held-out subsets, original SFT to repaired SFT code passes increase from 0/25 to 7/25; math final numeric matches increase from 9/30 to 10/30, with strict-format passes increasing from 0/30 to 10/30. Logic remains at an always-yes baseline. DPO did not improve the development objective mean.
-
-On 60 paired reasoning tasks, continued SFT solved four pairs and DPO trained on the same prompts and observed errors solved zero. All four models, individual predictions and training curves are in the [paired DPO experiment](docs/paired-dpo-results/README.md).
-
-The [SmolLM2 public evaluation](docs/smollm2-results/README.md) compares six frozen Qwen checkpoints on PIQA and HellaSwag and five instruction-tuned checkpoints on IFEval. It includes public baseline calibration, per-question predictions and paired uncertainty intervals for the effect of DPO.
-
-The [Base → SFT → DPO experiment](docs/progression-results/README.zh-CN.md) retrains Qwen2.5-0.5B with one SFT stage and one DPO stage. On the sealed four-task panel, equal-weight accuracy rose from 37.04% to 41.58% to 42.66%. The largest gain came from GSM8K. Strict instruction following declined on this panel. The report includes the unsuccessful first attempt and the full public evaluation of the locked weights.
-
-The follow-up experiment repairs completion tokenization and compares standard DPO with a matched chosen-only control. On 2,048 held-out questions, SFT scored 39.21%, DPO 39.60% and the chosen-only control 40.82%. [Results and reproduction](docs/progression-v2-results/README.md)
-
-In the [hard-negative DPO follow-up](docs/hard-pairs-v3-results/README.zh-CN.md), standard DPO gained 0.91 percentage points over SFT on 768 new prompts and 0.15 points on the full public suite. It fell short of the preregistered one-point holdout target.
-
-## Quick start
-
-Requires Git and Python. The package declares Python 3.10+; verified environments are **Linux / Python 3.11** in CI and **Windows / Python 3.13.7**, with PyTorch 2.9.0+cpu.
-
-```sh
-git clone https://github.com/LAnthonyJ/-nlp-.git nlp-course-implementations
-cd nlp-course-implementations
-python -m venv .venv
+torch.testing.assert_close(before[:, :3], after[:, :3])
+print((before[:, :3] - after[:, :3]).abs().max().item())  # 0.0
 ```
 
-Activate the environment:
+Try replacing `mask = causal_mask(4)` with `mask = None` and rerun the example. The assertion fails because earlier positions can now attend to the changed token. [Attention implementation](src/nlp_course/transformer.py) · [Mask regression tests](tests/test_components.py)
 
-| Platform | Command |
-| --- | --- |
-| Windows PowerShell | `.\.venv\Scripts\Activate.ps1` |
-| Linux | `source .venv/bin/activate` |
+## Does DPO improve a small language model?
 
-Install the CPU dependency and the local package, then run the demo:
+Starting from the same supervised fine-tuning (SFT) checkpoint, I compared two updates. Standard DPO trained on 511 pairs of correct answers and model errors. A supervised control saw the same prompts and only the correct answers. Both branches had the same learning-rate grid and maximum update budget. Checkpoints were selected on development data before opening the holdout.
+
+| Four-task mean accuracy | Starting SFT | Standard DPO | Correct-answer-only control | DPO gain over SFT, paired 95% CI |
+| --- | ---: | ---: | ---: | --- |
+| New holdout · 768 prompts | 44.66% | 45.57% | **52.73%** | +0.91 pp [+0.13, +1.82] |
+| Public suite · 13,680 prompts | 43.49% | 43.64% | Not evaluated | +0.15 pp [−0.35, +0.66] |
+
+DPO answered seven more holdout prompts correctly than SFT. That fell one prompt short of the prespecified one-percentage-point target. On the public suite, the interval included zero. The strongest holdout result came from the supervised control. [Experiment report](docs/hard-pairs-v3-results/README.md) · [Scoring data](docs/hard-pairs-v3-results/metrics.json) · [Training code](src/nlp_course/hard_pairs.py)
+
+An earlier audit explains why the tokenization details matter. Splitting a jointly encoded prompt and answer at the separately measured prompt length could drop the answer's first character. Replaying the repaired encoding restored 643 instruction demonstrations and 136 preferred answers. [Audit implementation](src/nlp_course/progression_audit.py) · [Boundary tests](tests/test_completion_v2.py) · [Repair experiment](docs/progression-v2-results/README.md)
+
+## Read the implementations
+
+| Question | Source | Evidence |
+| --- | --- | --- |
+| How do causal and padding masks affect attention? | [Transformer](src/nlp_course/transformer.py) | [Mask, gradient, and layer-independence tests](tests/test_components.py) |
+| Can a trained LoRA update be merged into the base weight? | [LoRA layers and injection](src/nlp_course/lora.py) | [Measured merge error](docs/figures/lora-merge.png) · [Shared-module tests](tests/test_precision_and_aliases.py) |
+| Which tokens survive top-k, top-p, or relative min-p sampling? | [Decoding sampler](src/nlp_course/decoding.py) | [Candidate distributions](docs/figures/decoding.png) · [API and examples](docs/api.md#decoding) |
+| How are wrong or unparseable answers counted? | [Answer scoring](src/nlp_course/evaluation.py) | [Input fixture](examples/toy_predictions.jsonl) · [Per-answer results](docs/validation/toy-evaluation.json) |
+
+## Run locally
+
+From the repository root, use a Python 3.10+ virtual environment. These commands install the tested CPU build of PyTorch and run the offline examples.
 
 ```sh
 python -m pip install -r requirements-cpu.txt --index-url https://download.pytorch.org/whl/cpu
 python -m pip install --no-deps -e .
 python examples/cpu_demo.py
-```
-
-Already cloned? Start from the environment setup in your existing repository. If PowerShell activation is unavailable, use `.\.venv\Scripts\python.exe` in place of `python`. For macOS or another PyTorch build, install the build appropriate for your platform before installing this package; those configurations have not been verified here.
-
-## Try the components
-
-### Run a tiny training example
-
-```sh
-python examples/cpu_demo.py
-```
-
-The demo runs a Transformer forward/backward pass, optimizes a LoRA adapter for 80 steps on a synthetic regression task, checks merge equivalence, and prints decoding distributions plus toy evaluation records. Selected fields from the [recorded output](docs/validation/cpu-demo.json):
-
-```json
-{
-  "seed": 42,
-  "device": "cpu",
-  "transformer_shape": [2, 5, 16],
-  "lora_synthetic_loss_before": 0.04594896361231804,
-  "lora_synthetic_loss_after": 0.000006364347882481525,
-  "lora_merge_max_error": 0.00000017881393432617188
-}
-```
-
-![LoRA synthetic regression learning curve](docs/figures/lora-learning.png)
-
-All 81 measured points, steps 0–80, on a log MSE axis without smoothing. Oscillations are part of the actual run.
-
-![LoRA merge consistency](docs/figures/lora-merge.png)
-
-Compare the same 192 output elements before/after merging and their absolute differences. [Measured traces](docs/validation/visualization/cpu-demo.json).
-
-### Inspect a decoding distribution
-
-After installation, run this in Python to see how relative Min-P filters and renormalizes three candidate tokens:
-
-```python
-import torch
-from nlp_course.decoding import DecodingSampler
-
-logits = torch.tensor([0.6, 0.3, 0.1]).log()
-probs = DecodingSampler().distribution(logits, strategy="minp", min_p=0.4)
-print([round(p, 3) for p in probs.tolist()])
-# [0.667, 0.333, 0.0]
-```
-
-Relative Min-P retains tokens with probability at least `min_p * max_probability`. Switch `strategy` to `greedy`, `topk`, or `topp` to explore other filters; see the [parameter and generation guide](docs/api.md#decoding).
-
-![Decoding probability comparison](docs/figures/decoding.png)
-
-Three fixed candidate tokens, original probabilities and four strategies; settings are shown in the title. Min-P boundary inclusion follows the actual floating-point probabilities.
-
-### Score saved answers
-
-```sh
 python -m nlp_course.evaluation examples/toy_predictions.jsonl --output outputs/toy-report.json
-```
-
-Each input line contains `prediction` and `reference` strings. The [four-example fixture](examples/toy_predictions.jsonl) deliberately includes a wrong answer and an invalid output. Its [report](docs/validation/toy-evaluation.json) contains `total: 4`, `correct: 2`, `invalid_outputs: 1`, and per-example records.
-
-> [!NOTE]
-> These are synthetic demonstrations, not pretrained-model benchmark results. `gsm8k` mode compares supported numeric answers exactly, without rounding. `math-strict` performs supported numeric or stripped-text matching; it does not implement general symbolic equivalence or official MATH scoring. See [answer formats and scoring limits](docs/api.md#evaluation).
-
-![Outcomes of four toy examples](docs/figures/toy-evaluation.png)
-
-Counts only the four-example fixture: 2 correct, 1 incorrect, 1 invalid. The CPU demo's separate two examples are excluded. [Per-example records](docs/validation/visualization/toy-evaluation.json).
-
-## Real-checkpoint capability diagnosis
-
-Completed **420 real-checkpoint responses** across Base, SFT and DPO: 100 main tasks plus 20 controlled probe pairs per stage. Read the [measured results and capability boundaries](docs/capability-results/README.md), [auditable statistics](docs/capability-results/analysis.json) and [evaluation workflow](docs/capability-evaluation.md).
-
-![Real-checkpoint task diagnostic with explicit sample sizes](docs/capability-results/capabilities.png)
-
-Strict protocol success was zero on the selected math/logic/code tasks. Secondary, post-hoc math matching found 5/30 SFT and 6/30 DPO answers numerically correct. This one-item difference does not establish an overall DPO advantage. Concept/writing quality remains pending anonymous human ratings. See the report for format failures, code failures, the imbalanced logic baseline and controlled-probe limitations. These checkpoint results are separate from the synthetic CPU demonstrations above.
-
-## Verified results
-
-Run the regression suite with the Python standard library:
-
-```sh
 python -m unittest discover -s tests -v
 ```
 
-The [CI workflow](.github/workflows/tests.yml) builds and installs the package, runs the suite, and executes both offline examples across **Linux / Python 3.10–3.13** and **Windows / Python 3.13**. Each job saves its environment, test log and JSON results as a downloadable artifact. See [CI coverage and reports](docs/ci.md).
+The CPU demo runs one Transformer backward pass and 80 LoRA optimizer steps on synthetic data. The four-answer scoring fixture produces two correct answers and one invalid output. The Qwen experiments use separate GPU runs and archived training inputs. [CPU demo source](src/nlp_course/demo.py) · [Recorded output](docs/validation/cpu-demo.json) · [GPU reproduction guide](docs/hard-pairs-v3.md)
 
-| Check | Recorded result |
-| --- | --- |
-| Regression suite | Includes checks for paired task isolation, preference provenance, frozen reference scores and published outcome counts |
-| Transformer output | `[2, 5, 16]`, with finite gradients |
-| Synthetic LoRA optimization | MSE `0.045949` → `0.000006364` after 80 steps, seed 42 |
-| LoRA merge consistency | Maximum absolute output difference ≈ `1.79e-7` |
-| First published version | [GitHub Actions passed](https://github.com/LAnthonyJ/-nlp-/actions/runs/43263272641) |
+## Project history
 
-These values describe the recorded CPU run; small numeric differences may occur across environments. See [validation details](docs/validation.md) and [raw results](docs/validation/) for the environment and execution evidence.
-
-## Explore the repository
-
-```text
-src/nlp_course/       Reusable implementations used by the examples and tests
-coursework/          Five original coursework snapshots, preserved byte-for-byte
-examples/            CPU demonstration and toy evaluation data
-tests/               Regression tests for correctness and edge cases
-docs/                API, source review, provenance and recorded validation
-.github/workflows/   Automated CPU checks
-```
-
-Use `src/nlp_course/` for runnable components. The historical `coursework/` files retain the issues discussed in the [source review](docs/code-review.md). The [API guide](docs/api.md) explains mask conventions, inference-only LoRA merging, and changes from the originals.
-
-The five original coursework implementations were completed by the repository owner. Repository preparation, repairs, tests and documentation were developed with AI assistance; see [provenance and contribution details](docs/provenance.md).
+The [coursework archive](coursework/) contains the five original submissions. The maintained package, tests, and reports were developed with AI assistance. Earlier experiments document how code and math scoring were repaired and how six Qwen checkpoints compared on public small-model benchmarks. [Provenance](docs/provenance.md) · [Scoring repairs](docs/repair-results/README.md) · [Public benchmark study](docs/smollm2-results/README.md)

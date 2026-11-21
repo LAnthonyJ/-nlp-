@@ -34,7 +34,7 @@ class PositionalEncoding(nn.Module):
         if x.size(1) > self.pe.size(1):
             raise ValueError("Sequence exceeds configured positional capacity")
         # Add positional encoding to input x, then apply dropout
-        x = x + self.pe[:, :x.size(1), :].detach()  # 位置编码不参与梯度更新
+        x = x + self.pe[:, :x.size(1), :].detach()
         return self.dropout(x)
 
 
@@ -126,9 +126,9 @@ class MultiHeadAttention(nn.Module):
             attn = attn.masked_fill(~allowed, 0)
         attn = self.drop(attn)
 
-        # 输出
         out = attn @ V  # (B, heads, seq_len, d_k)
-        out = out.transpose(1, 2).contiguous().view(B, -1, self.num_heads * self.d_k)  # 拼接多头
+        # Concatenate the heads before the output projection.
+        out = out.transpose(1, 2).contiguous().view(B, -1, self.num_heads * self.d_k)
         return self.out_linear(out)
 
 

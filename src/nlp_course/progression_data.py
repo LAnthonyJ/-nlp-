@@ -201,6 +201,7 @@ def prepare(cfg):
                 raise ValueError("Invalid training label")
             train[task].append(
                 dict(
+                    **({"source_group": item["source_id"]} if task == "hellaswag" and cfg.get("protocol") == "completion-v2" else {}),
                     id=f"train-{task}-{i}",
                     task=task,
                     prompt=doc.query,
@@ -209,6 +210,12 @@ def prepare(cfg):
                     answer=doc.choices[doc.gold_index],
                 )
             )
+    if cfg.get("study") == "hard-pairs-v3":
+        from .hard_pairs import prepare_splits
+        return prepare_splits(cfg, train, panels)
+    if cfg.get("protocol") == "completion-v2":
+        from .progression_v2_data import prepare_banks
+        return prepare_banks(cfg, train, panels)
     bank = {s: [] for s in ("sft", "mine", "dev")}
     counts = {
         "sft": 2 * cfg["train_per_task"],

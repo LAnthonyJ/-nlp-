@@ -104,6 +104,10 @@ def reuse_fixed_inputs(previous, current):
             destination.parent.mkdir(parents=True, exist_ok=True)
             try:
                 os.link(source, destination)
+            except PermissionError:
+                if os.name != "nt":
+                    raise
+                freeze(destination, read(source))
             except FileExistsError:
                 if sha(source) != sha(destination):
                     raise ValueError(f"Conflicting cache at {destination}")
@@ -306,7 +310,7 @@ def run(cfg):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("prepare", "run", "public", "report"))
+    parser.add_argument("command", choices=("audit", "prepare", "run", "public", "report"))
     parser.add_argument("--config", default="configs/progression.json")
     args = parser.parse_args()
     cfg = read(args.config)
@@ -314,6 +318,11 @@ def main():
 
 
 def dispatch(command, cfg):
+    if cfg.get("protocol") == "completion-v2":
+        from .progression_v2 import dispatch_v2
+        return dispatch_v2(command, cfg)
+    if command == "audit":
+        raise ValueError("Use configs/progression-v2.json for the completion audit")
     if command == "prepare":
         prepare(cfg)
     elif command == "public":

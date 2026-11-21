@@ -166,7 +166,10 @@ def freeze(path, value):
         try:
             save(temp, value)
             try:
-                os.link(temp, path)
+                if os.name == "nt":
+                    os.rename(temp, path)  # Atomic, refuses to replace on Windows.
+                else:
+                    os.link(temp, path)
             except FileExistsError:
                 if read(path) != value:
                     raise ValueError(f"Conflicting frozen input at {path}")

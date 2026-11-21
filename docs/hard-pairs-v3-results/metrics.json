@@ -1,0 +1,182 @@
+{
+  "results": {
+    "public": {
+      "scores": {
+        "sft": {
+          "piqa": 69.96735582154515,
+          "hellaswag": 52.2903804023103,
+          "ifeval": 19.77818853974122,
+          "gsm8k": 31.93010325655282,
+          "mean": 43.49150700503737
+        },
+        "dpo": {
+          "piqa": 69.69532100108815,
+          "hellaswag": 52.35012945628361,
+          "ifeval": 20.517560073937155,
+          "gsm8k": 32.00953137410643,
+          "mean": 43.643135476353834
+        }
+      },
+      "dpo": {
+        "pp": 0.15162847131646373,
+        "tasks": {
+          "piqa": {
+            "pp": -0.2720348204570185,
+            "gained": 10,
+            "lost": 15,
+            "n": 1838
+          },
+          "hellaswag": {
+            "pp": 0.05974905397331209,
+            "gained": 40,
+            "lost": 34,
+            "n": 10042
+          },
+          "ifeval": {
+            "pp": 0.7393715341959335,
+            "gained": 8,
+            "lost": 4,
+            "n": 541
+          },
+          "gsm8k": {
+            "pp": 0.07942811755361398,
+            "gained": 48,
+            "lost": 47,
+            "n": 1259
+          }
+        },
+        "passed": false,
+        "lower": -0.4674143295387353,
+        "ci95": [
+          -0.35462822448859954,
+          0.6604998449439023
+        ]
+      }
+    },
+    "holdout": {
+      "scores": {
+        "sft": {
+          "piqa": 70.83333333333333,
+          "hellaswag": 55.729166666666664,
+          "ifeval": 35.9375,
+          "gsm8k": 16.145833333333332,
+          "mean": 44.66145833333333
+        },
+        "dpo": {
+          "piqa": 71.875,
+          "hellaswag": 55.729166666666664,
+          "ifeval": 35.9375,
+          "gsm8k": 18.75,
+          "mean": 45.572916666666664
+        },
+        "chosen": {
+          "piqa": 72.39583333333333,
+          "hellaswag": 54.6875,
+          "ifeval": 38.541666666666664,
+          "gsm8k": 45.3125,
+          "mean": 52.734375
+        }
+      },
+      "dpo": {
+        "pp": 0.9114583333333357,
+        "tasks": {
+          "piqa": {
+            "pp": 1.0416666666666667,
+            "gained": 2,
+            "lost": 0,
+            "n": 192
+          },
+          "hellaswag": {
+            "pp": 0.0,
+            "gained": 0,
+            "lost": 0,
+            "n": 192
+          },
+          "ifeval": {
+            "pp": 0.0,
+            "gained": 0,
+            "lost": 0,
+            "n": 192
+          },
+          "gsm8k": {
+            "pp": 2.6041666666666665,
+            "gained": 7,
+            "lost": 2,
+            "n": 192
+          }
+        },
+        "passed": false,
+        "lower": 0.0,
+        "ci95": [
+          0.13020833333333334,
+          1.8229166666666665
+        ]
+      },
+      "control": {
+        "pp": -7.161458333333336,
+        "tasks": {
+          "piqa": {
+            "pp": -0.5208333333333334,
+            "gained": 2,
+            "lost": 3,
+            "n": 192
+          },
+          "hellaswag": {
+            "pp": 1.0416666666666667,
+            "gained": 2,
+            "lost": 0,
+            "n": 192
+          },
+          "ifeval": {
+            "pp": -2.6041666666666665,
+            "gained": 1,
+            "lost": 6,
+            "n": 192
+          },
+          "gsm8k": {
+            "pp": -26.5625,
+            "gained": 6,
+            "lost": 57,
+            "n": 192
+          }
+        },
+        "passed": false,
+        "lower": -9.635416666666668,
+        "ci95": [
+          -9.244791666666666,
+          -5.078125
+        ]
+      }
+    }
+  },
+  "design": {
+    "config": "28df28e3e71ffb3d390e80ba835ff7b17e813a8162da149f118aa1850dd6a9c9",
+    "banks": {
+      "dev": "093b5ec7e6cf5cb7c0bc4920c6249fe59556f1d1990d9336c63932e20aa8d24d",
+      "holdout": "912182c0775e62129edb7897570a92a69c512d79d723a6b9b4809e17bd1ac6fd"
+    },
+    "objective": "standard DPO",
+    "selection": "four-task mean, phase gain >=1 pp and all tasks >= -2 pp first; then earlier step and lower learning rate",
+    "formal_gain_pp": 1,
+    "require_positive_adjusted_lower": true
+  },
+  "pairs": {
+    "config": "28df28e3e71ffb3d390e80ba835ff7b17e813a8162da149f118aa1850dd6a9c9",
+    "parent": "757d83a538b05c620ce029d415b7192f799eda0470c9c389db411cc0d101d7b7",
+    "rows": "4882183a6c4ba558c257b842c961c40cbf0eb2929c43268dfb858d8e176f901d"
+  },
+  "weights": {
+    "sft": {
+      "path": "outputs/progression-v2-return/outputs/progression-v2/sft/step-64",
+      "sha": "757d83a538b05c620ce029d415b7192f799eda0470c9c389db411cc0d101d7b7"
+    },
+    "dpo": {
+      "path": "outputs/hard-pairs-v3/dpo-2e-05/step-8",
+      "sha": "a5abd3c8ce0c2018ed5e22a9e15c43d75378a2d2d331d98d80bbf882d0477dc8"
+    },
+    "chosen": {
+      "path": "outputs/hard-pairs-v3/chosen-8e-05/step-32",
+      "sha": "94fab5f7454dc8b976e8b5a14c9be83880036948c9f222eb3223e40466a13cf9"
+    }
+  }
+}

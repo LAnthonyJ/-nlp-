@@ -33,6 +33,10 @@ The [SmolLM2 public evaluation](docs/smollm2-results/README.md) compares six fro
 
 The [Base → SFT → DPO experiment](docs/progression-results/README.zh-CN.md) retrains Qwen2.5-0.5B with one SFT stage and one DPO stage. On the sealed four-task panel, equal-weight accuracy rose from 37.04% to 41.58% to 42.66%. The largest gain came from GSM8K. Strict instruction following declined on this panel. The report includes the unsuccessful first attempt and the full public evaluation of the locked weights.
 
+The follow-up experiment repairs completion tokenization and compares standard DPO with a matched chosen-only control. On 2,048 held-out questions, SFT scored 39.21%, DPO 39.60% and the chosen-only control 40.82%. [Results and reproduction](docs/progression-v2-results/README.md)
+
+In the [hard-negative DPO follow-up](docs/hard-pairs-v3-results/README.zh-CN.md), standard DPO gained 0.91 percentage points over SFT on 768 new prompts and 0.15 points on the full public suite. It fell short of the preregistered one-point holdout target.
+
 ## Quick start
 
 Requires Git and Python. The package declares Python 3.10+; verified environments are **Linux / Python 3.11** in CI and **Windows / Python 3.13.7**, with PyTorch 2.9.0+cpu.

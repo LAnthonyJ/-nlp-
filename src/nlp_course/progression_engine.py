@@ -21,11 +21,13 @@ def load_model(cfg, adapter=None, trainable=False):
     base = os.environ.get("PROGRESSION_BASE", cfg["model"])
     args = dict(revision=cfg["revision"], local_files_only=True)
     tok = AutoTokenizer.from_pretrained(base, **args)
+    tok.completion_v2 = cfg.get("protocol") == "completion-v2"
     tok.pad_token = tok.eos_token
     tok.padding_side = "left"
-    model = AutoModelForCausalLM.from_pretrained(
-        base, torch_dtype=torch.bfloat16, **args
-    ).cuda()
+    if cfg.get("study") == "hard-pairs-v3":
+        model = AutoModelForCausalLM.from_pretrained(base, torch_dtype=torch.bfloat16, device_map={"": "cuda:0"}, **args)
+    else:
+        model = AutoModelForCausalLM.from_pretrained(base, torch_dtype=torch.bfloat16, **args).cuda()
     if adapter:
         model = PeftModel.from_pretrained(model, str(adapter), is_trainable=trainable)
     elif trainable:
@@ -58,13 +60,27 @@ def prompt_for(row):
     return row["prompt"] if "choices" in row else qa(row["prompt"])
 
 
-def logps(model, tok, pairs, eos=True):
-    examples = []
-    for prompt, answer in pairs:
+def completion_tokens(tok, prompt, answer, task, eos=True):
+    if getattr(tok, "completion_v2", False) and task in ("ifeval", "gsm8k"):
+        prefix, suffix = [
+            tok.encode(text, add_special_tokens=False) for text in (prompt, answer)
+        ]
+        if not prefix or not suffix or tok.eos_token_id in suffix:
+            raise ValueError("Empty prompt/answer or embedded EOS")
+    else:
         prefix, suffix = split_tokens(tok, prompt, answer)
-        if eos:
-            suffix = suffix + [tok.eos_token_id]
-        examples.append((prefix, suffix))
+    if eos:
+        suffix = suffix + [tok.eos_token_id]
+    if len(prefix) + len(suffix) > 2048:
+        raise ValueError("Training or scoring example exceeds 2048 tokens")
+    return prefix, suffix
+
+
+def logps(model, tok, pairs, eos=True):
+    examples = [
+        completion_tokens(tok, p, a, task[0] if task else None, eos)
+        for p, a, *task in pairs
+    ]
     lengths = [len(p) + len(a) for p, a in examples]
     width = max(lengths)
     if width > 2048:
@@ -295,24 +311,32 @@ def mine(cfg, model, tok, bank, folder, hard):
     return pairs
 
 
-def train(cfg, stage, parent, rows, dev, folder, lr):
+def train(cfg, stage, parent, rows, dev, folder, lr, baseline=None):
+    rows = list(rows)
     random.Random(cfg["seed"]).shuffle(rows)
     torch.manual_seed(cfg["seed"])
     model, tok = load_model(cfg, parent, True)
-    batch = cfg[stage + "_batch"]
+    batch = cfg["sft_batch" if stage == "sft" else "dpo_batch"]
     steps = math.ceil(len(rows) / batch)
     checkpoints = {math.ceil(steps * f / 4) for f in (1, 2, 3, 4)}
     optimizer = torch.optim.AdamW(
         [p for p in model.parameters() if p.requires_grad], lr=lr
     )
     folder.mkdir(parents=True, exist_ok=True)
+    micro_batch = cfg.get("micro_batch", 4)
     refs = []
-    if stage == "dpo":
+    if stage in ("dpo", "hybrid"):
         path = folder / "reference.json"
         identity = sha(parent / "adapter_model.safetensors")
         from .capability_data import digest
 
-        key = digest([identity, rows])
+        key = (
+            digest([identity, rows])
+            if not tok.completion_v2
+            else digest(
+                [identity, rows, cfg["protocol"], tok.backend_tokenizer.to_str()]
+            )
+        )
         if path.exists():
             saved = read(path)
             if saved["key"] != key:
@@ -320,13 +344,13 @@ def train(cfg, stage, parent, rows, dev, folder, lr):
             refs = saved["values"]
         else:
             with torch.no_grad():
-                for i in range(0, len(rows), 4):
-                    chunk = rows[i : i + 4]
+                for i in range(0, len(rows), micro_batch):
+                    chunk = rows[i : i + micro_batch]
                     values, _ = logps(
                         model,
                         tok,
                         [
-                            (r["prompt"], r[k])
+                            (r["prompt"], r[k], r["task"])
                             for r in chunk
                             for k in ("chosen", "rejected")
                         ],
@@ -348,19 +372,26 @@ def train(cfg, stage, parent, rows, dev, folder, lr):
             model.train()
             chunk = rows[(step - 1) * batch : step * batch]
             optimizer.zero_grad()
-            for j in range(0, len(chunk), 4):
-                micro = chunk[j : j + 4]
-                if stage == "sft":
+            for j in range(0, len(chunk), micro_batch):
+                micro = chunk[j : j + micro_batch]
+                if stage in ("sft", "chosen"):
                     sums, n = logps(
-                        model, tok, [(prompt_for(r), r["answer"]) for r in micro]
-                    )
-                    loss = -(sums / n).mean()
-                else:
-                    vals, _ = logps(
                         model,
                         tok,
                         [
-                            (r["prompt"], r[k])
+                            (prompt_for(r), r["answer"], r["task"])
+                            if stage == "sft"
+                            else (r["prompt"], r["chosen"], r["task"])
+                            for r in micro
+                        ],
+                    )
+                    loss = -(sums / n).mean()
+                else:
+                    vals, counts = logps(
+                        model,
+                        tok,
+                        [
+                            (r["prompt"], r[k], r["task"])
                             for r in micro
                             for k in ("chosen", "rejected")
                         ],
@@ -373,6 +404,8 @@ def train(cfg, stage, parent, rows, dev, folder, lr):
                     )
                     a, b = vals.reshape(-1, 2).T
                     loss = preference_loss(a, b, ref[:, 0], ref[:, 1], cfg["beta"])
+                    if stage == "hybrid":
+                        loss = loss - 0.1 * (a / counts[::2]).mean()
                 if not torch.isfinite(loss):
                     raise ValueError("Non-finite training loss")
                 (loss * len(micro) / len(chunk)).backward()
@@ -397,32 +430,39 @@ def train(cfg, stage, parent, rows, dev, folder, lr):
             if step >= start and not (point / "summary.json").exists():
                 model.save_pretrained(point)
                 metrics = scores(evaluate(cfg, model, tok, dev, point / "dev"))
-                if stage == "dpo":
+                if stage in ("dpo", "hybrid"):
                     deltas = []
                     with torch.no_grad():
-                        for i in range(0, len(rows), 4):
+                        for i in range(0, len(rows), micro_batch):
                             vals, _ = logps(
                                 model,
                                 tok,
                                 [
-                                    (r["prompt"], r[k])
-                                    for r in rows[i : i + 4]
+                                    (r["prompt"], r[k], r["task"])
+                                    for r in rows[i : i + micro_batch]
                                     for k in ("chosen", "rejected")
                                 ],
                             )
                             deltas.extend(
                                 (
                                     vals.reshape(-1, 2).cpu()
-                                    - torch.tensor(refs[i : i + 4])
+                                    - torch.tensor(refs[i : i + micro_batch])
                                 ).tolist()
                             )
                     metrics["chosen_delta"] = sum(a for a, b in deltas) / len(deltas)
                     metrics["rejected_delta"] = sum(b for a, b in deltas) / len(deltas)
                 freeze(point / "summary.json", metrics)
-            history.append((read(point / "summary.json")["mean"], -step, point))
+            metrics = read(point / "summary.json")
+            eligible = (
+                baseline is not None
+                and all(metrics[t] >= baseline[t] - 2 - 1e-10 for t in TASKS)
+                and metrics["mean"]
+                >= baseline["mean"] + (2 if stage == "sft" else 1) - 1e-10
+            )
+            history.append((eligible, metrics["mean"], -step, point))
             if step > start:
                 tmp.replace(resume)
-    best = max(history)[2]
+    best = max(history)[-1]
     freeze(
         folder / "selected.json",
         dict(step=best.name, weights=sha(best / "adapter_model.safetensors")),

@@ -33,6 +33,10 @@
 
 在[一次 SFT、一次 DPO 的重训实验](docs/progression-results/README.zh-CN.md)中，Qwen2.5-0.5B 在四任务封存题上的等权综合分依次为 37.04%、41.58%、42.66%。提升主要来自 GSM8K，严格指令遵循得分有所下降。报告同时列出首轮失败原因和锁定权重后的全量公开评测。
 
+新一轮实验修复了回答首字符丢失的问题，并加入同数据的监督训练对照。在 2,048 道保留题上，SFT、标准 DPO 和仅学正确答案的对照分别得到 39.21%、39.60% 和 40.82%。[实验报告与复现方法](docs/progression-v2-results/README.zh-CN.md)
+
+在后续的标准 DPO 实验中，用模型实际答错且评分更高的错答重建偏好对后，DPO 在 768 道新保留题上比 SFT 提升 0.91 个百分点，在公开全量复测上提升 0.15 个百分点，未达到预设的 1 个百分点验收门槛。[最新实验报告](docs/hard-pairs-v3-results/README.zh-CN.md)
+
 ## 快速开始
 
 需要 Git 和 Python。项目声明 Python 3.10+；已验证 **Linux / Python 3.11** 和 **Windows / Python 3.13.7**，使用 PyTorch 2.9.0+cpu。

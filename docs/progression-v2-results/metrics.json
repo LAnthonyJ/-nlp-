@@ -1,0 +1,652 @@
+{
+  "metrics": {
+    "holdout": {
+      "scores": {
+        "base": {
+          "piqa": 74.0234375,
+          "hellaswag": 48.2421875,
+          "ifeval": 0.0,
+          "gsm8k": 9.1796875,
+          "mean": 32.861328125
+        },
+        "sft": {
+          "piqa": 73.046875,
+          "hellaswag": 50.1953125,
+          "ifeval": 10.15625,
+          "gsm8k": 23.4375,
+          "mean": 39.208984375
+        },
+        "chosen": {
+          "piqa": 72.65625,
+          "hellaswag": 50.5859375,
+          "ifeval": 12.5,
+          "gsm8k": 27.5390625,
+          "mean": 40.8203125
+        },
+        "dpo": {
+          "piqa": 73.4375,
+          "hellaswag": 50.390625,
+          "ifeval": 9.9609375,
+          "gsm8k": 24.609375,
+          "mean": 39.599609375
+        }
+      },
+      "comparisons": {
+        "base-sft": {
+          "pp": 6.34765625,
+          "tasks": {
+            "piqa": {
+              "pp": -0.9765625,
+              "gained": 15,
+              "lost": 20,
+              "n": 512
+            },
+            "hellaswag": {
+              "pp": 1.953125,
+              "gained": 32,
+              "lost": 22,
+              "n": 512
+            },
+            "ifeval": {
+              "pp": 10.15625,
+              "gained": 52,
+              "lost": 0,
+              "n": 512
+            },
+            "gsm8k": {
+              "pp": 14.2578125,
+              "gained": 100,
+              "lost": 27,
+              "n": 512
+            }
+          },
+          "passed": true,
+          "lower": 4.4921875,
+          "ci95": [
+            4.78515625,
+            7.861328125
+          ]
+        },
+        "sft-dpo": {
+          "pp": 0.390625,
+          "tasks": {
+            "piqa": {
+              "pp": 0.390625,
+              "gained": 3,
+              "lost": 1,
+              "n": 512
+            },
+            "hellaswag": {
+              "pp": 0.1953125,
+              "gained": 4,
+              "lost": 3,
+              "n": 512
+            },
+            "ifeval": {
+              "pp": -0.1953125,
+              "gained": 5,
+              "lost": 6,
+              "n": 512
+            },
+            "gsm8k": {
+              "pp": 1.171875,
+              "gained": 21,
+              "lost": 15,
+              "n": 512
+            }
+          },
+          "passed": false,
+          "lower": -0.48828125,
+          "ci95": [
+            -0.341796875,
+            1.123046875
+          ]
+        },
+        "chosen-dpo": {
+          "pp": -1.220703125,
+          "tasks": {
+            "piqa": {
+              "pp": 0.78125,
+              "gained": 4,
+              "lost": 0,
+              "n": 512
+            },
+            "hellaswag": {
+              "pp": -0.1953125,
+              "gained": 2,
+              "lost": 3,
+              "n": 512
+            },
+            "ifeval": {
+              "pp": -2.5390625,
+              "gained": 3,
+              "lost": 16,
+              "n": 512
+            },
+            "gsm8k": {
+              "pp": -2.9296875,
+              "gained": 14,
+              "lost": 29,
+              "n": 512
+            }
+          },
+          "passed": false,
+          "lower": -2.197265625,
+          "ci95": [
+            -2.05078125,
+            -0.439453125
+          ]
+        }
+      }
+    },
+    "public": {
+      "scores": {
+        "base": {
+          "piqa": 69.64091403699673,
+          "hellaswag": 51.155148376817365,
+          "ifeval": 15.341959334565619,
+          "gsm8k": 14.614773629864972,
+          "mean": 37.68819884456117
+        },
+        "sft": {
+          "piqa": 70.29379760609358,
+          "hellaswag": 52.12109141605258,
+          "ifeval": 19.77818853974122,
+          "gsm8k": 32.4066719618745,
+          "mean": 43.64993738094047
+        },
+        "dpo": {
+          "piqa": 70.02176278563657,
+          "hellaswag": 52.36008763194583,
+          "ifeval": 19.593345656192238,
+          "gsm8k": 32.08895949166005,
+          "mean": 43.51603889135867
+        }
+      },
+      "comparisons": {
+        "base-sft": {
+          "pp": 5.9617385363793005,
+          "tasks": {
+            "piqa": {
+              "pp": 0.6528835690968444,
+              "gained": 77,
+              "lost": 65,
+              "n": 1838
+            },
+            "hellaswag": {
+              "pp": 0.9659430392352121,
+              "gained": 427,
+              "lost": 330,
+              "n": 10042
+            },
+            "ifeval": {
+              "pp": 4.436229205175601,
+              "gained": 57,
+              "lost": 33,
+              "n": 541
+            },
+            "gsm8k": {
+              "pp": 17.79189833200953,
+              "gained": 300,
+              "lost": 76,
+              "n": 1259
+            }
+          },
+          "passed": true,
+          "lower": 4.5254716094383465,
+          "ci95": [
+            4.792863091112411,
+            7.117976866912544
+          ]
+        },
+        "sft-dpo": {
+          "pp": -0.13389848958180295,
+          "tasks": {
+            "piqa": {
+              "pp": -0.2720348204570185,
+              "gained": 10,
+              "lost": 15,
+              "n": 1838
+            },
+            "hellaswag": {
+              "pp": 0.23899621589324835,
+              "gained": 44,
+              "lost": 20,
+              "n": 10042
+            },
+            "ifeval": {
+              "pp": -0.18484288354898337,
+              "gained": 6,
+              "lost": 7,
+              "n": 541
+            },
+            "gsm8k": {
+              "pp": -0.3177124702144559,
+              "gained": 45,
+              "lost": 49,
+              "n": 1259
+            }
+          },
+          "passed": false,
+          "lower": -0.7775972410925535,
+          "ci95": [
+            -0.653888491587251,
+            0.3865675846204313
+          ]
+        }
+      }
+    }
+  },
+  "costs": {
+    "ablation": {
+      "wall_seconds_current_invocation": 353.0571331260726,
+      "device": "NVIDIA GeForce RTX 4090"
+    },
+    "chosen": {
+      "wall_seconds_current_invocation": 303.61878269398585,
+      "device": "NVIDIA GeForce RTX 4090"
+    },
+    "dpo": {
+      "wall_seconds_current_invocation": 337.332734988071,
+      "device": "NVIDIA GeForce RTX 4090"
+    },
+    "sft": {
+      "wall_seconds_current_invocation": 409.2805847310228,
+      "device": "NVIDIA GeForce RTX 4090"
+    },
+    "single_gpu_wall_seconds": 10948.0
+  },
+  "ablation": {
+    "repair": {
+      "pp": 1.7578125,
+      "tasks": {
+        "piqa": {
+          "pp": 0.0,
+          "gained": 2,
+          "lost": 2,
+          "n": 128
+        },
+        "hellaswag": {
+          "pp": 0.0,
+          "gained": 0,
+          "lost": 0,
+          "n": 128
+        },
+        "ifeval": {
+          "pp": 7.8125,
+          "gained": 11,
+          "lost": 1,
+          "n": 128
+        },
+        "gsm8k": {
+          "pp": -0.78125,
+          "gained": 6,
+          "lost": 7,
+          "n": 128
+        }
+      },
+      "passed": true
+    },
+    "old_dpo": {
+      "pp": 1.171875,
+      "tasks": {
+        "piqa": {
+          "pp": 0.78125,
+          "gained": 3,
+          "lost": 2,
+          "n": 128
+        },
+        "hellaswag": {
+          "pp": -0.78125,
+          "gained": 0,
+          "lost": 1,
+          "n": 128
+        },
+        "ifeval": {
+          "pp": 0.78125,
+          "gained": 3,
+          "lost": 2,
+          "n": 128
+        },
+        "gsm8k": {
+          "pp": 3.90625,
+          "gained": 11,
+          "lost": 6,
+          "n": 128
+        }
+      },
+      "passed": true
+    },
+    "repaired_dpo": {
+      "pp": 2.9296875,
+      "tasks": {
+        "piqa": {
+          "pp": 0.78125,
+          "gained": 1,
+          "lost": 0,
+          "n": 128
+        },
+        "hellaswag": {
+          "pp": -0.78125,
+          "gained": 0,
+          "lost": 1,
+          "n": 128
+        },
+        "ifeval": {
+          "pp": 8.59375,
+          "gained": 11,
+          "lost": 0,
+          "n": 128
+        },
+        "gsm8k": {
+          "pp": 3.125,
+          "gained": 8,
+          "lost": 4,
+          "n": 128
+        }
+      },
+      "passed": true
+    },
+    "old": [
+      {
+        "step": 16,
+        "piqa": 70.3125,
+        "hellaswag": 53.125,
+        "ifeval": 11.71875,
+        "gsm8k": 42.96875,
+        "mean": 44.53125,
+        "chosen_delta": 0.19141192667302676,
+        "rejected_delta": -0.05485030103591271
+      },
+      {
+        "step": 32,
+        "piqa": 71.09375,
+        "hellaswag": 52.34375,
+        "ifeval": 14.0625,
+        "gsm8k": 39.84375,
+        "mean": 44.3359375,
+        "chosen_delta": 0.3279385110945441,
+        "rejected_delta": -0.12306482635904104
+      },
+      {
+        "step": 48,
+        "piqa": 71.875,
+        "hellaswag": 52.34375,
+        "ifeval": 12.5,
+        "gsm8k": 41.40625,
+        "mean": 44.53125,
+        "chosen_delta": 0.41392070837900974,
+        "rejected_delta": -0.2483064029365778
+      },
+      {
+        "step": 64,
+        "piqa": 72.65625,
+        "hellaswag": 52.34375,
+        "ifeval": 14.84375,
+        "gsm8k": 42.96875,
+        "mean": 45.703125,
+        "chosen_delta": 0.4819349546160083,
+        "rejected_delta": -0.38694942818256095
+      }
+    ],
+    "new": [
+      {
+        "step": 16,
+        "piqa": 71.09375,
+        "hellaswag": 52.34375,
+        "ifeval": 16.40625,
+        "gsm8k": 39.0625,
+        "mean": 44.7265625,
+        "chosen_delta": 0.3427772412542254,
+        "rejected_delta": -0.04512291244463995
+      },
+      {
+        "step": 32,
+        "piqa": 70.3125,
+        "hellaswag": 53.125,
+        "ifeval": 17.96875,
+        "gsm8k": 41.40625,
+        "mean": 45.703125,
+        "chosen_delta": 0.5731020551756956,
+        "rejected_delta": -0.1283478183322586
+      },
+      {
+        "step": 48,
+        "piqa": 71.09375,
+        "hellaswag": 52.34375,
+        "ifeval": 21.09375,
+        "gsm8k": 42.1875,
+        "mean": 46.6796875,
+        "chosen_delta": 0.7269690357497893,
+        "rejected_delta": -0.2504482253571041
+      },
+      {
+        "step": 64,
+        "piqa": 72.65625,
+        "hellaswag": 52.34375,
+        "ifeval": 22.65625,
+        "gsm8k": 42.1875,
+        "mean": 47.4609375,
+        "chosen_delta": 0.8587397562805563,
+        "rejected_delta": -0.365175068291137
+      }
+    ]
+  },
+  "training_history": {
+    "sft": [
+      {
+        "step": 32,
+        "piqa": 71.09375,
+        "hellaswag": 53.125,
+        "ifeval": 17.96875,
+        "gsm8k": 39.84375,
+        "mean": 45.5078125
+      },
+      {
+        "step": 64,
+        "piqa": 72.65625,
+        "hellaswag": 53.90625,
+        "ifeval": 17.1875,
+        "gsm8k": 42.1875,
+        "mean": 46.484375
+      },
+      {
+        "step": 96,
+        "piqa": 71.09375,
+        "hellaswag": 53.90625,
+        "ifeval": 14.84375,
+        "gsm8k": 42.1875,
+        "mean": 45.5078125
+      },
+      {
+        "step": 128,
+        "piqa": 71.09375,
+        "hellaswag": 55.46875,
+        "ifeval": 17.96875,
+        "gsm8k": 46.875,
+        "mean": 47.8515625
+      }
+    ],
+    "chosen": [
+      {
+        "step": 16,
+        "piqa": 71.09375,
+        "hellaswag": 53.125,
+        "ifeval": 17.96875,
+        "gsm8k": 43.75,
+        "mean": 46.484375
+      },
+      {
+        "step": 32,
+        "piqa": 71.875,
+        "hellaswag": 53.90625,
+        "ifeval": 17.1875,
+        "gsm8k": 44.53125,
+        "mean": 46.875
+      },
+      {
+        "step": 48,
+        "piqa": 71.875,
+        "hellaswag": 53.90625,
+        "ifeval": 18.75,
+        "gsm8k": 44.53125,
+        "mean": 47.265625
+      },
+      {
+        "step": 64,
+        "piqa": 71.875,
+        "hellaswag": 53.125,
+        "ifeval": 17.96875,
+        "gsm8k": 45.3125,
+        "mean": 47.0703125
+      }
+    ],
+    "dpo": [
+      {
+        "step": 16,
+        "piqa": 71.09375,
+        "hellaswag": 53.125,
+        "ifeval": 17.1875,
+        "gsm8k": 45.3125,
+        "mean": 46.6796875,
+        "chosen_delta": 0.061668645415920764,
+        "rejected_delta": -0.06343368196394295
+      },
+      {
+        "step": 32,
+        "piqa": 71.875,
+        "hellaswag": 54.6875,
+        "ifeval": 17.1875,
+        "gsm8k": 46.09375,
+        "mean": 47.4609375,
+        "chosen_delta": 0.07365824631415308,
+        "rejected_delta": -0.14836780817131512
+      },
+      {
+        "step": 48,
+        "piqa": 71.875,
+        "hellaswag": 54.6875,
+        "ifeval": 17.96875,
+        "gsm8k": 46.875,
+        "mean": 47.8515625,
+        "chosen_delta": 0.09846025973092765,
+        "rejected_delta": -0.2445532861747779
+      },
+      {
+        "step": 64,
+        "piqa": 72.65625,
+        "hellaswag": 53.90625,
+        "ifeval": 17.96875,
+        "gsm8k": 45.3125,
+        "mean": 47.4609375,
+        "chosen_delta": 0.09386355109745637,
+        "rejected_delta": -0.378024995472515
+      }
+    ]
+  },
+  "preference_hash": "2fd3df32bf6330fde0cafafb0b583b24a03fc3b253ea6b4e051849cb849e682c",
+  "audit": {
+    "counts": {
+      "answer": 2048,
+      "restored_answer": 643,
+      "unchanged_choice_prompts": 512,
+      "chosen": 512,
+      "rejected": 512,
+      "restored_chosen": 136
+    },
+    "protocol": "completion-v2",
+    "tokenizer": "85d1ceae9fd30a7936c899eedc50257787910fc7a6139f82c5d705694c7da944",
+    "parent": "df91a12d3997db305d9d1fc6c89c36d4c198fc535fed65538a17202901d0dc64",
+    "pairs": "8007d7ee12bd7b8f1da586064e2d08ba37f97a0fc1242afb22e50e53b482793a",
+    "rows": "a72d6aeac36f0b75b528129ff144e2c04e867addf76984bca58ae581ff8630e2",
+    "passed": true
+  },
+  "support": {
+    "counts": {
+      "piqa": 256,
+      "hellaswag": 256,
+      "ifeval": 256,
+      "gsm8k": 256
+    },
+    "sources": {
+      "piqa": {
+        "gold": 256
+      },
+      "hellaswag": {
+        "gold": 256
+      },
+      "ifeval": {
+        "model": 230,
+        "reference": 26
+      },
+      "gsm8k": {
+        "model": 256
+      }
+    },
+    "collection": {
+      "piqa": {
+        "attempted": 928,
+        "eligible": 928,
+        "selected": 256,
+        "selected_per_attempt": 0.27586206896551724,
+        "greedy_errors": 256
+      },
+      "hellaswag": {
+        "attempted": 528,
+        "eligible": 528,
+        "selected": 256,
+        "selected_per_attempt": 0.48484848484848486,
+        "greedy_errors": 256
+      },
+      "ifeval": {
+        "attempted": 2048,
+        "eligible": 1733,
+        "selected": 256,
+        "selected_per_attempt": 0.125,
+        "greedy_errors": 243
+      },
+      "gsm8k": {
+        "attempted": 1560,
+        "eligible": 1339,
+        "selected": 256,
+        "selected_per_attempt": 0.1641025641025641,
+        "greedy_errors": 256
+      }
+    }
+  },
+  "inputs": {
+    "config": "ae419eb779166b76097878f85c7a551f0de2d5f79d27bdf790828ba7b2231734",
+    "banks": {
+      "sft": "1732d51d8e2acd4a4076f49c71ae7f5fd34db4d3ae844e4489dd92dbee3ea436",
+      "dev": "d73a2386847d0f59e628f8f310c1853997e69a58cbd367b69ab011a0cb1f40b2",
+      "mine": "30fafa3410958b2128d0a60a3f913d0f9a1e2c434db92748700ea0f8d631dec2",
+      "holdout": "712900ec2dfc30d7366f07d2808c196a5cf30e2c923a7f6950933d8fce65f42e"
+    },
+    "panels": [
+      "933e6a96d5e12c83f5e567b6585482b98222246e9ac8461056a5541438664530",
+      "a27f7f45dfabb2fc5f127ca3953bc3b2abaaafa714b992dd24529cc60cf6c086",
+      "7e96f53ba27c6e711ddf128f7c0dace4c67c6a3c2c5bfc35627f018158321467"
+    ],
+    "svamp": "5be77703a6d891ae476d7c082787ad361392aa02453b132516cdd5f4e7934e3e",
+    "holdout_math": "SVAMP",
+    "public_math": "GSM8K"
+  },
+  "weights": {
+    "selected": "dpo",
+    "base": "060db6499f32faf8b98477b0a26969ef7d8b9987",
+    "arms": {
+      "sft": {
+        "path": "sft/step-64",
+        "sha": "757d83a538b05c620ce029d415b7192f799eda0470c9c389db411cc0d101d7b7"
+      },
+      "chosen": {
+        "path": "chosen/step-48",
+        "sha": "0ed76e536b9d2d2da82b169cf4b12e27f520f315d8a77d3ca6ba399532f798a6"
+      },
+      "dpo": {
+        "path": "dpo/step-48",
+        "sha": "32628b48776458d5b860121ecc74335882dd4c70d87c87cef51c52e6a8f2189c"
+      }
+    }
+  }
+}

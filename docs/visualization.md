@@ -1,8 +1,8 @@
-# Static result figures / 静态成果图
+# Static result figures / Static Results Diagram
 
-The figures show CPU implementation validation on synthetic training and toy examples. They are not pretrained-language-model benchmark results. 图表用于解释实现行为，不代表真实语言模型性能。
+The figures show CPU implementation validation on synthetic training and toy examples. They are not pretrained-language-model benchmark results. The chart is used to explain the realization behaviour and does not represent real language model performance.
 
-## Reproduce / 重新生成
+## Reproduce / Regenerate
 
 From the repository root, with the project's CPU PyTorch already installed:
 
@@ -16,9 +16,9 @@ Collection reruns the original demonstration with seed 42 and records actual dat
 
 `run_cpu_demo(include_trace=False)` is available from `nlp_course.demo`. Its default return fields match the original example. With `include_trace=True`, the additional `trace` object records training configuration/environment, measured loss trajectory, paired merge outputs, logits and sampling settings. `examples/cpu_demo.py` continues to print only the original JSON report.
 
-采集命令重新执行示例，绘图命令只读取报告。新增报告位于独立目录，历史验证文件保持原样。使用自定义数据目录可以保留不同环境的运行结果。
+Reexecuts the collection command, drawing orders only read reports. The new report is located in a separate directory and the historical authentication file remains as it was. Use a custom data directory to preserve the results of operations in different environments.
 
-## Data and figures / 数据与图表
+## Data and figures / Data and Charts
 
 | Figure | Data source | Meaning |
 | --- | --- | --- |
@@ -32,7 +32,7 @@ All figures have SVG and PNG versions. Individual figures are 8×4.5 inches / 14
 
 The [manifest](validation/visualization/manifest.json) identifies the input fixture by SHA-256 and records the Git revision and dirty-working-tree flag when Git metadata is available. A dirty flag means the reports were collected before committing local changes; the revision alone is not an exact snapshot of those working-tree changes. Environment and training settings are recorded inside the CPU trace.
 
-## Validation / 验证
+## Validation / Authentication
 
 The renderer rejects incomplete trajectories, nonfinite data, invalid probability distributions, mismatched output arrays and summaries inconsistent with the data. It recomputes decoding distributions from the recorded logits/settings and rescores evaluation records using the existing implementation. It never infers missing intermediate loss values.
 

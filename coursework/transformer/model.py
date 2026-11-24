@@ -31,7 +31,7 @@ class PositionalEncoding(nn.Module):
 
     def forward(self, x):
         # Add positional encoding to input x, then apply dropout
-        x = x + self.pe[:, :x.size(1), :].detach()  # 位置编码不参与梯度更新
+        x = x + self.pe[:, :x.size(1), :].detach()  # Positional encodings are fixed.
         return self.dropout(x)
 
 
@@ -71,7 +71,7 @@ class MultiHeadAttention(nn.Module):
     """Multi-head self-attention mechanism"""
     def __init__(self, embed_dim: int, num_heads: int, dropout: float):
         super().__init__()
-        assert embed_dim % num_heads == 0, "embed_dim 必须能被 num_heads 整除"
+        assert embed_dim % num_heads == 0, "embed_dim must be divisible by num_heads"
         self.d_k = embed_dim // num_heads
         self.num_heads = num_heads
 
@@ -93,15 +93,15 @@ class MultiHeadAttention(nn.Module):
         attn_scores = torch.matmul(Q, K.transpose(-2, -1)) * scale  # (B, heads, seq_len, seq_len)
         
         if mask is not None:
-            # 扩展掩码维度以匹配注意力分数形状 (B, 1, 1, seq_len) 或 (B, 1, seq_len, seq_len)
+            # Expand the mask to match the attention score tensor: (B, 1, 1, seq_len) or (B, 1, seq_len, seq_len)
             attn_scores = attn_scores.masked_fill(mask.unsqueeze(1).unsqueeze(1) == 0, -1e9)
         
         attn = torch.softmax(attn_scores, dim=-1)
         attn = self.drop(attn)
 
-        # 输出
+        # Output projection
         out = attn @ V  # (B, heads, seq_len, d_k)
-        out = out.transpose(1, 2).contiguous().view(B, -1, self.num_heads * self.d_k)  # 拼接多头
+        out = out.transpose(1, 2).contiguous().view(B, -1, self.num_heads * self.d_k)  # Concatenate the attention heads.
         return self.out_linear(out)
 
 

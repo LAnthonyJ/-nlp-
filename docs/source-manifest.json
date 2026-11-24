@@ -2,8 +2,9 @@
   {
     "source": "NLP/作业/Assignment1/Q2_transformer_model.py",
     "destination": "coursework/transformer/model.py",
-    "sha256": "afb3fff6c3c7cc7c9dc2e903bbbfbb892742100705040558b55eaa2e34a3e6c1",
-    "status": "unchanged course source; owner confirmed completing this implementation on 2026-11-11"
+    "sha256": "c0e40d9956f9d2aae9170bf2c91d324612fbba791a0952e8dd88483dd384f898",
+    "status": "English comments and assertion message. The original course file is identified by original_sha256. The owner confirmed completing the implementation on 2026-11-11.",
+    "original_sha256": "afb3fff6c3c7cc7c9dc2e903bbbfbb892742100705040558b55eaa2e34a3e6c1"
   },
   {
     "source": "NLP/作业/Assignment2/Q1_lora_training.py",

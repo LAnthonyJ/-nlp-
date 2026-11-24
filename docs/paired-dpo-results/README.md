@@ -1,6 +1,6 @@
 # Does training on a model’s own mistakes improve its reasoning?
 
-A Qwen2.5-0.5B adapter answered 20 of 40 yes/no questions correctly by always saying *yes*. We changed one condition at a time and required both answers in each pair to be right. This distinguished a correct inference from a successful guess. [完整中文报告](README.zh-CN.md)
+A Qwen2.5-0.5B adapter answered 20 of 40 yes/no questions correctly by always saying *yes*. We changed one condition at a time and required both answers in each pair to be right. This distinguished a correct inference from a successful guess. [Full report](REPORT.md)
 
 | Model | Correct pairs / 60 | Correct questions / 120 | Valid format / 120 |
 | --- | ---: | ---: | ---: |
@@ -19,4 +19,4 @@ The first panel measures the mean reference-relative log-probability difference 
 
 On the historical 30 math and 25 code tasks, frozen SFT B scored 9 and 6. The previous DPO scored 10 and 6, continued SFT scored 9 and 5, and the new DPO scored 10 and 5. Both new adapters lost the same previously passing code task, HumanEval-47.
 
-The [Chinese report](README.zh-CN.md) includes mining yield, regression results, examples, limitations, and reproduction commands. Inspect the [per-question generations](generations.json), [preferences](pairs.json), [compressed candidate audit](mining.json.gz), [checkpoint measurements and hashes](metrics.json), [math and code results](regression.json), and [file checksums](manifest.json).
+The [detailed report](REPORT.md) includes mining yield, regression results, examples, limitations, and reproduction commands. Inspect the [per-question generations](generations.json), [preferences](pairs.json), [compressed candidate audit](mining.json.gz), [checkpoint measurements and hashes](metrics.json), [math and code results](regression.json), and [file checksums](manifest.json).

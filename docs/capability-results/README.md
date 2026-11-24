@@ -1,6 +1,6 @@
 # Real-checkpoint capabilities and boundaries: first diagnostic
 
-[中文](README.zh-CN.md) · [Protocol and review rubric](../capability-evaluation.md) · [Per-response scores](scores.json) · [Provenance manifest](manifest.json)
+[Extended notes](REPORT.md) · [Protocol and review rubric](../capability-evaluation.md) · [Per-response scores](scores.json) · [Provenance manifest](manifest.json)
 
 On 2026-11-15, the existing Qwen2.5-0.5B Base, SFT and DPO course checkpoints produced **420 formal responses**. Strict instruction-protocol success was low. A secondary analysis found some numerically correct math answers whose final-answer format failed the strict scorer. **Concept and writing quality remain pending human review.** These results do not establish an overall DPO improvement.
 
@@ -73,7 +73,7 @@ There is only one training checkpoint per stage. Some concepts cover familiar tr
 
 ## Human review and reproduction
 
-The local `outputs/capability/final-run/blind-review.csv` contains 60 open-task responses plus six consistency repeats, with stage identities hidden. Fill three integer rating columns from 1 to 5 using the [anchored rubric](../capability-evaluation.md#anonymous-scoring--匿名人工评分). Repeats are excluded from capability means. Single-reviewer judgments and potentially recognizable styles remain limitations. No human scores are estimated while review is pending.
+The local `outputs/capability/final-run/blind-review.csv` contains 60 open-task responses plus six consistency repeats, with stage identities hidden. Fill three integer rating columns from 1 to 5 using the [anchored rubric](../capability-evaluation.md#anonymous-scoring--Anonymous manual score). Repeats are excluded from capability means. Single-reviewer judgments and potentially recognizable styles remain limitations. No human scores are estimated while review is pending.
 
 With `.[viz]` installed, regenerate the figures directly from published statistics:
 

@@ -398,25 +398,7 @@ def analyze(suite_dir,run_dir):
             transitions.append(dict(first=first,last=last,direction=direction,task_ids=candidates[:3]))
     save(Path(run_dir)/'transition-cases.json',transitions)
     (Path(run_dir)/'report.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
-    zh=['# 真实模型能力快速诊断','',f'开放题人工评分状态：{"已导入" if human else "待你填写匿名评分表"}。',
-        '', '| 模型阶段 | 任务 | 已收到/应收到 | 已评分 | 正确 | 通过率 |','|---|---|---:|---:|---:|---:|']
-    for r in results:
-        value=f'{r["accuracy"]:.1%}' if r['accuracy'] is not None else '待评分或环境不可用'
-        zh.append(f'| {r["stage"]} | {r["category"]} | {r["received"]}/{r["expected"]} | {r["scored"]} | {r["correct"]} | {value} |')
-    zh.extend(['','## 数学答案格式敏感性（事后补充分析）','',
-        '严格分数包含答案输出协议。以下放宽提取仅诊断格式敏感性，不替代严格分数，也不证明推理过程正确。'])
-    for r in results:
-        if r['category']=='math':zh.append(f'- {r["stage"]}：严格 {r["correct"]}/{r["scored"]}；放宽最终答案格式 {r["format_relaxed_correct"]}/{r["received"]}。')
-    zh.extend(['','## 能力边界与解释','',
-        '- 数字题的答案错误与答案提取失败分别统计；格式失败不能直接解释为不会计算。',
-        '- 代码分数只统计已完成隔离执行的回答；缺失环境不计为模型错误。',
-        '- 受控题对只改变一个条件，用于定位数字规模、推理长度、上下文、约束和输出预算的影响。',
-        '- 概念诊断中的关键词覆盖率不是事实正确率；开放题质量等待匿名人工评分。',
-        '- 三个阶段各只有一次训练权重；阶段差异不能证明训练方法的一般因果效果。',
-        '- 模型容量、训练数据质量和偏好方向属于待验证解释，须结合审计样本与具体失败证据。',
-        '- 本轮仅为英文小样本快速诊断；中文、多轮对话、长上下文与完整基准均未覆盖。',
-        '', '具体失败回答见 cases.json，逐题对照与受控题对见 analysis.json。'])
-    (Path(run_dir)/'report.zh-CN.md').write_text('\n'.join(zh)+'\n',encoding='utf-8')
+    (Path(run_dir)/'report-details.md').write_text('\n'.join(lines)+'\n',encoding='utf-8')
     return report
 
 

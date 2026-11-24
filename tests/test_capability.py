@@ -150,7 +150,7 @@ class CapabilityTests(unittest.TestCase):
             score(suite,run);report=analyze(suite,run)
             change=next(r for r in report['stage_changes'] if r['first']=='base' and r['category']=='math')
             self.assertEqual(change['counts'],dict(regressed=1,improved=1))
-            self.assertTrue((run/'report.zh-CN.md').is_file())
+            self.assertTrue((run/'report-details.md').is_file())
             self.assertEqual(len(read(run/'transition-cases.json')),4)
             if importlib.util.find_spec('matplotlib'):
                 render_report(run)

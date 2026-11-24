@@ -1,4 +1,4 @@
-# Real-checkpoint capability evaluation / 真实模型多能力诊断
+# Real-checkpoint capability evaluation / Real model multi-capacity diagnosis
 
 This workflow compares Qwen2.5-0.5B Base, the existing SFT adapter, and the final DPO adapter. The DPO adapter is a continuation of SFT: load each adapter separately on the base, never stack SFT and DPO adapters. This is an English quick diagnostic, not an exhaustive benchmark or a claim of new training.
 
@@ -40,7 +40,7 @@ There are another **40 inputs forming 20 controlled pairs**: number magnitude, l
 - Concept/writing main tasks remain **pending human review**. Reference-context diagnostic keyword coverage is only lexical coverage, not factual accuracy. Writing diagnostic format constraints are automatically checked.
 - Objective task pass rates include sample size and Wilson intervals. Small selected samples do not establish broad population capability. A truncated response can still contain a correct answer; truncation is a separate recorded attribute.
 
-## Anonymous scoring / 匿名人工评分
+## Anonymous scoring / Anonymous manual score
 
 After all three formal runs, `review` exports `blind-review.csv`: 60 open-task answers plus six repeated answers, randomly ordered and stripped of stage labels. Keep `private-review-key.json` away from the reviewer. This is identity blinding, not a guarantee that answer style cannot suggest a model stage.
 
@@ -107,6 +107,6 @@ Code scoring also bounds combined stdout/stderr to 128 KiB, retains bounded fail
 
 ## Published first run
 
-The [English report](capability-results/README.md) and [中文报告](capability-results/README.zh-CN.md) contain all 420 formal responses' scoring aggregates, two inspected PNG/SVG figures, selected objective excerpts and source/weight hashes. No open-task model-labeled answers or private review keys are published. The public `analysis.json` can be rendered without checkpoints with `python -m nlp_course.capability render --run-dir docs/capability-results`; refresh artifact hashes in the manifest after intentionally changing files. Full generation still requires the original local weights and source data.
+The [English report](capability-results/README.md) and [Detailed report](capability-results/REPORT.md) contain all 420 formal responses' scoring aggregates, two inspected PNG/SVG figures, selected objective excerpts and source/weight hashes. No open-task model-labeled answers or private review keys are published. The public `analysis.json` can be rendered without checkpoints with `python -m nlp_course.capability render --run-dir docs/capability-results`; refresh artifact hashes in the manifest after intentionally changing files. Full generation still requires the original local weights and source data.
 
 Strict math/logic scores measure the requested answer protocol. Code failures include syntax-check failures before sandbox execution as well as runtime/test failures; unavailable infrastructure remains unscored. The diagnostic math prompts retained a NUMBER placeholder from preparation, followed by the fixed numeric-answer instruction. Observed copying and unfinished final-answer markers limit interpretation of these probes. A future cleaner protocol must be a separate run, not a modification to this run's frozen inputs.

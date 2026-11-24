@@ -1,5 +1,5 @@
 # Public evaluation of six Qwen checkpoints
-[中文报告](README.zh-CN.md)
+[Detailed report](REPORT.md)
 
 The primary comparison uses two adapters trained from SFT B on the same 166 prompts. Continued SFT learned the chosen answers and was selected at step 11. Upgraded DPO also trained on the model's rejected answers and was selected at step 6. The frozen SFT B and previous DPO checkpoints show how earlier stages performed. The two official Qwen checkpoints provide external baselines.
 

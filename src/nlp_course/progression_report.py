@@ -317,11 +317,11 @@ def report(root, dest=Path("docs/progression-results")):
             for row in items.values():
                 f.write(json.dumps(dict(model=arm, **row), ensure_ascii=False) + "\n")
     lines = [
-        "# Qwen2.5-0.5B 单次 SFT 与单次 DPO 的公开评测",
+        "# Qwen2.5-0.5B public evaluation after one SFT stage and one round of DPO",
         "",
-        f"共尝试 {final['attempts']} 轮，正式验收{'通过' if final['passed'] else '未通过'}。下表来自锁定最终权重后的全量描述性评测。每个阶段测 {sum(full['counts'].values()):,} 道题，四项等权。DPO 从选中的 SFT 出发训练一轮。",
+        f"Across {final['attempts']} attempts, the prespecified holdout criteria were {'met' if final['passed'] else 'not met'}. After checkpoint selection, each stage was evaluated on {sum(full['counts'].values()):,} questions with equal weight for each of the four tasks. DPO started from the selected SFT checkpoint.",
         "",
-        "| 阶段 | PIQA | HellaSwag | IFEval 严格提示级 | GSM8K | 等权均分 |",
+        "| Stage | PIQA | HellaSwag | IFEval strict prompt-level | GSM8K | Equal-weight mean |",
         "|---|---:|---:|---:|---:|---:|",
     ]
     for m in arms:
@@ -335,9 +335,9 @@ def report(root, dest=Path("docs/progression-results")):
     lines.extend(
         [
             "",
-            "## 封存题正式验收",
+            "## Prespecified holdout evaluation",
             "",
-            "| 轮次与题集 | Base 综合分 | SFT 综合分 | DPO 综合分 | SFT 增益 / 校正单侧下界 | DPO 增益 / 校正单侧下界 |",
+            "| Attempt and panel | Base mean | SFT mean | DPO mean | SFT gain / adjusted one-sided lower bound | DPO gain / adjusted one-sided lower bound |",
             "|---|---:|---:|---:|---:|---:|",
         ]
     )
@@ -346,16 +346,16 @@ def report(root, dest=Path("docs/progression-results")):
             formal = r["formal_scores"]
             a, b = r["formal_sft"], r["formal_dpo"]
             lines.append(
-                f"| 第 {i} 轮 / 集合 {r['panel']} | {formal['base']['mean']:.2f}% | {formal['sft']['mean']:.2f}% | {formal['dpo']['mean']:.2f}% | {a['pp']:+.2f} / {a['lower']:+.3f} | {b['pp']:+.2f} / {b['lower']:+.3f} |"
+                f"| Attempt {i} / panel {r['panel']} | {formal['base']['mean']:.2f}% | {formal['sft']['mean']:.2f}% | {formal['dpo']['mean']:.2f}% | {a['pp']:+.2f} / {a['lower']:+.3f} | {b['pp']:+.2f} / {b['lower']:+.3f} |"
             )
     lines.extend(
         [
             "",
-            "封存题决定是否验收。全量评测在训练结束后进行，含已开封的题目。两张表分别回答预定门槛是否达成，以及这条训练路径在完整评测范围内表现如何。增益和下界以百分点计。",
+            "The sealed panel determines acceptance. The full benchmark includes the opened questions and describes the selected checkpoints after training. Gains and lower bounds are in percentage points.",
             "",
-            "## 两段公开能力变化",
+            "## Changes on the full benchmark",
             "",
-            "| 阶段 | 综合分差（百分点） | 配对 95% 区间 | 回退最大的任务及变化（百分点） |",
+            "| Stage | Mean change (pp) | Paired 95% interval | Largest task regression (pp) |",
             "|---|---:|---:|---|",
         ]
     )
@@ -370,40 +370,40 @@ def report(root, dest=Path("docs/progression-results")):
         lines.extend(
             [
                 "",
-                f"全量评测中，DPO 相对 SFT 的综合增益为 {full['dpo']['pp']:+.2f} 个百分点，配对 95% 区间包含零。封存题上观察到的增益幅度在更大题集上未得到确认。",
+                f"The full-benchmark DPO gain over SFT was {full['dpo']['pp']:+.2f} percentage points. Its paired 95% interval includes zero, so the larger evaluation does not confirm the gain observed on the sealed panel.",
             ]
         )
     for stage in ("sft", "dpo"):
         for task, delta in full[stage]["tasks"].items():
             if delta["pp"] < -2:
                 lines.append(
-                    f"全量 {task} 上，{stage.upper()} 相对前一阶段下降 {-delta['pp']:.2f} 个百分点，超过预设的 2 点回退线。"
+                    f"On the full {task} benchmark, {stage.upper()} fell {-delta['pp']:.2f} percentage points from the previous stage, exceeding the two-point regression threshold."
                 )
     lines.extend(
         [
             "",
-            "## 迭代记录",
+            "## Training attempts",
             "",
-            "| 轮次 | SFT 开发增益 | DPO 开发增益 | 通过开发门槛后开封的集合 | 单卡运行分钟 |",
+            "| Attempt | SFT development gain | DPO development gain | Panel opened after selection | Single-GPU minutes |",
             "|---|---:|---:|---|---:|",
         ]
     )
     for i, r in enumerate(history, 1):
-        d = f"{r['dev_dpo']['pp']:+.2f}" if "dev_dpo" in r else "偏好对不足"
+        d = f"{r['dev_dpo']['pp']:+.2f}" if "dev_dpo" in r else "Insufficient preference pairs"
         lines.append(
             f"| {i} | {r['dev_sft']['pp']:+.2f} | {d} | {r.get('panel', '—')} | {audit[i - 1]['wall_seconds'] / 60:.1f} |"
         )
     lines.append("")
     for i, r in enumerate(history, 1):
         if r["passed"]:
-            lines.append(f"第 {i} 轮两段提升均通过封存题验收。")
+            lines.append(f"Both gains met the sealed-panel criteria on attempt {i}.")
             continue
         if "dev_dpo" not in r:
             lines.append(
-                f"第 {i} 轮有任务的合格偏好对不足 128 对。各类采集量见指标文件。"
+                f"On attempt {i}, at least one task yielded fewer than 128 eligible preference pairs. See the metrics file for counts."
             )
             continue
-        phase = "正式验收" if r["opened"] else "开发"
+        phase = "holdout" if r["opened"] else "development"
         comparisons = (
             [r["formal_sft"], r["formal_dpo"]]
             if r["opened"]
@@ -416,55 +416,55 @@ def report(root, dest=Path("docs/progression-results")):
             task = delta["tasks"][worst]
             details = []
             if delta["pp"] < (2 if stage == "SFT" else 1):
-                details.append("综合增益低于预设门槛")
+                details.append("The overall gain was below the prespecified threshold")
             if task["pp"] < -2:
                 details.append(
-                    f"{worst} 从错到对 {task['gained']} 题、从对到错 {task['lost']} 题，下降 {-task['pp']:.2f} 个百分点"
+                    f"{worst} gained {task['gained']} correct responses and lost {task['lost']}, a decline of {-task['pp']:.2f} percentage points"
                 )
             if delta.get("lower", 1) <= 0:
                 details.append(
-                    f"综合差值的校正单侧下界为 {delta['lower']:.2f} 个百分点"
+                    f"The adjusted one-sided lower bound was {delta['lower']:.2f} percentage points"
                 )
             lines.append(
-                f"第 {i} 轮{phase}评估中，{stage} 相对上阶段变化 {delta['pp']:+.2f} 个百分点。"
-                + "，".join(details)
-                + "。"
+                f"On attempt {i}, the {phase} change for {stage} relative to the previous stage was {delta['pp']:+.2f} percentage points."
+                + " ".join(details)
+                + "."
             )
         if i < len(history):
             design = audit[i]["design"]
             prior = audit[i - 1]["design"]
             if design["dev"] > prior["dev"]:
                 lines.append(
-                    f"下一轮将每类开发题扩至 {design['dev']} 道，并从 Base 重新训练。"
+                    f"The next attempt increased the development set to {design['dev']} examples per task and retrained from Base."
                 )
             elif design["hard"] and not prior["hard"]:
                 lines.append(
-                    "下一轮从同一 SFT 出发，优先采集首次回答错误且候选中有正确回答的训练题。"
+                    "The next attempt started from the same SFT checkpoint and prioritized prompts with an incorrect first response and a correct alternative."
                 )
             elif design["dpo_lr"] < prior["dpo_lr"]:
-                lines.append(f"下一轮将 DPO 学习率降至 {design['dpo_lr']:g}。")
+                lines.append(f"The next attempt reduced the DPO learning rate to {design['dpo_lr']:g}.")
     lines.extend(
         [
             "",
-            "开发增益以百分点计。指令开发集使用独立编写的练习，公开验收和全量评测使用原版 IFEval。单卡运行时间含本轮开发评估与偏好采集。各次重训的配置、逐项错转对与对转错题数、正负回答的概率变化见指标文件。",
-            f"在 {read(root / 'environment.json')['gpu']} 上，从环境验证至全量评测写入结果历时 {((root / 'public.json').stat().st_mtime - (root / 'environment.json').stat().st_mtime) / 3600:.2f} 小时。该时间包含等待与评分，不等于 GPU 内核执行时间。",
+            "Development gains are in percentage points. Instruction development uses independent exercises. The sealed and full public evaluations use original IFEval. Timing includes development evaluation and preference collection. Metrics include configurations, paired gains and losses, and changes in answer probabilities.",
+            f"On {read(root / 'environment.json')['gpu']}, environment verification through final result writing took {((root / 'public.json').stat().st_mtime - (root / 'environment.json').stat().st_mtime) / 3600:.2f} hours including waiting and scoring.",
             "",
-            "[训练与复现说明](../progression.md)",
+            "[Training and reproduction](../progression.md)",
         ]
     )
     lines.extend(
         [
             "",
-            "![综合分与配对区间](progression.png)",
+            "![Overall scores and paired intervals](progression.png)",
             "",
-            "![各项得分](tasks.png)",
+            "![Scores by task](tasks.png)",
             "",
-            "完整记录包括未达标的轮次、正式验收状态、封存题哈希、逐题输出与改善和退化案例。公开题存在历史暴露，结论限定在本次单种子权重和冻结协议。",
+            "The records include unsuccessful attempts, acceptance decisions, holdout hashes, individual outputs and examples of gains and regressions. Historical exposure to public questions limits conclusions to this seed, these checkpoints and this protocol.",
             "",
-            "[指标与验收](metrics.json) · [逐题结果](predictions.jsonl.gz) · [变化案例](cases.json)",
+            "[Metrics and acceptance](metrics.json) · [Per-question results](predictions.jsonl.gz) · [Examples](cases.json)",
         ]
     )
-    (dest / "README.zh-CN.md").write_text("\n".join(lines) + "\n", encoding="utf8")
+    (dest / "REPORT.md").write_text("\n".join(lines) + "\n", encoding="utf8")
     save(
         dest / "manifest.json",
         {

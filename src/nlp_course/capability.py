@@ -374,7 +374,7 @@ def analyze(suite_dir,run_dir):
                   'Strict scores include the requested answer protocol. The following relaxation diagnoses format sensitivity; it does not replace the strict result.'])
     for r in results:
         if r['category']=='math':lines.append(f'- {r["stage"]}: strict {r["correct"]}/{r["scored"]}; relaxed final-answer format {r["format_relaxed_correct"]}/{r["received"]}.')
-    lines.extend(['','## Failure evidence / 失败证据','', 'Only observable errors and controlled interventions are evidence. Capacity and training-data explanations remain hypotheses.'])
+    lines.extend(['','## Failure evidence','', 'Only observable errors and controlled interventions are evidence. Capacity and training-data explanations remain hypotheses.'])
     selected=[]
     for stage in STAGES:
         candidates=[]

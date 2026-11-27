@@ -7,7 +7,7 @@ The [project overview](README.md) introduces the causal attention example and th
 The package requires Python 3.10 or later. The recorded runs used Linux with Python 3.11 and Windows with Python 3.13.7 and CPU PyTorch 2.9.0. Create an environment using the following commands.
 
 ```sh
-git clone https://github.com/LAnthonyJ/small-language-model-lab.git nlp-course-implementations
+git clone https://github.com/LAnthonyJ/small-language-model-for-education.git nlp-course-implementations
 cd nlp-course-implementations
 python -m venv .venv
 ```

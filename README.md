@@ -1,6 +1,6 @@
-# Small Language Model Lab
+# Small Language Model for Education
 
-[![CPU tests](https://github.com/LAnthonyJ/small-language-model-lab/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/LAnthonyJ/small-language-model-lab/actions/workflows/tests.yml)
+[![CPU tests](https://github.com/LAnthonyJ/small-language-model-for-education/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/LAnthonyJ/small-language-model-for-education/actions/workflows/tests.yml)
 
 This project grew out of five NLP coursework implementations. You can inspect a causal attention mask on a CPU, train and merge a low-rank adapter, or follow a controlled experiment that tests whether direct preference optimization (DPO) improves a supervised Qwen2.5-0.5B checkpoint.
 

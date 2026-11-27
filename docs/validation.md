@@ -47,7 +47,7 @@ Raw records: [CPU example](validation/cpu-demo.json), [toy JSONL scoring](valida
 
 ## Publication validation — 2026-11-13
 
-The initial commit `c19b40650c874ec02965123c4b33472a00d68475` was pushed to [LAnthonyJ/small-language-model-lab](https://github.com/LAnthonyJ/small-language-model-lab). [GitHub Actions CPU tests](https://github.com/LAnthonyJ/small-language-model-lab/actions/runs/43263272641) completed successfully on Ubuntu / Python 3.11, including dependency installation, unittest, the CPU demonstration and JSONL scoring. The Git index was also checked against all five original coursework SHA-256 hashes.
+The initial commit `c19b40650c874ec02965123c4b33472a00d68475` was pushed to [LAnthonyJ/small-language-model-for-education](https://github.com/LAnthonyJ/small-language-model-for-education). [GitHub Actions CPU tests](https://github.com/LAnthonyJ/small-language-model-for-education/actions/runs/43263272641) completed successfully on Ubuntu / Python 3.11, including dependency installation, unittest, the CPU demonstration and JSONL scoring. The Git index was also checked against all five original coursework SHA-256 hashes.
 
 ## P2 review regressions — 2026-11-13
 

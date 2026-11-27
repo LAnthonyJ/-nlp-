@@ -24,7 +24,7 @@ These checks validate software behavior on small examples; the toy accuracy is n
 
 ## Downloading the evidence
 
-Open [CPU tests runs](https://github.com/LAnthonyJ/small-language-model-for-education/actions/workflows/tests.yml), select a run, and inspect the job summaries or the **Artifacts** section. Artifacts are named `cpu-ubuntu-latest-py3.10`, etc., and retained for 14 days.
+Open [CPU tests runs](https://github.com/LAnthonyJ/language-model-for-education/actions/workflows/tests.yml), select a run, and inspect the job summaries or the **Artifacts** section. Artifacts are named `cpu-ubuntu-latest-py3.10`, etc., and retained for 14 days.
 
 Each successful job provides:
 
